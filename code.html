@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>代码积累</title>
+    <style type="text/css">
+    body {
+        padding: 5;
+        font-family: 微软雅黑;
+    }
+    p,pre {
+        margin: 0;
+        border: 0;
+    }
+    .start-up-code {
+        padding-left: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .start-up-code > p {
+        background-color: #E18728;
+        padding-left: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 2;
+        color: white;
+    }
+    .start-up-code > pre {
+        padding-left: 5px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        webkit-box-sizing: border-box;
+        display: block;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+        width: 100%;
+        overflow-x: auto;
+        background-color: #1D1F21;
+        color: #FFF;
+        line-height: 1.5;
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-family: "microsoft yahei", Times, serif;
+    }
+    </style>
+</head>
+
+<body>
+    <br />
+    <hr width="80%" />
+    <div class="start-up-code">
+        <P>笔记</P>
+        <pre>
+			<code>
+	<!-- 新定义对象的方法-->
+	//1.字面量定义 literal
+	var site = {
+		name:"Tom",
+		site :"believezjp",
+		city:"beijing"
+	};
+	//2.
+	var site = new Object();
+	site.name = "Tom";
+	site.site = "believezjp";
+	site.city = "beijing";
+	
+	//3.
+	function Site(){
+		var I = {
+			name:"Tom",
+			site :"believezjp",
+			city:"beijing"
+		}
+		return I;
+	}
+	var site = new Site();
+	
+	//4.
+	function NSite(){
+		this.name:"Tom",
+		this.site :"believezjp",
+		this.city:"beijing"
+	}
+	NSite();
+	
+	var obj = {};
+	NSite.call(obj);
+	console.log(obj);
+	
+	
+	String.prototype.trimNew = function(){
+		return this.trim();
+	}
+	//new操作符具体干了什么呢?
+	1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。
+	2、属性和方法被加入到 this 引用的对象中。
+	3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。
+	
+	var obj  = {};//初始化一个对象obj
+	obj.__proto__ = Base.prototype;//将对象obj的__proto__设置为Base.prototype
+	Base.call(obj);//调用构造函数Base来初始化obj
+	
+	
+	
+	<------------------------------------------------Javascript基础--------------------------------------------------->
+		
+	//js基础
+	javascript是一种脚本语言，被设计为向HTML页面增加交互效果。
+	
+	js的引入方式有：
+	
+	1>内部嵌入：在body内部写入javascript
+	body
+		script type="text/javascript"
+			window.onload=function(){
+					...
+				}
+		/script
+	/body
+		
+	//2>外边引入，在body的底部或head的头部引入(推荐使用body中引入)
+	
+	//body中的js在页面加载完成后执行。可以加快页面的加载速度，增强http的请求速度
+	body
+		div
+			...
+		/div
+		
+		script type="text/javascript" src="js/name.js">/script>
+	/body
+	
+	//head中的代码在页面加载的时候就预先加载了
+	head
+		script type="text/javascript" src="js/name.js">/script>
+	/head
+	 
+	js的数据类型
+	
+	原始类型：
+	Number 数字                      string 字符串                          Boolean (turn false)            Object 对象
+	undefined 未定义                  null空                                 function 函数
+	
+	引用类型：
+	console.log(type(age));
+	document.write
+	
+	变量(声明 ，赋值 ，取值)
+	
+	声明一个变量      var a;
+	给一个变量赋值  var a=12;
+	取值：
+	body>
+		p>假设 y=5，计算 x=y+2，并显示结果。/p>
+		button onclick="myFunction()">点击这里/button>
+		
+		p id="demo">/p>
+		
+		script>
+		function myFunction()
+		{
+		var y=5;
+		var x=y+2;
+		var demoP=document.getElementById("demo")
+		demoP.innerHTML="x=" + x;
+		}
+		/script>
+		
+	/body>
+	
+	结果：x=7;
+	
+	定义一个Number(数字)   var a=2;
+	定义一个string(字符串 ) var a={age="20",sex="女",height:"160cm"}
+	获取一个Object(对象) 	x=document.getElementById("name");
+	Boolean 是对结果 的确定   var a=2;
+						var b=3;
+						if(a==b){
+							ture;
+						}
+						else{
+							false;
+						}
+	javascript 运算符
+	算术运算符：+加      -减      乘 *  除 /
+	赋值运算符：设a=6;
+			 a=6;        a=6;	
+			 a+=1;a=a+1; a=7;
+		        a-=1;a=a-1; a=5;
+			 a*=2;a=a*2; a=12;
+			 a/=2;a=a/2; a=3;
+			 a%=4;a=a%4; a=2;(余数)
+	比较运算符：  2==3;    false;
+			 2===2;   ture;
+			 2==="2"; false;
+			 2!=3;	  ture;
+			 2>3;     false;
+			 2<3;     ture;
+			 2>=3;    false;
+			 2<=3;    ture;
+	三元运算符：(exrp1)?(exrp2):(exrp3)	exrp1求值为ture时，结果为exr2,否则为exrp3;	 	
+			 	x=2;
+			 	y=(x==3)?x:1;
+			 	alert(y); 结果为2;
+	逻辑运算符：&&与and  var a=2; var b=3; (a&&b>2)  结果：false;
+			||或or   var n=2; var b=3; (a||b>2)  结果：ture;
+			! 非             var n=2; var b=3;	a!=3;    结果：turn;
+	字符串连接运算符：+ (主要用于连接两个字符串或字符串变量)		 	
+			 x="beijing";
+			 y=x+"你好！";         结果：beijing你好！
+			 	
+			字符串跟数字连接：
+			a=20;
+			y="年龄"+x+"岁！"
+	
+	综合练习：
+	var a1=1;
+	var a2=2;
+	var b1="1";
+	var b2="2";
+	var c1=true;
+	var c2=false;
+	document.write(a1+a2);    		//结果：3
+	document.write(a1+b1)			//结果：11
+	document.write(b2-b1);		//结果：1
+	document.write(b2-a1);		//结果：1
+	document.write(a1+b1+c1);		//结果：11true
+	document.write(a1+b1+a2);		//结果：112
+	document.write(b1-c1);		//结果：0
+	//字符串与数字不可以相加，但字符串与数字相减不受影响		
+			
+		
+	javascript
+	
+	if ...else...
+	if(expr1){
+		statement
+	}else if(expr2){
+		statement2
+	}else{
+		statement3
+	}
+	 该语法expr1成立时，则执行statement1;expr1不成立时,则检测expr2, 如果expr2成立，则执行statement2;	如果expr2不成立时，执行statement3;
+	 
+	三目运算：
+	条件1？ 操作:
+	条件2？操作:
+	条件3？操作:
+	操作;
+	 
+	最后一项不需要条件
+	 
+ 
+	练习：
+	输出是否为润年
+	
+	function runnian(y){
+		if(y%400==0||(y%4==0&&y%100!==0)){
+			document.write(y+"是润年");
+		}
+		else{
+			document.write(y+"不是润年");
+		}
+	}
+	runnian(1988);
+	结果：1988是润年
+	
+	
+	//输出得分成绩
+	function ming(results){
+			if(results==100){
+				document.write("好棒满分");
+			}
+			else if(results<100&&results>=90){
+				document.write("加把劲了，马上就夺冠喽");
+			}
+			else if(results<90&&results>=80){
+				document.write("骚年得少出去玩儿了");
+			}
+			else if(results<=70&&results>=60){
+				document.write("再不努力，就要被淘汰掉喽");
+			}
+			else{
+				document.write("请输入正确的成绩");
+			}
+		}
+		ming(90);
+	 
+	 
+	 结果：加把劲儿，马上就夺冠喽
+	 
+	 
+	 //三目运算，输出得分成绩
+	 
+	 function li(results){
+			results==100?document.write("满分"):
+			results<100&&results>=80?document.write("不错，继续努力"):
+			results<80&&results>=70?document.write("还得加油哦"):
+			results<60&&results>=0?document.write("骚年得努力了啊！"):
+			document.write("输入错误");
+		}
+		li(90);
+		结果：不错，继续努力
+		
+	 //去食堂吃饭
+	 function room(footer,money,total){
+			document.write("去食堂"+"<空格/>");
+			document.write("打饭"+"<空格/>");
+			document.write("扣"+money+"剩:"+(total-money)+"<空格/>");
+			document.write("回宿舍"+"<空格/>");
+			document.write("我今天吃了"+footer+"<空格/>");
+		}
+		room("拉面",15,50);
+		room("盖饭",16,50);
+		room("水饺",8,50);
+	 
+	 结果：
+	 	去食堂
+	 	打饭
+		扣15剩:35
+		回宿舍
+		我今天吃了拉面
+		去食堂
+		打饭
+		扣16剩:34
+		回宿舍
+		我今天吃了盖饭
+		去食堂
+		打饭
+		扣8剩:42
+		回宿舍
+		我今天吃了水饺
+			 
+	 
+	javscript switch...
+	
+	var x=2;
+	switch(x){
+		case 0:
+		alert("x等于0");
+		break;
+		case 1:
+		alert("x等于1");
+		break;
+		case 2:
+		alert("x等于2");
+		break;
+		default:
+		alert("x即不等于1和2,也不等于0");
+	}
+	
+	结果：x等于2;
+	
+	break用于执行完代码跳出流程。 
+	
+	
+	//练习：输出当前日期
+	/*switch...case*/ 
+	function myFunction(){
+		var x;
+		var d=new Date().getDay();
+		
+		switch(d){
+			case 0:
+			x="Today It's Sunday";
+			break;
+			case 1:
+			x="Tovday It's Monday";
+			break;
+			case 2:
+			x="Today It's Tuesday";
+			break;
+			case 3:
+			x="Today It's Wednesday";
+			break;
+			case 4:
+			x="Today It's Thursday";
+			break;
+			case 5:
+			x="Today It's  Friday";
+			break;
+			case 6:
+			x="Today It's Saturday";
+			break;
+			}
+		document.getElementById("demo").innerHTML=x;
+		}
+	 
+		body>
+		
+		p>今天周几/p>
+		button onclick="myFunction()">按钮/button>
+		p id="demo">/p>
+		/body>
+	 
+	 	结果：Today It's Tuesday   (跟着当前时间变化)
+ 
+	 
+	javascript for循环
+	
+	var i=1;
+	for(i=1;i<5;i++){
+		document.write(i);
+		
+	}
+	
+	结果：1 2 3 4
+	
+	添加if语句的for循环
+	var i=1;
+	for(i=1; ;i++){
+		if(i>5){
+			break;
+		}
+		document.write(i);
+	}
+	结果：1 2 3 4 5
+	
+	
+	for循环综合练习
+	输出1000-2000的所有润年(条件是可以被400整除或者可以被4整除但不能被100整除)
+	
+	var a=0;
+	for(i=1000;i<=2000;i++){
+		if(i%400==0 || (i%4==0 && i%100!==0)){
+			document.write(i+"")
+			a++
+			if(a%4==0){
+				document.write("换行");
+			}
+		}
+	}
+	
+	用for循环输出实心菱形
+	for(i=1;i<=6;i++){
+			for (j=1;j<=6-i;j++) {document.write('空格');}
+			for (k=1;k<=(2*i-1);k++){document.write('*');}
+			
+			
+			document.write('换行');
+	}
+	
+	for(i=5;i>=1;i--){
+		for(j=1;j<=6-i;j++){document.write('空格');}
+			for(k=1;k<=(2*i-1);k++){document.write("*");}
+				document.write("换行");
+	}
+	
+	
+	用for循环输出空心菱形
+	for(i=1;i<=6;i++){
+		for(j=1;j<=6-i;j++){document.write("&nbsp");}
+		for(k=1;k<=(2*i-1);k++){
+			if(k==1 || k==(2*i-1)){
+				document.write("*");
+			}
+			else{
+			document.write("空格");
+			}
+		}
+	
+		document.write("换行")
+	}
+	
+	for(i=5;i>=1;i--){
+		for(j=1;j<=6-i;j++){document.write("&nbsp");}
+		for(k=1;k<=(2*i-1);k++){
+			if(k==1 || k==(2*i-1)){
+				document.write("*");
+			}
+			else{
+				document.write("空格");
+			}
+		}	
+			
+		document.write("换行/")
+	}
+	
+	
+	javscript while与do while循环
+	
+	while
+	var i=1;
+	while(i<=10){
+		document.write(i+"<换行/>");
+		i++;
+	}
+	
+	结果：1 2 3 4 5 6 7 8 9 10
+	
+	do while和while循环非常相似，其区别在于do while必须执行一次，而while在表达式不成立时可能不做任何操作。
+	
+	do while
+	
+	var i=1;
+	do{
+		document.write(i+"<换行/>");
+		i++
+	}while(i<=10);
+	
+	结果：1 2 3 4 5 6 7 8 9 10
+	
+	
+	综合练习：
+	输出100以内的偶数
+	var i=1;
+	while(i<=100){
+		if(i%2==0){
+			document.write(i,"<换行/>");
+		}
+		i++;
+	}
+	
+	输出100以内的奇数
+	for(var i=1;i<=100;i++){
+		if(i%2!==0){
+			document.write(i,"<换行/>");
+		}
+	}
+	
+	输出100以内的偶数
+	for(var i=1;i<=100;i++){
+		if(i%2==0){
+			document.write(i,"<换行/>");
+		}
+	}
+	
+	九九乘法表
+	for(i=1;i<=9;i++){
+		for(j=1;j<=i;j++){
+			document.write(i+'*'+j+'='+i*j+'空格;''空格;');
+		}
+		
+		
+		document.write("<换行/>");
+	}
+	
+	结果：
+	1*1=1 
+	2*1=2 2*2=4 
+	3*1=3 3*2=6 3*3=9 
+	4*1=4 4*2=8 4*3=12 4*4=16 
+	5*1=5 5*2=10 5*3=15 5*4=20 5*5=25 
+	6*1=6 6*2=12 6*3=18 6*4=24 6*5=30 6*6=36 
+	7*1=7 7*2=14 7*3=21 7*4=28 7*5=35 7*6=42 7*7=49 
+	8*1=8 8*2=16 8*3=24 8*4=32 8*5=40 8*6=48 8*7=56 8*8=64 
+	9*1=9 9*2=18 9*3=27 9*4=36 9*5=45 9*6=54 9*7=63 9*8=72 9*9=81 
+	
+	//三角形
+	
+	var i=1;
+	while(i<=6){
+		var j=1;
+		while(j<=i){
+			document.write("*");
+			j++;
+		}
+		document.write("<换行/>");
+		i++;
+	}
+	
+	结果：
+	*
+	**
+	***
+	****
+	*****
+	******
+	
+	//倒三角
+	var i=10;
+	while(i>=1){
+		var j=1;
+		while(j<=i){
+			document.write("*");
+			j++;
+		}
+		
+		document.write("<换行/>");
+		i--;
+	}
+	
+	结果：
+	**********
+	*********
+	********
+	*******
+	******
+	*****
+	****
+	***
+	**
+	*
+	
+	//长方形
+	
+	var i=1;
+	while(i<=10){
+		var j=1;
+		while(j<=10){
+			document.write("*");
+			j++;
+		}
+		
+		document.write("<换行/>");
+		i++;
+	}
+
+	
+	//斐波那契数列
+		var a=0;
+		var b=1;
+		var n=2;
+		var s=1;
+		
+		while(n<=19){
+			var c=a+b;
+			a=b;
+			b=c;
+			n++;
+			s=s+c;
+		}
+		document.write(s);
+		
+		结果：10945
+		
+	斐波那契数列：0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+	这个数列从第三项开始，每一项都等于前两项之和。
+	斐波纳契数列以如下被以递归的方法定义：F0=0，F1=1，Fn=F(n-1)+F(n-2)（n>=2，n∈N*），
+	
+		
+	
+		
+		
+	while循环与for循环的区别：
+	while循环是未知的，且当条件不满足将停止执行。
+	for循环是已知的也可以是未知的，当循环完成后后继续判断一直到结果为false;
+	
+	for in变量与字符串循环
+	
+	var array_1=new Array('a',10.5,true);
+	var x;
+	for(x in array_1){
+		document.write(array_1[x]+"<空格/>");
+	}
+	
+	结果：a ,10.5,true
+	
+	直接输出
+	var array_1=new Array('a',10.5,true)
+	document.write(array_1);
+	
+	结果：a ,10.5,true
+	
+	
+	break
+	
+	var iNum=0;
+	for(var i=1;i<10;i++){
+		if(i%5==0){
+			break;
+		}
+		
+		iNum++;
+	}
+    alert(iNum);           
+	在以上代码中，for 循环从 1 到 10 迭代变量 i。在循环主体中，if 语句将（使用取模运算符）检查 i 的值是否能被 5 整除。
+	如果能被 5 整除，将执行 break 语句。alert 显示 "4"，即退出循环前执行循环的次数
+	
+	
+	continue
+	
+	var iNum=0;
+	for(i=1;i<10;i++){
+		if(i%5==0){
+			continue;
+		}
+		
+		iNum++;
+	}
+	alert(iNum);
+	这里，alert 将显示 "8"，即执行循环的次数。
+	可能执行的循环总数为 9，不过当 i 的值为 5 时，将执行 continue 语句，会使循环跳过表达式 iNum++，返回循环开头。
+	
+	
+	//函数
+	
+	function hello(name){
+		document.write((name+"，你好！"))
+	}
+	
+	body
+	
+	input type="button" value="确定" onclick="hello('小明')"
+	/body
+	
+	结果：你好，小明！
+	
+	//arguments 类似数组形式保存了函数参数
+	
+	function hello(name,age){
+		document.write("他叫"+arguments[0]+"今年"+arguments[1]+"岁！");
+	}
+	
+	body
+	
+	input type="button" value="确定" onclick="hello('小明',18)"
+	/body
+	
+	
+	结果：他叫小明今年18岁！
+	
+	
+	retrun
+	
+	function sum(x,y){
+		return x+y;
+	}
+	relsut=sum(2,3);
+	document.write(relsut);
+	
+	结果：5
+	
+	
+	function main(n){
+		return n;
+	}
+	document.write(main(1));
+	
+	结果：1
+	
+	function main(n,m){
+			m=n+"lala"
+			document.write(m);
+			return m;
+			<!--console.log(m)-->
+		}
+		main("dape");
+		var u=main("ninini");
+		alert(u);
+		
+	结果：输出：dapelalanininilala
+	    alert:  nininilala
+	
+	经验：第一次m的值为dapelala ,第二次为nininilala,所以有了最终结果。原因是只传了一个值，所以第一个参数值为n,将值给n带进入计算。
+		看不懂的时候可以先console.log,或者打断点，F5刷新，F10执行。想看每个参数的值得时候，把鼠标放到断点上边的值上，就有参数显示了。
+	
+	<---javascript DOM--->
+	
+	//输出位同学的姓名跟年龄
+		table id="tb">/table>
+			
+		script type="text/javascript">
+					
+			var students=[['张益楠','女','22','山东农业大学'],['吴多','男','22','山东农业大学'],
+        	['陈钦亮','男','22','山东农业大学'],	['张浩然','男','21','山东农业大学'],
+        	['王洪恩','男','23','山东农业大学'],['张召勇','男','22','山东农业大学'],
+        	['张国玉','女','24','北京经济技术研修学院'],['方宏伟','男','22','北京信息科技大学'],
+        	['李宝臣','男','23','山东农业大学'],['李志成','男','23','山东农业大学'],
+        	['曾棱辉','男','23','山东农业大学'],['刘宁','男','24','山东农业大学'],
+        	['朱培瑶','男','23','']];			
+		
+		
+		
+				var table=document.getElementById("tb");
+						
+				var str="";
+			
+				for(var i=0;i<students.length;i++){
+		
+					var studentElement=students[i];
+				//输出姓名
+					function alert1(num){
+						alert(num.firstChild.innerHTML);
+					};
+				
+					//输出tr td     onclick输出姓名
+					str=str+"<tr onclick='alert1(this)'><td>"+students[i][0]+"</td><td>"+students[i][1]+"</td><td>"+students[i][2]+"</td><tr>"
+				
+			/*	document.getElementById("students").innerHTML;*/
+	
+			}
+			
+			table.innerHTML=str;
+		
+		/script
+	
+	
+	//创建一个表格
+		createElement创建节点
+		createTexNode创建文本
+		appendChild  创建子元素
+		removeChild  删除子元素
+		
+		
+		table border="1" cellspacing="0" cellpadding="0" id="tb2">/table>	
+	
+		window.onload=function(){
+			var a=[1,2,3,4];
+			var b=document.getElementById("tb2");
+
+			for(i=0;i<a.length;i++){
+				var tr=document.createElement("tr");
+				var td=document.createElement("td");
+				var text=document.createTextNode(a[i]);
+				
+				td.appendChild(text);
+				tr.appendChild(td);
+				b.appendChild(tr);
+				
+			}
+		}
+		
+		
+	
+	
+			</code>
+		</pre>
+    </div>
+</body>
+
+</html>
