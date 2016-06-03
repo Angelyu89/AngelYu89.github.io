@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#tb{background:#666;color:#fff;float:left;}
+			#oDiv1{width:300px;height:300px;background:blueviolet;float:left;margin-left:30px;}
+			#btn1,#btn2,#btn3,#btn4{outline:none;border:0;}
+			#oDiv2{width:300px;height:300px;background:blue;margin-left:700px;}
+		</style>
+	</head>
+	<body>
+		<p>创建表格，并且鼠标移入弹出序号</p>
+		<table border="1"; id="tb"></table>
+		<table border="1"; id="tb2"></table>
+		
+		
+		<div id="oDiv1">
+				<p>点击按钮换肤</p>
+			<button id="btn1" class="btn1" type="button" onclick="y()">首页</button>
+			<button id="btn2" class="btn2" type="button" onclick="r()">添加</button>
+			<button id="btn3" class="btn3" type="button" onclick="b()">删除</button>
+			<button id="btn4" class="btn4" type="button" onclick="a()">修改</button>
+		</div>
+		
+	
+		<div id="oDiv2" onmousemove="toGreen()" onmouseout="tored()">
+				<p>鼠标移入改变颜色</p>
+		</div>
+		
+		<script type="text/javascript" src="js/new_file.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button id="btn">按钮</button>
+		<p>点击按钮，弹框</p>
+		<button id="btn" onclick="clickq(this)">按钮</button>
+		<p>点击按钮，更换按钮文字</p>
+		
+		<script type="text/javascript">
+			document.getElementById("btn").onclick=function(){
+				alert("生活多么美好");
+			}
+			
+			//onclick更改文字内容
+			function clickq(btnObj){
+				btnObj.innerHTML="haha";
+			}
+		
+			
+		</script>
+	</body>
+</html>

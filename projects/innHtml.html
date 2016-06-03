@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>点击对应列表输出姓名</p>
+		<table border="1" cellspacing="0" cellpading="0" id="tb"></table>
+			
+		<script type="text/javascript">
+					
+			var students=[['张益楠','女','22','山东农业大学'],['吴多','男','22','山东农业大学'],
+        	['陈钦亮','男','22','山东农业大学'],	['张浩然','男','21','山东农业大学'],
+        	['王洪恩','男','23','山东农业大学'],['张召勇','男','22','山东农业大学'],
+        	['张国玉','女','24','北京经济技术研修学院'],['方宏伟','男','22','北京信息科技大学'],
+        	['李宝臣','男','23','山东农业大学'],['李志成','男','23','山东农业大学'],
+        	['曾棱辉','男','23','山东农业大学'],['刘宁','男','24','山东农业大学'],
+        	['朱培瑶','男','23','']];			
+			
+				
+				var table=document.getElementById("tb");
+						
+				var str="";
+			
+				for(var i=0;i<students.length;i++){
+		
+					var studentElement=students[i];
+				//输出姓名
+					function alert1(num){
+						alert(num.firstChild.innerHTML);
+					};
+				
+					//输出tr td     onclick输出姓名
+					str=str+"<tr onclick='alert1(this)'><td>"+students[i][0]+"</td><td>"+students[i][1]+"</td><td>"+students[i][2]+"</td><tr>"
+				
+			/*	document.getElementById("students").innerHTML;*/
+	
+			}
+			
+			table.innerHTML=str;
+			
+			
+			
+			
+			
+			
+				
+		</script>
+	</body>
+</html>

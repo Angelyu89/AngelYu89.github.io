@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0;padding:0;
+			}
+			#oDiv1{width:1500px;height:660px;background:aliceblue;position:relative;}
+			img{width:130px;height:200px;border:18px solid #FFFF00;margin-top: 55px;
+    margin-left: 185px;}
+		</style>
+	</head>
+	<body>
+		<h2>美女照片墙</h2>
+		<div id="oDiv1">
+			<img class="img1" src="img/2.jpg" id="img1" alt="" />
+			<img class="img2" src="img/3.jpg" id="img1" alt="" />
+			<img class="img3" src="img/4.jpg" id="img1" alt="" />
+			<img class="img4" src="img/5.jpg" id="img1" alt="" />
+			<img class="img5" src="img/6.jpg" id="img1" alt="" />
+			<img class="img6" src="img/7.jpg" id="img1" alt="" />
+			<img class="img7" src="img/8.jpg" id="img1" alt="" />
+			<img class="img7" src="img/9.jpg" id="img1" alt="" />
+		</div>
+		<script type="text/javascript">
+			var a=document.getElementsByTagName("img");
+			for(i=0;i<a.length;i++)
+			{
+				(function(j){
+					a[i].onmouseover=function(){
+					a[j].style.transform="rotate(20deg)";
+				}
+				})(i);
+				
+			}
+			for(i=0;i<a.length;i++)
+			{
+				(function(j){
+					a[i].onmouseout=function(){
+					a[j].style.transform="rotate(0deg)";
+				}
+				})(i);
+				
+			}
+		</script>
+	</body>
+</html>

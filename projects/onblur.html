@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS emali验证</title>
+	</head>
+	<body>
+		<form action="http://www.baidu.com" onsubmit="return validate()">
+			emali:<input type="text" id="emali" value="emali" placehloder="请输入邮箱号" /><span id="emaliSpan"></span></br>
+			<p>输入的邮箱号大于7位数,提示格式错误</p>
+			password:<input type="password" id="password" placeholder="请输入密码" /><span id="passwordSpan"></span></br>
+			<p>输入的密码大于7位数,提示格式错误</p>
+			password:<input type="password" id="reset" placeholder="请重新输入密码" /><span id="resetSpan"></span></br>
+			<p>输入的密码与之前的不符,提示"密码不一致，请重新输入"</p>
+			<input type="submit"/>
+			<p>输出成功后，可提交百度</p>
+		</form>
+		<script type="text/javascript">
+			
+			/*	document.getElementById("emali").onchange=function(){
+				if(document.getElementById("emali").value.length>7){
+					document.getElementById("emaliSpan").innerHTML="格式有误";
+				}else{document.getElementById("emaliSpan").innerHTML=""}
+				
+			}
+			
+			
+				document.getElementById("password").onchange=function(){
+				if(document.getElementById("password").value.length>7){
+					document.getElementById("passwordSpan").innerHTML="格式有误";
+				}else{document.getElementById("passwordSpan").innerHTML=""}
+			}
+			
+			
+			
+				document.getElementById("reset") .onchange=function(){
+					if(document.getElementById("reset").value!=getElementById("password").value){
+						document.getElementById("resetSpan").innerHTML="两次密码输入不一致";
+					}else(document.getElementById("resetSpan").innerHTML="")
+				}	*/
+			
+			
+			function validateEmail(){
+				//输出大于7显示格式错误
+				if(document.getElementById("emali").value.length>7){
+					document.getElementById("emaliSpan").innerHTML="格式有误";
+					return false;
+				}else{document.getElementById("emaliSpan").innerHTML=""}
+					return true;
+			}
+			
+			function validatePwd(){
+				
+				if(document.getElementById("password").value.length>7){
+					document.getElementById("passwordSpan").innerHTML="格式有误";
+					return false;
+				}else{document.getElementById("passwordSpan").innerHTML=""}
+					return true;
+			}
+			
+			
+			function validateReput(){
+				
+				if(document.getElementById("password").value!=document.getElementById("reset").value){
+						document.getElementById("resetSpan").innerHTML="两次密码输入不一致";
+						return false;
+					}else(document.getElementById("resetSpan").innerHTML="")
+					return true;
+				}	
+
+			 
+			document.getElementById("emali").onchange=function(){
+				validateEmail();
+			}
+			
+			document.getElementById("password").onchange=function(){
+				validatePwd();
+			}
+			
+			document.getElementById("reset").onchange=function(){
+				validateReput();
+			}
+			   
+			   
+			 function validate(){
+			 	
+			 	vemail=validateEmail();
+			 	
+			 	vpssword=validatePwd();
+			 	
+			 	vreset=validateReput();
+			 	
+			 	if(vemail && vpssword && vreset){
+			 		
+			 		return true;
+			 		
+			 	}else{
+			 		return false;
+			 	}
+			 }
+		</script>
+	</body>
+</html>
