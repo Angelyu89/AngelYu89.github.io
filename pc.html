@@ -2,16 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>代码积累</title>
+    <title>我的项目</title>
     <style type="text/css">
+    *{
+    	margin:0;padding:0;
+    }
+    
     body {
         padding: 5;
         font-family: 微软雅黑;
     }
-    p,pre {
-        margin: 0;
-        border: 0;
+    
+    ul li{
+    	list-style:none;
     }
+    
     .start-up-code {
         padding-left: 15px;
         padding-top: 15px;
@@ -27,31 +32,43 @@
         line-height: 2;
         color: white;
     }
-    .start-up-code > pre {
-        padding-left: 5px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        webkit-box-sizing: border-box;
-        display: block;
-        white-space: pre-wrap;
-        white-space: -moz-pre-wrap;
-        white-space: -pre-wrap;
-        white-space: -o-pre-wrap;
-        word-wrap: break-word;
-        width: 100%;
-        overflow-x: auto;
-        background-color: #1D1F21;
-        color: #FFF;
-        line-height: 1.5;
-        font-size: 16px;
-        letter-spacing: 1px;
-        font-family: "microsoft yahei", Times, serif;
-    }
-    a{
+    
+    h3{
+    	padding:10px 0;
+    }   
+   
+    .lis_pc ul li a,
+    .lis_pc2 ul li a
+    {
     	text-decoration: none;
+    	color:#666;
+    	display:block;
+    	transition: all 1s;
+    	border:1px solid #ccc;
     }
-    .taobaoa{
-    	margin-left:-128px;
+        
+   .lis_pc ul li a:hover ,
+   .lis_pc2 ul li a:hover
+   {
+    	    background: rgba(255,255,255,0.2);
+    	    transform: rotate(360deg);
+    }
+    
+   .lis_pc,.lis_pc2{
+   	display:block;
+   	margin-top:20px;
+   	width:80%;
+   	overflow:hidden;
+   }
+    
+    li{
+    	    float: left;
+		    width: 120px;
+		    height: 40px;
+		    line-height: 38px;
+		    text-align: center;
+		    display: inline-block;
+		    margin-left:20px;
     }
     </style>
 </head>
@@ -61,25 +78,51 @@
     <hr width="80%" />
     <div class="start-up-code">
         <P>项目</P>
-        <pre>
-			<code>
-				<div>
-					<p>pc篇</p>
-                	<a href="projects/mz/index.html" target="_blank">米折</a>
-                	<a href="projects/jingshan/index.html" target="_blank">金山毒霸</a>
-                	<a href="projects/jingdong/index.html" target="_blank">京东首页</a>
+		<div class="lis_pc">
+			<h3>pc篇</h3>
+			<ul>
+				<li>
+        			<a href="projects/mz/index.html" target="_blank">米折</a>							
+				</li>
+				<li>							
+        			<a href="projects/jingshan/index.html" target="_blank">金山毒霸</a>
+				</li>
+				<li>
+        			<a href="projects/jingdong/index.html" target="_blank">京东首页</a>							
+				</li>
+				<li>							
 					<a class="taobaoa" href="projects/taobao/index.html" target="_blank">淘宝首页</a>
-				</div>
-                	<div>
-                	<p>原生JS</p>
-                	<a href="projects/onblur.html" target="_blank">emali验证</a>
-                	<a href="projects/onclick.html" target="_blank">按钮点击事件</a>
-                	<a href="projects/innHtml.html" target="_blank">输出列表内容</a>
-                	<a href="projects/onmouseover.html" target="_blank">美女照片墙</a>
-                	<a href="projects/table.html" target="_blank">创建表格、换肤</a>
-                	</div>
-			</code>
-		</pre>
+				</li>
+			</ul>
+		</div>
+		
+		
+    	<div class="lis_pc2">
+    	<h3>原生JS</h3>
+    		<ul>
+    			<li>
+    				<a href="projects/onblur.html" target="_blank">emali验证</a>    				
+    			</li>
+    			<li>
+				    <a href="projects/onclick.html" target="_blank">按钮点击事件</a>    				
+    			</li>
+    			<li>
+			    	<a href="projects/innHtml.html" target="_blank">输出列表内容</a>   				
+    			</li>
+    			<li>
+			    	<a href="projects/onmouseover.html" target="_blank">美女照片墙</a>    				
+    			</li>
+    			<li>  				
+			    	<a href="projects/table.html" target="_blank">创建表格、换肤</a>
+    			</li>
+    		</ul>
+    	
+    	</div>
+    </div>  
+		<canvas id="c_n13" width="1600" height="755" style="position: fixed;top: 0px;left: 0px;z-index: -1;opacity: 39.5;"></canvas>
+		
+		
+		<script src="javascripts/canvas-nest.min.js"></script>
 </body>
 
 </html>
