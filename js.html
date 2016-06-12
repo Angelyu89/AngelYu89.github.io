@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的引入方式</title>
+    <script src="javascripts/js.js"></script>
+</head>
+<body<!--onload="init()"-->>
+    <h2>
+        JS代码写在哪儿？
+    </h2>
+    <h3>方法一</h3>
+    <p>写到body尾部 最后一行 内部写法(一般不这么写)</p></br>
+    script type="text/javascript"</br>
+        console.log("hello world");</br>
+    /script
+
+    <p>写到body尾部 最后一行 引用外部JS 外部(页面加载完成才加载)</p></br>
+    script src="main.js">/script
+    <h3>方法二</h3>
+    <p>在head标记里面，通过body.onload事件执行( head中引入访问不到body的标记 eg: document.body.inHTML="hello world" )</p></br>
+    script src="main.js">/script</br>
+
+    function init(){
+    document.body.innerHTML="Hello world";
+    }
+
+    body onload="init()"
+    <h3>方法三</h3>
+    <p>写在head 标签里面，通过window.onload事件执行</p>
+     script src="main.js">/script</br>
+
+    window.onload=function(){
+    document.body.innerHTML="hello world";
+    }
+
+</body>
+</html>

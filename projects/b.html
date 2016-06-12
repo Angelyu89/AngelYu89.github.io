@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.btn{
+				width: 100px;
+				height:100px;
+			}
+			.red{background-color: red;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<button class="btn red">点击我</button>
+			<div id="msg"></div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){
+				document.getElementsByClassName("red")[0].onclick = function(){
+					document.getElementById("msg").textContent = "hello" +"fdfd" +"World!";
+				}
+			}
+		</script>
+	</body>
+</html>
