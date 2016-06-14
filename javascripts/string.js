@@ -82,45 +82,68 @@ window.onload=function(){
         document.write("无效的分数")
         }
 	  }
+
+	//向下求整
+	document.getElementById("btn13").onclick=function(){
+		var score=-20;
+	
+	switch(Math.floor(score/10)){
+	    case 10:
+	        document.write("满分")
+	        break;
+	    case 9:
+	        document.write("优秀")
+	        break;
+	    case 8:
+	        document.write("良好")
+	        break;
+	    case 7:
+	    case 6:
+	        document.write("及格")
+	        break;
+	    case 5:
+	    case 4:
+	    case 3:
+	    case 2:
+	    case 1:
+	        document.write("不及格")
+	        break;
+	    default:
+	        document.write("无效分数")
+	        break;
+		}
+	}
+
+	//数组
+
+	document.getElementById("btn14").onclick=function(){
+		//定义数组
+		var arr=[1,2,"Hello"];
+		//输出
+		document.write(arr);
+	}
+
+	
+	document.getElementById("btn14").onclick=function(){
+		//定义数组
+		var arr=[1,2,"Hello"];
+		//输出
+		document.write(arr);
+	}
+	
+	//添加元素
+	document.getElementById("btn15").onclick=function(){
+		var arr=[1,2,"Hello"];
+        arr.push("world");
+        document.write(arr);
+	}
+	
+	
+	
+	
 }
-//向下求整
-document.getElementById("btn13").onclick=function(){
-	var score=-20;
 
-switch(Math.floor(score/10)){
-    case 10:
-        document.write("满分")
-        break;
-    case 9:
-        document.write("优秀")
-        break;
-    case 8:
-        document.write("良好")
-        break;
-    case 7:
-    case 6:
-        document.write("及格")
-        break;
-    case 5:
-    case 4:
-    case 3:
-    case 2:
-    case 1:
-        document.write("不及格")
-        break;
-    default:
-        document.write("无效分数")
-        break;
-}
-
-
-
-
-
-}
-
-
-
+		
 
 
 
@@ -159,7 +182,7 @@ else if (score == 90) {
 }*/
 
 //向下求整
-var score=-20;
+/*var score=-20;
 
 switch(Math.floor(score/10)){
     case 10:
@@ -186,7 +209,7 @@ switch(Math.floor(score/10)){
         console.log("无效分数")
         break;
 }
-
+*/
 
 
 
