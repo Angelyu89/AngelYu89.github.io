@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title></title>
+    <script language="javascript" type="text/javascript" src="js/animation.js"></script>
+    <script language="javascript" type="text/javascript">
+        window.onload = function () {
+            new animation({ element: "Div1", url: 'img/15_gumby11-blockheads.jpg', hover: function () { this.element.style.backgroundPositionX = '-135px'; }, blur: function () { this.element.style.backgroundPositionX = '0'; } });
+            new animation({ element: "Div2", url: 'img/16_gumby11-prickle.jpg', hover: function () { this.element.style.backgroundPositionX = '-335px'; }, blur: function () { this.element.style.backgroundPositionX = '-270px'; } });
+            new animation({ element: "Div3", url: 'img/17_gumby11-goo.png', hover: function () { this.element.style.backgroundPositionX = '-467px'; }, blur: function () { this.element.style.backgroundPositionX = '-400px'; } });
+            new animation({ element: "Div4", url: 'img/10_gumby11-gumby.jpg', hover: function () { this.element.style.backgroundPositionX = '-780px'; }, blur: function () { this.element.style.backgroundPositionX = '-682px'; } });
+            new animation({ element: "Div5", url: 'img/18_gumby11-pokey.png', hover: function () { this.element.style.backgroundPositionX = '-609px'; }, blur: function () { this.element.style.backgroundPositionX = '-534px'; } });
+        };
+    </script>
+    <style type="text/css">
+        div{position:absolute;}
+    </style>
+</head>
+<body>
+<div style="width:135px;height:156px;background:url(img/6_gumby11-initial-sprite.png) 0 0;" id="Div1"></div>
+<div style="left:138px;top:40px;width:65px;height:102px;background:url(img/6_gumby11-initial-sprite.png) -270px 0;" id="Div2"></div>
+<div style="left:196px;top:14px;width:67px;height:144px;background:url(img/6_gumby11-initial-sprite.png) -400px 0;z-index:90;" id="Div3"></div>
+<div style="left:246px;top:-6px;width:98px;height:156px;background:url(img/6_gumby11-initial-sprite.png) -682px 0;" id="Div4"></div>
+<div style="left:323px;top:50px;width:75px;height:108px;background:url(img/6_gumby11-initial-sprite.png) -534px 0;" id="Div5"></div>
+</body>
+</html>
