@@ -131,13 +131,95 @@ window.onload=function(){
 		document.write(arr);
 	}
 	
-	//添加元素
+	//添加元素(在尾部)
 	document.getElementById("btn15").onclick=function(){
 		var arr=[1,2,"Hello"];
         arr.push("world");
         document.write(arr);
 	}
 	
+	//修改数组元素splice(即可添加，也可替换/删除)
+	document.getElementById("btn16").onclick=function(){
+		var arr=[1,2,"Hello",3,4,5];
+		//[1,是添加删除的位置，0，表示不删除，ucai,添加的新项目]
+		//arr.splice(1,0,"ucai");
+		
+		//[2，从第二位置开始，1，删除一个，ucai,添加一个新元素  ucai来替代被删除的元素：]
+		//arr.splice(2,1,"ucai");
+		
+		//[2，从第二个位置开始，3，删除三个，ucai,添加一个新元素  ucai来替代被删除的元素：]
+		//arr.splice(2,3,"ucai");
+		
+		//删除第3位开始的所有值
+		//arr.splice(3,arr.length);
+		
+		//删除第3位开始的1个值
+		arr.splice(3,1);
+				
+        document.write(arr);
+	}
+	
+	//数组的链接
+	document.getElementById("btn17").onclick=function(){
+		var a = [1,2,3];
+        document.write(a.concat(4,5));
+	}
+	
+	//将数组转成字符串join
+	document.getElementById("btn18").onclick=function(){
+		var arr=[1,2,3,"ni","hao"];
+		console.log(arr.join(""));
+	}
+	
+	//遍历数组
+	document.getElementById("btn19").onclick=function(){
+		var arr=[1,2,3,"ni","hao"];
+		arr.forEach(function(){
+        console.log(arguments);
+       })
+	}
+	
+	//删除末尾元素
+	document.getElementById("btn20").onclick=function(){
+		var arr=[1,2,3,"ni","hao"]
+		arr.pop();
+        console.log(arr);
+	}
+	
+	//删除第一个元素shift
+	document.getElementById("btn21").onclick=function(){
+	    var arr=[1,2,3,"ni","hao"]
+	    arr.shift();
+	    console.log(arr);
+	    
+	}
+	
+	//排序sort
+	document.getElementById("btn22").onclick=function(){
+		var arr=[1,2,3,"ni","hao"]
+		arr.sort(function(a,b){
+			return a>b;
+			
+		})
+		console.log(arr);
+	}
+	
+	//对象进行排序
+	document.getElementById("btn23").onclick=function(){
+		var arr=[{name:"li",age:10},{name:"zhang",age:20},{name:"zhao",age:30}]
+		arr.sort=(function(a,b){
+			return a.age<b.age;		
+		})
+		console.log(arr);		
+	}
+	
+	//访问
+	document.getElementById("btn24").onclick=function(){
+		var arr=[1,2,3,4,-10];
+        for(var i=0;i<arr.length;i++){
+         console.log(arr[i])
+        }
+	}
 	
 	
 	
