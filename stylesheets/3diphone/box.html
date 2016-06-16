@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes animationTo0{
+            from{
+                transform:perspective(0px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+            }
+            to{
+                transform:perspective(360px) rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+            }
+        }
+
+        @keyframes animationTo360{
+            from{
+                transform:perspective(1000px) rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(0deg)  rotateX(0deg) rotateZ(0deg);
+            }
+        }
+
+
+        .cartion{
+            position:relative;
+            animation: animationTo0;
+            animation-duration:10s;
+            transform-style:preserve-3d ;
+            margin: 0 auto;
+            margin-top: 200px;
+        }
+        div{
+            width:200px;
+            height:200px;
+            line-height:200px;
+            position:absolute;
+            text-align:center;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .oDiv1{
+            background-color:orangered;
+            transform: rotateY(90deg) translateZ(100px) ;
+        }
+        .oDiv2{
+            background-color:aqua;
+            transform:translateZ(100px);
+
+        }
+        .oDiv3{
+            background-color:orange;
+            transform: rotateY(90deg)translateZ(-100px);
+        }
+        .oDiv4{
+            background-color:red;
+            transform:translateZ(-100px);
+        }
+        .oDiv5{
+            background-color:blue;
+            transform: rotateX(90deg)translateZ(100px);
+        }
+        .oDiv6{
+            background-color:chartreuse;
+            transform: rotateX(90deg)translateZ(-100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="cartion">
+        <div class="oDiv1">1</div>
+        <div class="oDiv2">2</div>
+        <div class="oDiv3">3</div>
+        <div class="oDiv4">4</div>
+        <div class="oDiv5">5</div>
+        <div class="oDiv6">6</div>
+    </div>
+</body>
+</html>

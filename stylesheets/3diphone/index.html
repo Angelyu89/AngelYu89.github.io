@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>旋转的盒子</title>
+		<style type="text/css">
+			
+			/*@keyframes animTo0{
+				from{
+					transform: perspective(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				}
+				to{
+					transform: perspective(1000px) rotateX(360deg) rotateY(360deg) rotateZ(360deg);	
+				}
+			}
+			*/
+		
+		
+		 @keyframes animTo360{
+            from{
+                transform:perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            to{
+                transform:perspective(1000px) rotateX(720deg) rotateY(720deg) rotateZ(720deg);
+            }
+        }
+			
+			.catainer{				
+				position:absolute;
+				width:500px;
+				height:500px;
+				top: 200px;
+				left:200px;
+				/*animation:animTo0;
+				animation-duration: 10s;
+				transform-style: preserve-3d;*/
+				
+			}
+			
+			.catainer:hover{
+			animation:animTo360;
+            animation-duration:10s;
+            transform-style: preserve-3d;
+            animation-fill-mode: forwards;
+			}
+			
+			
+			.oDiv1{
+				width:200px;
+				height:200px;
+				line-height:200px;
+				background-color:#21b716;
+				text-align:center;
+				font-size:80px;
+			    position: absolute;
+			    transform: rotateY(90deg) translateZ(100px);		
+			}
+			.oDiv2{
+				width:200px;
+				height:200px;
+				background-color:orangered;
+				line-height:200px;
+				font-size:80px;
+				text-align:center;
+				position:absolute;
+				transform: translateZ(100px);
+				
+			}
+			.oDiv3{
+				width:200px;
+				height:200px;
+				background-color:darkorange;
+				line-height:200px;
+				font-size:80px;
+				text-align:center;
+				position:absolute;
+    			transform: rotateY(90deg) translateZ(-100px); 
+			}
+			.oDiv4{
+				width:200px;
+				height:200px;
+				background-color:royalblue;
+				line-height:200px;
+				font-size:80px;
+				text-align:center;
+				position:absolute;			   
+				transform: translateZ(-100px);				
+			}
+			   
+			
+			.oDiv5{
+				width:200px;
+				height:200px;
+				background-color:red;
+				font-size:80px;
+				text-align:center;
+				position:absolute;
+				transform:  rotateX(90deg) translateZ(100px);
+	
+			}
+			.oDiv6{
+				width:200px;
+				height:200px;
+				background-color:yellow;
+				line-height:200px;
+				font-size:80px;
+				text-align:center;
+				position:absolute;
+				transform:  rotateX(90deg) translateZ(-100px);
+			
+			}
+		</style>
+	</head>
+	<body>
+		<div class="catainer">			
+				<div class="oDiv1">	壹</div>
+				<div class="oDiv2">	贰</div>
+				<div class="oDiv3">	叁</div>
+				<div class="oDiv4">	肆</div>
+				<div class="oDiv5">	伍</div>
+				<div class="oDiv6">	陆</div>			
+		</div>
+	</body>
+</html>

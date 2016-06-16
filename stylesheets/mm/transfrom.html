@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .oDiv{
+            width:200px;
+            height:200px;
+            background-color:orange;
+            margin-bottom:50px;
+            transform:perspective(1000px) rotateY(30deg);
+            //使用GPU渲染（强制开启硬件加速）
+           /* transform:translateZ(0px);*/
+
+        }
+
+
+            @keyframes animTo0{
+                form{
+                    transform:rotate(0deg);
+                }
+                to{
+                    transform:rotate(180deg);
+                }
+            }
+
+           @keyframes animTo180{
+            form{
+                transform:rotate(0deg);
+            }
+            to{
+                transform:rotate(180deg);
+            }
+        }
+        .oDiv2,.oDiv4{
+
+            animation:animTo0;
+            animation-duration: 2s;
+            width:100px;
+            height:30px;
+            background-color:orangered;
+        }
+
+        .oDiv2:hover,.oDiv4:hover{
+            animation:animTo180;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes animTo0{
+            form{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+        }
+
+        @keyframes animTo180{
+            form{
+                transform:perspective(1000px) rotateY(0deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+        }
+
+
+        .oDiv3{
+            animation:animTo0;
+            animation-duration: 2s;
+            width:100px;
+            height:30px;
+            background-color:orchid;
+            color:#fff;
+        }
+        .oDiv3:hover{
+            animation:animTo180;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes animTo0{
+            form{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+        }
+
+        @keyframes animTo180{
+            form{
+                transform:perspective(1000px) rotateY(0deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+        }
+
+        .oDiv8{
+            margin-top:50px;
+            animation:animTo0;
+            animation-duration: 2s;
+            position: absolute;
+            top: 10%;
+            left: 70%;
+        }
+
+        .oDiv8:hover{
+            animation:animTo180;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+
+        }
+
+
+        @keyframes animTo0{
+            form{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+        }
+
+        @keyframes animTo180{
+            form{
+                transform:perspective(1000px) rotateY(0deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+        }
+
+        .oDiv9{
+            margin-top:50px;
+            animation:animTo0;
+            animation-duration: 2s;
+        }
+
+        .oDiv9:hover{
+            animation:animTo180;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes animTo0{
+            form{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+        }
+
+        @keyframes animTo180{
+            form{
+                transform:perspective(1000px) rotateY(0deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+        }
+
+        .oDiv10{
+            margin-top:50px;
+            animation:animTo0;
+            animation-duration: 2s;
+            backface-visibility:hidden;
+            position: absolute;
+            left: 30%;
+            top:10%;
+        }
+
+        .oDiv10:hover{
+            animation:animTo180;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+
+        }
+
+        @keyframes animTo0{
+            form{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+            to{
+                transform:perspective(1000px) rotateY(180deg);
+            }
+        }
+
+        @keyframes rotateDiv{
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        .oDiv11{
+            background-color:orange;
+            width:300px;
+            height:20px;
+            transform-origin:10% ;
+            animation-name:rotateDiv;
+            animation-duration:10s;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="oDiv">
+
+    </div>
+
+    <div class="oDiv2">
+    1
+    </div>
+    <div class="oDiv3">
+        2
+    </div>
+    <div class="oDiv4">
+        3
+    </div>
+    <div class="oDiv2">
+        1
+    </div>
+    <div class="oDiv3">
+        2
+    </div>
+    <div class="oDiv4">
+        3
+    </div>
+
+
+
+
+    <div >
+        <img class="oDiv8" src="21.png" alt="">
+    </div>
+
+    <div class="oDiv9">
+        <img src="21.png" alt="">
+    </div>
+
+    <div >
+        <img class="oDiv10" src="21.png" alt="">
+    </div>
+
+    <div class="oDiv11">
+
+    </div>
+
+</body>
+</html>
