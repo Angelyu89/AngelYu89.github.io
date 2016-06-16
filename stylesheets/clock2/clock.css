@@ -1,0 +1,37 @@
+#dial{
+    width:500px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin:0 auto;
+}
+#clockwise{
+    width: 120px;
+    height:22px;
+    background-color: #0dacee;
+    margin-left: 250px;
+    margin-top: 250px;
+    transform-origin: 7% 50%;
+
+}
+#minuteHand{
+    width: 180px;
+    height:15px;
+    background-color:#940ce2;
+    margin-left: 250px;
+    margin-top: -19px;
+    transform-origin: 7% 50%;
+}
+#secondHand{
+    width: 220px;
+    height:10px;
+    background-color: #f0b3b3;
+    margin-left: 250px;
+    margin-top: -12px;
+    transform-origin: 7% 50%;
+}
+#clock{
+    width:120px;
+    margin: 50px auto;
+    font-size:30px;
+}
