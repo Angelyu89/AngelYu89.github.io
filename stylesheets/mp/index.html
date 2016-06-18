@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+
+    <style>
+        #a{
+            width:400px;
+            height:400px;
+            background-color:#ff0000;
+        }
+        #b{
+            width:200px;
+            height:200px;
+            background-color:yellow;
+        }
+        #c{
+            width:100px;
+            height:100px;
+            background-color:deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        <div id="b">
+            <div id="c"></div>
+        </div>
+    </div>
+    <script src="mp.js"></script>
+</body>
+</html>
