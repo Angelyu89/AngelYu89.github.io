@@ -1,11 +1,11 @@
 
 
-#wall{
+/*#wall{
     height: 1000px;
     width: 80%;
     border: 1px solid black;
     margin: auto;
-}
+}*/
 #face{
     width: 400px;
     height: 400px;
@@ -22,15 +22,15 @@
     position: absolute;
 }
 .leftEye{
-    left: 60px;;
-    top: 90px;;
+    left: 60px;
+    top: 90px;
 }
 .rightEye{
     left: 240px;
     top: 90px;
 }
-.whites{
 
+.whites{
     height: 80px;
     width: 80px;
     border-radius: 50%;
