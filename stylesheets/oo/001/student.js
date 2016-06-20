@@ -3,12 +3,12 @@
  */
 //继承
 
-
-
 (function(){
-    //Student是定义的类
+    //Student是定义的类（类第一个字母大小，函数第一个字母小写）
     function Student(name){
+        
         var self=Human(name);
+        
         self.learn=function(){
             console.log(self.name+"学习");
         }

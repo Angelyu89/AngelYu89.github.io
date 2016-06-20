@@ -3,10 +3,10 @@
  */
 
 (function(){
-
     function init(){
         var h=Human("ucai");
         h.sayhello();
+
 
         //s是实例，继承上级
         var s=Student("ZhangSan");
