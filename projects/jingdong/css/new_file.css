@@ -68,6 +68,9 @@ ul li{
 	padding: 0 10px;
 }
 
+.wrap_rg2 span:hover{
+	color:#D5000D;
+}
 
 .warp06{
 /*	background:url(../img/dom1.png)no-repeat 4px -2px;*/
