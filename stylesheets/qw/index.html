@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes scale {
+            0%{
+                width:100px;
+                left:0;
+                border-radius: 5px;
+            }
+            50%{
+                width:100px;
+                left:400px;
+                background-color:blue;
+            }
+            100%{
+                left:900px;
+                width:500px;
+                border-radius: 5px;
+                background-color:green;
+            }
+        }
+        #oDiv2{
+            position:absolute;
+            width:100px;
+            height:100px;
+            background-color:red;
+            animation:scale 3s linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="oDiv">
+        <div id="oDiv2"></div>
+    </div>
+</body>
+</html>
