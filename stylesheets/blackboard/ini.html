@@ -1,0 +1,133 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>用HTML5 Canvas做一个画图板</title>
+    <style type="text/css">
+        body,p{margin:0;padding:0;}
+        #content {
+            display: block;
+            font-size: 14px;
+            margin-left:20%;
+            margin-top:10%;
+            padding: 0 15px 0 15px;
+            line-height: 150%;
+            color: #1A2536;
+            background: url(img/Top.png)no-repeat 15px 0;
+            background-size: 522px 20px;
+
+            font-family: "PT Serif", Georgia, Times, "Times New Roman", "Heiti SC", "Microsoft Yahei", "微软雅黑", "宋体", serif;
+        }
+        #TopLeft{
+            background: url(img/TopLeft.png)no-repeat -5px 0;
+            width: 28px;
+            height: 19px;
+            position: absolute;
+            margin-left: 20%;
+        }
+        #TopRight{
+            background:url(img/TopRight.png)no-repeat;
+            width: 24px;
+            height: 19px;
+            position: absolute;
+            margin-left:53%;
+        }
+        #Left{
+            background: url(img/Left.png);
+            width: 28px;
+            height: 335px;
+            position: absolute;
+            margin-left: 20%;
+            margin-top:17px;
+        }
+        #Right{
+            background:url(img/Right.png);
+            width: 24px;
+            height: 335px;
+            position: absolute;
+            margin-left:53%;
+            margin-top:17px;
+        }
+        #bottom{
+            background: url(img/Bottom.png);
+            width: 552px;
+            height: 30px;
+            position: absolute;
+            margin-top: 22%;
+            margin-left: 20%;
+        }
+    </style>
+
+</head>
+<body>
+<div id="TopLeft"></div>
+<div id="TopRight"></div>
+<div id="Left"></div>
+<div id="Right"></div>
+<div id="bottom"></div>
+<div id="content">
+    <canvas id="the_stage" width="520" height="350" style="border: 1px solid #999;background-color:#ff00ff;margin-top:20px;">
+    </canvas>
+</div>
+
+<script type="text/javascript">
+    function Draw(arg){
+        if(arg.nodeType){    //判断结点类型
+            this.canvas = arg;
+        }else if(typeof arg =='string'){
+            this.canvas = document.getElementById(arg);
+        }else{
+            return;
+        }
+        this.init();
+    }
+
+    Draw.prototype = {
+        init:function(){
+            var that = this;
+            if (!this.canvas.getContext) {   //判断是否支持Canvas
+                return;
+            }
+            this.context = this.canvas.getContext('2d');
+            this.canvas.onselectstart = function(){  //去掉选择
+                return false;
+            };
+            this.canvas.onmousedown = function(){//鼠标按下
+                that.drawBegin(event);
+            };
+        },
+        drawBegin:function(e){
+            var that = this,
+                    stage_info = this.canvas.getBoundingClientRect();   //getBoundingClientRect()可以不用考虑兼容性
+            window.getSelection()?window.getSelection().removeAllRanges():document.selection.empty(); //清除文本的选中
+
+            this.context.moveTo(
+                    e.clientX - stage_info.left,
+                    e.clientY - stage_info.top
+            );
+            document.onmousemove = function(){//鼠标经过
+                that.drawing(event);
+            };
+            document.onmouseup = this.drawEnd;//鼠标弹起时执行
+        },
+        drawing:function(e){
+            var stage_info = this.canvas.getBoundingClientRect();
+
+            this.context.lineTo(
+                    e.clientX - stage_info.left,
+                    e.clientY - stage_info.top
+            );
+            this.context.stroke();   //相当与fill()，填充
+        },
+        drawEnd:function(){//鼠标经过跟抬起为null
+            document.onmousemove = document.onmouseup = null;       //释放内存
+        }
+
+    };
+
+    var draw = new Draw('the_stage');
+
+</script>
+</body>
+</html>
