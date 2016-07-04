@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增删改查</title>
+    <script src="TableRow.js"></script>
+</head>
+<body>
+
+<div id="datacontainer"></div>
+
+<div>
+    <form id="form">
+        <label>
+            姓名:
+            <input type="text" required="required" name="name">
+        </label><br>
+        <label>
+            日期:
+            <input type="date" required="required" name="date">
+        </label><br>
+        <label>
+            欠钱数额:
+            <input type="number" required="required" name="amount">
+        </label><br>
+        <label>
+            是否还清:
+            <input type="number" required="required" name="paied">
+        </label><br>
+        <input type="submit" value="保存">
+    </form>
+</div>
+
+<div id="msgcontainer" style="color: red;"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
