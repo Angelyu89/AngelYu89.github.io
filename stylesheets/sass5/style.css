@@ -1,0 +1,12 @@
+.oDiv {
+  width: 100px;
+  height: 100px;
+  background-color: #666666; }
+  .oDiv ul > li {
+    width: 10px;
+    height: 10px;
+    background-color: #00ff00;
+    list-style: none;
+    margin-left: 2px;
+    margin-top: 5px;
+    float: left; }
