@@ -12,6 +12,7 @@ http.createServer(function(request,response){//一个请求对象，一个服务
     
     if(request.url=="/index.html"){
         
+        //返回前端
         response.end(fs.readFileSync("index.html"));
         
     }else if(request.url.match(/\/server/)){

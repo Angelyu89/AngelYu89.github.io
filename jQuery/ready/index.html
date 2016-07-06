@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>执行输出内容</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+
+    <script>
+        //网页中DOM结构绘制完即执行
+        $(document).ready(function(){
+            alert ("Hello world");
+        });
+
+        $(document).ready(function(){
+            alert("Hello jQuery");
+        });
+
+        //简写
+        $(function(){
+            alert("Hello js")
+        })
+    </script>
+</body>
+</html>
