@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转动画基础</title>
+    <style>
+        /*规定动画*/
+        @keyframes anim{
+            from{
+                transform:rotate(0deg);
+                background-color:red;
+            }
+            to{
+                transform:rotate(360deg);
+                background-color:yellow;
+            }
+        }
+        #oDiv{
+            animation-name:anim;/*名称*/
+            -webkit-animation-duration: 5s;
+            -moz-animation-duration: 5s;
+            -o-animation-duration: 5s;
+            animation-duration: 5s;/*规定一个周期所花费的秒或毫秒*/
+            animation-direction:alternate;/*规定动画是否在下一周逆向播放*/
+            animation-iteration-count:infinite;/*规定动画播放的次数*/
+            animation-timing-function:linear;/*规定动画的速度曲线*/
+            width:100px;
+            height:100px;
+            background-color:#00ff00;
+            position:absolute;
+            left:50px;
+            top:50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="oDiv"></div>
+</body>
+</html>

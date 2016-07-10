@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>磨掉棱角</title>
+</head>
+<style>
+    #oDiv{
+        position: absolute;
+        animation: myfirst 5s ;
+    }
+
+        @keyframes myfirst {
+            0%{
+                background-color:red;
+                width:300px;
+                height:300px;
+                transform:rotate(0deg);
+                animation-timing-function:ease;
+            }
+            30%{
+                background-color:yellow;
+                width:200px;
+                height:200px;
+                border-radius:5px;
+                animation-timing-function:ease;
+                transform:rotate(90deg);
+            }
+            60%{
+                width:150px;
+                height:150px;
+                background-color:blue;
+                border-radius:10px;
+                animation-timing-function:ease;
+                transform:rotate(180deg);
+            }
+            100%{
+                width:100px;
+                height:100px;
+                background-color:cyan;
+                border-radius: 50%;
+                animation-timing-function:ease;
+                transform:rotate(360deg);
+            }
+        }
+</style>
+<body>
+    <div id="oDiv">
+
+    </div>
+</body>
+</html>

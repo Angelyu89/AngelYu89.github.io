@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>看视频</title>
+    <link rel="stylesheet" href="jquery-ui.css"/>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="jquery-ui.theme.css">
+</head>
+<body>
+
+<!--播放视频-->
+<script>
+    $(function() {
+        $( "#dialog" ).dialog({
+            autoOpen: false,
+            show:"explode",//explode,bind,bounce,Clip,Drop,fold,highlight,puff,pulsate,scale,shake,size,slide
+            width:1200,
+            hide:"slide"
+
+        });
+
+        $( "#opener" ).click(function() {
+            $( "#dialog" ).dialog( "open" );
+        });
+    });
+</script>
+    <div id="dialog" title="Basic dialog">
+        <video src="toutu1.mp4" width="1200" height="600" autoplay="autoplay" controls="controls"></video>
+    </div>
+
+    <button id="opener">
+
+        打开对话框
+    </button>
+</body>
+</html>
