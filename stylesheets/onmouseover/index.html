@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标滑动出现</title>
+    <style>
+        .Imagbox img{
+            width: 373px;
+            height: 250px;
+        }
+        .oDiv{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+                 }
+        .oDivSp{
+            border-radius: 20px;
+            cursor:pointer;
+        }
+        .div1,.div2,.div3,.div4,.div5{
+            position:absolute;
+            text-align:center;
+            opacity:0;
+        }
+        .visible{
+            opacity:1;
+            transition-duration: 8s;
+        }
+        .bColr{
+            color:red;
+            font-weight:bold;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="oDivBox">
+        <div class="oDiv">
+            <span class="oDivSp bColr">①</span>
+            <span class="oDivSp">②</span>
+            <span class="oDivSp">③</span>
+            <span class="oDivSp">④</span>
+            <span class="oDivSp">⑤</span>
+        </div>
+        <div class="oDiv2">
+            <div class="Imagbox visible div1">
+                <a href=""><img src="img/01.png" alt=""></a>
+                <a href=""><img src="img/02.png" alt=""></a>
+                <a href=""><img src="img/03.png" alt=""></a>
+                <a href=""><img src="img/04.png" alt=""></a>
+                <a href=""><img src="img/09.png" alt=""></a>
+                <a href=""><img src="img/11.png" alt=""></a>
+                <a href=""><img src="img/12 (1).png" alt=""></a>
+                <a href=""><img src="img/08.png" alt=""></a>
+            </div>
+            <div class="Imagbox div2">
+                <a href=""><img src="img/05.png" alt=""></a>
+                <a href=""><img src="img/06.png" alt=""></a>
+                <a href=""><img src="img/07.png" alt=""></a>
+                <a href=""><img src="img/08.png" alt=""></a>
+                <a href=""><img src="img/03.png" alt=""></a>
+                <a href=""><img src="img/07.png" alt=""></a>
+                <a href=""><img src="img/05.png" alt=""></a>
+                <a href=""><img src="img/04.png" alt=""></a>
+            </div>
+            <div class="Imagbox div3">
+                <a href=""><img src="img/09.png" alt=""></a>
+                <a href=""><img src="img/11.png" alt=""></a>
+                <a href=""><img src="img/12 (1).png" alt=""></a>
+                <a href=""><img src="img/08.png" alt=""></a>
+                <a href=""><img src="img/01.png" alt=""></a>
+                <a href=""><img src="img/02.png" alt=""></a>
+                <a href=""><img src="img/03.png" alt=""></a>
+                <a href=""><img src="img/04.png" alt=""></a>
+            </div>
+            <div class="Imagbox div4">
+                <a href=""><img src="img/02.png" alt=""></a>
+                <a href=""><img src="img/08.png" alt=""></a>
+                <a href=""><img src="img/12 (1).png" alt=""></a>
+                <a href=""><img src="img/01.png" alt=""></a>
+                <a href=""><img src="img/05.png" alt=""></a>
+                <a href=""><img src="img/06.png" alt=""></a>
+                <a href=""><img src="img/07.png" alt=""></a>
+                <a href=""><img src="img/08.png" alt=""></a>
+            </div>
+            <div class="Imagbox div5">
+                <a href=""><img src="img/03.png" alt=""></a>
+                <a href=""><img src="img/07.png" alt=""></a>
+                <a href=""><img src="img/05.png" alt=""></a>
+                <a href=""><img src="img/04.png" alt=""></a>
+                <a href=""><img src="img/09.png" alt=""></a>
+                <a href=""><img src="img/11.png" alt=""></a>
+                <a href=""><img src="img/12 (1).png" alt=""></a>
+                <a href=""><img src="img/08.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
