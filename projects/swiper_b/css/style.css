@@ -1,0 +1,1102 @@
+ html,
+ body {
+ 	position: relative;
+ 	height: 100%;
+ }
+ 
+ body {
+ 	background: #eee;
+ 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+ 	color: #000;
+ 	margin: 0;
+ 	padding: 0;
+ }
+ /*音乐*/
+ 
+ #myaudioWrapper {
+ 	width: 12%;
+    height: 7%;
+    position: fixed;
+    z-index: 100;
+    top: 0%;
+    right: 2%;
+ }
+ 
+ .myAudio {
+ 	width: 100%;
+    height: 100%;
+ 	background: url(../img/musicBtn.png)no-repeat;
+ 	background-size: 100% 100%;
+ }
+ 
+ .myAudio.stop {
+ 	background: url(../img/musicBtnOff.png)no-repeat;
+ 	background-size: 100% 100%;
+ }
+ 
+/*中间内容区*/
+ .swiper-container {
+ 	width: 100%;
+ 	height: 100%;
+ }
+ 
+ .swiper-slide {
+ 	text-align: center;
+ 	font-size: 18px;
+ 	background: #fff;
+ 	/* Center slide text vertically */
+ 	display: -webkit-box;
+ 	display: -ms-flexbox;
+ 	display: -webkit-flex;
+ 	display: flex;
+ 	-webkit-box-pack: center;
+ 	-ms-flex-pack: center;
+ 	-webkit-justify-content: center;
+ 	justify-content: center;
+ 	-webkit-box-align: center;
+ 	-ms-flex-align: center;
+ 	-webkit-align-items: center;
+ 	align-items: center;
+ }
+ /* 图1*/
+ 
+ .swiper1-color{
+ 	background: #3e88f1;
+    overflow: hidden;
+ }
+ 
+ .indext-txt {
+ 	position: absolute;
+    z-index: 9;
+    text-align: center;
+    top:5%;
+    right: 15%;
+    width: 58%;
+    height: 21%;
+ }
+ 
+ .fadeIn {
+ 	width: 100%;
+ 	height: 100%;
+ }
+ 
+ .delay_400ms {
+ 	animation-delay: 400ms;
+ }
+ 
+ .indtx-txt .f01 {
+ 	left: 10%;
+ 	top: 5%;
+ }
+ 
+ .abs {
+ 	position: absolute;
+ }
+ 
+ .indtx-txt .f02 {
+ 	right: 22%;
+ 	bottom: 0;
+ }
+ 
+ .delay_700ms {
+ 	width: 45px;
+ 	height: 65px;
+ }
+ 
+ .delay_1s {
+ 	animation-delay: 1s;
+ 	width: 36px;
+ 	height: 52px;
+ }
+ 
+ 
+.f01{
+ 	width: 28%;
+    height: 64%;
+    position: absolute;
+    top: 6%;
+    left: -18%;
+ }
+ 
+.f01 img,.f02 img{
+	width:100%;
+	height:100%;
+}
+ 
+.f02{
+	width: 26%;
+    height: 50%;
+    position: absolute;
+    top: 54%;
+    right: 4%;
+   
+	}
+ 
+.swiper1-people{
+	width: 85%;
+    height: 27%;
+    position: absolute;
+    top: 32%;
+    left: 8%;
+    z-index: 4;
+    
+    animation-name: myfirst;
+	animation-duration:2s;
+	animation-timing-function: linear;
+	animation-delay:1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+
+.swiper1-people img{
+	width:100%;
+	height:100%;
+}
+ 
+.swiper1-bag{
+	position: absolute;
+    width: 100%;
+    height: 94%;
+    top: 6%;
+    left: 0%;
+    z-index: 3;
+    
+    animation-name: myfirst;
+	animation-duration:2s;
+	animation-timing-function: linear;
+	animation-delay:1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+ 
+.swiper1-bag img{
+	width:100%;
+	height:100%;
+} 
+ 
+.swiper1-cloud{
+	position: absolute;
+    width: 95%;
+    height: 62%;
+    top: 6%;
+    left: 3%;
+    z-index: 2;
+    
+    animation-name: myfirst;
+	animation-duration:2s;
+	animation-timing-function: linear;
+	animation-delay:2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+ 
+.swiper1-cloud img{
+	width:100%;
+	height:100%;
+}
+ 
+.swiper1-Stars{
+	position: absolute;
+    width: 100%;
+    height: 77%;
+    left: 0;
+    z-index: 4;
+    top:0%;
+    
+    
+animation-name: myfirst;
+animation-duration:3s;
+animation-timing-function: linear;
+animation-delay:2s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+animation-play-state: running;
+}
+
+@keyframes myfirst
+{
+0%   {transform:scale(1) ;}
+100%  {transform:scale(1.05);}
+
+}
+
+
+@keyframes myName
+{
+0%   {transform:scale(1) ;}
+100%  {transform:scale(1.05);}
+
+}
+
+.swiper1-Stars img{
+	width:100%;
+	height:100%;
+}
+ 
+.swiper1-Building{
+	position: absolute;
+    width: 100%;
+    height:24%;
+    left: 0;
+    z-index:2;
+    bottom:0;
+} 
+ 
+.swiper1-Building img{
+	width:100%;
+	height:100%;
+} 
+ 
+ 
+ 
+ /*图2*/
+ .swiper{
+ 	width:100%;
+ 	height:100%;
+ }
+ 
+ .swiper2_bg{
+ 	width:100%;
+ 	height:100%;
+ 	position: absolute;
+
+ }
+ 
+ .swiper2_bg img{
+ 	width:100%;
+ 	height:100%;
+ }
+ 
+ .swiper2_sign{
+ 	width:100%;
+ 	height:100%;
+ 	position: absolute;
+ 	z-index: 3;
+ }
+ 
+.swiper2_sign img{
+ 	width:100%;
+ 	height:100%;
+ }
+ 
+ 
+ .swiper2_gdtext{
+ 	width: 58%;
+    height:8%;
+    z-index: 3;
+    left: 20%;
+    top: 33%;
+    position: absolute;
+ }
+ .gd{
+ 	width:100%;
+ 	height:100%;
+ }
+ 
+.swiper2_dstext{
+	width:58%;
+    height:8%;
+    z-index: 3;
+    left: 20%;
+    top: 46%;
+    position: absolute;
+}
+.ds{
+ 	width:100%;
+ 	height:100%;
+ }
+ 
+ /*图3*/
+ .swiper3-color{
+ 	background-color: #070918
+ }
+ 
+.swiper3-bag{
+	position: absolute;
+	z-index:2;
+	width: 100%;
+    height: 100%;
+    left: 0;
+}
+ 
+.swiper3-bag img{
+	width:100%;
+	height:100%;
+}
+
+.swiper3-text{
+	position: absolute;
+    z-index: 2;
+    width: 26%;
+    height: 5%;
+    left: 0;
+    top: 5%;
+}
+.swiper3-text img{
+	width:100%;
+	height:100%;
+}
+
+.swiper3-Building{
+	position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 85%;
+    left: 0;
+    top: 16%;
+} 
+ 
+.swiper3-Building img{
+	width:100%;
+	height:100%;
+}
+ 
+ /*图3-2*/
+.swiper3-title{
+	position: absolute;
+    z-index: 2;
+    width:40%;
+    height: 5%;
+    left: 0;
+    top: 5%;
+}
+ 
+.swiper3-title img{
+	width:100%;
+	height:100%;
+} 
+
+.swiper3-BusStation{
+	z-index: 2;
+    width: 100%;
+    height:50%;
+    bottom: 0%;
+    position: absolute;
+    left: 0;
+}
+ 
+.swiper3-BusStation img{
+	width:100%;
+	height:100%;
+}
+
+.swiper3-BusAvatar{
+	z-index: 2;
+    width: 26%;
+    height: 14%;
+    bottom: 2%;
+    position: absolute;
+    right: 2%;
+}
+ 
+.swiper3-BusAvatar img{
+	width:100%;
+	height:100%;
+}
+ 
+.swiper3-bus{
+	z-index: 2;
+    width: 83%;
+    left: 0;
+    height: 25%;
+    bottom: 2%;
+    position: absolute;
+} 
+ 
+.swiper3-bus img{
+	width:100%;
+	height:100%;
+} 
+ 
+ 
+/*图3-3*/
+
+.swiper3-myTeamBg{
+	z-index: 2;
+    width:100%;
+    left: 0;
+    height:100%;
+    position: absolute;
+}
+
+.swiper3-myTeamBg img,.swiper3-myTeamWall img,.swiper3-myteamWhereTxt img,.swiper3-text img,.swiper3-myTeamAvatar img{
+	width:100%;
+	height:100%;
+}
+ 
+.swiper3-myTeamWall{
+	z-index: 3;
+    width: 28%;
+    height: 56%;
+    bottom: 0;
+    right: 0%;
+    position: absolute;
+}
+ 
+.swiper3-myteamWhereTxt{
+	z-index: 3;
+    width: 38%;
+    height: 14%;
+    bottom: 14%;
+    left: 25%;
+    position: absolute;
+} 
+
+.swiper3-myTeamAvatar{
+	z-index: 3;
+    width: 26%;
+    height: 22%;
+    top: 27%;
+    right: 9%;
+    position: absolute;
+}
+
+
+.swiper3-myTeamTxt{
+	z-index: 3;
+    width: 14%;
+    height: 5%;
+    top: 25%;
+    left: 22%;
+    position: absolute;
+}
+
+.swiper3-myTeamTxt01{
+	z-index: 3;
+    width: 18%;
+    height: 6%;
+    top: 32%;
+    left: 22%;
+    position: absolute;
+}
+
+.swiper3-myTeamTxt02{
+	z-index: 3;
+    width: 18%;
+    height: 6%;
+    top:40%;
+    left: 22%;
+    position: absolute;
+}
+
+.swiper3-myTeamTxt03{
+	z-index: 3;
+    width: 18%;
+    height: 6%;
+    top:48%;
+    left: 22%;
+    position: absolute;
+}
+
+.swiper3-myTeamTxt01 img,.swiper3-myTeamTxt02 img,.swiper3-myTeamTxt03 img,.swiper3-myTeamTxt img{
+	width:100%;
+	height:100%;
+}
+
+ 
+ /*图4*/
+.swiper4-ddOff{
+	width: 100%;
+    height: 100%;
+	
+}
+ 
+ .light-btn {
+ 	z-index: 2;
+    left: 5%;
+    width: 32%;
+    height: 85%;
+    bottom: 0%;
+    position: absolute;
+ }
+ 
+ .light-btn-on {
+ 	display: none;
+ }
+ 
+ .light-off {
+ 	background-color: #302e5c;
+ }
+ 
+ .light-page {
+ 	left: 0;
+ 	bottom: 0;
+ 	width: 100%;
+ 	height: 100%;
+ 	z-index: 1;
+ }
+ 
+ .light-page .light-bg {
+ 	bottom: -2px;
+ 	z-index: 1;
+ }
+ 
+ .light-bg img {
+ 	width: 100%;
+ 	height: 100%;
+ }
+ 
+ .light-title {
+ 	right: 0;
+ 	top: 5%;
+ 	z-index: 3;
+ 	width: 46%;
+    height: 7%;
+ 	position: absolute;
+ }
+ 
+ .light-title img {
+ 	width: 100%;
+ 	height: 100%;
+ }
+ 
+ .light-click-guide {
+ 	left: 32%;
+ 	top: 30%;
+    z-index: 3;
+    width: 41%;
+    height:4%;
+ 	
+ 	animation-name: myName;
+	animation-duration:0.5s;
+	animation-timing-function: linear;
+	animation-delay:1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+ }
+ 
+ .light-click-guide img {
+ 	width: 100%;
+ 	height: 100%;
+ }
+ 
+ .light-btn img {
+ 	width: 100%;
+ 	height: 100%;
+ }
+ 
+ /*图4-2*/
+ 
+.swiper4-bag{
+ 	background: #1a7fdc;
+ 	width: 100%;
+    height: 100%;
+    display:none;
+ }
+ 
+.swiper4-lightOnBg{
+	left:0%;	
+    z-index: 3;
+    width:100%;
+    height:100%;
+    position: absolute;
+} 
+
+.swiper4-lightOn{
+	left:4%;
+    bottom: 0%;
+    z-index: 3;
+    width: 34%;
+    height:85%;
+    position: absolute;
+}
+
+
+.swiper4-lightFlowers{
+	right: 10%;
+    bottom: 0%;
+    z-index: 3;
+    width: 30%;
+    height: 18%;
+} 
+ 
+.swiper4-weKnowYou{
+	left: 32%;
+    top: 28%;
+    z-index: 3;
+    width: 50%;
+    height: 12%;
+    position: absolute;
+} 
+ 
+ 
+.swiper4-lightOnBg img,.swiper4-lightFlowers img,.swiper4-weKnowYou img,.swiper4-lightOn img{
+	width:100%;
+	height:100%;
+} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ /*图5*/
+ 
+ .swiper5 {
+ 	width: 100%;
+ 	height: 100%;
+ }
+ 
+ .swiper5 img {
+ 	position: absolute;
+ }
+ 
+ .swiper5 img:nth-of-type(1) {
+ 	width: 100%;
+ 	height: 100%;
+ 	left: 0;
+ }
+ 
+ .swiper5 img:nth-of-type(2) {
+ 	width: 100%;
+ 	top: 0%;
+ 	left: 0;
+ 	height: 25%;
+ }
+ 
+ .swiper5 img:nth-of-type(3) {
+ 	width: 62%;
+    height: 30%;
+    top: 15%;
+    right: 6%;
+ }
+ 
+ .swiper5 img:nth-of-type(4) {
+ 	width: 76%;
+ 	top:50%;
+ 	right: 15%;
+ }
+ .swiper5-footTa{
+ 	position: absolute;
+    width: 70%;
+    height: 18%;
+    top: 52%;
+    left: 10%;
+ }
+.swiper5-footTa img{
+	width:100%;
+	height:100%;
+}
+ 
+.swiper5-footTx{
+	position: absolute;
+    width: 58%;
+    height: 13%;
+    top: 56%;
+    left: 25%;
+}
+
+.swiper5-footTx img{
+	width:100%;
+	height:100%;
+}
+ 
+ .swiper5 img:nth-of-type(5) {
+ 	width: 53%;
+    height: 12%;
+ 	top: 63%;
+ 	right: 15%;
+ }
+ 
+
+/*图6*/
+
+.swiper6-bag{
+	background:url(../img/runBg.jpg)no-repeat;
+	background-size:100% 100%;
+}
+
+.swiper6-runAvatar{
+    position: absolute;
+    width: 32%;
+    height: 32%;
+    left: 12%;
+    top: 17%;
+}
+.swiper6-runAvatar img{
+	width: 100%;
+    height: 100%;
+}
+
+.swiper6-runTa{
+	position: absolute;
+    width: 70%;
+    height: 20%;
+    left: 15%;
+    top: 52%;
+}
+
+.swiper6-runTa img{
+	width: 100%;
+    height: 100%;
+}
+
+.swiper6-runTxt{
+	position: absolute;
+    width: 56%;
+    height: 12%;
+    left: 15%;
+    top: 53%;
+}
+
+.swiper6-runTxt img{
+	width: 100%;
+    height: 100%;
+}
+
+/*图7*/
+
+.swiper7-bag{
+	background: #4add9d;
+    text-align: center;
+}
+
+.swiper7-salaryBg{
+    position: absolute;
+    width: 88%;
+    height: 56%;
+    left: 8%;
+    top: 2%;
+}
+.swiper7-salaryBg img{
+	width: 100%;
+    height: 100%;
+}
+
+.swiper7-salaryAvatar{
+	position: absolute;
+    width: 46%;
+    height: 35%;
+    left: 24%;
+    top: 5%;
+}
+
+.swiper7-salaryAvatar img{
+	width: 100%;
+    height: 100%;
+}
+
+
+
+.swiper7-runTa{
+	position: absolute;
+    width: 70%;
+    height: 20%;
+    left: 15%;
+    top: 52%;
+}
+
+.swiper7-runTa img{
+	width: 100%;
+    height: 100%;
+}
+
+.swiper7-runTxt{
+	position: absolute;
+    width: 56%;
+    height: 12%;
+    left: 15%;
+    top: 66%;
+}
+
+.swiper7-runTxt img{
+	width: 100%;
+    height: 100%;
+}
+
+/*图8*/
+
+.swiper8-bag{
+	background: #b5effd;
+}
+
+.swiper8-color{
+	position: absolute;
+    width: 50%;
+    height: 8%;
+    top: 10%;
+    left: 25%;
+    z-index: 4;
+}
+
+.swiper8-color img{
+	width:100%;
+	height:100%;
+}
+
+.swiper8-text{
+	background: #fc5955;
+    height: 70%;
+    padding: 15px;
+    z-index: 3;
+    position: relative;
+    margin: 15px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.swiper8-text-inner{
+	border-radius: 5px;
+    background: #ef3d38;
+    color: #fff;
+   
+    padding: 14px 6px 55px;
+    height: 67%;
+   
+}
+.swiper8-text-inner p{
+	 font-size: 1rem;
+}
+
+
+.swiper8-introFlowers{
+	width: 22%;
+    height: 10%;
+    top: 5%;
+    left: 2%;
+    position: absolute;
+    
+    animation-name: myName;
+	animation-duration:0.5s;
+	animation-timing-function: linear;
+	animation-delay:1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+
+.swiper8-introFlowers img{
+	width:100%;
+	height:100%;
+}
+
+.swiper8-introCloudy{
+	width: 91%;
+    height: 68%;
+    left: 5%;
+    position: absolute;
+    bottom: 22%;
+    z-index: 5;
+}
+
+.swiper8-introCloudy img{
+	width:100%;
+	height:100%;
+}
+
+.swiper8-introStar{
+	width: 12%;
+    height: 10%;
+    bottom: 12%;
+    right: 33%;
+    position: absolute;
+    z-index: 5;
+    
+    animation-name: myName;
+	animation-duration:0.5s;
+	animation-timing-function: linear;
+	animation-delay:1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+
+.swiper8-introStar img{
+	width:100%;
+	height:100%;
+}
+
+.swiper8-introAvatar{
+	width:30%;
+    height: 25%;
+    bottom: 0%;
+    right: 5%;
+    position: absolute;
+    z-index: 5;
+}
+
+.swiper8-introAvatar img{
+	width:100%;
+	height:100%;
+}
+
+
+
+
+
+/*图9*/
+
+.swiper9-color{
+	text-align: center;
+    background:url(../img/endBg.png)no-repeat #3e88f1;
+    background-size: 100% 100%;
+}
+
+.swiper9-endLogo{
+	position: absolute;
+    width:50%;
+    height: 6%;
+    left: 23%;
+    top: 6%;
+}
+
+.swiper9-endLogo img{
+	width:100%;
+	height:100%;
+}
+
+.swiper9-endTxt{
+	position: absolute;
+    width: 58%;
+    height: 11%;
+    left: 20%;
+    top: 20%;
+}
+
+.swiper9-endTxt img{
+	width:100%;
+	height:100%;
+}
+
+.swiper9-endMail{
+	position: absolute;
+    width: 58%;
+    height: 4%;
+    left: 20%;
+    top: 35%;
+}
+
+.swiper9-endMail img{
+	width:100%;
+	height:100%;
+}
+
+.swiper9-endClickGuide{
+	position: absolute;
+    width: 30%;
+    height: 3%;
+    left: 36%;
+    top: 44%;
+}
+
+.swiper9-endClickGuide img{
+	width:100%;
+	height:100%;
+}
+
+.swiper9-people{
+	position: absolute;
+    width: 62%;
+    height: 20%;
+    left: 20%;
+    top: 50%;
+    
+    animation-name: myName;
+	animation-duration:0.5s;
+	animation-timing-function: linear;
+	animation-delay:1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+}
+
+.swiper9-people img{
+	width:100%;
+	height:100%;
+}
+
+.swiper9-cloud{
+	position: absolute;
+    width: 88%;
+    height: 68%;
+    left: 7%;
+    top: 10%;   
+    
+    animation-name: myfirst;
+	animation-duration:2s;
+	animation-timing-function: linear;
+	animation-delay:1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+    
+}
+
+.swiper9-cloud img{
+	width:100%;
+	height:100%;
+}
+
+.swiper9-Building{
+	position: absolute;
+    width: 33%;
+    height: 3%;
+    left: 32%;
+    bottom: 2%;
+}
+
+.swiper9-Building img{
+	width:100%;
+	height:100%;
+}
+
+.swiper-bgbtn{
+	position: absolute;
+    width: 14%;
+    height: 10%;
+    bottom: 5%;
+    z-index: 5;
+    left: 44%;
+    
+    animation-name: anmate;
+	animation-duration:1s;
+	animation-timing-function: linear;
+	animation-delay:3s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-play-state: running;
+	
+}
+
+ @keyframes anmate
+{
+from {
+	transform:scale(1);opacity:1;
+
+	}
+to {
+	
+	transform:scale(1);opacity:0;
+}
+}
+
+.swiper-bgbtn img{
+	width:100%;
+	height:100%;
+}
+
+
+/*文字多媒体查询*/
+
+@media (min-width: 320px) and (max-width: 359px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media (min-width: 760px) and (max-width: 1000px) {
+    html {
+        font-size: 26px;
+    }
+}
