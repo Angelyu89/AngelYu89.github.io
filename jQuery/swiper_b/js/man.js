@@ -60,6 +60,9 @@ autoPlay();
 $("body").on("touchstart",autoPlay);
 
 
+
+
+点灯（移动端不管用）
 (function(){
 	
 	function Main(){
@@ -87,7 +90,29 @@ $("body").on("touchstart",autoPlay);
 
 
 
-
+////点灯效果
+//  function light() {
+//      var btn = $(".page4-3")[0];
+//      var first = $(".page4")[0];
+//      var last = $(".page4-0")[0];
+//
+//      // console.log(btn);
+//
+//      btn.addEventListener("click", function () {
+////          console.log("aaaaaaaa");
+//          $(first).css({
+//              display: "none"
+//          });
+//          $(last).css({
+//              display: "block"
+//          });
+//      }.bind(this));
+//
+//
+//  }
+//
+//  light();
+//})();
 
 
 

@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>love</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+
+.music_btn {
+    position: absolute;
+    background: url("img/musicBtn.png") no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    right: 10%;
+    top: 0;
+    padding: 43px;
+    animation: rotate1 3s linear infinite;
+}
+
+@keyframes rotate1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.music_btn.off {
+    background-image: url("img/musicBtnOff.png")
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+<div class="music_btn active" id="musbtn">
+    <audio src="img/music.mp3" id="audio" autoplay></audio>
+</div>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2016—8—9</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			爱人 = <span class="keyword">鹏</span><br />
+			我= <span class="keyword">玉</span>。。。<br />
+			<span class="comments">// 亲爱的，今天是七夕，给你一个特别的回忆</span><br />
+			The girl loved the boy;<br />			
+			<span class="comments">// 从认识到现在的每一天，都特别的开心，快乐</span><br />
+			The boy love the girl;<br />
+			<span class="comments">// 虽然你的性格固执，内向，但你的心意，我都了解</span><br />
+			The boy can not be separated the girl;<br />
+			<span class="comments">// 我会珍惜我们一起的每一天</span><br />
+			The girl can not be separated the boy;<br />
+			<span class="comments">//我一直以为爱是个抽象类，直到你实例化了它。</span><br />
+			<span class="keyword">The boy</span> very <span class="keyword">happy</span>;<br />
+			<span class="comments">// 我这一辈子只贡献给你和代码。</span><br />			
+			<span class="keyword">The girl</span> is also very <span class="keyword">happy</span>;<br />
+			<span class="placeholder"/><span class="comments">// 你能是我的私有变量么？我想是那个唯一能抵达你心的那个人</span><br />
+			Met you I was lucky</br>
+			<span class="placeholder"/><span class="comments">// 让我的世界扩展到你的世界里去吧</span><br />
+			Is willing to accompany you to see every scenery</br>
+			<span class="comments">// 我对你的爱是一个常量，永恒不变。</span><br />
+			<br>
+			<br>
+			I want to say:<br />
+			Baby, I love you forever;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br/>
+					<div class="signature">- 爱你的</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		<a href="#">....</a><br />
+		<a href="#">....</a><br />
+		
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2013, 7, 28);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>
