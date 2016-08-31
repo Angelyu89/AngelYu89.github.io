@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解决for 循环闭包变量问题</title>
+    <script>
+
+        //******错误的写法
+//        function init(){
+//            var Ary=document.getElementsByTagName("p");
+//            for(i=0;i<Ary.length;i++){
+//                Ary[i].onclick=function(){
+//                    alert(i);
+//                }
+//            }
+//        }
+
+
+        //let 解决for 循环闭包变量问题
+//        function init(){
+//            var Ary=document.getElementsByTagName("p");
+//            for(let i=0;i<Ary.length;i++){
+//                Ary[i].onclick=function(){
+//                    alert(i);
+//                }
+//            }
+//        }
+
+
+        //将变量 i 保存给在每个段落对象（p）上
+//        function init(){
+//            var Ary=document.getElementsByTagName("p");
+//            for(var i=0;i<Ary.length;i++){
+//                Ary[i].i=i;
+//                Ary[i].onclick=function(){
+//                    alert(this.i);
+//                }
+//            }
+//        }
+
+        //将变量i保存在匿名函数自身
+//        function init(){
+//            var Ary=document.getElementsByTagName("p");
+//            for(var i=0;i<Ary.length;i++){
+//                (Ary[i].onclick=function(){
+//                    alert(arguments.callee.i);
+//                }).i=i;
+//            }
+//        }
+
+
+        //加一层闭包，i以函数参数形式传递给内层函数
+//        function init(){
+//            var Ary=document.getElementsByTagName("p");
+//            for(var i=0;i<Ary.length;i++){
+//                (function(arg){
+//                    Ary[i].onclick=function(){
+//                        alert(arg);
+//                    }
+//                })(i);//调用时的参数
+//            }
+//        }
+
+
+        //加一层闭包，i以局部变量形式传递给内存函数
+//        function init(){
+//            var Ary=document.getElementsByTagName("p");
+//            for(var i=0;i<Ary.length;i++){
+//                (function(){
+//                    var temp=i;
+//                    Ary[i].onclick=function(){
+//                        alert(temp);
+//                    }
+//                })();
+//            }
+//        }
+
+
+        //加一层闭包，返回一个函数作为响应事件
+//        function init(){
+//            var Ary=document.getElementsByTagName("p");
+//            for(var i=0;i<Ary.length;i++){
+//                Ary[i].onclick=function(arg){
+//                    return function(){
+//                        alert(arg);
+//                    }
+//                }(i);
+//            }
+//        }
+
+        //用function实现，实际上每产生一个函数实例就会产生一个闭包
+        function init(){
+            var Ary=document.getElementsByTagName("p");
+            for(var i=0;i<Ary.length;i++){
+                Ary[i].onclick=new Function("alert("+i+")");//new一次就产生一个函数实例
+            }
+        }
+
+
+
+    </script>
+</head>
+
+
+<body onload="init()">
+
+        <p>产品一</p>
+        <p>产品二</p>
+        <p>产品三</p>
+        <p>产品四</p>
+        <p>产品五</p>
+</body>
+</html>
