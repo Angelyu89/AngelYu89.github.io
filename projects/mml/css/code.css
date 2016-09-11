@@ -1,0 +1,119 @@
+.sign{
+    overflow:hidden;
+    margin-right: 180px;
+    margin-bottom: 80px;
+}
+
+.logins{
+    width:400px;
+    height: 288px;
+    background: #f9f9f9;
+    border:1px solid #d8d8d8;
+    float: right;
+}
+.pig{
+    float: left;
+}
+.pig img{
+    margin-left:150px;
+}
+
+.logo{
+    margin-top:40px;
+    margin-left: 90px;
+}
+
+.logins h3{
+    font-weight: bold;
+    margin-left: 28px;
+    margin-top: 15px;
+}
+
+input{
+    width: 280px;
+    height: 42px;
+    border:1px solid #ddd;
+}
+
+.inputpass{
+    margin-top:10px;
+    padding-left:10px;
+}
+
+.login-form{
+    margin-top: 35px;
+    text-align: center;
+}
+
+.inputtext {
+    padding-left:10px;
+}
+.inputbtn{
+    width:100px;
+    height:34px;
+    background-color:#f08300;
+    color:#fff;
+    outline: none;
+    border-radius: 5px;
+    border: 0;
+}
+
+.inputbtn:active{
+    border:2px solid rgb(255, 162, 49);;
+}
+
+.input_span{
+    margin-left: 20px;
+}
+.inputzc{
+    width:50px;
+    height:24px;
+    margin-bottom: 15px;
+}
+
+.zc_b{
+    font-size:13px;
+    color: #666;
+}
+h5{
+    text-align: center;
+}
+.account{
+    text-align:center;
+}
+
+.footer{
+    margin-top:25px;
+
+}
+
+.footer a{
+    color:#666;
+}
+.footer span{
+    border-right:1px solid #666;
+    padding: 0 9px;
+}
+.footer p{
+    text-align: center;
+    margin-top: 10px;
+}
+.footer_img{
+    margin-top:10px;
+    text-align: center;
+}
+
+/*验证码*/
+
+.code{
+    width:100px;
+    padding-left: 10px;
+}
+.code_img{
+    width: 90px;
+    height: 42px;
+    margin-top: -4px;
+    padding-left: 10px;
+}
+
+

@@ -1,0 +1,94 @@
+.city_header{
+	background:url(../img/IMG_1.png)no-repeat;
+	background-size:100% 100%;
+	width:100%;
+	height: 10rem;
+}
+
+.list_header{
+	background:url(../img/IMG_1.png)no-repeat;
+	background-size:100% 100%;
+	width:100%;
+	height:6rem;
+}
+
+.city_Input,.list_Input{
+	position: absolute;
+    width: 60%;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-radius: 1rem;   
+    left: 20%;
+    border: 0;
+    padding-left: 2rem;
+}
+
+.city_Input{
+	top:13%;
+}
+
+.list_Input{
+	top:6%;
+}
+
+.city_bn,.list_bn{
+	position: absolute;
+    width: 4rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-radius: 0 1rem 1rem 0;    
+    right: 10%;
+    border: 0;  
+    background:url(../img/IMG01.png)no-repeat 1rem 0;
+  	background-size: 48% 100%;
+    background-color: #0097e0;
+}
+
+.city_bn{
+	top: 13%;
+}
+
+.list_bn{
+	top:6%;
+}
+
+.area{
+	height: 2rem;
+    line-height: 2rem;
+    width:40%;
+    border: 1px solid #666;
+    margin-top: 1rem;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.city_content{
+	width:100%;
+	text-align:center;
+	margin-top: 1rem;
+}
+
+.city_content ul li{
+	display: inline-block;
+    width: 23%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid #666;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.city_contrainer{
+	padding-top:8rem;
+}
+
+#wearter{
+	margin-left: 1rem;
+    width: 68%;
+    line-height: 2rem;
+    margin-top: 1rem;
+    color: black;
+}
+
+

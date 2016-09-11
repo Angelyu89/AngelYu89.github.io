@@ -1,0 +1,14 @@
+.container{
+    width:1082px;
+}
+
+.header{
+    width:100%;
+    height:94px;
+    position:fixed;
+    background-color:#ff0000;
+}
+
+.toutu{
+    position:absolute;
+}

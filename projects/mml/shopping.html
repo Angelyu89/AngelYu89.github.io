@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/shopping.css">
+</head>
+<body>
+    <!--导航-->
+    <div class="navbox"></div>
+        <div class="container">
+            <div class="shopping_logo_box">
+                <div class="shopping_logo">
+                    <a href=""><img src="img/logo.png" alt=""></a>
+                </div>
+                <div class="excessive">
+                    <div class="sog">
+                        <dl>我的购物车</dl>
+                        <dt>1</dt>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!--尾部-->
+    <div class="footer"></div>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".navbox").load("nav.html");
+            $(".footer").load("footer.html");
+        });
+    </script>
+
+</body>
+</html>

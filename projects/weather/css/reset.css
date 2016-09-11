@@ -1,0 +1,67 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+a{
+	text-decoration:none;
+}
+
+ul li{
+	list-style:none;
+}
+
+body{
+	width:100%;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+}
+
+.header{
+	width:100%;
+	height:4rem;
+	line-height:4rem;
+}
+
+.footer{
+	width:100%;
+	height:4rem;
+	line-height:4rem;
+}
+
+.contrainer{
+	overflow-y:scroll;
+	-webkit-box-flex:1;
+	
+}
+
+
+/*多媒体查询* 10px=1rem/ */
+
+@media(min-width:320px)and(max-width:359px;){
+	html{
+		font-size:10px;
+	}
+}
+
+@media(min-width:360px)and(max-width:480px){
+	html{
+		font-size:14px;
+	}
+}
+
+@media(min-width:760px)and(max-width:1000px){
+	html{
+		font-size:26px;
+	}
+}
+
+
+
+
+
+
+
+
+
+

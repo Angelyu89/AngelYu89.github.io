@@ -1,0 +1,185 @@
+.sign{
+    overflow:hidden;
+}
+
+.rg_box{
+    width: 400px;
+    height:252px;
+    border-bottom: 2px Dotted #ddd;
+}
+
+.sign_box{
+    overflow:hidden;
+}
+.logins{
+    width:400px;
+    height:340px;
+    background: #f9f9f9;
+    border:1px solid #d8d8d8;
+    float:right;
+}
+
+.pig{
+    float: left;
+}
+.pig img{
+    margin-left:150px;
+}
+
+.logo img{
+    margin-top:40px;
+    margin-left: 90px;
+}
+
+.logins h3{
+    font-weight: bold;
+    margin-left: 28px;
+    margin-top: 15px;
+}
+
+input{
+    width: 228px;
+    height: 26px;
+    border:1px solid #ddd;
+}
+label{
+    margin-top:18px;
+}
+
+.login-form{
+    text-align: center;
+}
+.inputbtn{
+    width:96px;
+    height:32px;
+    background-color:#f08300;
+    color:#fff;
+    outline: none;
+    border-radius: 5px;
+    border: 0;
+}
+
+.inputbtn:active{
+    border:2px solid rgb(255, 162, 49);;
+}
+.inputzc{
+    width:50px;
+    height:24px;
+    margin-bottom: 15px;
+}
+
+.zc_b{
+    font-size:13px;
+    color: #666;
+}
+h5,.account{
+    text-align: center;
+}
+.footer{
+    margin-top:25px;
+}
+.footer a{
+    color:#666;
+}
+.footer span{
+    border-right:1px solid #666;
+    padding: 0 9px;
+}
+.footer p{
+    text-align: center;
+    margin-top: 10px;
+}
+.footer_img{
+    margin-top:10px;
+    text-align: center;
+}
+.agreement{
+    width:16px;
+    height:16px;
+}
+/*验证码*/
+
+.code{
+    width:58px;
+}
+.code_img{
+    width:100px;
+    height: 26px;
+    margin-left:5px;
+}
+.input_vdn{
+    width:58px;
+}
+.vdn_btn{
+    border: 1px solid #ddd;
+    background-color: #fff;
+    width: 104px;
+    font-size: 13px;
+}
+.password{
+    margin-right: 10px;
+}
+.yzm{
+    margin-left: 36px;
+}
+.dxm{
+    margin-right: 82px;
+}
+
+.inputtext,.inputpass,.code,.input_vdn{
+    margin-left:15px;
+    padding-left: 10px;
+}
+
+.xy_cl{
+    color:#ff0000;
+}
+
+.xy_cl:hover{
+    color:#ff0000;
+}
+.zc_btn,.ty_cb,.yd_text{
+    float:left;
+}
+.zc_btn{
+    margin-left:118px;
+}
+
+.ty_cb,.yd_text{
+    margin-left: 10px;
+    margin-top: -10px;
+}
+/*注册后*/
+.rgn_af{
+    width: 400px;
+    float: left;
+    margin-left: 200px;
+    margin-top: 26px;
+}
+
+.rg_gm,.rg_sq,.rg_fx,.rg_dp,.rg_pj,.rg_wy{
+    float:left;
+    margin-top:26px;
+}
+.rg_gm span,.rg_sq span,.rg_fx span,.rg_dp span,.rg_pj span,.rg_wy span{
+    margin-left: 10px
+}
+.rg_sq,.rg_dp,.rg_wy{
+    margin-left:45px;
+}
+
+#rgn_bm_sign{
+    width: 50px;
+    height: 25px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 3px;
+}
+.rgn_bm_sign {
+    margin-top: 22px;
+    margin-bottom: 75px;
+}
+.rgn_bm_sign a{
+    text-decoration: none;
+    font-weight:bold;
+}

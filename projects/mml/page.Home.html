@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home页</title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap-theme.min.css">
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+   <!-- <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:1200px)">-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/page.Home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="sign">
+                <!--头图-->
+                    <div class="toutu">
+                        <img src="img/toutu2.jpg" alt="">
+                    </div>
+                    <!--登录-->
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="nav_left">
+                            <div class="login">
+                                <a href="">
+                                    <span id="logodl">您好，欢迎来到</span>
+                                </a>
+                                <a href="">
+                                    <span>米米乐商城</span>
+                                </a>
+                                <a href="sign.html">
+                                    <span>[登录]</span>
+                                </a>
+                                <a href="registered.html">
+                                    <span>[注册]</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">官方微博 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">商品收藏</a></li>
+                                        <li><a href="#">店铺收藏</a></li>
+                                        <li><a href="#">收藏米乐乐</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">我的订单 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">待付款订单</a></li>
+                                        <li><a href="#">待确认订单</a></li>
+                                        <li><a href="#">待收货</a></li>
+                                        <li><a href="#">待评价交易</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户中心 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">帮助中心</a></li>
+                                        <li><a href="#">售后服务</a></li>
+                                        <li><a href="#">客服中心</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">服务中心 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">在线客服 </a></li>
+                                        <li><a href="#">QQ客服 </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">网站导航 <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">导购频道</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+            </div>
+                <!--搜索-->
+            <div class="banner">
+                <div class="logo">
+                    <a href="">
+                        <img src="img/logo.png"/>
+                    </a>
+                </div>
+                <div class="search">
+                    <div>
+                        <input type="text" placeholder="索8.8试一试"name="搜索"/>
+                        <button>搜索</button>
+                    </div>
+                    <div class="search_03">
+                        <a href="" id="jdh">十周年庆</a>
+                        <a href="" id="jdh">满1000减1000</a>
+                        <a href="" id="jdh">8.8包邮</a>
+                        <a href="">魅口</a>
+                        <a href="">零食</a>
+                        <a href="">手机</a>
+                        <a href="">纸尿裤</a>
+                    </div>
+
+                </div>
+                <div class="shopping">
+                    <button class="shopping-btn">
+                        <!--<img src="img/scn_13.gif"/>-->
+                       <a href="shopping.html">
+                       	<span>购物车</span>
+                       </a> 
+                        <b>0</b>
+                        <span>件</span>
+                    </button>
+                </div>
+                <div class="sys">
+                    <img src="img/QRcode.png" alt="">
+                </div>
+            </div>
+            <div class="theme">
+                <div class="them_bar">
+                   <span>所有商品</span>
+                    <div class="bar_a">
+                        <b class="a"></b>
+                    </div>
+                </div>
+
+                <div class="theme_nav">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">米活动</a></li>
+                        <li><a href="#">乐社区</a></li>
+                        <li><a href="#">商家入驻</a></li>
+                        <li><a href="#">8.8天天抢</a></li>
+                        <li><a href="#">米金融</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         <div class="middle">
+             <div class="middle_left">
+                 <div>
+                     <ul>
+                         <li class="icon-mobile-phone" id="icon1">
+                             <a href="#">
+                                 手机/数码
+                             </a>
+                         </li>
+
+                         <li class="icon2" id="icon2"><a href="#" >电脑/办公</a></li>
+                         <li class="icon3" id="icon3"><a href="#" >食品/酒饮/生鲜/特产</a></li>
+                         <li class="icon4" id="icon4"><a href="#" >服装/鞋帽/箱包</a></li>
+                         <li class="icon5" id="icon5"><a href="#" >母婴/玩具</a></li>
+                         <li class="icon6" id="icon6"><a href="#" >家具/生活/服务</a></li>
+                         <li class="icon7" id="icon7"><a href="#" >个人美妆/清洁用品</a></li>
+                         <li class="icon8" id="icon8"><a href="#" >家用电器</a></li>
+                     </ul>
+                 </div>
+             </div>
+                 <!--面包屑-->
+                 <div class="middle_left_dynamic" id="middle_left_dynamic1">
+                     <div class="dynamic1_ipone_left">
+                         <div class="dynamic1_ipone">
+                             <div class="dynamic1_ipone_sm">
+                                 <div class="sk"></div>
+                                 <div class="sk-h">
+                                     <h3>手机数码</h3>
+                                 </div>
+                             </div>
+
+                             <div class="dynamic1_ipone_c">
+                                 <h4><a href="">手机通讯 ></a></h4>
+                             </div>
+                             <div class="dynamic1_ipone_one">
+                                 <ul>
+                                     <li><a href="">ipone</a></li>
+                                     <li><a href="">三星</a></li>
+                                     <li><a href="">小米</a></li>
+                                     <li><a href="">魅族</a></li>
+                                     <li><a href="">华为</a></li>
+                                     <li><a href="">诺基亚</a></li>
+                                     <li><a href="">联想</a></li>
+                                     <li><a href="">HTC</a></li>
+                                     <li><a href="">中兴</a></li>
+                                     <li><a href="">索尼</a></li>
+                                     <li><a href="">乐视</a></li>
+                                     <li><a href="">其他</a></li>
+                                     <li><a href="">微软</a></li>
+                                     <li><a href="">儿童定位手表</a></li>
+                                 </ul>
+                             </div>
+
+                         </div>
+                         <div class="dynamic2_camera">
+                             <div class="dynamic2_camera_a">
+                                 <h4><a href="">摄影摄像 ></a> </h4>
+                             </div>
+                             <div class="dynamic1_ipone_one">
+                                 <ul>
+                                     <li><a href="">数码摄像机</a></li>
+                                     <li><a href="">数码相机</a></li>
+                                     <li><a href="">单反相机</a></li>
+                                     <li><a href="">单电微单相机</a></li>
+                                 </ul>
+                             </div>
+                         </div>
+                         <div class="dynamic3_camera">
+                             <div class="dynamic3_camera_a">
+                                 <h4><a href="">智能设备 ></a></h4>
+                             </div>
+                             <div class="dynamic1_ipone_one">
+                                 <ul>
+                                     <li><a href="">智能手环</a></li>
+                                     <li><a href="">健康监测</a></li>
+                                     <li><a href="">智能手表</a></li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="dynamic1_ipone_right">
+                         <div class="dynamic2_camera">
+                             <div class="dynamic2_camera_a">
+                                 <h4><a href="">手机配件 ></a> </h4>
+                             </div>
+                             <div class="dynamic1_ipone_one">
+                                 <ul>
+                                     <li><a href="">贴膜</a></li>
+                                     <li><a href="">手机保护壳</a></li>
+                                     <li><a href="">电池</a></li>
+                                     <li><a href="">手机耳机</a></li>
+                                     <li><a href="">充电器/数据线</a></li>
+                                     <li><a href="">手机存储卡</a></li>
+                                     <li><a href="">移动电源</a></li>
+                                     <li><a href="">配件</a></li>
+                                 </ul>
+                             </div>
+                         </div>
+                         <div class="dynamic3_camera">
+                             <div class="dynamic3_camera_a">
+                                 <h4><a href="">数码配件 ></a></h4>
+                             </div>
+                             <div class="dynamic1_ipone_one">
+                                 <ul>
+                                     <li><a href="">闪光灯</a></li>
+                                 </ul>
+                             </div>
+                         </div>
+                         <div class="dynamic2_camera">
+                             <div class="dynamic2_camera_a">
+                                 <h4><a href="">服务产品 ></a> </h4>
+                             </div>
+                             <div class="dynamic1_ipone_one">
+                                 <ul>
+                                     <li><a href="">服务产品</a></li>
+                                 </ul>
+                             </div>
+                         </div>
+                         <div class="dynamic3_camera">
+                             <div class="dynamic3_camera_a">
+                                 <h4><a href="">影音娱乐 ></a></h4>
+                             </div>
+                             <div class="dynamic1_ipone_one">
+                                 <ul>
+                                     <li><a href="">耳机耳麦</a></li>
+                                     <li><a href="">音响</a></li>
+                                     <li><a href="">录音笔</a></li>
+                                     <li><a href="">家庭影音系统</a></li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                <!--电脑办公-->
+             <div class="middle_left_dynamic" id="middle_left_dynamic2">
+                 <div class="dynamic1_ipone_left">
+                     <div class="dynamic1_ipone">
+                         <div class="dynamic1_ipone_sm">
+                             <div class="sk"></div>
+                             <div class="sk-h">
+                                 <h3>手机数码</h3>
+                             </div>
+                         </div>
+
+                         <div class="dynamic1_ipone_c">
+                             <h4><a href="">手机通讯 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">ipone</a></li>
+                                 <li><a href="">三星</a></li>
+                                 <li><a href="">小米</a></li>
+                                 <li><a href="">魅族</a></li>
+                                 <li><a href="">华为</a></li>
+                                 <li><a href="">诺基亚</a></li>
+                                 <li><a href="">联想</a></li>
+                                 <li><a href="">HTC</a></li>
+                                 <li><a href="">中兴</a></li>
+                                 <li><a href="">索尼</a></li>
+                                 <li><a href="">乐视</a></li>
+                                 <li><a href="">其他</a></li>
+                                 <li><a href="">微软</a></li>
+                                 <li><a href="">儿童定位手表</a></li>
+                             </ul>
+                         </div>
+
+                     </div>
+                     <div class="dynamic2_camera">
+                         <div class="dynamic2_camera_a">
+                             <h4><a href="">摄影摄像 ></a> </h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">数码摄像机</a></li>
+                                 <li><a href="">数码相机</a></li>
+                                 <li><a href="">单反相机</a></li>
+                                 <li><a href="">单电微单相机</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic3_camera">
+                         <div class="dynamic3_camera_a">
+                             <h4><a href="">智能设备 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">智能手环</a></li>
+                                 <li><a href="">健康监测</a></li>
+                                 <li><a href="">智能手表</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="dynamic1_ipone_right">
+                     <div class="dynamic2_camera">
+                         <div class="dynamic2_camera_a">
+                             <h4><a href="">手机配件 ></a> </h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">贴膜</a></li>
+                                 <li><a href="">手机保护壳</a></li>
+                                 <li><a href="">电池</a></li>
+                                 <li><a href="">手机耳机</a></li>
+                                 <li><a href="">充电器/数据线</a></li>
+                                 <li><a href="">手机存储卡</a></li>
+                                 <li><a href="">移动电源</a></li>
+                                 <li><a href="">配件</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic3_camera">
+                         <div class="dynamic3_camera_a">
+                             <h4><a href="">数码配件 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">闪光灯</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic2_camera">
+                         <div class="dynamic2_camera_a">
+                             <h4><a href="">服务产品 ></a> </h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">服务产品</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic3_camera">
+                         <div class="dynamic3_camera_a">
+                             <h4><a href="">影音娱乐 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">耳机耳麦</a></li>
+                                 <li><a href="">音响</a></li>
+                                 <li><a href="">录音笔</a></li>
+                                 <li><a href="">家庭影音系统</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+            <!--食品-->
+             <div class="middle_left_dynamic" id="middle_left_dynamic3">
+                 <div class="dynamic1_ipone_left">
+                     <div class="dynamic1_ipone">
+                         <div class="dynamic1_ipone_sm">
+                             <div class="sk"></div>
+                             <div class="sk-h">
+                                 <h3>手机数码</h3>
+                             </div>
+                         </div>
+
+                         <div class="dynamic1_ipone_c">
+                             <h4><a href="">手机通讯 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">ipone</a></li>
+                                 <li><a href="">三星</a></li>
+                                 <li><a href="">小米</a></li>
+                                 <li><a href="">魅族</a></li>
+                                 <li><a href="">华为</a></li>
+                                 <li><a href="">诺基亚</a></li>
+                                 <li><a href="">联想</a></li>
+                                 <li><a href="">HTC</a></li>
+                                 <li><a href="">中兴</a></li>
+                                 <li><a href="">索尼</a></li>
+                                 <li><a href="">乐视</a></li>
+                                 <li><a href="">其他</a></li>
+                                 <li><a href="">微软</a></li>
+                                 <li><a href="">儿童定位手表</a></li>
+                             </ul>
+                         </div>
+
+                     </div>
+                     <div class="dynamic2_camera">
+                         <div class="dynamic2_camera_a">
+                             <h4><a href="">摄影摄像 ></a> </h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">数码摄像机</a></li>
+                                 <li><a href="">数码相机</a></li>
+                                 <li><a href="">单反相机</a></li>
+                                 <li><a href="">单电微单相机</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic3_camera">
+                         <div class="dynamic3_camera_a">
+                             <h4><a href="">智能设备 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">智能手环</a></li>
+                                 <li><a href="">健康监测</a></li>
+                                 <li><a href="">智能手表</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="dynamic1_ipone_right">
+                     <div class="dynamic2_camera">
+                         <div class="dynamic2_camera_a">
+                             <h4><a href="">手机配件 ></a> </h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">贴膜</a></li>
+                                 <li><a href="">手机保护壳</a></li>
+                                 <li><a href="">电池</a></li>
+                                 <li><a href="">手机耳机</a></li>
+                                 <li><a href="">充电器/数据线</a></li>
+                                 <li><a href="">手机存储卡</a></li>
+                                 <li><a href="">移动电源</a></li>
+                                 <li><a href="">配件</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic3_camera">
+                         <div class="dynamic3_camera_a">
+                             <h4><a href="">数码配件 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">闪光灯</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic2_camera">
+                         <div class="dynamic2_camera_a">
+                             <h4><a href="">服务产品 ></a> </h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">服务产品</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic3_camera">
+                         <div class="dynamic3_camera_a">
+                             <h4><a href="">影音娱乐 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">耳机耳麦</a></li>
+                                 <li><a href="">音响</a></li>
+                                 <li><a href="">录音笔</a></li>
+                                 <li><a href="">家庭影音系统</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <!--服装-->
+             <div class="middle_left_dynamic" id="middle_left_dynamic4">
+                 <div class="dynamic1_ipone_left">
+                     <div class="dynamic1_ipone">
+                         <div class="dynamic1_ipone_sm">
+                             <div class="sk"></div>
+                             <div class="sk-h">
+                                 <h3>手机数码</h3>
+                             </div>
+                         </div>
+
+                         <div class="dynamic1_ipone_c">
+                             <h4><a href="">手机通讯 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">ipone</a></li>
+                                 <li><a href="">三星</a></li>
+                                 <li><a href="">小米</a></li>
+                                 <li><a href="">魅族</a></li>
+                                 <li><a href="">华为</a></li>
+                                 <li><a href="">诺基亚</a></li>
+                                 <li><a href="">联想</a></li>
+                                 <li><a href="">HTC</a></li>
+                                 <li><a href="">中兴</a></li>
+                                 <li><a href="">索尼</a></li>
+                                 <li><a href="">乐视</a></li>
+                                 <li><a href="">其他</a></li>
+                                 <li><a href="">微软</a></li>
+                                 <li><a href="">儿童定位手表</a></li>
+                             </ul>
+                         </div>
+
+                     </div>
+                     <div class="dynamic2_camera">
+                         <div class="dynamic2_camera_a">
+                             <h4><a href="">摄影摄像 ></a> </h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">数码摄像机</a></li>
+                                 <li><a href="">数码相机</a></li>
+                                 <li><a href="">单反相机</a></li>
+                                 <li><a href="">单电微单相机</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic3_camera">
+                         <div class="dynamic3_camera_a">
+                             <h4><a href="">智能设备 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">智能手环</a></li>
+                                 <li><a href="">健康监测</a></li>
+                                 <li><a href="">智能手表</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="dynamic1_ipone_right">
+                     <div class="dynamic2_camera">
+                         <div class="dynamic2_camera_a">
+                             <h4><a href="">手机配件 ></a> </h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">贴膜</a></li>
+                                 <li><a href="">手机保护壳</a></li>
+                                 <li><a href="">电池</a></li>
+                                 <li><a href="">手机耳机</a></li>
+                                 <li><a href="">充电器/数据线</a></li>
+                                 <li><a href="">手机存储卡</a></li>
+                                 <li><a href="">移动电源</a></li>
+                                 <li><a href="">配件</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic3_camera">
+                         <div class="dynamic3_camera_a">
+                             <h4><a href="">数码配件 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">闪光灯</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic2_camera">
+                         <div class="dynamic2_camera_a">
+                             <h4><a href="">服务产品 ></a> </h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">服务产品</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="dynamic3_camera">
+                         <div class="dynamic3_camera_a">
+                             <h4><a href="">影音娱乐 ></a></h4>
+                         </div>
+                         <div class="dynamic1_ipone_one">
+                             <ul>
+                                 <li><a href="">耳机耳麦</a></li>
+                                 <li><a href="">音响</a></li>
+                                 <li><a href="">录音笔</a></li>
+                                 <li><a href="">家庭影音系统</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+
+
+             <div id="middle-zhong">
+                 <div id="list" style="left: 0">
+                     <ul>
+                        <!-- <li><a href="#"><img src="img/web-101-101-5.jpg" alt=""></a></li>-->
+                         <li><a href="#"><img src="img/web-101-101-1.jpg" alt=""></a></li>
+                         <li><a href="#"><img src="img/web-101-101-2.jpg" alt=""></a></li>
+                         <li><a href="#"><img src="img/web-101-101-3.jpg" alt=""></a></li>
+                         <li><a href="#"><img src="img/web-101-101-4.jpg" alt=""></a></li>
+                         <li><a href="#"><img src="img/web-101-101-5.jpg" alt=""></a></li>
+                         <!--<li><a href="#"><img src="img/web-101-101-1.jpg" alt=""></a></li>-->
+                     </ul>
+                 </div>
+
+                 <div id="buttons">
+                     <span index="0" name="btnSpan" class="on"></span>
+                     <span index="1" name="btnSpan" class=""></span>
+                     <span index="2" name="btnSpan" class=""></span>
+                     <span index="3" name="btnSpan" class=""></span>
+                     <span index="4" name="btnSpan" class=""></span>
+                 </div>
+                 <a href="shuffling.js:;" id="prev" class="arrow">&lt;</a>
+                 <a href="shuffling.js:;" id="next" class="arrow">&gt;</a>
+             </div>
+
+
+             <div class="middle_right">
+                 <h5>商城公告</h5>
+                 <div class="middle_right_guanggao">
+                     <ul>
+                         <li><a href="">•米神争霸赛，最高授信22万(2016)</a></li>
+                         <li><a href="">•米米乐十周年庆1000立(2016)</a></li>
+                         <li><a href="">•新品推荐：魅口鸡尾酒，4折封</a></li>
+                     </ul>
+                 </div>
+                 <h5>订单查询</h5>
+                 <div class="mid_order">
+                     <input type="text" placeholder="请输入订单号">
+                     <input type="text" placeholder="请输入和您订单号匹配的手机号">
+                     <button>订单查询</button>
+                 </div>
+                 <h5 class="service">生活服务</h5>
+                 <div class="middle_theme_rg03">
+                     <div class="middle_theme_rg0301">
+                         <a href=""><img src="img/huafei.jpg"/></a>
+                         <a href=""><span>电话费</span></a>
+                     </div>
+                     <div class="middle_theme_rg0301">
+                         <a href=""><img src="img/lvxing.jpg"/></a>
+                         <a href=""><span>机票</span></a>
+                     </div>
+                     <div class="middle_theme_rg0302">
+                         <a href=""><img src="img/TB1IHDzLVXXXXakapXXXXXXXXXX-48-48.png"/></a>
+                         <a href=""><span>礼品卡</span></a>
+                     </div>
+                     <div class="middle_theme_rg0301">
+                         <a href=""><img src="img/waimai.jpg"/></a>
+                         <a href=""><span>酒店</span></a>
+                     </div>
+                     <div class="middle_theme_rg0301">
+                         <a href=""><img src="img/zhaofuwu.jpg"/></a>
+                         <a href=""><span>旅行</span></a>
+                     </div>
+                     <div class="middle_theme_rg0301">
+                         <a href=""><img src="img/shuimeiqi.jpg"/></a>
+                         <a href=""><span>水电煤</span></a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+        <!--抢米酒-->
+        <div class="introduction">
+            <div class="introduction_letter">
+                <a href=""><span class="introduction_letter1">抢米购</span></a>
+                <a href=""><span class="introduction_letter2">鸡尾酒</span></a>
+                <a href=""><span class="introduction_letter2">米米乐十周年庆</span></a>
+                <a href=""><span class="introduction_letter2">粽情好礼</span></a>
+                <a href=""><span class="introduction_letter2">万里挑一</span></a>
+                <a href=""><span class="introduction_letter2">精明多剁手党</span></a>
+            </div>
+            <div class="introduction_list">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="app">
+                <div class="app_xz">
+                    <p>手机APP免费下载</p>
+                    <img src="img/banner-bottom.png" alt="">
+                </div>
+                <div class="app_sp">
+                    <a href=""><img src="img/web-122-122-2-1.jpg" alt=""></a>
+                    <a href=""><img src="img/web-122-122-2-2.jpg" alt=""></a>
+                    <a href=""><img src="img/web-122-122-2-3.jpg" alt=""></a>
+                    <a href=""><img src="img/web-122-122-2-4.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="preferential_box">
+                <div class="con_three">
+                    <h3>品质生活</h3>
+
+                    <div class="con_threehz">
+                        <div class="con_three1">
+                            <a href=""><img src="img/19.png"/></a>
+                        </div>
+
+                        <div class="con_three2">
+                            <h4>好物100</h4>
+                            <div class="con_three11">
+                                <h3>品牌学院</h3>
+                                <p>明星导师 羽泉</p>
+                                <span>红包发放中</span>
+                            </div>
+
+                            <div class="con_three12">
+                                <a href=""><img src="img/20.png"/></a>
+                            </div>
+                            <div class="con_three13">
+                                <h3>发现好物</h3>
+                                <p>平板2合一笔记本</p>
+                                <span>Thinkpad X1</span>
+                            </div>
+
+                            <div class="con_three14">
+                                <a href=""><img src="img/21.png"/></a>
+                            </div>
+                        </div>
+                        <div class="con_three3">
+                            <h4>品牌街</h4>
+
+                            <div class="con_three32">
+                                <a href=""><img src="img/22.png"/></a>
+                            </div>
+                            <div class="con_three33">
+                                <div class="con_three13">
+                                    <h3>国际大牌</h3>
+                                    <p>锐步</p>
+                                    <span>满800减100</span>
+                                </div>
+
+                                <div class="con_three14">
+                                    <a href=""><img src="img/23.png"/></a>
+                                </div>
+
+                            </div>
+                            <div class="con_three34">
+
+                                <div class="con_three15">
+                                    <a href=""><img src="img/24.png"/></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="con_three4">
+                            <div class="con_three41">
+                                <a href=""><img src="img/90.png" class="con_three411"></a>
+                                <a href=""><img src="img/91.png" class="con_three412"></a>
+
+                                <a href=""><img src="img/92.png" class="con_three411"></a>
+                                <a href=""><img src="img/93.png" class="con_three412"></a>
+
+                                <a href=""><img src="img/94.png" class="con_three411"></a>
+                                <a href=""><img src="img/95.png" class="con_three412"></a>
+
+                                <a href=""><img src="img/96.png" class="con_three411"></a>
+                                <a href=""><img src="img/97.png" class="con_three412"></a>
+
+                                <a href=""><img src="img/98.png" class="con_three411"></a>
+                                <a href=""><img src="img/99.png" class="con_three412"></a>
+
+                                <a href=""><img src="img/100.png" class="con_three411"></a>
+                                <a href=""><img src="img/101.png" class="con_three412"></a>
+
+                                <a href=""><img src="img/102.png" class="con_three413"></a>
+                                <a href=""><img src="img/103.png" ></a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="con_threebm">
+                        <a href="">
+                            <img src="img/104.png"/>
+                        </a>
+                        <a href="">
+                            <img src="img/105.png"/>
+                        </a>
+                        <a href="">
+                            <img src="img/106.png"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--F1服装鞋包-->
+        <div class="con_four">
+            <div class="con_four1">
+                <div class="con_four11">
+                    <p>F1</p>
+                    <a href=""><h2>服装鞋包</h2></a>
+                </div>
+
+                <div class="con_four12">
+                    <a href=""><span>大牌</span></a>
+                    <a href=""><span>男装</span></a>
+                    <a href=""><span>女装</span></a>
+                    <a href=""><span>鞋靴</span></a>
+                    <a href=""><span>箱包</span></a>
+                    <a href=""><span>内衣配饰</span></a>
+                    <a href=""><span>珠宝首饰</span></a>
+                    <a href=""><span>奢品礼品</span></a>
+                    <a href=""><span>奢华腕表</span></a>
+                </div>
+            </div>
+            <div class="con_four2">
+                <!--服装鞋包第一部分-->
+                <div class="con_four2hz">
+                    <div class="con_four21">
+                        <div class="con_four211" >
+                            <a href=""><img src="img/107.png"></a>
+                        </div>
+                        <div class="con_four212">
+                            <div class="con_four2121">
+                                <a href=""><i></i></a>
+                                <a href=""><span>男装</span></a>
+                            </div>
+
+                            <div class="con_four2122">
+                                <a href=""><i></i></a>
+                                <a href=""><span>女装</span></a>
+                            </div>
+
+                            <div class="con_four2123">
+                                <a href=""><i></i></a>
+                                <a href=""><span>内衣</span></a>
+                            </div>
+
+                            <div class="con_four2124">
+                                <a href=""><i></i></a>
+                                <a href=""><span>鞋靴</span></a>
+                            </div>
+
+                            <div class="con_four2125">
+                                <a href=""><i></i></a>
+                                <a href=""><span>箱包</span></a>
+                            </div>
+
+                            <div class="con_four2126">
+                                <a href=""><i></i></a>
+                                <a href=""><span>奢侈品</span></a>
+                            </div>
+                        </div>
+                        <div class="con_four213">
+                            <div class="con_four2131">
+                                <div class="con_four21311">
+                                    <dl class="con_four213111">
+                                        <dd class="newc">女装新品</dd>
+                                        <dd>服装城</dd>
+                                        <dd>时尚女鞋</dd>
+                                        <dd>纯棉内裤</dd>
+                                    </dl>
+
+                                    <dl class="con_four213111">
+                                        <dd>品质男鞋</dd>
+                                        <dd>太阳镜</dd>
+                                        <dd class="newc">精品男装</dd>
+                                        <dd>奢侈品</dd>
+                                    </dl>
+
+                                </div>
+
+                                <div class="con_four21312">
+                                    <dl class="con_four213121">
+                                        <dd>菩提手串</dd>
+                                        <dd>时尚女包</dd>
+                                        <dd>小叶紫檀</dd>
+                                        <dd>热销腕表</dd>
+                                    </dl>
+
+                                    <dl class="con_four213122">
+                                        <dd class="newc">水晶手链</dd>
+                                        <dd>精品男包</dd>
+                                        <dd class="newc">奢侈名表</dd>
+                                        <dd>夏日上新</dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="con_four24">
+                        <a href=""><img src="img/108.png"></a>
+                    </div>
+
+
+                </div>
+
+                <!--服装鞋包第二部分-->
+                <div class="con_four3">
+                    <div class="con_four31">
+                        <a href=""><img src="img/109.png"></a>
+                    </div>
+                    <div class="con_four32">
+                        <a href=""><img src="img/110.png"></a>
+                    </div>
+                    <div class="con_four33">
+                        <a href=""><img src="img/111.png"></a>
+                    </div>
+                </div>
+
+                <!--服装鞋包第三部分-->
+                <div class="con_four4">
+                    <div class="con_four41">
+                        <a href=""><img src="img/112.png"/></a>
+                    </div>
+                    <div class="con_four42">
+                        <a href=""><img src="img/113.png"/></a>
+                    </div>
+                    <div class="con_four43">
+                        <a href=""><img src="img/114.png"/></a>
+                    </div>
+                    <div class="con_four44">
+                        <a href=""><img src="img/115.png"/></a>
+                    </div>
+                </div>
+
+                <!--服装鞋包第四部分-->
+                <div class="con_four5">
+                    <div class="con_four51">
+                        <a href=""><img src="img/116.png"/></a>
+                    </div>
+                    <div class="con_four52">
+                        <a href=""><img src="img/117.png"/></a>
+                    </div>
+                    <div class="con_four53">
+                        <a href=""><img src="img/118.png"/></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="con_four6">
+                <div class="con_four6hz">
+                    <div class="con_four61">
+                        <a href=""><img src="img/31.png"></a>
+                    </div>
+
+                    <div class="con_four62">
+                        <a href=""><img src="img/32.png"></a>
+                    </div>
+
+                    <div class="con_four63">
+                        <a href=""><img src="img/33.png"></a>
+                    </div>
+
+                    <div class="con_four64">
+                        <a href=""><img src="img/34.png"></a>
+                    </div>
+
+                    <div class="con_four65">
+                        <a href=""><img src="img/35.png"></a>
+                    </div>
+
+                    <div class="con_four66">
+                        <a href=""><img src="img/36.png"></a>
+                    </div>
+
+                    <div class="con_four67">
+                        <a href=""><img src="img/37.png"></a>
+                    </div>
+
+                    <div class="con_four68">
+                        <a href=""><img src="img/38.png"></a>
+                    </div>
+
+                    <div class="con_four69">
+                        <a href=""><img src="img/39.png"></a>
+                    </div>
+
+                    <div class="con_four70">
+                        <a href=""><img src="img/30.png"></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--F2个护美妆-->
+        <div class="con_four">
+            <div class="con_four1">
+                <div class="con_four11">
+                    <p>F2</p>
+                    <a href=""><h2>个护美妆</h2></a>
+                </div>
+
+                <div class="con_four12">
+                    <a href=""><span>热门</span></a>
+                    <a href=""><span>国际大牌</span></a>
+                    <a href=""><span>国妆名品</span></a>
+                    <a href=""><span>个人护理</span></a>
+                    <a href=""><span>清洁用品</span></a>
+                    <a href=""><span>纸品湿巾</span></a>
+                    <a href=""><span>香水彩妆</span></a>
+                    <a href=""><span>热销面膜</span></a>
+                    <a href=""><span>男士精品</span></a>
+                </div>
+            </div>
+            <div class="con_four2">
+                <!--个护美妆第一部分-->
+                <div class="con_four7hz">
+                    <div class="con_four071">
+                        <div class="con_four211" >
+                            <a href=""><img src="img/43.png"></a>
+                        </div>
+                        <div class="con_four712">
+                            <div class="con_four2121">
+                                <a href=""><i></i></a>
+                                <a href=""><span>男装</span></a>
+                            </div>
+
+                            <div class="con_four2122">
+                                <a href=""><i></i></a>
+                                <a href=""><span>女装</span></a>
+                            </div>
+
+                            <div class="con_four2124">
+                                <a href=""><i></i></a>
+                                <a href=""><span>鞋靴</span></a>
+                            </div>
+
+                            <div class="con_four2125">
+                                <a href=""><i></i></a>
+                                <a href=""><span>箱包</span></a>
+                            </div>
+
+                        </div>
+                        <div class="con_four713">
+                            <div class="con_four71388">
+                                <a href=""><p>美妆盛宴 满199减80 ></p></a>
+                                <a href=""><p>处处关怀展青春风采 ></p></a>
+                            </div>
+
+                            <div class="con_four2131">
+                                <div class="con_four21311">
+                                    <dl class="con_four213111">
+                                        <dd class="newc">女装新品</dd>
+                                        <dd>服装城</dd>
+
+                                    </dl>
+
+                                    <dl class="con_four213111">
+                                        <dd>品质男鞋</dd>
+                                        <dd>太阳镜</dd>
+
+                                    </dl>
+
+                                </div>
+
+                                <div class="con_four71312">
+                                    <dl class="con_four213121">
+
+                                        <dd>小叶紫檀</dd>
+                                        <dd class="newc">热销腕表</dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <!--个护美妆第二部分-->
+                <div class="con_four11">
+                    <div class="con_four111">
+                        <a href=""><img src="img/46.png"></a>
+                    </div>
+                    <div class="con_four112">
+                        <a href=""><img src="img/47.png"></a>
+                    </div>
+
+                </div>
+
+                <!--服装鞋包第三部分-->
+                <div class="con_four8">
+                    <div class="con_four81">
+                        <a href=""><img src="img/48.png"/></a>
+                    </div>
+                    <div class="con_four82">
+                        <a href=""><img src="img/49.png"/></a>
+                    </div>
+
+
+                </div>
+
+                <!--服装鞋包第四部分-->
+                <div class="con_four9">
+                    <div class="con_four91">
+                        <a href=""><img src="img/50.png"/></a>
+                    </div>
+
+                    <div class="con_four92">
+                        <a href=""><img src="img/51.png"/></a>
+                    </div>
+                </div>
+
+
+                <div class="con_four10">
+                    <div class="con_four101">
+                        <a href=""><img src="img/52.png"/></a>
+                    </div>
+
+                    <div class="con_four102">
+                        <a href=""><img src="img/54.png"/></a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="con_four6">
+                <div class="con_four6hz">
+                    <div class="con_four61">
+                        <a href=""><img src="img/56.png"></a>
+                    </div>
+
+                    <div class="con_four62">
+                        <a href=""><img src="img/57.png"></a>
+                    </div>
+
+                    <div class="con_four63">
+                        <a href=""><img src="img/58.png"></a>
+                    </div>
+
+                    <div class="con_four64">
+                        <a href=""><img src="img/59.png"></a>
+                    </div>
+
+                    <div class="con_four65">
+                        <a href=""><img src="img/60.png"></a>
+                    </div>
+
+                    <div class="con_four66">
+                        <a href=""><img src="img/61.png"></a>
+                    </div>
+
+                    <div class="con_four67">
+                        <a href=""><img src="img/62.png"></a>
+                    </div>
+
+                    <div class="con_four68">
+                        <a href=""><img src="img/63.png"></a>
+                    </div>
+
+                    <div class="con_four69">
+                        <a href=""><img src="img/64.png"></a>
+                    </div>
+
+                    <div class="con_four70">
+                        <a href=""><img src="img/65.png"></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="con_four7">
+                <a href=""><img src="img/42.png"></a>
+                <a href=""><img class="con_four71" src="img/40.png"></a>
+                <a href=""><img class="con_four71" src="img/41.png"></a>
+            </div>
+
+        </div>
+
+
+        <!--F3手机通讯-->
+
+        <div class="con_four">
+            <div class="con_four1">
+                <div class="con_four11">
+                    <p>F3</p>
+                    <a href=""><h2>手机通讯</h2></a>
+                </div>
+
+                <div class="con_four12">
+                    <a href=""><span>热门</span></a>
+                    <a href=""><span>新品</span></a>
+                    <a href=""><span>性价比</span></a>
+                    <a href=""><span>营销商</span></a>
+                    <a href=""><span>手机配件</span></a>
+                    <a href=""><span>JDphone</span></a>
+                    <a href=""><span>京东170</span></a>
+                    <a href=""><span>汽车用品</span></a>
+                </div>
+            </div>
+            <div class="con_four2">
+                <!--手机通讯第一部分-->
+                <div class="con_four2hz">
+                    <div class="con_four21">
+                        <div class="con_four211" >
+                            <a href=""><img src="img/67.png"></a>
+                        </div>
+                        <div class="con_five212">
+                            <div class="con_five2121">
+                                <a href=""><i></i></a>
+                                <a href=""><span>手机</span></a>
+                            </div>
+
+                            <div class="con_five2122">
+                                <a href=""><i></i></a>
+                                <a href=""><span>营业厅</span></a>
+                            </div>
+
+                            <div class="con_five2123">
+                                <a href=""><i></i></a>
+                                <a href=""><span>配件</span></a>
+                            </div>
+
+                        </div>
+                        <div class="con_five213">
+                            <div class="five88">
+                                <div class="five881">
+                                    <a href=""><p>phone购1元抵1099 ></p></a>
+                                    <a href=""><p>联想手机满500-100 ></p></a>
+                                </div>
+                                <div class="five882">
+                                    <a href=""><p>年度新品盘点 ></p></a>
+                                    <a href=""><p>欧洲杯纪念款买5-1 ></p></a>
+                                </div>
+                            </div>
+
+                            <div class="con_four2131">
+                                <div class="con_four21311">
+                                    <dl class="con_four213111">
+                                        <dd class="newc">女装新品</dd>
+                                        <dd>服装城</dd>
+                                        <dd>时尚女鞋</dd>
+                                        <dd>纯棉内裤</dd>
+                                    </dl>
+
+                                    <dl class="con_four213111">
+                                        <dd>品质男鞋</dd>
+                                        <dd>太阳镜</dd>
+                                        <dd class="newc">精品男装</dd>
+                                        <dd>奢侈品</dd>
+                                    </dl>
+
+                                </div>
+
+                                <div class="con_four21312">
+                                    <dl class="con_four213121">
+                                        <dd>菩提手串</dd>
+                                        <dd>时尚女包</dd>
+                                        <dd>小叶紫檀</dd>
+                                        <dd>热销腕表</dd>
+                                    </dl>
+
+                                    <dl class="con_four213122">
+                                        <dd class="newc">水晶手链</dd>
+                                        <dd>精品男包</dd>
+                                        <dd class="newc">奢侈名表</dd>
+                                        <dd>夏日上新</dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--手机通讯第二部分-->
+                <div class="con_five3">
+                    <div class="five_list2">
+                        <div class="five_list201">
+                            <a href=""><img src="img/68.png"/></a>
+                            <a href=""><p>保养套餐机油+机滤套装</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>217.00</b></a>
+                        </div>
+
+                        <div class="five_list202">
+                            <a href=""><img src="img/69.png"/></a>
+                            <a href=""><p>利拓冰丝坐垫</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>298.00</b></a>
+                        </div>
+
+                        <div class="five_list203">
+                            <a href=""><img src="img/70.png"/></a>
+                            <a href=""><p>固特异丝圈脚垫</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>299.00</b></a>
+                        </div>
+
+                        <div class="five_list204">
+                            <a href=""><img src="img/71.png"/></a>
+                            <a href=""><p>风帆棉维护汽车蓄电池</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>469.00</b></a>
+                        </div>
+                    </div>
+
+
+                    <div class="five_list2">
+                        <div class="five_list205">
+                            <a href=""><img src="img/72.png"/></a>
+                            <a href=""><p>小米 红米Note3双通版 </p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>899.00</b></a>
+                        </div>
+
+                        <div class="five_list206">
+                            <a href=""><img src="img/73.png"/></a>
+                            <a href=""><p>蓝魔MOS1 Max移动</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>1599.00</b></a>
+                        </div>
+
+                        <div class="five_list207">
+                            <a href=""><img src="img/75.png"/></a>
+                            <a href=""><p>摩托罗拉(moto) XT1085</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>1199.00</b></a>
+                        </div>
+
+                        <div class="five_list208">
+                            <a href=""><img src="img/74.png"/></a>
+                            <a href=""><p>魅族HD-50红色耳机</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>399.00</b></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="con_four6">
+                <div class="con_four6hz">
+                    <div class="con_four61">
+                        <a href=""><img src="img/f1.png"></a>
+                    </div>
+
+                    <div class="con_four62">
+                        <a href=""><img src="img/f2.png"></a>
+                    </div>
+
+                    <div class="con_four63">
+                        <a href=""><img src="img/f3.png"></a>
+                    </div>
+
+                    <div class="con_four64">
+                        <a href=""><img src="img/f4.png"></a>
+                    </div>
+
+                    <div class="con_four65">
+                        <a href=""><img src="img/f5.png"></a>
+                    </div>
+
+                    <div class="con_four66">
+                        <a href=""><img src="img/f6.png"></a>
+                    </div>
+
+                    <div class="con_four67">
+                        <a href=""><img src="img/f7.png"></a>
+                    </div>
+
+                    <div class="con_four68">
+                        <a href=""><img src="img/f8.png"></a>
+                    </div>
+
+                    <div class="con_four69">
+                        <a href=""><img src="img/f9.png"></a>
+                    </div>
+
+                    <div class="con_four70">
+                        <a href=""><img src="img/f10.png"></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--家用电器-->
+
+        <div class="con_four">
+            <div class="con_four1">
+                <div class="con_four11">
+                    <p>F4</p>
+                    <a href=""><h2>家用电器</h2></a>
+                </div>
+
+                <div class="con_four12">
+                    <a href=""><span>热门</span></a>
+                    <a href=""><span>大家电</span></a>
+                    <a href=""><span>生活电器</span></a>
+                    <a href=""><span>厨房电器</span></a>
+                    <a href=""><span>个人健康</span></a>
+                    <a href=""><span>应季电器</span></a>
+                    <a href=""><span>净化/净水</span></a>
+                    <a href=""><span>新奇特</span></a>
+                    <a href=""><span>高端电器</span></a>
+                </div>
+            </div>
+            <div class="con_four2">
+                <!--家用电器第一部分-->
+                <div class="con_four2hz">
+                    <div class="con_four21">
+                        <div class="con_four211" >
+                            <a href=""><img src="img/76.png"></a>
+                        </div>
+                        <div class="con_five212">
+                            <div class="con_five2121">
+                                <a href=""><i></i></a>
+                                <a href=""><span>家用电器</span></a>
+                            </div>
+
+                            <div class="con_five2122">
+                                <a href=""><i></i></a>
+                                <a href=""><span>家电服务</span></a>
+                            </div>
+
+                        </div>
+                        <div class="con_five213">
+                            <div class="five88">
+                                <div class="five881">
+                                    <a href=""><p>phone购1元抵1099 ></p></a>
+                                    <a href=""><p>联想手机满500-100 ></p></a>
+                                </div>
+                                <div class="five882">
+                                    <a href=""><p>年度新品盘点 ></p></a>
+                                    <a href=""><p>欧洲杯纪念款买5-1 ></p></a>
+                                </div>
+                            </div>
+
+                            <div class="con_four2131">
+                                <div class="con_four21311">
+                                    <dl class="con_four213111">
+                                        <dd class="newc">女装新品</dd>
+                                        <dd>服装城</dd>
+                                        <dd>时尚女鞋</dd>
+                                        <dd>纯棉内裤</dd>
+                                    </dl>
+
+                                    <dl class="con_four213111">
+                                        <dd>品质男鞋</dd>
+                                        <dd>太阳镜</dd>
+                                        <dd class="newc">精品男装</dd>
+                                        <dd>奢侈品</dd>
+                                    </dl>
+
+                                </div>
+
+                                <div class="con_four21312">
+                                    <dl class="con_four213121">
+                                        <dd>菩提手串</dd>
+                                        <dd>时尚女包</dd>
+                                        <dd>小叶紫檀</dd>
+                                        <dd>热销腕表</dd>
+                                    </dl>
+
+                                    <dl class="con_four213122">
+                                        <dd class="newc">水晶手链</dd>
+                                        <dd>精品男包</dd>
+                                        <dd class="newc">奢侈名表</dd>
+                                        <dd>夏日上新</dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--家用电器第二部分-->
+                <div class="con_five3">
+                    <div class="five_list2">
+                        <div class="five_list201">
+                            <a href=""><img src="img/77.png"/></a>
+                            <a href=""><p>力博得（Lebond）声波电动牙刷 </p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>399.00</b></a>
+                        </div>
+
+                        <div class="five_list202">
+                            <a href=""><img src="img/78.png"/></a>
+                            <a href=""><p>飞利浦（PHILIPS）HP8216/05 1600瓦电吹风 家用负离子养护</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>259.00</b></a>
+                        </div>
+
+                        <div class="five_list203">
+                            <a href=""><img src="img/79.png"/></a>
+                            <a href=""><p>怡禾康按摩椅YH-D100B全身电动家用按摩椅 咖啡色</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>3660.00</b></a>
+                        </div>
+
+                        <div class="five_list204">
+                            <a href=""><img src="img/80.png"/></a>
+                            <a href=""><p>【京东配送】朗康 电动按摩足疗仪LK</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>358.00</b></a>
+                        </div>
+                    </div>
+
+
+                    <div class="five_list2">
+                        <div class="five_list205">
+                            <a href=""><img src="img/81.png"/></a>
+                            <a href=""><p>飞科(FLYCO)FS375智能电动剃须刀 全身水洗刮胡刀 </p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>149.00</b></a>
+                        </div>
+
+                        <div class="five_list206">
+                            <a href=""><img src="img/82.png"/></a>
+                            <a href=""><p>松下（Panasonic）EH-ANA1 纳米水离子电吹风</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>349.00</b></a>
+                        </div>
+
+                        <div class="five_list207">
+                            <a href=""><img src="img/83.png"/></a>
+                            <a href=""><p>香山(CAMRY)iR-Baby蓝牙控制智能婴儿秤</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>199.00</b></a>
+                        </div>
+
+                        <div class="five_list208">
+                            <a href=""><img src="img/84.png"/></a>
+                            <a href=""><p>金稻蒸脸美容仪喷雾机离子补水洁面仪器</p></a>
+                            <a href=""><span>￥</span></a>
+                            <a href=""><b>158.00</b></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="con_four6">
+                <div class="con_four6hz">
+                    <div class="con_four61">
+                        <a href=""><img src="img/85.png"></a>
+                    </div>
+
+                    <div class="con_four62">
+                        <a href=""><img src="img/86.png"></a>
+                    </div>
+
+                    <div class="con_four63">
+                        <a href=""><img src="img/87.png"></a>
+                    </div>
+
+                    <div class="con_four64">
+                        <a href=""><img src="img/88.png"></a>
+                    </div>
+
+                    <div class="con_four65">
+                        <a href=""><img src="img/89.png"></a>
+                    </div>
+
+                    <div class="con_four66">
+                        <a href=""><img src="img/1f.png"></a>
+                    </div>
+
+                    <div class="con_four67">
+                        <a href=""><img src="img/1a.png"></a>
+                    </div>
+
+                    <div class="con_four68">
+                        <a href=""><img src="img/1b.png"></a>
+                    </div>
+
+                    <div class="con_four69">
+                        <a href=""><img src="img/1c.png"></a>
+                    </div>
+
+                    <div class="con_four70">
+                        <a href=""><img src="img/1d.png"></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--尾部-->
+    <div class="footer">
+        <div class="footerone">
+            <img src="img/d1.png"/>
+            <img src="img/d2.png"/>
+            <img src="img/d3.png"/>
+            <img src="img/d4.png"/>
+        </div>
+
+        <div class="footertwo">
+            <dl>
+                <dt>
+                    购物指南
+                </dt>
+                <dd>购物流程</dd>
+                <dd>流程介绍</dd>
+                <dd>生活旅行团购</dd>
+                <dd>大家电</dd>
+                <dd>常见问题</dd>
+                <dd>联系客服</dd>
+            </dl>
+
+            <dl class="twodl">
+                <dt>
+                    配送方式
+                </dt>
+                <dd>购物流程</dd>
+                <dd>流程介绍</dd>
+                <dd>生活旅行团购</dd>
+                <dd>大家电</dd>
+                <dd>常见问题</dd>
+                <dd>联系客服</dd>
+            </dl>
+
+            <dl class="twodl">
+                <dt>
+                    支付方式
+                </dt>
+                <dd>购物流程</dd>
+                <dd>流程介绍</dd>
+                <dd>生活旅行团购</dd>
+                <dd>大家电</dd>
+                <dd>常见问题</dd>
+                <dd>联系客服</dd>
+            </dl>
+
+            <dl class="twodl">
+                <dt>
+                    售后服务
+                </dt>
+                <dd>购物流程</dd>
+                <dd>流程介绍</dd>
+                <dd>生活旅行团购</dd>
+                <dd>大家电</dd>
+                <dd>常见问题</dd>
+                <dd>联系客服</dd>
+            </dl>
+
+            <dl class="twodl">
+                <dt>
+                    特色服务
+                </dt>
+                <dd>购物流程</dd>
+                <dd>流程介绍</dd>
+                <dd>生活旅行团购</dd>
+                <dd>大家电</dd>
+                <dd>常见问题</dd>
+                <dd>联系客服</dd>
+            </dl>
+
+            <div class="twod">
+                <h3>京东自营覆盖区县</h3>
+                <p>京东已向全国2630个区县提供配送服务，支持货到付款，pos刷卡和售后上门服务。</p>
+                <a href=""><span>查看更多 ></span></a>
+            </div>
+
+        </div>
+
+        <div class="footerthree">
+            <div class="footer_three1">
+                <a href=""><span>关于我们</span></a>
+                <a href=""><span>联系我们</span></a>
+                <a href=""><span>入住商家</span></a>
+                <a href=""><span>营销中心</span></a>
+                <a href=""><span>米米乐</span></a>
+                <a href=""><span>友情链接</span></a>
+                <a href=""><span>销售联盟</span></a>
+                <a href=""><span>米米社区</span></a>
+                <a href=""><span>米米公益</span></a>
+                <a href=""><span>English Site</span></a>
+                <a href=""><span>Contact Us</span></a>
+
+            </div>
+            <div class="footer_three2">
+                <a href=""><img src="img/d5.png"></a>
+                <a href=""><span>京公网安备 11000002000088号</span> </a>
+                <a href=""><span> 京ICP证070359号</span></a>
+                <a href=""><span>互联网药品信息服务资格证编号(京)-经营性-2014-0008</span></a>
+                <a href=""><span>新出发京零 字第大120007号</span></a>
+                <a href=""><span>互联网许可证网证(京)字150号</span></a>
+
+            </div>
+
+            <div class="footer_three3">
+                <a href="">出版物经营许可证</a>
+                <a href="">网络文化经营许可证京网文[2014]2148-348号</a>
+                <p>违法和不良信息举报电话：4006561155  Copyright © 2004-2016  京东JD.com 版权所有</p>
+            </div>
+
+            <div class="footer_three5">
+                <p>米米乐旗下网站：米米钱包</p>
+            </div>
+
+            <div class="footer_three4">
+                <a href=""><img src="img/d6.png"></a>
+                <a href=""><img src="img/d11.png"></a>
+                <a href=""><img src="img/d7.png"></a>
+                <a href=""><img src="img/d8.png"></a>
+                <a href=""><img src="img/d9.png"></a>
+                <a href=""><img src="img/d10.png"></a>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/shuffling.js"></script>
+</body>
+</html>

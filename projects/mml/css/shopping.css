@@ -1,0 +1,18 @@
+.excessive{
+    width:645px;
+    height:82px;
+}
+.shopping_logo_box{
+    overflow:hidden;
+}
+.shopping_logo{
+    float:left;
+    width:212px;
+    height:75px;
+}
+.excessive{
+    float:right;
+    width: 643px;
+    height: 75px;
+}
+
