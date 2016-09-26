@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no"/>
+    <title>index</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet " href="../css/swiper.min.css">
+    <script src="../js/jquery-3.0.0.js"></script>
+    <script src="../js/swiper-3.3.1.min.js"></script>
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div id="menu_left">
+    <div class="menu_goods" id="menu_goods_0"></div>
+    <div class="menu_goods" id="menu_goods_1"></div>
+    <div class="menu_goods" id="menu_goods_2"></div>
+    <div class="menu_goods" id="menu_goods_3"></div>
+    <div class="menu_goods" id="menu_goods_4"></div>
+    <div class="menu_goods" id="menu_goods_5"></div>
+    <div class="menu_goods" id="menu_goods_6"></div>
+    <div class="menu_goods" id="menu_goods_7"></div>
+    <div class="menu_goods" id="menu_goods_8"></div>
+    <div class="menu_goods" id="menu_goods_9"></div>
+    <div class="menu_goods" id="menu_goods_10"></div>
+    <div class="menu_goods" id="menu_goods_11"></div>
+    <div class="menu_goods" id="menu_goods_12"></div>
+</div>
+<div id="top">
+    <div id="top_top">
+        <div id="top_top_left"></div>
+        <div id="top_top_logo"></div>
+        <a href="../html/search.html" id="top_top_right"></a>
+    </div>
+    <div id="top_bottom">
+        -提供韩国设计师品牌服饰和潮流美妆产品-
+    </div>
+</div>
+<div id="middle">
+    <div id="CarouselFigure" class="swiper-container">
+        <div id="img_CarouselFigure" class="swiper-wrapper">
+
+            <div class="swiper-slide" id="img_1"></div>
+            <div class="swiper-slide" id="img_2"></div>
+            <div class="swiper-slide" id="img_3"></div>
+            <div class="swiper-slide" id="img_4"></div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+        <!--<div class="box_num">-->
+            <!--<div class="num" id="num_1"></div>-->
+            <!--<div class="num" id="num_2"></div>-->
+            <!--<div class="num" id="num_3"></div>-->
+            <!--<div class="num" id="num_4"></div>-->
+        <!--</div>-->
+    </div>
+    <div id="five_logo">
+        <div class="cantTouchLogo" id="cantTouchLogo_1"><span class="font_cantTouchLogo">热销</span></div>
+        <div class="cantTouchLogo" id="cantTouchLogo_2"><span class="font_cantTouchLogo">新品</span></div>
+        <div class="cantTouchLogo" id="cantTouchLogo_3"><span class="font_cantTouchLogo">促销</span></div>
+        <div class="cantTouchLogo" id="cantTouchLogo_4"><span class="font_cantTouchLogo">穿搭</span></div>
+        <div class="cantTouchLogo" id="cantTouchLogo_5"><span class="font_cantTouchLogo">设计师</span></div>
+    </div>
+    <div id="box_fenLei">
+        热门商品
+    </div>
+    <div id="box_goods">
+
+    </div>
+    <div id="back" class="back"></div>
+</div>
+
+<div id="btm">
+    <a class="btm_logo" id="btm_logo_1">首页</a>
+    <a href="../html/index_classify.html" class="btm_logo" id="btm_logo_2">分类</a>
+    <a class="btm_logo" id="btm_logo_3">活动</a>
+    <a class="btm_logo" id="btm_logo_4">购物车</a>
+    <a class="btm_logo" id="btm_logo_5">我</a>
+</div>
+
+<script src="../js/FlexibleBox.js"></script>
+<script src="../js/readyGo.js"></script>
+<script src="../js/index_top_top_left.js"></script>
+<script src="../js/index_left.js"></script>
+<script src="../js/index_goods.js"></script>
+<script src="../js/Goback.js"></script>
+<!--<script src="../js/CarouselFigure.js"></script>-->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop:true,
+        autoplay:1000,
+        watchSlidesProgress : true,
+        watchSlidesVisibility : true,
+        autoplayDisableOnInteraction : false
+    });
+</script>
+
+</body>
+</html>

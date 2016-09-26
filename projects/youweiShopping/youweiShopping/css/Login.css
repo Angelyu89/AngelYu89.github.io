@@ -1,0 +1,247 @@
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Microsoft YaHei";
+
+}
+
+#LoginBg {
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .5);
+    -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 90px 5px rgba(0, 0, 0, 1) inset;
+    background: url("../youweiIMG/bg_signup.jpg") no-repeat ;
+    background-attachment: fixed;
+    -webkit-filter: blur(10px); /* Chrome, Opera */
+    background-size: 100% 100%;
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+#black{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: .2;
+    z-index:1;
+
+}
+#LoginLogo {
+    position: absolute;
+    left: 40%;
+    top: 8%;
+    background: url("../youweiIMG/icon_set.png") no-repeat;
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -187px 0;
+    width: 78px;
+    height: 107px;
+    z-index: 2;
+}
+
+#X {
+    position: absolute;
+    top: 4%;
+    right: 8%;
+    background: url("../youweiIMG/icon_set.png") no-repeat;
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -200px -286px;
+    width: 19px;
+    height: 19px;
+    z-index: 2;
+}
+
+.signin-input {
+    position: absolute;
+    top: 30%;
+    left: 7.2%;
+    background: white;
+    width: 85.3%;
+    height: 15%;
+    z-index: 2;
+}
+
+#telNum {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 72%;
+    height: 40%;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: medium;
+    border: 0;
+}
+
+#pass {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 72%;
+    height: 40%;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: medium;
+    border: 0;
+}
+
+#input_l {
+    position: absolute;
+    top: 49%;
+    left: 5%;
+    width: 90%;
+    height: 1%;
+    background: #d8d8d8;
+}
+
+.delPhoneNum {
+    position: absolute;
+    background: url("../youweiIMG/icon_set.png") no-repeat;
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: 0 -73px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 10;
+    right: 4%;
+
+}
+
+#delPhoneNum1 {
+    top: 20%;
+
+}
+
+#delPhoneNum2 {
+    top: 70%;
+
+}
+
+#Login {
+    background: #000000;
+    position: absolute;
+    left: 7.2%;
+    top: 46.47%;
+    width: 85.3%;
+    height: 6.75%;
+    text-align: center;
+    line-height: 350%;
+    border-radius: 10px;z-index: 2;
+
+}
+#LoginFont{
+    color: white;
+    font-size: 1.5rem;
+}
+#forgetPassWord{
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top:54.42%;
+    right: 7.2%;
+    text-decoration: none;
+    z-index: 2;
+}
+#dontName{
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top:66%;
+    left: 29.33%;
+    text-decoration: none;
+    z-index: 2;
+}
+#registerNow{
+    position: absolute;
+    top:65.22%;
+    left: 53.33%;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 16.53%;
+    height: 3.55%;
+    text-align: center;
+    line-height: 200%;
+    text-decoration: none;
+    z-index: 2;
+}
+#registerNowFont{
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.hr{
+    position:absolute;
+    top:77.55%;
+    width: 26.67%;
+    height: 2px;
+    background: #d8d8d8;
+    z-index: 2;
+}
+#hrLeft{
+    left:5.33%
+}
+#hrRight{
+    right:5.33%
+}
+#thirdParty{
+    position:absolute;
+    top:76.4%;
+    left:41.33%;
+    width: 26.67%;
+    height: 2px;
+    z-index: 2;
+}
+#thirdPartyFont{
+    color: #d8d8d8;
+    font-size: 1.3rem;
+}
+.logo_thirdParty{
+    position: absolute;
+    bottom:15%;
+    width: 32%;
+    height: 3.69%;
+    background-size:100% 100%;
+    z-index: 2;
+}
+#Connect_logo_3{
+    left: 10%;
+    background: url("../youweiIMG/Connect_logo_3.png") no-repeat;
+}
+#loginbtn_03{
+    right: 12%;
+    background: url("../youweiIMG/loginbtn_03.png") no-repeat;
+}
+.BombBox{
+    position: absolute;
+    width: 46.67%;
+    height: 4.43%;
+    top:50%;
+    left: 30%;
+    background: #6c6968;
+    z-index: 2;
+    border-radius: 5px ;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    line-height: 250%;
+    display: none;
+
+}

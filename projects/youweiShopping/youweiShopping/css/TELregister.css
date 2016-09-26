@@ -1,0 +1,305 @@
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+}
+
+html {
+    font-size: 10px;
+    font-family: "Microsoft YaHei";
+}
+
+#LoginBg {
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .5);
+    -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 90px 5px rgba(0, 0, 0, 1) inset;
+    background: url("../youweiIMG/bg_find_pw.jpg") no-repeat ;
+    background-attachment: fixed;
+    -webkit-filter: blur(10px); /* Chrome, Opera */
+    background-size: 100% 100%;
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+#black{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: .1;
+    z-index:1;
+
+}
+#LoginLogo {
+    position: absolute;
+    left: 40%;
+    top: 8%;
+    background: url("../youweiIMG/icon_set.png") no-repeat;
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -187px 0;
+    width: 78px;
+    height: 107px;
+
+    z-index: 2;
+}
+
+#X {
+    position: absolute;
+    top: 4%;
+    right: 8%;
+    background: url("../youweiIMG/icon_set.png") no-repeat;
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -200px -286px;
+    width: 19px;
+    height: 19px;
+
+    z-index: 2;
+}
+#YourTEL{
+
+}
+.box_identifyingCode{
+    position: absolute;
+    top:33.23%;
+    left: 7.2%;
+    background: white;
+    width: 85.3%;
+    height: 6.8%;
+    z-index: 2;
+}
+#identifyingCode{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 72%;
+    height: 40%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    outline: medium;
+    border: 0;
+}
+#countDown{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 15%;
+    height: 100%;
+   border-left: 1px solid #d8d8d8;
+    text-align: center;
+    color: #000000;
+    font-size: 1rem;
+    line-height: 400%;
+}
+.signin-input {
+    position: absolute;
+    top:41.36%;
+    left: 7.2%;
+    background: white;
+    width: 85.3%;
+    height: 15%;
+    z-index: 2;
+}
+
+#telNum {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 72%;
+    height: 40%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    outline: medium;
+    border: 0;
+    letter-spacing:.2em;
+}
+
+#pass {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 72%;
+    height: 40%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    outline: medium;
+    border: 0;
+    letter-spacing:.2em;
+}
+
+#input_l {
+    position: absolute;
+    top: 49%;
+    left: 5%;
+    width: 90%;
+    height: 1%;
+    background: #d8d8d8;
+}
+
+#Login {
+    background: #000000;
+    position: absolute;
+    left: 7.2%;
+    top: 65%;
+    width: 85.3%;
+    height: 6.75%;
+    text-align: center;
+    line-height: 400%;
+    border-radius: 10px;
+    z-index: 2;
+}
+#LoginFont{
+    color: white;
+    font-size: 1.5rem;
+}
+#acceptPolicyChk{
+    position: absolute;
+    top:75%;
+    left: 8.5%;
+    background-image: url("../youweiIMG/icon_set.png");
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -287px 0;
+    width: 16px;
+    height: 16px;
+
+    z-index: 2;
+}
+#accept{
+    position: absolute;
+    top:75%;
+    left: 14%;
+    z-index: 2;
+}
+#acceptFont{
+    color: white;
+    font-size: 1rem;
+    z-index: 2;
+}
+#dontName{
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top:86%;
+    left: 34%;
+    text-decoration: none;
+    z-index: 2;
+}
+#registerNow{
+    position: absolute;
+    top:85%;
+    left: 53.33%;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 10.67%;
+    height: 3.69%;
+    text-align: center;
+    line-height: 200%;
+    text-decoration: none;
+    z-index: 2;
+}
+#registerNowFont{
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 2;
+}
+#YourTEL{
+    position: absolute;
+    top:30%;
+    left: 7.2%;
+    font-size: 1rem;
+    color: #fff;
+    z-index: 2;
+
+}
+#yanzheng{
+    width: 85.4%;
+    height: 7%;
+    position: absolute;
+    top:57.2%;
+    left:7%;
+    z-index: 2;
+    background: white;
+
+}
+#passA {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    width: 72%;
+    height: 90%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    outline: medium;
+    border: 0;
+    z-index: 2;
+}
+#identifyingCodeA{
+    position: absolute;
+    background: black;
+    width: 20%;
+    height:100%;
+    top:0;
+    right: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    line-height:350%;
+    z-index: 2;
+}
+
+.BombBox{
+    position: absolute;
+    width: 46.67%;
+    height: 4.43%;
+    top:50%;
+    left: 30%;
+    background: #6c6968;
+    z-index: 2;
+    border-radius: 5px ;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    line-height: 250%;
+    display: none;
+
+}
+.delPhoneNum {
+    position: absolute;
+    background: url("../youweiIMG/icon_set.png") no-repeat;
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: 0 -73px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 10;
+    right: 4%;
+
+}
+
+#delPhoneNum1 {
+    top: 20%;
+
+}
+
+#delPhoneNum2 {
+    top: 70%;
+
+}

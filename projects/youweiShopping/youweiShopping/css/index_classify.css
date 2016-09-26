@@ -1,0 +1,575 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: white;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-box-direction: normal;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Microsoft YaHei";
+
+}
+
+@keyframes block {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(99%);
+    }
+}
+
+@keyframes back {
+    from {
+        transform: translateX(99%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#menu_left {
+    position: fixed;
+    height: 100%;
+    width: 66.67%;
+    border-right: 1px solid #d8d8d8;
+    background: white;
+    z-index: 2;
+    left: -66.67%;
+
+}
+
+.menu_goods {
+    float: left;
+    width: 80%;
+    height: 7.5%;
+    margin-left: 10%;
+    z-index: 3;
+    border-bottom: 1px solid #6c6968;
+    font-size: 2rem;
+    line-height: 250%;
+    color: black;
+
+}
+
+#top {
+    position: relative;
+    height: 13.3%;
+    width: 100%;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+#btm {
+    position: relative;
+    height: 7.39%;
+    width: 100%;
+    background: #000000;
+}
+
+.btm_logo {
+    float: left;
+    width: 19.9%;
+    height: 100%;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 600%;
+    text-decoration: none;
+}
+
+#btm_logo_1 {
+    background: url("../youweiIMG/icon-homemay-home.png") no-repeat 50% 20%;
+    background-size: 22px 20px;
+    opacity: 0.4;
+}
+
+#btm_logo_2 {
+    background: url("../youweiIMG/icon-homemay-category.png") no-repeat 50% 20%;
+    background-size: 20px 20px;
+
+}
+
+#btm_logo_3 {
+    background: url("../youweiIMG/icon-homemay-activity.png") no-repeat 50% 20%;
+    background-size: 25px 20px;
+    opacity: 0.4;
+}
+
+#btm_logo_4 {
+    background: url("../youweiIMG/icon-homemay-cart.png") no-repeat 50% 20%;
+    background-size: 22px 20px;
+    opacity: 0.4;
+}
+
+#btm_logo_5 {
+    background: url("../youweiIMG/icon-homemay-user.png") no-repeat 50% 20%;
+    background-size: 18px 20px;
+    opacity: 0.4;
+}
+
+#top_top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #6c6968;
+    height: 50%;
+    width: 100%;
+}
+
+#top_top_left {
+    position: absolute;
+    top: 30%;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background: url("../youweiIMG/icon-homemay-menu.png") no-repeat center center;
+    background-size: 19px 16px;
+    width: 12%;
+    height: 45%;
+}
+
+#product_top_top_left {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    background: url("../youweiIMG/icon_set.png");
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -36px -185px;
+    width: 18px;
+    height: 18px;
+}
+
+#top_top_logo {
+    position: absolute;
+    left: 38%;
+    top: 20%;
+    background: url("../youweiIMG/icon_set.png") no-repeat;
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -45px -103px;
+    width: 93px;
+    height: 27px;
+
+}
+
+#top_top_right {
+    position: absolute;
+    right: 2%;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background: url("../youweiIMG/icon-homemay-search.png") no-repeat center center;
+    background-size: 19px 19px;
+    width: 45px;
+    height: 45px;
+}
+
+#top_bottom {
+    position: absolute;
+    top: 66%;
+    left: 2%;
+    height: 50%;
+    width: 100%;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#middle {
+    position: relative;
+    -webkit-box-flex: 1;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+
+}
+
+.index_classify {
+    float: left;
+    margin-top: 5%;
+    width: 22%;
+    height: 16%;
+    line-height: 800%;
+    margin-left: 8%;
+    background: gray;
+    text-decoration: none;
+    text-align: center;
+}
+
+.font_index_classify {
+    color: white;
+    font-size: 2rem;
+    border-radius: 5%;
+    text-decoration: none;
+}
+
+.font_menu_goods {
+    line-height: 250%;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}
+
+.box_goods {
+    float: left;
+    width: 100%;
+    height: 25%;
+
+}
+
+.box_good {
+    float: left;
+    width: 45%;
+    height: 100%;
+}
+
+.img_box_good {
+    float: left;
+    width: 100%;
+    height: 100%;
+
+}
+
+.box_good_right {
+    float: right;
+    height: 100%;
+    width: 55%;
+}
+
+.name_good {
+    width: 100%;
+    height: 30%;
+    float: left;
+}
+
+.font_name_good {
+    text-align: center;
+    color: #6c6968;
+    font-size: 1.2rem;
+}
+
+.box_good_right_left {
+    float: left;
+    width: 30%;
+    height: 70%;
+
+}
+
+.price {
+    float: left;
+    margin-top: -20%;
+    height: 40%;
+    width: 100%;
+}
+
+.font_price {
+    color: red;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.discount {
+    float: left;
+    margin-top: -50%;
+    width: 100%;
+    height: 20%;
+}
+
+.font_discount {
+    color: #6c6968;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.shoppingCat {
+    float: right;
+    width: 70%;
+    height: 70%;
+}
+
+.product_top {
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.product_box_CarouselFigure {
+    float: left;
+    width: 100%;
+    height: 80%;
+
+}
+
+.product_img_CarouselFigure {
+    float: left;
+    left: 0;
+    height: 100%;
+}
+
+.product_box_bottom {
+    float: left;
+    width: 100%;
+    height: 20%;
+}
+
+.product_name {
+
+    float: left;
+    width: 100%;
+    height: 50%;
+    line-height: 200%;
+
+}
+
+.font_product_name {
+    font-size: 1.2rem;
+    color: #6c6968;
+    font-weight: bold;
+}
+
+.product_number {
+    float: left;
+    width: 100%;
+    height: 50%;
+    line-height: 100%;
+}
+
+.product_price {
+    float: left;
+    height: 100%;
+    text-align: center;
+    margin-left: 3%;
+    width: 15%;
+
+    line-height: 100%;
+
+}
+
+.font_product_price {
+    font-size: 2rem;
+    color: red;
+    font-weight: bold;
+
+}
+
+.product_discount {
+    float: left;
+
+    height: 100%;
+    width: 20%;
+    margin-left: 10%;
+    text-align: center;
+    line-height: 100%;
+}
+
+.font_product_discount {
+    font-size: 1rem;
+    color: #007aff;
+
+}
+
+.product_business {
+    float: right;
+    height: 100%;
+    width: 30%;
+
+    text-align: center;
+    line-height: 100%;
+}
+
+.font_product_business {
+    color: #6c6968;
+    font-size: 1.2rem;
+}
+
+.product_middle {
+    position: absolute;
+    top: 68%;
+    width: 100%;
+    height: 16%;
+    border-bottom: 1px solid #d8d8d8;
+    border-top: 1px solid #d8d8d8;
+}
+
+.product_middle_top {
+    float: left;
+    width: 100%;
+    height: 50%;
+
+}
+
+.font_product_middle_top {
+    font-size: 1.6rem;
+    color: midnightblue;
+    font-weight: bold;
+}
+
+.product_middle_bottom {
+    float: left;
+    width: 100%;
+    height: 50%;
+    line-height: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+.font_product_middle_bottom {
+    font-size: 1rem;
+    color: #6c6968;
+}
+
+.product_numPlus {
+    position: absolute;
+    width: 100%;
+    height: 16%;
+    top: 88%;
+    border: 1px solid #d8d8d8;
+
+}
+
+.product_box_details {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 90%;
+
+}
+
+.product_box_details_top {
+    float: left;
+    width: 100%;
+    height: 5%;
+    line-height: 100%;
+}
+
+.font_product_box_details_top {
+    float: left;
+    margin-left: 10%;
+    color: #6c6968;
+    font-size: 2rem;
+
+}
+
+.product_box_details_bottom {
+    float: left;
+    width: 100%;
+    height: 80%;
+    border-top: 1px solid #d8d8d8;
+}
+
+.img_product_box_details_bottom {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+#product_btm {
+    position: relative;
+    height: 7.39%;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #d8d8d8;
+}
+
+#bg {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    background: url("../youweiIMG/icon_set.png") no-repeat;
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: 0 -113px;
+    width: 21px;
+    height: 21px;
+}
+
+#product_shopping_cat {
+    float: right;
+    margin-right: 2%;
+    margin-top: 1.5%;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 35%;
+    height: 70%;
+    color: black;
+    font-size: 2rem;
+    line-height: 180%;
+    text-align: center;
+}
+
+#welcome {
+    float: left;
+    width: 40%;
+    height: 80%;
+    margin-top: 1%;
+    margin-left: 15%;
+    background: #d8d8d8;
+}
+
+#minus {
+    float: left;
+    width: 30%;
+    height: 100%;
+    border-right: 1px solid #fff;
+    font-size: 3rem;
+    color: black;
+    text-align: center;
+    line-height: 100%;
+}
+
+#plus {
+    float: right;
+    width: 30%;
+    height: 100%;
+    border-left: 1px solid #fff;
+    font-size: 3rem;
+    color: black;
+    text-align: center;
+    line-height: 100%;
+}
+
+#product_num {
+    float: left;
+    margin-top: 0.3%;
+    margin-left: 0.2%;
+    width: 38%;
+    border: 0;
+    height: 91%;
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    line-height: 150%;
+}
+
+#successAdd {
+    display: none;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 15 0%;
+    position: absolute;
+    border-radius: 50%;
+    background: red;
+    top: 10%;
+    left: 9%;
+    width: 5%;
+    height: 37%;
+}

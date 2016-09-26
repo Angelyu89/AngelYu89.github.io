@@ -1,0 +1,518 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: white;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-box-direction: normal;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Microsoft YaHei";
+
+}
+
+@keyframes block {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(99%);
+    }
+}
+
+@keyframes back {
+    from {
+        transform: translateX(99%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#menu_left {
+    position: fixed;
+    height: 100%;
+    width: 66.67%;
+    border-right: 1px solid #d8d8d8;
+    background: white;
+    z-index: 2;
+    left: -66.67%;
+
+}
+
+.menu_goods {
+    float: left;
+    width: 80%;
+    height: 7.5%;
+    margin-left: 10%;
+    z-index: 3;
+    border-bottom: 1px solid #6c6968;
+    font-size: 2rem;
+    line-height: 250%;
+    color: black;
+
+}
+
+#top {
+    position: relative;
+    height: 13.3%;
+    width: 100%;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+#shopping_top {
+    position: relative;
+    height: 6.5%;
+    width: 100%;
+
+}
+
+#btm {
+    position: relative;
+    height: 13.3%;
+    width: 100%;
+    background: #000000;
+}
+
+#btm_top {
+    float: left;
+    width: 100%;
+    height: 44.44%;
+    background: #ffffff;
+}
+
+#btm_bottom {
+    float: left;
+    width: 100%;
+    height: 55.56%;
+}
+
+.btm_logo {
+    float: left;
+    width: 19.9%;
+    height: 100%;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 600%;
+    text-decoration: none;
+}
+
+#btm_logo_1 {
+    background: url("../youweiIMG/icon-homemay-home.png") no-repeat 50% 20%;
+    background-size: 22px 20px;
+    opacity: 0.4;
+}
+
+#btm_logo_2 {
+    background: url("../youweiIMG/icon-homemay-category.png") no-repeat 50% 20%;
+    background-size: 20px 20px;
+    opacity: 0.4;
+}
+
+#btm_logo_3 {
+    background: url("../youweiIMG/icon-homemay-activity.png") no-repeat 50% 20%;
+    background-size: 25px 20px;
+    opacity: 0.4;
+}
+
+#btm_logo_4 {
+    background: url("../youweiIMG/icon-homemay-cart.png") no-repeat 50% 20%;
+    background-size: 22px 20px;
+    opacity: 0.4;
+}
+
+#shopping_btm_logo_4 {
+    background: url("../youweiIMG/icon-homemay-cart.png") no-repeat 50% 20%;
+    background-size: 22px 20px;
+
+}
+
+#btm_logo_5 {
+    background: url("../youweiIMG/icon-homemay-user.png") no-repeat 50% 20%;
+    background-size: 18px 20px;
+    opacity: 0.4;
+}
+
+#btm_top_left {
+    float: left;
+    width: 60%;
+    height: 98%;
+
+}
+
+#addAll {
+    float: left;
+    color: black;
+    line-height: 280%;
+    font-size: 1.6rem;
+}
+#howMuch{
+    float: right;
+    color: red;
+    font-size: 2rem;
+    line-height: 230%;
+}
+#pay {
+    float: right;
+    background: black;
+    width: 30%;
+    height: 98%;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 200%;
+
+}
+
+#top_top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #6c6968;
+    height: 50%;
+    width: 100%;
+}
+
+#shopping_top_top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #6c6968;
+    height: 100%;
+    width: 100%;
+}
+
+#shopping_top {
+    position: relative;
+    height: 6.5%;
+    width: 100%;
+
+}
+
+#top_top_left {
+    position: absolute;
+    top: 30%;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background: url("../youweiIMG/icon-homemay-back.png") no-repeat center center;
+    background-size: 11px 19px;
+    width: 45px;
+    height: 45px;
+}
+
+#product_top_top_left {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    background: url("../youweiIMG/icon_set.png");
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -36px -185px;
+    width: 18px;
+    height: 18px;
+}
+
+#top_top_logo {
+    position: absolute;
+    left: 47%;
+    top: 30%;
+    color: black;
+    font-size: 1.8rem;
+    line-height: 100%;
+    font-weight: bold;
+    width: 15%;
+    height: 10%;
+
+}
+
+#top_top_right {
+    position: absolute;
+    right: 2%;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background: url("../youweiIMG/icon-homemay-search.png") no-repeat center center;
+    background-size: 19px 19px;
+    width: 45px;
+    height: 45px;
+}
+
+#top_bottom {
+    position: absolute;
+    top: 50%;
+
+    height: 50%;
+    width: 100%;
+}
+
+#search_X {
+    position: absolute;
+    top: 36%;
+    right: 20%;
+    background-image: url("../youweiIMG/icon_set.png");
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: 0 -73px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#top_bottom_input {
+    float: left;
+    margin-top: 2%;
+    width: 80%;
+    height: 70%;
+    background: #e4e4e4;
+    margin-left: 2%;
+}
+
+#search_input {
+    background: #e4e4e4;
+    border: 0;
+    outline: medium;
+    width: 90%;
+    height: 90%;
+    float: left;
+    margin-left: 2%;
+
+}
+
+#div_search {
+    float: right;
+    width: 15%;
+    height: 70%;
+    background: black;
+    border-radius: 2px;
+    margin-top: 2%;
+    margin-right: 3%;
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    line-height: 180%;
+}
+
+#middle {
+    position: relative;
+    -webkit-box-flex: 1;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+
+}
+
+#shopping_middle {
+    position: relative;
+    -webkit-box-flex: 1;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    background: #d9d9d9;
+}
+
+.box_goods {
+    float: left;
+    width: 100%;
+    height: 25%;
+
+}
+
+.box_good {
+    float: left;
+    width: 45%;
+    height: 100%;
+}
+
+.img_box_good {
+    float: left;
+    width: 100%;
+    height: 100%;
+
+}
+
+.box_good_right {
+    float: right;
+    height: 100%;
+    width: 55%;
+}
+
+.name_good {
+    width: 100%;
+    height: 30%;
+    float: left;
+}
+
+.font_name_good {
+    text-align: center;
+    color: #6c6968;
+    font-size: 1.2rem;
+}
+
+.box_good_right_left {
+    float: left;
+    width: 30%;
+    height: 70%;
+
+}
+
+.price {
+    float: left;
+    margin-top: -20%;
+    height: 40%;
+    width: 100%;
+}
+
+.font_price {
+    color: red;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.discount {
+    float: left;
+    margin-top: -50%;
+    width: 100%;
+    height: 20%;
+}
+
+.font_discount {
+    color: #6c6968;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.div_goods {
+    float: left;
+    border: 1px solid #d8d8d8;
+    height: 20%;
+    width: 100%;
+    margin-top: 1%;
+    background: white;
+}
+
+.left_div_goods {
+    float: left;
+    margin-top: 15%;
+    margin-left: 2%;
+    width: 10%;
+    height: 20%;
+
+}
+
+.right_div_goods {
+    float: right;
+    width: 85%;
+    height: 90%;
+    margin-top: 1%;
+}
+
+.box_img_goods {
+    float: left;
+    height: 100%;
+    width: 35%;
+
+}
+
+.right_div_goods_leftTop {
+    float: left;
+    width: 65%;
+    height: 40%;
+}
+
+.font_right_div_goods_leftTop {
+    color: #6c6968;
+    font-size: 2rem;
+}
+
+.right_div_goods_leftBottom {
+    float: left;
+    width: 65%;
+    height: 60%;
+}
+
+.right_div_goods_leftBottom_left {
+    float: left;
+    height: 100%;
+    width: 30%;
+}
+
+.price_right_div_goods_leftBottom_left {
+    float: left;
+    width: 100%;
+    height: 60%;
+}
+
+.font_price_right_div_goods_leftBottom_left {
+    font-size: 2rem;
+    color: red;
+}
+
+.yuanJia_right_div_goods_leftBottom_left {
+    float: left;
+    width: 100%;
+    height: 40%;
+}
+
+.font_yuanJia_right_div_goods_leftBottom_left {
+    color: #d8d8d8;
+    font-size: 1rem;
+}
+
+.right_div_goods_leftBottom_right {
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+.num_right_div_goods_leftBottom_right {
+    float: left;
+    width: 100%;
+    height: 50%;
+
+}
+
+.input_num {
+    float: left;
+    width: 90%;
+    background: #d8d8d8;
+    border: 0;
+    margin-top: 1%;
+    height: 90%;
+    font-size: 2rem;
+}
+
+.dont_right_div_goods_leftBottom_right {
+    float: left;
+    width: 100%;
+    height: 50%;
+}
+
+.del {
+    float: left;
+    border-radius: 5px;
+    margin-top: 1%;
+    width: 50%;
+    height: 90%;
+    margin-left: 30%;
+    background: firebrick;
+    text-align: center;
+    line-height: 250%;
+}
+
+.font_del {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}

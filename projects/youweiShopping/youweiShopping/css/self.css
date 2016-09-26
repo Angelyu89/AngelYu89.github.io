@@ -1,0 +1,224 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: white;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-box-direction: normal;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Microsoft YaHei";
+
+}
+
+@keyframes block {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(99%);
+    }
+}
+
+@keyframes back {
+    from {
+        transform: translateX(99%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#menu_left {
+    position: fixed;
+    height: 100%;
+    width: 66.67%;
+    border-right: 1px solid #d8d8d8;
+    background: white;
+    z-index: 2;
+    left: -66.67%;
+
+}
+.menu_goods{
+    float: left;
+    width: 80%;
+    height: 7.5%;
+    margin-left: 10%;
+    z-index: 3;
+    border-bottom:1px solid #6c6968 ;
+    font-size: 2rem;
+    line-height: 250%;
+    color: black;
+
+}
+#top {
+    position: relative;
+    height: 6.6%;
+    width: 100%;
+    border-bottom: 1px solid #d8d8d8;
+}
+#top_top_left {
+    position: absolute;
+    top: 30%;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background: url("../youweiIMG/icon-homemay-menu.png") no-repeat center center;
+    background-size: 19px 16px;
+    width: 12%;
+    height: 45%;
+}
+
+#top_top_logo {
+    position: absolute;
+    left: 36%;
+    top: 20%;
+    width: 40%;
+    height: 66%;
+    color: black;
+    line-height: 200%;
+    font-size: 1.6rem;
+    font-weight: bold;
+
+}
+
+
+#btm {
+    position: relative;
+    height: 7.39%;
+    width: 100%;
+    background: #000000;
+}
+.btm_logo{
+    float: left;
+    width: 19.9%;
+    height: 100%;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 600%;
+    text-decoration: none;
+}
+#btm_logo_1{
+    background: url("../youweiIMG/icon-homemay-home.png") no-repeat 50% 20%;
+    background-size: 22px 20px;
+    opacity: 0.4;
+}
+#btm_logo_2{
+    background: url("../youweiIMG/icon-homemay-category.png") no-repeat 50% 20%;
+    background-size: 20px 20px;
+    opacity: 0.4;
+}
+#btm_logo_3{
+    background: url("../youweiIMG/icon-homemay-activity.png") no-repeat 50% 20%;
+    background-size: 25px 20px;
+    opacity: 0.4;
+}
+#btm_logo_4{
+    background: url("../youweiIMG/icon-homemay-cart.png") no-repeat 50% 20%;
+    background-size: 22px 20px;
+    opacity: 0.4;
+}
+#btm_logo_5{
+    background: url("../youweiIMG/icon-homemay-user.png") no-repeat 50% 20%;
+    background-size: 18px 20px;
+
+}
+#middle {
+    position: relative;
+    -webkit-box-flex: 1;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+}
+#box_MyWconcept{
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 26.6%;
+
+}
+#black{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: black;
+     opacity: .2;
+     z-index:1;
+ }
+#MyWconcept{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, .5);
+    -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 90px 5px rgba(0, 0, 0, 1) inset;
+    background: url("../youweiIMG/下载.jpg") no-repeat;
+    background-attachment: fixed;
+    -webkit-filter: blur(10px); /* Chrome, Opera */
+    background-size: 100% 100%;
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    z-index:3;
+}
+#headPortrait{
+    position: absolute;
+    width: 21.33%;
+    height: 45%;
+    top:6.67%;
+    left:40%;
+    border-radius: 50%;
+    background: url("../youweiIMG/下载.jpg") no-repeat;
+    background-size: 100% 100%;
+    z-index: 5;
+}
+#who{
+    position: absolute;
+    width: 17.77%;
+    height: 14%;
+    top:60%;
+    left:40%;
+    z-index: 5;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+#box_orderForGoods{
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top:35%;
+    border-bottom: 1px solid #d8d8d8;
+    border-top:1px solid #d8d8d8;
+}
+.orderForGoods{
+    float: left;
+    margin-left: 5%;
+    width: 90%;
+    height: 22%;
+    border-bottom: 1px solid #d8d8d8;
+    color: #6c6968;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 300%;
+
+}
+#quit{
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+    width: 90%;
+    height: 8%;
+    background: #6c6968;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 230%;
+    text-decoration: none;
+}

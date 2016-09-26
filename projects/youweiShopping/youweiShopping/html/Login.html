@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/Login.css">
+    <script src="../js/jquery-3.0.0.js"></script>
+</head>
+<body>
+<div id="black"></div>
+    <div id="LoginBg" ></div>
+    <div id="LoginLogo"></div>
+    <a href="../html/index.html" id="X" ></a>
+    <div class="signin-input">
+        <input id="telNum" type="number" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" placeholder="请填写手机号码"/>
+        <div id="input_l"></div>
+        <input id="pass" type="password" autocomplete="off" placeholder="请填写密码">
+        <div class="delPhoneNum" id="delPhoneNum1"></div>
+        <div class="delPhoneNum" id="delPhoneNum2"></div>
+    </div>
+    <div id="Login">
+        <span id="LoginFont">登录</span>
+    </div>
+    <a href="#" id="forgetPassWord">忘记密码</a>
+    <a href="../html/TELregister.html" id="dontName">还没有账号?</a>
+    <a href="../html/TELregister.html" id="registerNow">
+        <span id="registerNowFont">马上注册</span>
+    </a>
+    <div class="hr" id="hrLeft"></div>
+    <div id="thirdParty">
+        <span id="thirdPartyFont">第三方登录</span>
+    </div>
+    <div class="hr" id="hrRight"></div>
+    <a href="https://xui.ptlogin2.qq.com/cgi-bin/xlogin?appid=716027609&pt_3rd_aid=101272566&daid=383&pt_skey_valid=0&style=35&s_url=http%3A%2F%2Fconnect.qq.com&refer_cgi=authorize&which=&response_type=code&client_id=101272566&redirect_uri=https%3A%2F%2Fm.wconcept.cn%2Fcustomer%2Faccount%2Flogin%2F&state=qq_login" class="logo_thirdParty" id="Connect_logo_3"></a>
+    <a href="https://api.weibo.com/oauth2/authorize?response_type=code&client_id=641865149&redirect_uri=https%3A%2F%2Fm.wconcept.cn%2Fcustomer%2Faccount%2Flogin%2F" class="logo_thirdParty" id="loginbtn_03"></a>
+<div class="BombBox" id="yonghumingbucunzai">用户名不存在</div>
+<div class="BombBox" id="yonghumingmimabucunzai">用户名或密码不符</div>
+<div class="BombBox" id="denglu">登录成功</div>
+<script src="../js/FlexibleBox.js"></script>
+<script src="../js/delPhoneNum.js"></script>
+<script src="../js/Login.js"></script>
+
+</body>
+</html>

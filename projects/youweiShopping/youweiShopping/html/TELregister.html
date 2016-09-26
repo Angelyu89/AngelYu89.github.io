@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no"/>
+
+    <title>TELregister</title>
+    <script src="../js/jquery-3.0.0.js"></script>
+    <link rel="stylesheet" href="../css/TELregister.css">
+</head>
+<body>
+<div id="black"></div>
+<div id="LoginBg"></div>
+<div id="LoginLogo"></div>
+<a href="../html/Login.html" id="X"></a>
+<div id="YourTEL">
+    请在规定时间内完成注册
+</div>
+
+<div class="box_identifyingCode">
+    <input id="identifyingCode" type="number" autocapitalize="off" autocorrect="off" autocomplete="off"
+           spellcheck="false"
+           placeholder="请输入手机号码"/>
+    <div id="countDown">
+
+    </div>
+</div>
+<div class="signin-input">
+    <input id="telNum" type="password" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false"
+           placeholder="设置密码"/>
+    <div id="input_l"></div>
+    <input id="pass" type="password" autocomplete="off" placeholder="确认密码">
+    <div class="delPhoneNum" id="delPhoneNum1"></div>
+    <div class="delPhoneNum" id="delPhoneNum2"></div>
+</div>
+
+<div id="yanzheng">
+    <input id="passA" type="text" autocomplete="off" placeholder="请填写图形验证码">
+    <div id="identifyingCodeA"></div>
+</div>
+
+<div id="Login">
+    <span id="LoginFont">马上注册</span>
+</div>
+<div id="acceptPolicyChk"></div>
+<div id="accept">
+    <span id="acceptFont">接受wconcept隐私条款</span>
+</div>
+<a href="#" id="dontName">已有账号?</a>
+<a href="#" id="registerNow">
+    <span id="registerNowFont">登录</span>
+</a>
+
+<div class="BombBox" id="beizhuce">该手机已注册，请直接登录</div>
+<div class="BombBox" id="chenggongzhuce">恭喜你注册成功，正在为你跳转至登录界面！</div>
+<div class="BombBox" id="tianxieshoujihaoma">请填写正确的手机号码</div>
+<div class="BombBox" id="mimabuyiyang">两次的密码不一致</div>
+<div class="BombBox" id="mimataiduan">请设置6位数以上的密码</div>
+<div class="BombBox" id="yanzhengmabudui">请输入正确的验证码</div>
+
+<script src="../js/FlexibleBox.js"></script>
+<script src="../js/countDown.js"></script>
+<script src="../js/acceptPolicyChk.js"></script>
+<script src="../js/identifyingCode.js"></script>
+<script src="../js/register.js"></script>
+<script src="../js/delPhoneNum.js"></script>
+</body>
+</html>

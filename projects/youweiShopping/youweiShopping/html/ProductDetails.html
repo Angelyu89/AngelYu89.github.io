@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no"/>
+    <title>ProductDetails</title>
+    <link rel="stylesheet" href="../css/index_classify.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script src="../js/jquery-3.0.0.js"></script>
+    <script src="../js/swiper-3.3.1.min.js"></script>
+
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 80%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="menu_left">
+    <div class="menu_goods" id="menu_goods_0"></div>
+    <div class="menu_goods" id="menu_goods_1"></div>
+    <div class="menu_goods" id="menu_goods_2"></div>
+    <div class="menu_goods" id="menu_goods_3"></div>
+    <div class="menu_goods" id="menu_goods_4"></div>
+    <div class="menu_goods" id="menu_goods_5"></div>
+    <div class="menu_goods" id="menu_goods_6"></div>
+    <div class="menu_goods" id="menu_goods_7"></div>
+    <div class="menu_goods" id="menu_goods_8"></div>
+    <div class="menu_goods" id="menu_goods_9"></div>
+    <div class="menu_goods" id="menu_goods_10"></div>
+    <div class="menu_goods" id="menu_goods_11"></div>
+    <div class="menu_goods" id="menu_goods_12"></div>
+</div>
+<div id="top">
+    <div id="top_top">
+        <div id="product_top_top_left"></div>
+        <div id="top_top_logo"></div>
+        <div id="top_top_right"></div>
+    </div>
+    <div id="top_bottom">
+        -提供韩国设计师品牌服饰和潮流美妆产品-
+    </div>
+</div>
+<div id="middle">
+    <div class="product_top">
+        <div class="product_box_CarouselFigure swiper-container" id="b">
+            <div class="product_img_CarouselFigure swiper-wrapper" id="a">
+
+            </div>
+        </div>
+        <div class="product_box_bottom">
+            <div class="product_name" id="c"></div>
+            <div class="product_number" >
+                <div class="product_price" id="d"></div>
+                <div class="product_discount" id="e"></div>
+                <div class="product_business" id="f"></div>
+            </div>
+        </div>
+    </div>
+    <div class="product_middle">
+        <div class="product_middle_top" id="g" ></div>
+        <div class="product_middle_bottom" id="h"></div>
+    </div>
+    <!--<div class="product_numPlus"></div>-->
+    <div class="product_box_details">
+        <div class="product_box_details_top" id="i"></div>
+        <div class="product_box_details_bottom" id="j">
+
+        </div>
+    </div>
+</div>
+
+<div id="product_btm">
+    <div id="bg"></div>
+    <div id="successAdd"></div>
+    <div id="welcome">
+        <div id="minus">-</div>
+        <input id="product_num" value="1">
+        <div id="plus">+</div>
+    </div>
+    <a id="product_shopping_cat">加入购物车</a>
+</div>
+
+
+<script src="../js/FlexibleBox.js"></script>
+<script src="../js/index_left.js"></script>
+<script src="../js/classify.js"></script>
+<script src="../js/ProductDetails.js"></script>
+<script src="../js/product_numPlusMinus.js"></script>
+<script src="../js/base.js"></script>
+<!--<script src="../js/shopping_add.js"></script>-->
+</body>
+</html>

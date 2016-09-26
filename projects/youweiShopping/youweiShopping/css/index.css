@@ -1,0 +1,383 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: white;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-box-direction: normal;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Microsoft YaHei";
+
+}
+
+@keyframes block {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(99%);
+    }
+}
+
+@keyframes back {
+    from {
+        transform: translateX(99%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+#menu_left {
+    position: fixed;
+    height: 100%;
+    width: 66.67%;
+    border-right: 1px solid #d8d8d8;
+    background: white;
+    z-index: 2;
+    left: -66.67%;
+
+}
+
+.menu_goods {
+    float: left;
+    width: 80%;
+    height: 7.5%;
+    margin-left: 10%;
+    z-index: 3;
+    border-bottom: 1px solid #6c6968;
+
+
+
+}
+.font_menu_goods{
+    line-height: 250%;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}
+#top {
+    position: relative;
+    height: 13.3%;
+    width: 100%;
+}
+
+#btm {
+    position: relative;
+    height: 7.39%;
+    width: 100%;
+    background: #000000;
+}
+
+.btm_logo {
+    float: left;
+    width: 19.9%;
+    height: 100%;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 600%;
+    text-decoration: none;
+}
+
+#btm_logo_1 {
+    background: url("../youweiIMG/icon-homemay-home.png") no-repeat 50% 20%;
+    background-size: 22px 20px;
+
+}
+
+#btm_logo_2 {
+    background: url("../youweiIMG/icon-homemay-category.png") no-repeat 50% 20%;
+    background-size: 20px 20px;
+    opacity: 0.4;
+}
+
+#btm_logo_3 {
+    background: url("../youweiIMG/icon-homemay-activity.png") no-repeat 50% 20%;
+    background-size: 25px 20px;
+    opacity: 0.4;
+}
+
+#btm_logo_4 {
+    background: url("../youweiIMG/icon-homemay-cart.png") no-repeat 50% 20%;
+    background-size: 22px 20px;
+    opacity: 0.4;
+}
+
+#btm_logo_5 {
+    background: url("../youweiIMG/icon-homemay-user.png") no-repeat 50% 20%;
+    background-size: 18px 20px;
+    opacity: 0.4;
+}
+
+#top_top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid #6c6968;
+    height: 50%;
+    width: 100%;
+}
+
+#top_top_left {
+    position: absolute;
+    top: 30%;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background: url("../youweiIMG/icon-homemay-menu.png") no-repeat center center;
+    background-size: 19px 16px;
+    width: 12%;
+    height: 45%;
+}
+
+#top_top_logo {
+    position: absolute;
+    left: 38%;
+    top: 20%;
+    background: url("../youweiIMG/icon_set.png") no-repeat;
+    background-size: 425px 325px;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -45px -103px;
+    width: 93px;
+    height: 27px;
+
+}
+
+#top_top_right {
+    position: absolute;
+    right: 2%;
+    display: inline-block;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background: url("../youweiIMG/icon-homemay-search.png") no-repeat center center;
+    background-size: 19px 19px;
+    width: 45px;
+    height: 45px;
+}
+
+#top_bottom {
+    position: absolute;
+    top: 66%;
+    left: 2%;
+    height: 50%;
+    width: 100%;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#middle {
+    position: relative;
+    -webkit-box-flex: 1;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+}
+
+#CarouselFigure {
+    position: absolute;
+    width: 100%;
+    height: 55%;
+    overflow: hidden;
+
+}
+
+#img_CarouselFigure {
+    float: left;
+    position: absolute;
+    left: 0;
+    height: 100%;
+
+}
+
+.box_num {
+    position: fixed;
+    height: 1%;
+    width: 30%;
+    top: 60%;
+    left: 35%;
+    z-index: 4;
+}
+
+.num {
+    position: fixed;
+    top: 50%;
+    border-radius: 50%;
+    width: 2.667%;
+    height: 1.478%;
+    background: #bcb39c;
+    z-index: 3;
+}
+
+#num_1 {
+    left: 36%;
+}
+
+#num_2 {
+    left: 46%;
+}
+
+#num_3 {
+    left: 56%;
+}
+
+#num_4 {
+    left: 66%;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    float: left;
+}
+#img_1{
+
+    background: url("https://img.alicdn.com/bao/uploaded/i3/TB1eqMyIVXXXXXIaXXXXXXXXXXX_!!0-item_pic.jpg_430x430q90.jpg") no-repeat;
+    background-size: 100% 110%;
+}
+#img_2{
+
+    background: url("http://img30.360buyimg.com/popWaterMark/jfs/t2011/4/612174753/231399/8309087b/561cbdb9N3ce22bf7.jpg") no-repeat;
+    background-size: 100% 110%;
+}
+#img_3{
+
+    background: url("https://img.alicdn.com/imgextra/i2/2625587648/TB20VACfpXXXXcFXXXXXXXXXXXX_!!2625587648.jpg") no-repeat;
+    background-size:100% 110%;
+}
+#img_4{
+
+    background: url("https://img.alicdn.com/imgextra/i3/119579859/TB2W761fpXXXXXpXpXXXXXXXXXX_!!119579859.jpg") no-repeat;
+    background-size:100% 110%;
+}
+#five_logo{
+    position: absolute;
+    border-bottom: 1px solid #d8d8d8;
+    width: 100%;
+    height: 14.77%;
+    top:55%;
+}
+.cantTouchLogo{
+    float: left;
+    width: 20%;
+    height: 100%;
+
+    
+}
+#cantTouchLogo_1{
+    background: url("../youweiIMG/icon-homemay-hotproduct-3.png")no-repeat 50% 30%;
+    background-size: 60% 60%;
+}
+#cantTouchLogo_2{
+    background: url("../youweiIMG/icon-homemay-newproduct-3.png")no-repeat 50% 30%;
+    background-size: 60% 60%;
+}
+#cantTouchLogo_3{
+    background: url("../youweiIMG/icon-homemay-promotion-3.png")no-repeat 50% 30%;
+    background-size: 60% 60%;
+}
+#cantTouchLogo_4{
+    background: url("../youweiIMG/icon-homemay-dapei-3.png")no-repeat 50% 30%;
+    background-size: 60% 60%;
+}
+#cantTouchLogo_5{
+    background: url("../youweiIMG/icon-homemay-designer-3.png")no-repeat 50% 30%;
+    background-size: 60% 60%;
+}
+.font_cantTouchLogo{
+   float: left;
+    margin-top: 80%;
+    margin-left: 30%;
+    font-size: 1.2rem;
+    color: #6c6968;
+    text-align: center;
+}
+#box_fenLei{
+    position: absolute;
+    width: 100%;
+    height: 6.65%;
+    top:70%;
+    color: #6c6968;
+    text-align: center;
+    line-height: 300%;
+    font-size: 1.5rem;
+}
+#box_goods{
+    position: absolute;
+    width: 100%;
+    top:77%;
+    height: 40%;
+}
+.box_good{
+    float: left;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 43%;
+    height: 150%;
+}
+.img_box_good{
+    float: left;
+    width: 100%;
+    height: 60%;
+
+}
+.name_good{
+    width: 100%;
+    height: 10%;
+    float: left;
+
+}
+.font_name_good{
+    text-align: center;
+    color: #6c6968;
+    font-size: 1.2rem;
+}
+.price{
+    float: left;
+    margin-top: 15%;
+    height: 10%;
+    width: 50%;
+    margin-left: 6%;
+
+}
+.font_price{
+    color: red;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.discount{
+    float: right;
+    margin-top: 17%;
+    margin-right: 8%;
+    width: 30%;
+    height: 10%;
+
+}
+.font_discount{
+    color: #6c6968;
+    font-size: .8rem;
+    text-align: center;
+}
+.back{
+    position: fixed;
+    top:83%;
+    right: 5%;
+    background-image: url("../youweiIMG/icon_set.png");
+    background-size: 425px 325px;
+    vertical-align: middle;
+    text-indent: -999999px;
+    background-position: -51px -134px;
+    width: 51px;
+    height: 51px;
+  display: none;
+}
