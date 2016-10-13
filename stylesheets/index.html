@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>清除浮动:after</title>
+		<style>
+		*{
+			margin:0;padding:0;
+		}
+			/*.left{
+				background-color:#ff0000;
+				width:30%;
+				height:150px;
+				
+			}
+			.right{
+				background-color:#00ff00;
+				width:20%;
+				height:200px;
+			
+			}
+			.myLeft{
+				float:left;
+			}
+			.clearfix:after{
+				content:"";
+				display:block;
+				height:0;			
+				visibility: hidden;
+				clear:both;
+			}
+			.clearfix{zoom:1;}*/
+			
+			.main{
+				width:1000px;
+			}
+			.myLast,.myLeft,.myRight{
+				width:200px;
+				height:200px;
+				background-color:#ddd;
+			}
+			.myRight{
+				background:#00ff00;
+			}
+			.myLast{
+				background-color:#EEFF00;
+				height:140px;
+			}
+			.left{
+				float:left;
+			}
+			.clearfix:after{
+				content:".";display:block;
+				height:0;visibility: hidden;
+				clear: both;
+			}
+			.clearfix{
+				zoom:1;
+			}
+			.clearit{
+				clear:both;height:0;
+				font-size:0;overflow:hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div class="main clearfix">
+			<div class="left myLeft">左侧</div>
+			<div class="right myLeft ">右侧</div>
+		</div>
+		<div class="footer">
+			<p>我是底部</p>
+		</div>-->
+		
+		<div class="main">
+			<div class="myLeft left">左侧</div>
+			<div class="myRight left clearfix">右侧</div>
+			<div class="clearit"></div>
+			<div class="myLast">最后一个</div>
+		</div>
+	</body>
+</html>
