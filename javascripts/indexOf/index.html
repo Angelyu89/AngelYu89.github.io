@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>给数组去重复项</title>
+</head>
+<body>
+    <script>
+//*方法一思路：
+//1，创建空数组来存放结果
+//2，用join把数组转化成字符串放在一起，用indexOf查找相同的元素，不相同的添加到新数组。
+
+//此方法将传入的值的形式将参数代入方法中。
+
+     
+//      var arr=["a","b","a","c","c","ab","bc"];
+//        function removeRepeat(arr){
+//            var i,tmpArr=[];
+//            for(i in arr){
+//                //join() 方法用于把数组中的所有元素放入一个字符串
+//                if(tmpArr.join(',').indexOf(arr[i])==-1){
+////                    console.log(tmpArr);
+//                        tmpArr.push(arr[i]);
+//                }
+//            }
+//            return tmpArr;
+//        }
+//        var r=removeRepeat(arr);
+//          console.log(r);
+
+
+//方法二思路：
+//此方法同上，但不同的是，这次没有将参数直接代入
+
+//     Array.prototype.unique=function(){
+//         var i,tmpArr=[];
+//         for(i in this){
+//             if(typeof this[i]!='function'){
+//                 if(tmpArr.join(',').indexOf(this[i])==-1){
+//                     tmpArr.push(this[i]);
+//                 }
+//             }
+//         }
+//         return tmpArr;
+//     }
+//      var arr=["a","b","a","c","c","ab","bc"];
+//      var r=arr.unique();
+//      console.log(r);
+
+
+//**方法三思路:
+//1,先将原数组进行排序
+//2,检查原数组的第i个元素与结果数组的最后一个元素是否相同,因为已经排序,所以重复元素会在相邻位置
+//3,如果不相同,则将该元素存入结果数组中
+
+//
+//Array.prototype.under=function(){
+//	this.sort();
+//	
+//	var res=[this[0]];
+//	
+//	for(var i=1;i<this.length;i++){
+//		if(this[i]!==res[res.length-1]){
+//			res.push(this[i]);
+//		}
+//	}
+//	return res;
+//}
+//
+//var arr=[1,"a","a","b","d","e","e",1,0]
+//alert(arr.under());
+
+
+//方法四 思路：
+//1,构建一个新的数组存放结果
+//2,for循环每次从数组中取出一个元素，用这个元素循环与结果数组对比
+//3，若结果数组中没有改元素，则存到结果数组中
+//
+//Array.prototype.unique1=function(){
+//	var res=[this[0]];
+//	
+//	for(var i=1;i<this.length;i++){
+//		var repeat=false;
+//		for(var j=0;j<res.length;j++){
+//			if(this[i]==res[j]){
+//				repeat=true;
+//				break;
+//			}
+//		}
+//		if(!repeat){
+//			res.push(this[i]);
+//		}
+//	}
+//	return res;
+//	
+//}
+//
+//
+//var arr=[1,"a","a","b","d","e","e",1,0]
+//alert(arr.unique1());
+
+
+//****方法五 思路：
+//1,创建一个新的数组存放结果
+//2,创建一个空对象
+//3,for循环时，每次取出一个元素与对象进行对比，如果这个元素不重复，则把它存放到结果数组中，
+//同时把这个的内容作为对象的一个属性，并赋值为1，存入到第2部建立的对象中。
+
+//说明：至于如何对比，就是每次从原数组中取出一个元素，然后到对象中去访问这个属性，如果能访问
+//到值，则说明重复。
+
+Array.prototype.unique3=function(){
+	var res=[];
+	var json={};
+	
+	for(var i=0;i<this.length;i++){
+		if(!json[this[i]]){
+			res.push(this[i]);
+			json[this[i]]=1;
+		}
+	}
+	return res;
+}
+
+
+var arr=[112,112,34,'你好',112,112,34,'你好','str','str1'];
+alert(arr.unique3());
+
+
+
+
+//数组方法：
+
+//	var foo=[];
+//	foo.push(1);
+//	foo.push(4);
+//	foo.pop();
+//	foo.push(5,6);
+//	foo.push(7,8);
+//	alert(foo.length);
+
+//var a=[];
+//a.unshift(3,6);
+//a.unshift(8);
+//a.shift();
+//alert(a);
+
+
+
+//未定义
+// var foo={};
+// foo.bar='hello';
+// alert(foo.length);
+
+	
+//	var a="b'm a dasagna eog"
+//	a.split("").reverse().join("");
+//	alert(a);
+
+//	var arr=["Aa","ba","Cc"];
+//	arr.reverse().join().split();
+//	alert(arr);
+		
+	//jquery禁用前进后退按钮
+//	<script type="text/javascript" language="javascript">
+//
+//		$(document).ready(function() {
+//		
+//		     window.history.forward(1);
+//		
+//		     //OR
+//		
+//		     window.history.forward(-1);
+//		
+//		});
+
+//var a=new Array("Ac","Cc","Bb");
+//a.sort();
+//alert(a);
+
+//var str="Hello world";
+//alert(str.indexOf("Hello"));==>0下标为0;
+//alert(str.lastIndexOf("d"));==>10最后一个字符下标为10;
+
+</script>	
+		
+	
+</body>
+</html>
