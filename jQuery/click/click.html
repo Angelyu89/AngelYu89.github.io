@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>click事件</title>
+    <style>
+        .con{
+            width:200px;
+            min-height:300px;
+            float:left;
+            border:9px solid #00CCFF;
+            border-radius:15px;
+        }
+        .con span{
+            display: block;
+            padding: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        #con-left{
+            background-color:#eee;
+
+        }
+        #con-right{
+            background-color:#eee;
+            margin-left:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="con-left" class="con">
+        <span>序号1</span>
+        <span>序号2</span>
+        <span>序号3</span>
+        <span>序号4</span>
+        <span>序号5</span>
+        <span>序号6</span>
+        <span>序号7</span>
+        <span>序号8</span>
+    </div>
+    <div id="con-right" class="con"></div>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+                var leftCon =$("#con-left");
+                var rightCon =$("#con-right");
+            $("#con-left span").click(function(){
+                var that=$(this);
+                that.css("color","red");
+                var newDom=that.clone();
+                newDom.css("color","black");
+                rightCon.append(newDom);
+
+            });
+            $(document).on('click','#con-right span',function(){
+                var that =$(this);
+                that.remove();
+            })
+        })
+
+    </script>
+</body>
+</html>

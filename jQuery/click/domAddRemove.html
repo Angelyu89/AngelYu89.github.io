@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery-click事件</title>
+		<style type="text/css">
+			.con{
+				width:48%;
+				float:left;
+				min-height: 300px;
+				padding:3px;
+			}
+			.con span{
+				padding:10px;
+				font-size: 14px;
+				display: inline-block;
+				border: 1px solid #0099cc;
+				cursor: pointer;
+			}
+			#con-left{
+				background-color: greenyellow;
+			}
+			#con-right{
+				background-color: #00CCFF;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="con-left" class="con">
+			<span>我</span>
+			<span>是</span>
+			<span>前</span>
+			<span>端</span>
+			<span>开</span>
+			<span>发</span>
+			<span>工</span>
+			<span>程</span>
+			<span>师</span>
+		</div>
+		<div id="con-right" class="con"></div>
+		
+		<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		//每次写js都要先写这个，为了将js只在局部起作用
+		$(function(){
+			//定义一些通用的变量，防止重复获取dom元素
+			var leftCon = $('#con-left');
+			var rightCon = $('#con-right');
+			
+			//js绑定点击事件的通用方法    第一种方法
+			$('#con-left span').click(function(){
+				//获取到当前点击的对象
+				var that = $(this);
+				var word = that.text();
+				//将当前元素克隆成一个新的元素
+				var newDom = that.clone();
+//				that.remove();
+				newDom.html(word +' X');
+				//添加到右侧的容器中
+				rightCon.append(newDom);
+			});
+			//这里个右侧的span绑定click事件，可以看到没有alert执行，
+			/**
+			 * 原因：此处绑定事件是先绑定事件后，
+			 * dom元素的生成是在绑定事件执行后才添加的，
+			 * 所以没有生效
+			 * 以下的绑定事件不生效
+			 */
+			/*$('#con-right span').click(function(){
+				alert();
+			});
+			*/
+			/**
+			 * 绑定事件的第二种方法！！
+			 * 用于：元素是通过js动态添加到页面的，可以用这种方法绑定鼠标事件
+			 */
+			$(document).on('click','#con-right span',function(){
+				//获取当前点击的对象
+				var that = $(this);
+				//将当前对象删除
+				that.remove();
+			});
+		});
+		</script>
+		
+	</body>
+</html>
