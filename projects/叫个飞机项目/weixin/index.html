@@ -1,0 +1,173 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="no-cache" http-equiv="Cache-Control">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/page.css" type="text/css">
+    <title>叫个飞机</title>
+</head>
+<body>
+    <div class="container">
+        <!--头部导航-->
+        <div class="nav">
+            <!--<a href="#" class="return_a">返回</a>-->
+            叫个飞机
+            <a href="order_ongoing.html" class="order_a"  >
+                <img src="images/order_icon.png" alt="订单图标">
+            </a>
+        </div>
+        <!--end头部导航-->
+        <!--头图-->
+        <div class="head_img_wrap">
+            <img src="images/banner.jpg" alt="头图">
+        </div>
+        <!--end头图-->
+        <!--四个模块-->
+        <div class="index_box">
+            <ul class="index_box_ul">
+                <!--婚礼航拍-->
+                <a class="app_service_a" data="1" href="app_service.html">
+                    <li class="wedding_li fl">
+                        <div class="pad_div">
+                            <span>婚礼航拍</span>
+                            <div class="line"></div>
+                            <p>送鲜花</p>
+                            <p>送戒指</p>
+                            <p>婚礼跟拍</p>
+                        </div>
+                        <img src="images/wedding_icon.png" class="wedding_icon" alt="">
+                    </li>
+                </a>
+                <!--end婚礼航拍-->
+                <!--影视航拍-->
+                <a class="app_service_a" data="2" href="app_service.html">
+                    <li class="movies_li fr">
+                        <div class="pad_div">
+                            <span>影视航拍</span>
+                            <div class="line"></div>
+                            <p>电视剧</p>
+                            <p>微电影</p>
+                            <p>纪录片</p>
+                        </div>
+                        <img src="images/movies_icon.png" class="movies_icon" alt="">
+                    </li>
+                </a>
+                <!--end影视航拍-->
+                <!--商业宣传-->
+                <a class="app_service_a" data="3" href="app_service.html">
+                    <li class="business_li fl">
+                        <div class="pad_div">
+                            <span>商业宣传</span>
+                            <div class="line"></div>
+                            <p>楼盘航拍</p>
+                            <p>景区航拍</p>
+                            <p>工厂航拍</p>
+                        </div>
+                        <img src="images/business_icon.png" class="business_icon" alt="">
+                    </li>
+                </a>
+                <!--end商业宣传-->
+                <!--活动宣传-->
+                <a class="app_service_a" data="4" href="app_service.html">
+                    <li class="active_li fr">
+                        <div class="pad_div">
+                            <span>活动宣传</span>
+                            <div class="line"></div>
+                            <p>大型活动</p>
+                            <p>广告航拍</p>
+                            <p>鸟瞰图</p>
+                        </div>
+                        <img src="images/active_icon.png" class="active_icon" alt="">
+                    </li>
+                </a>
+                <!--end活动宣传-->
+            </ul>
+            <div class="tips">更多服务行业即将上线，敬请期待！</div>
+        </div>
+        <!--end四个模块-->
+        <input type="hidden" id="openidinput" value="">
+        <input type="hidden" id="userid" value="">
+    </div>
+    <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //微信跳转截取url 获取openid
+            var href = window.location.href;
+            var wenhaohou = href.split("?");
+            var param = wenhaohou[1];
+            if (param != "") {
+                var params = param.split("=");
+                var openidval = params[1];
+                //存储openid
+                $("#openidinput").attr("value", openidval);
+            }
+            var openid = $("#openidinput").val();
+            //页面跳转事件
+            $(".order_a").click(function () {
+                //验证openid
+                $(".order_a").attr("href", "order_ongoing.html?openid=" + openid);
+            });
+            //预约服务页面跳转事件
+            $(".app_service_a").click(function () {
+                var servicenum = $(this).attr("data");
+                $(".app_service_a").attr("href", "app_service.html?openid=" + openid +"&servicenum="+servicenum);
+            });
+            //存储openid的cookie方法
+            //$.cookie('openid',openid);
+        });
+/*<<<<<<< .mine
+        //预约服务页面跳转事件
+        $(".app_service_a").click(function () {
+            $(".app_service_a").attr("href","app_service.html?openid="+openid);
+        });
+
+        //验证openid函数
+        function checkOpenidAjax(openid)
+        {
+            var param = "{\"openid\":\"" + openid + "\"}";
+            $.ajax({
+                url: "http://192.168.8.107:8080/app/User_findUserinfoByOpenid",
+                type: "POST",
+                data: { params: param, devices: "weixin" },
+                dataType: "jsonp",
+                jsonpCallback: 'checkOpenidCollback',
+                jsonp: "jsonCollback",//服务端用于接收callback调用的function名的参数
+                success: function (data) {
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });
+        }
+        //openid毁掉函数
+        function checkOpenidCollback(v)
+        {
+        	//var openid = $("#openidinput").val();
+            var status = v.status;
+            if(status==1)
+            {
+                //已绑定
+                $(".order_a").attr("href","order_ongoing.html?openid="+openid);
+            }
+            else if (status == 2) {
+                //未绑定
+                $(".order_a").attr("href","bang_phone.html");
+            }
+            else {
+                //系统错误
+                alert("网络错误O(∩_∩)O~~");
+            }
+        }
+	});
+=======
+>>>>>>> .r468*/
+    </script>
+</body>
+</html>

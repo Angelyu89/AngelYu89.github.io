@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="no-cache" http-equiv="Cache-Control">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/page.css" type="text/css">
+    <title>叫个飞机</title>
+</head>
+<body>
+	<div class="container">
+        <!--头部导航-->
+        <div class="nav_order">
+            <a href="order.html" class="return_a_order"></a>
+            订单详情
+        </div>
+        <!--end头部导航-->
+		<div class="order_line">
+            <img src="images/order_line.png" alt="时间轴">
+            <div id="order_line_txt1" class="order_line_txt">预约中</div>
+            <div id="order_line_txt2" class="order_line_txt">已接单</div>
+            <div id="order_line_txt3" class="order_line_txt">服务中</div>
+            <div id="order_line_txt4" class="order_line_txt">已完成</div>
+            <div class="cb"></div>
+            <p id="order_line_info"></p>
+        </div>
+
+        <ul class="order_wrap">
+            <li>
+                <div class="order_num">
+                    <span class="fl">订单编号：128044455566</span>
+                    <p class="fr">2015-7-23 16:40</p>
+                </div>
+                <div class="order_box">
+                    <label>服务类型</label>
+                    <div class="order_div">婚礼航拍</div>
+                    <label>服务地点</label>
+                    <div class="order_div">奥林匹克公园</div>
+                    <label>服务时间</label>
+                    <div class="order_div">2015-08-30至2015-09-01</div>
+                    <label>服务描述</label>
+                    <div class="order_div">要求整套婚礼航拍流程准确无误拍摄全。送捧花、送戒指等一系列服务。价格不是问题</div>
+                    <div class="cb"></div>
+                </div>
+            </li>
+        </ul>
+        <a id="contract_a" href="" class="order_com">
+            <i class="order_i com1"></i>订单合同
+        </a>
+        <a id="photo_a" href="javascript:;" class="order_com">
+            <i class="order_i com2"></i>现场服务照片
+        </a>
+        <div class="order_phone">
+            拨打客服电话：400-870-1088
+            <a id="contract_power" href="#">合同效力说明</a>
+        </div>
+        <div class="order_footer">
+            <!-- <a href="javascript:;" class="cancel_a">取消订单</a>
+            <a href="javascript:;" class="contract_a">签订合同</a> -->
+        </div>
+    </div>
+    <!--取消订单-->
+    <div class="cancel_order_wrap">
+        <div class="bg_mask"></div>
+        <div class="cancel_order_box">
+            <span>确定取消订单</span>
+            <a id="cancle_no" href="javascript:;">否</a>
+            <a id="cancle_yes" href="javascript:;">是</a>
+        </div> 
+    </div>
+    <!--end取消订单-->
+    <input type="hidden" id="openidinput" value="">
+    <input type="hidden" id="ordertypeid" value="">
+    <input type="hidden" id="feishouid" value="">
+    <input type="hidden" id="userid" value="">
+    <input type="hidden" id="orderstatus" value="">
+    <input type="hidden" id="orderid" value="">
+    <input type="hidden" id="orderindex" value="">
+    <input type="hidden" id="ordernumber" value="">
+    <input type="hidden" id="ordertablename" value="">
+
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var href_json = getUrlParam("json");//通过关键字分解url
+            //alert(json);
+            var json = eval('(' + href_json + ')');
+
+            var ordertypeid = json.ordertypeid;
+            var feishouid = json.feishouid;
+            var userid = json.userid;
+            var orderstatus = json.orderstatus;
+            var orderid = json.orderid;
+            var orderindex = json.orderindex;
+            var ordernumber = json.ordernumber;
+            var ordertablename = json.ordertablename;
+
+            //alert(ordertypeid+"-----"+feishouid+"-----"+userid+"-----"+orderstatus+"-----"+orderid+"-----"+orderindex+"-----"+ordernumber+"-----"+ordertablename+"-----");
+
+            orderListAjax(ordertypeid,feishouid,userid,orderstatus,orderid,orderindex,ordernumber,ordertablename);
+        });
+        //截取url
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+
+        function orderListAjax(ordertypeid,feishouid,userid,orderstatus,orderid,orderindex,ordernumber,ordertablename){
+            var param_val = "{\"ordertypeid\":\""+ordertypeid+"\",\"feishouid\":\""+feishouid+"\",\"userid\":\""+userid+"\",\"orderstatus\":\""+orderstatus+"\",\"orderid\":\""+orderid+"\",\"orderindex\":\""+orderindex+"\",\"ordernumber\":\""+ordernumber+"\",\"ordertablename\":\""+ordertablename+"\"}";
+            $.ajax({
+                url: "http://123.57.174.52:8080/app/Order_orderDetail",
+                type: "POST",
+                data: { params: param_val, devices: "weixin", jsonCallback: "orderDetailsCallback" },
+                dataType: "jsonp",
+                //服务端用于接收callback调用的function名的参数
+                success: function (data) {
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });
+        }
+        
+        var str = "";
+        //订单详情回调函数
+        function orderDetailsCallback(v){
+            var status = v.status;
+            var order = v.order;
+                /*
+                  "orderindex":"",
+                  "orderstatus":"1",
+                  "ordertablename":"",
+                  "orderbegintime":"2015-08-13",
+                  "locktime":"",
+                  "userid":"",
+                  "ordernumber":"201508181654087",
+                  "ordertypename":"",
+                  "orderremark":"",
+                  "userphone":"15811386974",
+                  "username":"朱6",
+                  "feishouid":"",
+                  "ordertypeid":"",
+                  "orderid":"dc6080c6e8d64d6e8dc831814f8f9d00",
+                  "orderlocation":"北京"
+                */
+            var orderindex = order.orderindex//
+            var orderstatus = order.orderstatus;//
+            var ordertablename = order.ordertablename;//
+            var orderbegintime = order.orderbegintime;//服务时间
+            var locktime = order.locktime;//
+            var userid = order.userid;//
+            var ordernumber = order.ordernumber;//订单编号
+            var ordertypename = order.ordertypename//服务类型
+            var orderremark = order.orderremark;//
+            var userphone = order.userphone;//电话
+            var username = order.username;//用户名
+            var feishouid = order.feishouid;//
+            var ordertypeid = order.ordertypeid;//
+            var orderid = order.orderid;//
+            var orderlocation = order.orderlocation;//服务地点
+            var orderaddtime = order.orderaddtime;
+            var cancelreason = order.cancelreason;
+            //存储值
+            $("#ordertypeid").val(ordertypeid);
+            $("#feishouid").val(feishouid);
+            $("#userid").val(userid);
+            $("#orderstatus").val(orderstatus);
+            $("#orderid").val(orderid);
+            $("#orderindex").val(orderindex);
+            $("#ordernumber").val(ordernumber);
+            $("#ordertablename").val(ordertablename);
+            //正常状态
+            if(status == 1){
+                var json = "{\"ordertablename\":\"" + ordertablename + "\","+
+                             "\"orderid\":\"" + orderid + "\","+
+                             "\"orderindex\":\"" + orderindex + "\","+
+                             "\"feishouid\":\"" + feishouid + "\","+
+                             "\"userid\":\"" + userid + "\","+
+                             "\"orderstatus\":\"" + orderstatus + "\"," +
+                            "}";
+                
+                if(orderstatus <= 3){
+                    $("#order_line_txt1").addClass("active");
+                    $("#order_line_info").text("等待服务方接单，并提供在线合同");
+                }
+                else if(orderstatus == 10){
+                    $("#order_line_txt2").addClass("active");
+                    $("#order_line_info").text("服务方已接单，请尽快签订合同");
+                }
+                else if(orderstatus == 4){
+                    $("#order_line_txt2").addClass("active");
+                    $("#order_line_info").text("合同签订成功，请等待服务开始");
+                }
+                else if(orderstatus == 5){
+                    $("#order_line_txt3").addClass("active");
+                    $("#order_line_info").text("服务经行中");
+                }
+                else if(orderstatus == 7){
+                    $("#order_line_txt4").addClass("active");
+                    $("#order_line_info").text("服务已完成");
+                }
+                else if(orderstatus == 80){
+                    $("#order_line_info").text("已取消订单");
+                }
+
+                str = str + "<li>";
+                str = str + "   <div class=\"order_num\">";
+                str = str + "       <span class=\"fl\">订单编号：" + ordernumber + "</span>";
+                str = str + "       <p class=\"fr\">" + orderaddtime + "</p>";
+                str = str + "   </div>";
+                str = str + "   <div class=\"order_box\">";
+                str = str + "       <label>服务类型</label>";
+                str = str + "       <div class=\"order_div\">" + ordertypename + "</div>";
+                str = str + "       <label>服务地点</label>";
+                str = str + "       <div class=\"order_div\">" + orderlocation + "</div>";
+                str = str + "       <label>服务时间</label>";
+                str = str + "       <div class=\"order_div\">" + orderbegintime + "</div>";
+                str = str + "       <label>服务描述</label>";
+                str = str + "       <div class=\"order_div\">" + orderremark + "</div>";
+                str = str + "       <div class=\"cb\"></div>";
+                str = str + "   </div>";
+                str = str + "</li>";
+                $(".order_wrap").html(str);
+                var orderstatus_val = parseInt(orderstatus);
+                //alert(orderstatus_val);
+                //预约中和已锁定的状态
+                if (orderstatus_val <= 3) {
+                    var str_a = "";
+                    str_a = str_a + "<a href='javascript:;'class=\"cancel_a\" onclick=\"show_order()\">申请取消</a>";
+                    $(".order_footer").html(str_a);
+                    $("#contract_a").hide();//合同选项
+                    $("#photo_a").hide();//服务照片选项
+                    $("#contract_power").hide();//合同效力说明
+                }
+                //已接发送合同 还没签订
+                else if (orderstatus_val == 10) {
+                    var str_a = "";
+                    str_a = str_a + "<a href='javascript:;'class=\"cancel_a\" onclick=\"show_order()\">申请取消</a><a href=\"order_contract.html\" class=\"contract_a\" onclick=\"contract_href()\">签订合同</a>";
+                    $(".order_footer").html(str_a);
+                    $("#contract_a").hide();//合同选项
+                    $("#photo_a").hide();//服务照片选项
+                    $("#contract_power").show();//合同效力说明
+                }
+                //已接单签订合同完成
+                else if (orderstatus_val == 4) {
+                    $(".order_footer").hide();//底部隐藏
+                    /*var str_a = "";
+                    str_a = str_a + "<a href='javascript:;'class=\"cancel_a\" onclick=\"show_order()\">申请取消</a><a href=\"#\" class=\"contract_a\" onclick=\"contract_href()\">签订合同</a>";
+                    $(".order_footer").html(str_a);*/
+                    $("#contract_a").show();//合同选项
+                    $("#photo_a").hide();//服务照片选项
+                    $("#contract_power").show();//合同效力说明
+                }
+                //开始服务和服务完成
+                else if (orderstatus_val == 5 || orderstatus_val == 7) {
+                    $(".order_footer").hide();//底部隐藏
+                    $("#contract_a").show();
+                    $("#photo_a").show();
+                    $("#contract_power").show();
+                }
+                //取消订单
+                else if (orderstatus_val == 80) {
+                    $(".order_footer").hide();//底部隐藏
+                    $("#contract_a").hide();//合同选项
+                    $("#photo_a").hide();//服务照片选项
+                    $("#contract_power").hide();//合同效力说明
+                }
+                /*else if(orderstatus == 62) {
+                    $("#inputordercancelreason").html(cancelreason);
+                    $(".push_wrap").show();
+                    $(".button_wrap").show();
+                }*/
+            }
+            //网络异常
+            else if(status == 0) {
+                alert("网络错误~");
+            }
+        }
+
+        //点击取消订单
+        $("#cancle_yes").click(function () {
+            //取值
+            var ordertablename = $("#ordertablename").val();
+            var orderid = $("#orderid").val();
+            var orderindex = $("#orderindex").val();
+            var feishouid = $("#feishouid").val();
+            var userid = $("#userid").val();
+            var orderstatus = $("#orderstatus").val();
+            //var cancelreason = $(".cancel_label[check='ture']").text();
+            //alert("ordertablename:"+ordertablename+"====orderid:"+orderid+"====orderindex:"+orderindex+"====feishouid:"+feishouid+"====userid:"+userid+"====orderstatus:"+orderstatus);
+            cancelOrderAjax(ordertablename, orderid, orderindex, feishouid, userid, orderstatus)
+        });
+        //取消订单ajax
+        function cancelOrderAjax(ordertablename, orderid, orderindex, feishouid, userid, orderstatus) {
+            var param_val = "{\"ordertablename\":\"" + ordertablename + "\",\"orderid\":\"" + orderid + "\",\"orderindex\":\"" + orderindex + "\",\"feishouid\":\"" + feishouid + "\",\"userid\":\"" + userid + "\",\"orderstatus\":\"" + orderstatus + "\"}";
+            var requesturl = "http://123.57.174.52:8080/app/Order_userCancelOrder";
+
+            //fnAjax(url, params);
+            $.ajax({
+                url: requesturl,
+                type: "POST",
+                data: { params: param_val, devices: "weixin", jsonCallback: "cancelOrderAjaxCollback" },
+                dataType: "jsonp",
+                jsonpCallback: 'cancelOrderAjaxCollback',
+                jsonp: "jsonCollback",//服务端用于接收callback调用的function名的参数
+                success: function (data) {
+                    var status = data.status;
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });
+        }
+        //取消订单回调函数
+        function cancelOrderAjaxCollback(v) {
+            var status = v.status;
+            var openid = $("#openidinput").val();
+            if (status == 1) {
+                alert("申请取消订单成功~");
+                $(".order_footer").hide();//底部隐藏
+                $("#order_line_info").text("已取消订单");
+            }
+            if (status == 2) {
+                alert("申请取消订单成功~");
+                //var cookie = $.cookie('openid');
+                //window.location.href = "order_ongoing.html?openid=" + openid;
+            }
+            else if (status == 0) {
+                alert("网络错误~");
+            }
+        }
+
+        //合同链接
+        function contract_href(){
+
+
+            //{"orderindex":"","feishouid":"2001030303","ordertablename":"order_default","status":"2","orderid":"ae3d61d7e7f041e995d1ae2766ce7f14"}
+            //取值
+            var ordertablename = $("#ordertablename").val();
+            var orderid = $("#orderid").val();
+            var orderindex = $("#orderindex").val();
+            var feishouid = $("#feishouid").val();
+            var userid = $("#userid").val();
+            var orderstatus = $("#orderstatus").val();
+            var ordertypeid = $("#ordertypeid").val();
+            var ordernumber = $("#ordernumber").val();
+
+            var json = "{\"ordertypeid\":\"" + ordertypeid + "\",\"ordernumber\":\"" + ordernumber + "\",\"ordertablename\":\"" + ordertablename + "\",\"orderid\":\"" + orderid + "\",\"orderindex\":\"" + orderindex + "\",\"feishouid\":\"" + feishouid + "\",\"userid\":\"" + userid + "\",\"orderstatus\":\"" + orderstatus + "\"}";
+
+            $(".contract_a").attr("href","order_contract.html?jsonp="+ json+"");
+        }
+        $("#contract_a").click(function(){
+            //取值
+            var ordertablename = $("#ordertablename").val();
+            var orderid = $("#orderid").val();
+            var orderindex = $("#orderindex").val();
+            var feishouid = $("#feishouid").val();
+            var userid = $("#userid").val();
+            var orderstatus = $("#orderstatus").val();
+            var ordertypeid = $("#ordertypeid").val();
+            var ordernumber = $("#ordernumber").val();
+
+            var json = "{\"ordertypeid\":\"" + ordertypeid + "\",\"ordernumber\":\"" + ordernumber + "\",\"ordertablename\":\"" + ordertablename + "\",\"orderid\":\"" + orderid + "\",\"orderindex\":\"" + orderindex + "\",\"feishouid\":\"" + feishouid + "\",\"userid\":\"" + userid + "\",\"orderstatus\":\"" + orderstatus + "\"}";
+            $(this).attr("href","order_contract.html?jsonp="+ json+"");
+        })
+    </script>
+</body>
+</html>

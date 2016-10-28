@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="no-cache" http-equiv="Cache-Control">
+	<meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/page.css"/> 
+	<title>订单详情</title>
+	</head>
+<body class="bg_fb">
+	<div class="container">
+		<div class="push_wrap none">
+			<span class="push_tit">服务方申请取消</span>
+            <p id="inputordercancelreason">拒绝理由：服务场地无法飞行</p>
+			<p>您可以联系客服人员（<span>400-870-1088</span>）经行协商</p>
+		</div>
+		<!--经度条-->
+		<div class="speed_wrap">
+			<img id="speed_img" src="images/speed1.png" alt="进度条">
+		</div>
+		<!--经度条结束-->
+		<div class="order_box">
+			
+		</div>
+		<div class="button_wrap none">
+            <input type="button" class="contact_input fl" value="不同意" id="userNotAgreeCancel">
+            <input type="button" class="cancel_input fr" value="同意" id="userAgreeCancel">
+		</div>
+	</div>
+	<input type="hidden" id="openidinput" value="">
+    <input type="hidden" id="ordertypeid" value="">
+    <input type="hidden" id="feishouid" value="">
+    <input type="hidden" id="userid" value="">
+    <input type="hidden" id="orderstatus" value="">
+    <input type="hidden" id="orderid" value="">
+    <input type="hidden" id="orderindex" value="">
+    <input type="hidden" id="ordernumber" value="">
+    <input type="hidden" id="ordertablename" value="">
+
+
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+    <script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function () {
+	        var href = window.location.href;
+			var wenhaohou =  href.split("?")[1];
+			var fengefuhou = wenhaohou.split("=");
+			var href_json = fengefuhou[1];
+			//字符替换
+			href_json = del_html_tags(href_json,"%22","\"");
+			//转换json格式
+			var json = eval('(' + href_json + ')');
+
+			var ordertypeid = json.ordertypeid;
+    		var feishouid = json.feishouid;
+    		var userid = json.userid;
+    		var orderstatus = json.orderstatus;
+    		var orderid = json.orderid;
+    		var orderindex = json.orderindex;
+    		var ordernumber = json.ordernumber;
+    		var ordertablename = json.ordertablename;
+    		var openid = json.openid;
+    
+    		$("#openid").val(openid);
+
+    		$("#openidinput").attr("value", openid);
+	    	orderListAjax(ordertypeid,feishouid,userid,orderstatus,orderid,orderindex,ordernumber,ordertablename);
+	    	$("#userAgreeCancel").click(userAgreeCancelFunction);
+            $("#userNotAgreeCancel").click(userNotAgreeCancelFunction);
+            
+	    });
+	    function orderListAjax(ordertypeid,feishouid,userid,orderstatus,orderid,orderindex,ordernumber,ordertablename){
+			var params = "{\"ordertypeid\":\""+ordertypeid+"\",\"feishouid\":\""+feishouid+"\",\"userid\":\""+userid+"\",\"orderstatus\":\""+orderstatus+"\",\"orderid\":\""+orderid+"\",\"orderindex\":\""+orderindex+"\",\"ordernumber\":\""+ordernumber+"\",\"ordertablename\":\""+ordertablename+"\"}";
+			var url = "http://localhost:8088/app/Order_orderDetail";
+		    fnAjax(url, params);
+	    }
+		
+	    var str = "";
+	    function orderListCallback(v){
+	    	var status = v.status;
+	    	var order = v.order;
+				/*
+				  "orderindex":"",
+				  "orderstatus":"1",
+				  "ordertablename":"",
+				  "orderbegintime":"2015-08-13",
+				  "locktime":"",
+				  "userid":"",
+				  "ordernumber":"201508181654087",
+				  "ordertypename":"",
+				  "orderremark":"",
+				  "userphone":"15811386974",
+				  "username":"朱6",
+				  "feishouid":"",
+				  "ordertypeid":"",
+				  "orderid":"dc6080c6e8d64d6e8dc831814f8f9d00",
+				  "orderlocation":"北京"
+				*/
+				var orderindex = order.orderindex//
+				var orderstatus = order.orderstatus;//
+				var ordertablename = order.ordertablename;//
+				var orderbegintime = order.orderbegintime;//服务时间
+				var locktime = order.locktime;//
+				var userid = order.userid;//
+				var ordernumber = order.ordernumber;//订单编号
+				var ordertypename = order.ordertypename//服务类型
+				var orderremark = order.orderremark;//
+				var userphone = order.userphone;//电话
+				var username = order.username;//用户名
+				var feishouid = order.feishouid;//
+				var ordertypeid = order.ordertypeid;//
+				var orderid = order.orderid;//
+				var orderlocation = order.orderlocation;//服务地点
+				var orderaddtime = order.orderaddtime;
+				var cancelreason = order.cancelreason;
+	        //存储值
+				$("#ordertypeid").val(ordertypeid);
+				$("#feishouid").val(feishouid);
+				$("#userid").val(userid);
+				$("#orderstatus").val(orderstatus);
+				$("#orderid").val(orderid);
+				$("#orderindex").val(orderindex);
+				$("#ordernumber").val(ordernumber);
+				$("#ordertablename").val(ordertablename);
+				var openid = $("#openidinput").val();
+	    	//正常状态
+	    	if(status == 1){
+				var json = "{\"ordertablename\":\"" + ordertablename + "\","+
+							 "\"orderid\":\"" + orderid + "\","+
+							 "\"orderindex\":\"" + orderindex + "\","+
+							 "\"feishouid\":\"" + feishouid + "\","+
+							 "\"userid\":\"" + userid + "\","+
+							 "\"orderstatus\":\"" + orderstatus + "\"," +
+                              "\"openid\":\"" + openid + "\"" +
+							"}";
+				
+				if(orderstatus==1){
+					$("#speed_img").attr("src","images/speed1.png");
+				}
+				else if(orderstatus==4){
+					$("#speed_img").attr("src","images/speed2.png");
+				}
+				else if(orderstatus==5){
+					$("#speed_img").attr("src","images/speed3.png");
+				}
+				else if(orderstatus==7){
+					$("#speed_img").attr("src","images/speed4.png");
+				}
+				str = str + "<div class=\"order_wrap\">";
+				str = str + "	<div class=\"content\">";
+				str = str + "		<div class=\"order_num\">";	
+				str = str + "			订单号：<span>" + ordernumber;
+				str = str + "       </span></div>";
+				str = str + "		<dl class=\"order_info_dl\">";
+				str = str + "			<dt>服务类型：</dt>";
+				str = str + "			<dd>" + ordertypename + "</dd>";
+				str = str + "			<dt>服务地点：</dt>";
+				str = str + "			<dd>" + orderlocation + "</dd>";
+				str = str + "			<dt>服务时间：</dt>";
+				str = str + "			<dd>" + orderbegintime + "</dd>";
+				str = str + "			<dt>下单时间：</dt>";
+				str = str + "			<dd>" + orderaddtime + "</dd>";
+				str = str + "			<dt>联系电话：</dt>";
+				str = str + "			<dd>" + userphone + "</dd>";
+				str = str + "		    <dt>联系人：</dt>";
+				str = str + "			<dd>" + username + "</dd>";
+				str = str + "		</dl>";/*
+				str = str + "       <div class=\"order_img_wrap\">";
+				str = str + "       	<img src=\"images/order_img.jpg\" class=\"order_img\" alt=\"订单图片\">";
+				str = str + "		    <img src=\"images/order_img.jpg\" class=\"order_img\" alt=\"订单图片\">";
+				str = str + "		    <img src=\"images/order_img.jpg\" class=\"order_img\" alt=\"订单图片\">";
+				str = str + "		    <div class=\"cb\"></div>";
+				str = str + "		</div>";*/
+				str = str + "	</div>";
+				var orderstatus_val = parseInt(orderstatus);
+				if (orderstatus_val < 3) {
+				    str = str + "<a href='order_cancel.html?json=" + json + "' class=\"cancel_order_a\">直接取消</a>";
+				}
+				else {
+				    str = str + "<a href='order_cancel.html?json=" + json + "' class=\"cancel_order_a\">申请取消</a>";
+				}
+				str = str + "</div>";
+				$(".order_box").html(str);
+				//alert(orderstatus_val);
+				if (orderstatus_val < 6) {
+					$(".cancel_order_a").show();
+					//alert(orderstatus);
+				}
+				else if(orderstatus == 62) {
+		    		$("#inputordercancelreason").html(cancelreason);
+		    		$(".push_wrap").show();
+		    		$(".button_wrap").show();
+		    	}
+			}
+			//网络异常
+	    	else if(status == 0) {
+	    		alert("网络错误~");
+	    	}
+	    	//飞手申请取消
+	    	/*else if(status == 61||orderstatus == 62||orderstatus == 81||orderstatus == 82||orderstatus == 91||orderstatus == 92) {
+	    		$("#inputordercancelreason").html(cancelreason);
+	    		
+	    	}*/
+		}
+		//字符替换方法
+	    function del_html_tags(str,reallyDo,replaceWith) { 
+			var e=new RegExp(reallyDo,"g"); 
+			words = str.replace(e, replaceWith); 
+			return words; 
+		}
+		//用户同意取消
+		function userAgreeCancelFunction()
+        {
+		    var ordertablename = $("#ordertablename").val();
+		    var feishouid = $("#feishouid").val();
+            var orderid = $("#orderid").val();
+            var orderindex = $("#orderindex").val();
+            var userid = $("#userid").val();
+            var orderstatus = $("#orderstatus").val();
+            var param = "{\"ordertablename\":\"" + ordertablename + "\",\"orderid\":\"" + orderid + "\",\"orderindex\":\"" + orderindex + "\",\"userid\":\"" + userid + "\",\"orderstatus\":\"" + orderstatus + "\",\"feishouid\":\"" + feishouid + "\"}";
+            $.ajax({
+                url: "http://localhost:8088/app/Order_userAgreeCancel",
+                type: "POST",
+                data: { params: param, devices: "weixin", jsonCallback: "userAgreeCancelFunctionCollback" },
+                dataType: "jsonp",
+                jsonpCallback: 'userAgreeCancelFunctionCollback',
+                jsonp: "jsonCollback",//服务端用于接收callback调用的function名的参数
+                success: function (data) {
+                    var status = data.status;
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });
+        }
+        //用户同意取消回调
+        function userAgreeCancelFunctionCollback(v)
+        {
+            var status = v.status;
+            var openid = $("#openidinput").val();
+            if (status == 1) {
+                window.location.href = "order_cancelled?openid=" + openid;
+            }
+            if (status == 2) {
+                window.location.href="order_ongoing.html?openid=" + openid;
+            }
+            if (status == 0) {
+                alert("同意取消错误");
+            }
+        }
+        //用户不同意取消
+        function userNotAgreeCancelFunction()
+        {
+            var ordertablename = $("#ordertablename").val();
+            var orderid = $("#orderid").val();
+            var orderindex = $("#orderindex").val();
+            var userid = $("#userid").val();
+            var orderstatus = $("#orderstatus").val();
+            var feishouid = $("#feishouid").val();
+            var param = "{\"ordertablename\":\"" + ordertablename + "\",\"orderid\":\"" + orderid + "\",\"orderindex\":\"" + orderindex + "\",\"userid\":\"" + userid + "\",\"orderstatus\":\"" + orderstatus + "\",\"feishouid\":\"" + feishouid + "\"}";
+            $.ajax({
+                url: "http://localhost:8088/app/Order_userNotAgreeCancel",
+                type: "POST",
+                data: { params: param, devices: "weixin", jsonCallback: "userNotAgreeCancelFunctionCollback" },
+                dataType: "jsonp",
+                jsonpCallback: 'userNotAgreeCancelFunctionCollback',
+                jsonp: "jsonCollback",//服务端用于接收callback调用的function名的参数
+                success: function (data) {
+                    var status = data.status;
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });
+        }
+        //用户不同意取消回调
+        function userNotAgreeCancelFunctionCollback(v)
+        {
+            var status = v.status;
+            var openid = $("#openidinput").val();
+            if (status == 1)
+            {
+                window.location.href="order_ongoing.html?openid=" + openid;
+            }
+            if (status == 2)
+            {
+                window.location.href="order_ongoing.html?openid=" + openid;
+            }
+            if (status == 0)
+            {
+                alert("不同意取消错误");
+            }
+        }
+    </script>
+</body>
+</html>

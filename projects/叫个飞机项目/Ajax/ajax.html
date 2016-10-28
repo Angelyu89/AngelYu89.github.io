@@ -1,0 +1,88 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="css/base.css" rel="stylesheet" />
+	<title>ajax 调试</title>
+</head>
+<body>
+	<div class="middle_wrap">
+		<dl>
+			<dt>URL地址</dt>
+			<dd><input type="text" id="url_inputs"></dd>
+			<dt>params</dt>
+			<dd>
+				<textarea name="" id="params_text" cols="30" rows="10"></textarea>
+			</dd>
+			<dt>关键字</dt>
+			<dd><input type="text" id="kw_inputs"></dd>
+			<dt></dt>
+			<dd>
+				<a class="ajax_a" href="javascript:;">请求开始</a>
+			</dd>
+			<dt>请求结果</dt>
+			
+			<dd><textarea name="" id="ajax_json" cols="30" rows="10"></textarea></dd>
+			
+		</dl>
+	</div>
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$(".ajax_a").click(function(){
+				var url_val = $("#url_inputs").val();
+				var params_val = $("#params_text").val();
+
+				fnAjax(url_val,params_val);
+			})
+			function fnAjax(url,param){
+				alert(url+"===="+param);
+			    $.ajax({
+			        url: url,
+			        type: "POST",
+			        data: {params: param, devices: "test",jsonpCallback:"testAjax" },
+			        dataType:"jsonp",
+			        jsonpCallback: "testAjax",
+			        jsonp:"jsonCallback",
+			        success: function (data) {
+			        	alert(data);
+			        },
+			        complete: function (XMLHttpRequest, textStatus) {
+						alert(textStatus);
+			        },
+			    }); 
+			}
+
+			function testAjax(v){
+		    	// var status = v.status;
+		    	// var kw_val = $("#kw_inputs").val();
+		    	// if(status == 1){
+		    	// 	var allJson = v.kw_val;
+		    	// 	alert(allJson);
+		    	// }
+		    	// else if(status == 2) {
+		    	// 	alert("返回是空值");
+		    	// }
+		    	// else if(status == 0) {
+		    	// 	alert("网络错误~");
+		    	// }	
+		    	alert(v);
+			}
+    	});
+		
+        $(document).ready(function () {
+	        request.posturl = "http://localhost:8088/AjaxWeb/AjaxServlet";
+	        request.collback = "collbackFunction";
+	        request.param = "4567890";
+	        request.device = "";
+	        request.ajaxRequestFunction();
+        });
+        
+        function collbackFunction(data)
+        {
+            alert(data);
+        }
+	</script>
+</body>
+</html>

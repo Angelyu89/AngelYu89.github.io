@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+<meta content="telephone=no" name="format-detection">
+<link rel="shortcut icon" href="images/favicon.ico">
+<meta name="keywords" content="叫个飞机">
+<meta name="description" content="“叫个飞机”是全球最大的无人机飞行服务平台，我们致力于让无人机为每一个人服务。平台提供：影视航拍 婚礼航拍 商业广告 活动宣传等无人机航拍服务。">	
+<title>叫个飞机.无人机航拍服务平台</title>
+<link href="css/base.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+<link href="css/index.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/styleB.css"  media="screen and (max-width: 768px)">
+</head>
+<body class="no_ov">
+	<h1 class="none">无人机航拍</h1>
+<div id="pic1" num="1">
+	<!--右侧白点-->
+	<div class="nag">
+	    <div  class="ac active"><b></b></div>
+	    <div class="ac"><b></b></div>
+	    <div class="ac"><b></b></div>
+	    <div class="ac"><b></b></div>  
+	    <div class="ac"><b></b></div>  
+	    <div class="ac"><b></b></div>
+	    <div class="ac"><b></b></div>  
+	</div>
+	<!--end右侧白点-->
+
+	<!--向下箭头-->
+  	<!-- <div class="divtop"><img id="btntop" class="btntop" src="images/top.png" alt="向下的箭头"/></div> -->
+	<!--end向下箭头-->
+
+	<!--头导航-->
+	<div class="nav">
+		<div class="middle_nav">
+			<a href="index.html" class="nav_a_middle"><img src="images/web_logo.png" alt="网站logo"></a>
+			<a href="index.html" class="nav_a_fl" title="首页">首页</a>
+			<a href="app_service.html?1" class="nav_a_fl" title="预约飞行服务">预约飞行服务</a>
+			<a href="recruit.html" class="nav_a_fl" title="飞手加盟">飞手加盟</a>
+			<a href="http://bbs.jiaogefeiji.com/forum.php" target="_blank" class="nav_a_fl" title="论坛">论坛</a>
+			<a href="about_us.html" class="nav_a_fl" title="关于我们">关于我们</a>
+		</div>
+		<!-- <div class="nav_sign">
+			<a href="javascript:;" class="fl" id="sign" title="登录">登录</a>
+			<span>|</span>
+			<a href="javascript:;" class="fl" id="registered" title="注册">注册</a>
+			<a href="javascript:;" class="fl exit_a" id="" title="退出">退出</a>
+		</div> -->
+	</div>
+	<!--end头导航-->
+	
+	<!--手机导航-->
+	<a href="javascript:scroll(0,0)">
+		<div class="mobile_nav">
+            <a href="index.html">
+                <img class="mobile_logo fl" src="images/com_logo.png" alt="logo图片">
+                <div class="mobile_tit">叫个飞机</div>
+            </a>
+			<div class="menu-icon">
+				<img src="images/open-Icon.png" alt="菜单栏">
+			</div>
+		</div>
+	</a>
+	<ul class="mobile_nav_ul">
+		<a href="index.html" title="首页"><li>首页</li></a>
+		<a href="app_service.html?1" title="预约服务"><li>预约服务</li></a>
+		<a href="recruit.html" title="飞手加盟"><li>飞手加盟</li></a>
+		<a href="about_us.html" title="关于我们"><li>关于我们</li></a>
+	</ul>
+	<!--end手机导航-->
+
+	<!-- 登录弹窗 开始 -->
+  	<div class="pop_sign" id="pop_sign">
+      	<div class="bg_mask"></div>
+      	<div class="pop_store">
+        	<h3 class="pop_title">登录叫个飞机账号<a class="close" id="sign_close" href="javascript:;" title="关闭"></a></h3>
+        	<div class="pop_box">
+        		<div class="pop_box_l fl">
+        			<form action="" method="post" onsubmit="return submit_sign();">
+        				<span class="sign_error"></span>
+        				<input type="text" class="phone" id="sign_phone" value="" placeholder="请输入手机号">
+        				<input type="password" class="password" id="sign_password" value="" placeholder="请输入密码">
+        				<label class="lab_tips"><input type="checkbox" class="inp_checkbox">下次自动登录</label>
+        				<!-- <a href="" class="forgot_ps fr" title="忘记密码">忘记密码</a> -->
+        				<input type="submit" value="登录" class="submit_input">
+        				<a href="javascript:;" class="registered_a fr" title="立即注册">立即注册</a>
+        			</form>
+        		</div>
+        		<div class="pop_box_r fr">
+        			<span>微信扫码登录</span>
+        			<img src="images/code.jpg" alt="微信二维码">
+        			<div class="scan_code">请使用<em>微信扫描</em>二维码登录</div>
+        		</div>
+        		<div class="cb"></div>
+        	</div>
+      	</div>
+  	</div>
+	<!-- 登录弹窗 结束 -->
+
+	<!-- 注册弹窗 开始 -->
+  	<div class="pop_registered" id="pop_registered">
+      	<div class="bg_mask"></div>
+      	<div class="pop_store">
+        	<h3 class="pop_title">注册叫个飞机账号<a class="close" id="reg_close" href="javascript:;" title="关闭"></a></h3>
+        	<div class="pop_box">
+    			<form action="" method="post" onsubmit="return submit_reg();">
+    				<span class="reg_error"></span>
+    				<input type="text" class="reg_phone" id="reg_phone" value="" placeholder="请输入手机号">
+    				<input type="text" class="reg_name" id="reg_name" value="" placeholder="请输入用户名">
+    				<input type="password" class="reg_ps" id="reg_ps" value="" placeholder="请输入密码">
+    				<input type="password" class="reg_con_ps" id="reg_con_ps" value="" placeholder="请输入密码">
+    				<input type="text" class="reg_code fl" id="reg_code" value="" placeholder="请输入验证码">
+    				<a href="" class="take_code fr" title="获取验证码">获取验证码</a>
+    				<div class="cb"></div>
+    				<label class="lab_tips"><input type="checkbox" class="inp_checkbox">我已阅读并接受<em>叫个飞机</em>条款</label>
+    
+    				<input type="submit" value="注册" class="registered_input">
+    				<a href="javascript:;" class="sign_a fr" title="立即登录">立即登录</a>
+    				<div class="cb"></div>
+    			</form>
+        	</div>
+      	</div>
+  	</div>
+	<!-- 注册弹窗 结束 -->
+
+  	<div class="back a1"> 
+  		<video id="video" src="images/toutu1.mp4" width="100%" autoplay loop oncontextmenu="return false;">
+  			<source src="images/toutu1.mp4" type="audio/mp4">
+  		</video>
+  		 <img src="images/video_txt.png" alt="视频图片" class="video_txt">
+  	</div>
+
+  	<div class="back a2">
+    	<div class="back_txt_box box2">
+  			<img src="images/index_txt2.png" alt="影视航拍">
+  			<a href="app_service.html?2" class="booking1" title="在线预约">在线预约</a>
+  		</div>
+    </div>
+
+  	<div class="back a3">
+	    <div class="back_txt_box box3">
+  			<img src="images/index_txt3.png" alt="婚礼航拍">
+  			<a href="app_service.html?3" class="booking2" title="在线预约">在线预约</a>
+  		</div>
+	</div>
+
+  	<div class="back a4">
+    	<div class="back_txt_box box4">
+  			<img src="images/index_txt4.png" alt="商业广告">
+  			<a href="app_service.html?1" class="booking3" title="在线预约">在线预约</a>
+  		</div>
+  	</div>
+
+  	<div class="back a5">
+    	<div class="back_txt_box box5">
+  			<img src="images/index_txt5.png" alt="活动宣传">
+  			<a href="app_service.html?4" class="booking4" title="在线预约">在线预约</a>
+  		</div>
+  	</div>
+
+  	<div class="back a6">
+  		<!-- <h3 class="scroll_tit">入驻服务方</h3>
+  		<div class="scrolllist" id="s1">
+  					<a class="abtn aleft" href="#left" title="左移"></a>
+  					<div class="imglist_w">
+  						<ul class="imglist">
+  							<li>
+  								<a target="_blank" href="#" title="工作室"><img alt="工作室" src="images/logo1.jpg" /></a>
+  							</li>
+  							<li>
+  								<a target="_blank" href="#" title="工作室"><img alt="工作室" src="images/logo2.jpg" /></a>
+  							</li>
+  							<li>
+  								<a target="_blank" href="#" title="工作室"><img alt="工作室" src="images/logo3.jpg" /></a>
+  							<li>
+  								<a target="_blank" href="#" title="工作室"><img alt="工作室" src="images/logo4.jpg" /></a>
+  							</li>
+  							<li>
+  								<a target="_blank" href="#" title="工作室"><img alt="工作室" src="images/logo1.jpg" /></a>
+  							</li>
+  							<li>
+  								<a target="_blank" href="#" title="工作室"><img alt="工作室" src="images/logo2.jpg" /></a>
+  							</li>
+  							<li>
+  								<a target="_blank" href="#" title="工作室"><img alt="工作室" src="images/logo3.jpg" /></a>
+  							</li>
+  						</ul>imglist end
+  					</div>
+  					<a class="abtn aright" href="#right" title="右移"></a>
+  					<ul class="logo_ul">
+  						<li>
+  							<img alt="工作室" src="images/logo1.jpg" />
+  							<span class="room_name">蒲公英航拍工作室</span>
+  						</li>
+  						<li>
+  							<img alt="工作室" src="images/logo2.jpg" />
+  							<span class="room_name">飞鸟蓝天航拍工作室</span>
+  						</li>
+  						<li>
+  							<img alt="工作室" src="images/logo3.jpg" />
+  							<span class="room_name">飞蓝天航拍工作室</span>
+  						</li>
+  						<li>
+  							<img alt="工作室" src="images/logo4.jpg" />
+  							<span class="room_name">Flying航拍工作室</span>
+  						</li>
+  						<li>
+  							<img alt="工作室" src="images/logo1.jpg" />
+  							<span class="room_name">天涯航拍工作室</span>
+  						</li>
+  						<li>
+  							<img alt="工作室" src="images/logo2.jpg" />
+  							<span class="room_name">翱翔天空航拍工作室</span>
+  						</li>
+  						<li>
+  							<img alt="工作室" src="images/logo3.jpg" />
+  							<span class="room_name">展翼航拍工作室</span>
+  						</li>
+  						<li>
+  							<img alt="工作室" src="images/logo4.jpg" />
+  							<span class="room_name">航拍天空工作室</span>
+  						</li>
+  					</ul>
+  				</div>
+  		<div class="index_data">
+  			<div class="middle_data">
+  				<ul>
+  					<li>
+  						<div>4212</div>
+  						<span>注册用户</span>
+  					</li>
+  					<li>
+  						<div>20</div>
+  						<span>航拍工作室</span>
+  					</li>
+  					<li>
+  						<div>231</div>
+  						<span>架无人机</span>
+  					</li>
+  					<li>
+  						<div>142</div>
+  						<span>场飞行服务</span>
+  					</li>
+  				</ul>
+  			</div>
+  		</div> -->
+  	</div>
+
+  	<div class="back_foot a7">
+  		<div class="footer">
+    		<div class="middle_foot">
+    			<div class="footer_li1 fl">
+	    			<img src="images/code.jpg" alt="二维码">
+	    			<p>扫码关注“叫个飞机”</p>
+	    			<p>微信公众号</p>
+	    		</div>
+	    		<div class="footer_li2 fl">
+	    			网站导航
+	    			<a href="index.html" title="网站首页"><p>网站首页</p></a>
+	    			<a href="app_service.html" title="预约服务"><p>预约服务</p></a>
+	    			<a href="recruit.html" title="飞手加盟"><p>飞手加盟</p></a>
+	    			<a href="about_us.html" title="关于我们"><p>关于我们</p></a>
+	    		</div>
+	    		<div class="footer_li3 fl">
+					联系我们
+					<p>公司邮箱：kefu@jiaogefeiji.com </p>
+					<p>公司电话：4007-051-510</p>
+					<p>公司地址：北京市海淀区知春路7号致真大厦A座3层</p>
+				</div>
+			</div>
+			<div class="footer_bottom">Copyright©2012-2015 jiaogefeiji.All Rights Reserved</div>
+    	</div>
+    </div>
+	
+	<!--手机端展示-->
+	<div class="mobile_div">
+	    <div class="mobile_a1">
+	    	<img class="mobile_a1_bg" src="images/video_txt.jpg" alt="">
+	    </div>
+
+	    <div class="mobile_a2">
+	    	<img class="mobile_a1_bg" src="images/bg2.jpg" alt="">
+	    	<div class="mobile_oper2">
+				<img class="mobile_img_tit" src="images/m_a1.png" alt="">
+				<a href="app_service.html?2" class="mobile_booking1" title="在线预约">在线预约</a>
+			</div>
+	    </div>
+
+	    <div class="mobile_a3">
+	    	<img class="mobile_a1_bg" src="images/mobile_bg3.jpg" alt="">
+	    	<div class="mobile_oper3">
+				<img class="mobile_img_tit" src="images/m_a2.png" alt="">
+				<a href="app_service.html?3" class="mobile_booking1" title="在线预约">在线预约</a>
+			</div>
+	    </div>
+
+	    <div class="mobile_a4">
+	    	<img class="mobile_a1_bg" src="images/bg4.jpg" alt="">
+	    	<div class="mobile_oper4">
+				<img class="mobile_img_tit" src="images/m_a3.png" alt="">
+				<a href="app_service.html?1" class="mobile_booking1" title="在线预约">在线预约</a>
+			</div>
+	    </div>
+	    <div class="mobile_a5">
+	    	<img class="mobile_a1_bg" src="images/bg5.jpg" alt="">
+	    	<div class="mobile_oper5">
+				<img class="mobile_img_tit" src="images/m_a4.png" alt="">
+				<a href="app_service.html?4" class="mobile_booking1" title="在线预约">在线预约</a>
+			</div>
+	    </div>
+	    <div class="mobile_a5">
+	    	<img class="mobile_a1_bg" src="images/bg6.jpg" alt="">
+	    </div>
+	    <div class="mobile_foot">
+	    	<img class="mobile_code" src="images/code.jpg" alt="二维码">
+	    	<p>扫码关注“叫个飞机”</p>
+	    	<p>微信公众号</p>
+	    	<div class="mobile_footer_bottom">Copyright©2012-2015 jiaogefeiji.All Rights Reserved</div>
+	    </div>
+    </div>
+    <!--end手机端展示-->
+
+</div>
+<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="js/jquery.easing.js"></script>
+<script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+<script>
+	function $en(tit){return encodeURIComponent(tit)}
+	var title="叫个飞机";
+
+	var h=$(window).height();
+	var w=$(window).width();
+
+
+	$(".back").css("height",h+"px");
+	//$(".nag").css("top",$(window).scrollTop() + 250 +"px");
+	/*底部工作室名字 span宽度 高度*/
+		var name_val = $(".room_name").width();
+        var back_height	= $(".back").height();
+        var name_height = (back_height-350)/2;
+		if (name_val<252||name_height<100) {
+			$(".room_name").css("font-size","22px");
+		}
+		else{
+			$(".room_name").css("font-size","27px");
+		}
+		$(".room_name").css("height",name_height);
+		$(".room_name").css("line-height",name_height+"px");
+		if (w < 1252) {
+			$(".nav_a_fl").css("padding","0 115px 0 0;");
+			$(".nav_a_fr").css("padding","0 115px 0 0;");
+		}
+	//鼠标滚动事件 
+	var shubiao=true;
+	var wheel = function(event) {  
+		var num=$("#pic1").attr("num");
+		
+		var delta = 0;  
+		if (!event)
+			event = window.event;  
+		if (event.wheelDelta) {
+			delta = event.wheelDelta / 120;
+		} else if (event.detail) {
+			delta = -event.detail / 3;
+		}
+		if (delta) handle(delta);
+		if (event.preventDefault) event.preventDefault();  
+		event.returnValue = false;  
+	}
+	if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
+	document.onmousewheel = wheel;
+	var $f=true;
+	var handle = function(delta) {
+		if(!shubiao) return;
+		shubiao=false;
+		var random_num = Math.floor((Math.random() * 100) + 50);
+		if (delta < 0) {
+			PicWheelScroll(1);
+			$f=false;
+			 //console.log("鼠标滑轮向下滚动：" + delta + "次！"); // 1  
+			return false;  
+		} else {
+			$f=true;
+			PicWheelScroll(0);
+			//console.log("鼠标滑轮向上滚动：" + delta + "次！"); // -1  
+			return false;  
+		}
+	}
+	//右边白点点击
+	$(".ac").each(function(i){
+		$(this).click(function(){
+			$(".ac").removeClass("active");
+			$(".ac").eq(i).addClass("active");
+			var num=i+1;
+			if(num=="6") $("#btntop").hide();
+			else $("#btntop").show();
+			gotoAnchor($(".a"+num));
+			getAnchroFun(num);
+		})
+	})
+
+	var PicWheelScroll = function(n){
+		var num=$("#pic1").attr("num");
+		if((num===7&&n===1) || (num===1&&n===0)) return;
+		if(n==1){
+			if(num<7) num++;
+		}else{
+			if(num>1) num--;
+		}
+		$(".ac").removeClass("active");
+		$(".ac").eq(num-1).addClass("active");
+		if(num=="7") $("#btntop").hide();
+		else $("#btntop").show();
+		gotoAnchor($(".a"+num));
+		getAnchroFun(num);
+	}
+
+	var getAnchroFun=function(num){
+		var h=$(window).height();
+		var h=(h-500<30?30:h-580)+"px";
+		$(".divtop").css("bottom","30px");
+		var n=$("#pic1").attr("num");
+		$("#pic1").attr("num",num);
+	}
+
+	var gotoAnchor = function(selector,isauto){
+		var anchor = $(selector);
+		if (anchor.length < 0) return;
+		var $win=$(window);
+		var $body = $(window.document.documentElement);
+		var ua = navigator.userAgent.toLowerCase();
+		if (ua.indexOf("webkit") > -1) {
+			$body = $(window.document.body)
+		}
+
+		var pos=anchor.offset();
+		if (isauto) {
+			var t = pos.top - $win.scrollTop(); //相对于屏幕显示区
+			var t2 = $win.height() - t;
+			if (t2 < anchor.outerHeight()) {
+				$body.animate({"scrollTop": pos.top}, "normal");
+			}
+			return;
+		}
+		$body.animate({"scrollTop": pos.top},{queue :false,complete: function(){shubiao=true;}});
+	}
+
+	gotoAnchor($(".a1"));
+	//屏幕尺寸发生变化
+	$(window).resize(function(){
+		var h=$(window).height();
+		$(".back").css("height",h+"px");
+		var n=$("#pic1").attr("num");
+		var h1=(h-500<30?30:h-580)+"px";
+		$(".divtop").css("bottom","30px");
+		gotoAnchor($(".a"+n));
+
+		/*底部工作室名字 span宽度 高度*/
+		var name_val = $(".room_name").width();
+        var back_height	= $(".back").height();
+        var name_height = (back_height-350)/2;
+        var nav_width = $(".nav").width();
+		if (name_val<252||name_height<100) {
+			$(".room_name").css("font-size","22px");
+		}
+		else{
+			$(".room_name").css("font-size","27px");
+		}
+		$(".room_name").css("height",name_height);
+		$(".room_name").css("line-height",name_height+"px");
+		if (nav_width < 1252) {
+			$(".nav_a_fl").css("padding","0 115px 0 0;");
+			$(".nav_a_fr").css("padding","0 115px 0 0;");
+		}
+	});
+	
+	//线下箭头
+	$(".divtop").click(function(){
+		var n=$("#pic1").attr("num");
+		if(n=="6") $("#btntop").hide();
+		n=parseInt(n)+1;
+		if(n==7) {return;}
+		$(".ac").removeClass("active");
+		$(".ac").eq(n-1).addClass("active");
+		gotoAnchor($(".a"+n));
+		getAnchroFun(n);
+		$("#pic1").attr("num",n);
+	})
+	$(document).ready(function(){
+	  	var Media = document.getElementById("video"); 
+		var w=$(window).width();
+	    if (w <= 768) {
+	        Media.pause();
+	    }
+	    else{
+	        Media.play();
+	    }
+	    $(document).keydown(function (e) {
+            if (e.keyCode == 38 || e.keyCode == 40) {
+                return false;
+            }
+        });
+	});
+	
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?3da7c9d0e846b2329c4e2f3c5c0ac556";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>
+<!--无人机航拍 无人机 飞行服务 婚礼航拍 影视航拍 商业宣传 活动宣传-->

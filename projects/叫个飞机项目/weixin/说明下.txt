@@ -1,0 +1,8 @@
+app_service.html  预约服务
+bang_phone.html   绑定手机
+evaluation.html   评价订单
+index.html        首页
+order_cancelled.html  已取消的订单（ 在这页面里面包含了一个订单为空的 状态）
+order_completed.html  已完成的订单
+order_ongoing.html    进行中的订单
+order_details.html    订单详情

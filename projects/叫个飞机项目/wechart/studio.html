@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="no-cache" http-equiv="Cache-Control">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/page.css" type="text/css">
+    <title>叫个飞机</title>
+</head>
+<body class="bg_fff">
+	<div class="container">
+        <!--头部导航-->
+        <div class="search_nav">
+            <div class="search_wrap">
+            	<input class="search_input" type="text" placeholder="搜索工作室及飞手" value="">
+            </div>
+        </div>
+        <!--end头部导航-->
+		<div class="studio_wrap">
+			<ul class="studio_ul">
+                
+            </ul>
+		</div>
+        <!--尾部导航-->
+        <div class="footer">
+            <ul>
+            	<li class="f_app">
+            		<a href="index.html" title="预约">
+            			<img src="images/footer_1.png" alt="预约">
+            			<span class="f_span">预约</span>
+            		</a>
+            	</li>
+            	<li class="f_studio">
+            		<a href="studio.html" title="工作室">
+            			<img src="images/footer_02.png" alt="工作室">
+            			<span class="f_span active">工作室</span>
+            		</a>
+            	</li>
+            	<li class="f_order">
+            		<a href="order.html" title="订单">
+	            		<img src="images/footer_3.png" alt="订单">
+	            		<span class="f_span">订单</span>
+            		</a>
+            	</li>
+            	<li class="f_my">
+            		<a href="my.html" title="我的">
+	            		<img src="images/footer_4.png" alt="我的">
+	            		<span class="f_span">我的</span>
+            		</a>
+            	</li>
+            </ul>
+        </div>
+        <!--end尾部导航-->
+    </div>
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function () {
+    		sutdio_list();
+    	});
+    	function sutdio_list(){
+		    $.ajax({
+                url: "http://123.57.174.52:8080/app/Studio_studioQuery",
+                type: "POST",
+                data: "jsonCallback=studioListCallback&devices=weixin",
+                dataType: "jsonp",
+                callback: 'studioListCallback',
+                jsonp: "jsonCallback",
+                //服务端用于接收callback调用的function名的参数
+                success: function (data) {
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });	
+    	}
+        var str = "";
+    	function studioListCallback(v){
+    		var status_val = v.status;
+    		if (status_val == 1) {
+    	        var allStudio = v.studios;
+	    		for (var i = 0; i < allStudio.length; i++) {
+					var oneStudio = allStudio[i];
+	
+					var detail = oneStudio.studioDetail//工作室详情
+					var name = oneStudio.studioName;//工作室名称
+					var phone = oneStudio.studioPhone;//工作室电话
+					var id = oneStudio.studioId;//工作室id
+					var img = oneStudio.studioImageUrl;//工作室图片
+
+                    str = str + "   <li>";
+                    str = str + "       <a href='studio_details.html?"+id+"' title=\"工作室\">";
+                    str = str + "           <img class=\"sutdio_img\" src=\"" + img + "\" alt=\"工作室图片\">";
+                    str = str + "           <div class=\"studio_div\">"; 
+                    str = str + "               <span>" + name + "</span>";
+                    str = str + "               <p>" + detail + "</p>";
+                    str = str + "           </div>";
+                    str = str + "       </a>";
+                    str = str + "    </li>";
+                    $(".studio_ul").html(str);
+
+					//alert(detail+"---"+name+"---"+phone+"---"+id+"---"+img);
+				};
+    	    }
+    	    else if (status_val == 0) {
+    	        alert("empty");
+    	    }
+    	}
+    </script>
+</body>
+</html>

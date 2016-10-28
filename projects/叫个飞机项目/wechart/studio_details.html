@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="no-cache" http-equiv="Cache-Control">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/page.css" type="text/css">
+    <title>叫个飞机</title>
+</head>
+<body>
+	<div class="container">
+        <!--头部导航-->
+        <div class="nav_order">
+            <a href="studio.html" class="return_a_order"></a>
+            工作室介绍
+        </div>
+        <!--end头部导航-->
+        <div class="app_img_wrap">
+            <img id="studioImageUrl" src="images/studio_head.jpg" alt="工作室图片">
+        </div>
+		<div class="app_head"> 
+            <p>独特的空中视角只为独一无二的商业宣传！</p>
+            <div>叫个飞机  为您的活动来一次空中特写让您的广告宣传更加气势恢宏</div>
+        </div>
+        <div class="fixed_wrap">
+            <div class="app_wrap">
+                <p class="app_tit">服务项目</p>
+                <div id="studioDescribe"></div>
+            </div>
+            <div class="app_wrap">
+                <p class="app_tit">服务无人机</p>
+                <div id="devices"></div>
+            </div>
+            <div class="app_wrap">
+                <p class="app_tit">服务价格</p>
+                <div>下单后服务方会与您沟通具体事宜及价格。</div>
+            </div><!-- <div class="ssskkk"></div> -->
+        </div>
+        <div class="order_footer">
+            <a href="" class="app_a">立即预约</a>
+        </div>
+    </div>
+    
+    <input id="sutdioId" type="hidden" value="">
+    <input id="studioName" type="hidden" value="">
+    <input id="typeName" type="hidden" value="">
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+    <script type="text/javascript">
+        var last = "";/*
+        var str_typeid = "";
+        var str_typename = "";*/
+        $(document).ready(function () {
+            var href = window.location.href;
+            var wenhaohou = href.split("?");
+            var param = wenhaohou[1];
+            $("#sutdioId").attr("value", param);
+            sutdio_list();
+        });
+        function sutdio_list(){
+            var param = $("#sutdioId").val();
+            $.ajax({
+                url: "http://123.57.174.52:8080/app/Studio_studioDetailQuery",
+                type: "POST",
+                data: "jsonCallback=studioListCallback&devices=weixin&params= {\"studioid\":\"" + param + "\"}",
+
+                dataType: "jsonp",             
+            }); 
+        }
+        function studioListCallback(v){
+            var status_val = v.status;
+            if (status_val == 1) {
+                   //获取工作室详情对象
+                    var studioDetail = v.studioDetail;
+                    //alert(studioDetail);
+
+                   //获取工作室名称
+                    var studioName=studioDetail.studioname; 
+
+                    //alert("studioName:"+studioName);
+                    $("#studioName").attr("value", studioName);
+
+                   //获取工作室描述
+                    var studioDescribe=studioDetail.studioDescribe;
+                    //alert("studioDescribe:"+studioDescribe);
+                    $("#studioDescribe").text(studioDescribe);
+
+                   //获取设备数组
+                    var devices=studioDetail.devices;
+                   //循环每一个设备
+                    for(var i=0;i<devices.length;i++)
+                    {
+
+                      var deviceName=devices[i].devicename;
+                      var deviceDescribe=devices[i].devicedescribe;
+                     // alert("deviceName:"+deviceName+"deviceDescribe:"+deviceDescribe);
+                      var str = "";
+                      str = str + deviceName+":"+deviceDescribe+"<br>";
+                      $("#devices").append(str);
+                    }//
+
+                    //获取服务类型数组ordertypes
+                    var ordertypes=studioDetail.ordertypes;
+                    last=JSON.stringify(ordertypes);
+                   // $(".ssskkk").append(last);
+                    //$("#typeName").attr("value", aToStr);
+                    //循环每一个服务类型
+                    for(var j=0;j<ordertypes.length;j++)
+                    {
+                      var typeName=ordertypes[j].typeName;
+                      var typeImageUrl=ordertypes[j].typeImageUrl;
+                      //alert("typeName:"+typeName+"typeImageUrl:"+typeImageUrl); 
+                        //str1=str1+typeName+"|";
+                        //获取子类型
+                        /*var ordertype_sub = ordertypes[j].ordertype_sub;
+                        alert(ordertype_sub);*//*
+                        for(var k=0;k<ordertype_sub.length;k++)
+                        {
+                            var typeid=ordertypes[k].typeid;
+                            var typename=ordertypes[k].typename;
+                            alert("typeid:"+typeid+"typename:"+typename); 
+                            str_typeid = str_typeid + typeid+"|";
+                            str_typename = str_typename + typename+"|";
+                        }*/
+                    }
+                    //获取工作室首页图片
+                    var studioImageUrl=studioDetail.studioImageUrl;
+                    //alert("studioImageUrl:"+studioImageUrl);
+                    $("#studioImageUrl").attr("src",studioImageUrl);
+            }
+            else if (status_val == 0) {
+                alert("empty");
+            }
+        }
+        $(".app_a").click(function(){
+            var studioName_val = $("#studioName").val();
+           // alert(studioName_val);
+            var studio_head_img_val = $("#studioImageUrl").attr("src");
+            var studioid =  $("#sutdioId").attr("value");
+            var jsonp = "{\"studioName\":\"" + studioName_val + "\","+
+                        "\"studio_head_img\":\"" + studio_head_img_val + "\","+
+                        "\"ordertypes\":"+last+"}"; 
+                        jsonp=encodeURI(jsonp)
+                        $(this).attr("href", "studio_app.html?" + studioid + "");
+        })
+    </script>
+</body>
+</html>

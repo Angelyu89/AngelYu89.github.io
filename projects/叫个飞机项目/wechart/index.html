@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="no-cache" http-equiv="Cache-Control">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/page.css" type="text/css">
+    <title>叫个飞机</title>
+</head>
+<body>
+    <div class="container">
+        <!--头部导航-->
+        <div class="nav">
+            叫个飞机
+        </div>
+        <!--end头部导航-->
+        <!--头图-->
+        <div class="swipe">
+            <ul id="slider">
+                <li style="display:block"><img src="images/banner.jpg" alt="" /></li>
+                <li><img src="images/banner.jpg" alt="" /></li>
+                <li><img src="images/banner.jpg" alt="" /></li>
+                <li><img src="images/banner.jpg" alt="" /></li>
+            </ul>
+            <div id="pagenavi">
+                <a href="javascript:void(0);" class="active">1</a>
+                <a href="javascript:void(0);">2</a>
+                <a href="javascript:void(0);">3</a>
+                <a href="javascript:void(0);">4</a>
+            </div>
+        </div>
+        <!--end头图-->
+        <div class="index_wrap">
+            <a class="type" href="app_service1.html" data="1000001010">
+                <div class="app1">
+                    <img src="images/index1.jpg" alt="商业宣传">
+                </div>
+            </a>
+            <a class="type" href="app_service2.html" data="1000001011">
+                <div class="app2">
+                    <img src="images/index2.jpg" alt="影视航拍">
+                </div>
+            </a>
+            <a class="type" href="app_service3.html" data="1000001012">
+                <div class="app3">
+                    <img src="images/index3.jpg" alt="婚礼航拍">
+                </div>
+            </a>
+            <a class="type" href="app_service4.html" data="1000001013">
+                <div class="app4">
+                    <img src="images/index4.jpg" alt="旅行服务">
+                </div>
+            </a>
+            <div class="cb"></div>
+        </div>
+        <!--尾部导航-->
+        <div class="footer">
+            <ul>
+                <li class="f_app">
+                    <a href="index.html" title="预约">
+                        <img src="images/footer_01.png" alt="预约">
+                        <span class="f_span active">预约</span>
+                    </a>
+                </li>
+                <li class="f_studio">
+                    <a href="studio.html" title="工作室">
+                        <img src="images/footer_2.png" alt="工作室">
+                        <span class="f_span">工作室</span>
+                    </a>
+                </li>
+                <li class="f_order">
+                    <a id ="order_a" href="order.html" title="订单">
+                        <img src="images/footer_3.png" alt="订单">
+                        <span class="f_span">订单</span>
+                    </a>
+                </li>
+                <li class="f_my">
+                    <a id="my" href="my.html" title="我的">
+                        <img src="images/footer_4.png" alt="我的">
+                        <span class="f_span">我的</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--end尾部导航-->
+    </div>
+
+    <script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+    <script type="text/javascript" src="js/touchScroll.js"></script>
+    <script type="text/javascript" src="js/touchslider.dev.js"></script>
+    <script type="text/javascript">
+        var active=0,
+        as=document.getElementById('pagenavi').getElementsByTagName('a');
+        
+        for(var i=0;i<as.length;i++){
+            (function(){
+                var j=i;
+                as[i].onclick=function(){
+                    t2.slide(j);
+                    return false;
+                }
+            })();
+        }
+
+        var t2=new TouchSlider({id:'slider', speed:600, timeout:6000, before:function(index){
+                as[active].className='';
+                active=index;
+                as[active].className='active';
+            }
+        });  
+
+        $(document).ready(function () {
+            /*var jsonp = getUrlParam("json");
+            var json = eval('(' + jsonp + ')');
+
+            var userid_val = json.userid;//userid
+            var userphone_val = json.userphone;//userphone*/
+            var userid = localStorage.getItem("userid");
+            var userphone_val = localStorage.getItem("userphone"); 
+            //alert(userid+"==="+userphone_val);
+            //$("#order_a").attr("href", "order.html?userid=" + userid_val);
+            //$("#my").attr("href", "my.html?userphone=" + userphone_val);
+
+            //$(".footer").load('foot.html')
+
+        });
+        //截取url
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+
+        $(".type").click(function(){
+            var ordertype = $(this).attr("data");
+            localStorage.setItem("ordertype",ordertype);
+            //alert(ordertype);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="no-cache" http-equiv="Cache-Control">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/page.css"/> 
+	<title>我的订单</title>
+</head>
+<body class="bg_fb">
+	<div class="container">
+		<!--状态栏开始-->
+		<ul class="stabus">
+			<a id="ongoing">
+				<li class="active">
+					进行中
+					<span class="active_line"></span>
+				</li>
+			</a>
+            <a id="completed">
+                <li>已完成</li>
+            </a>
+            <a id="cancelled">
+                <li>已取消</li>
+            </a>
+		</ul>
+		<!--状态栏结束-->
+		<!--订单外框-->
+
+		<div class="order_box">
+			
+		</div>
+
+		<!--end订单外框-->
+		<!--无订单-->
+		<div class="order_no_wrap">
+			<img src="images/order_no.png" alt="没有订单">
+			<div>还没有订单，赶快去预约吧！</div>
+			<a class="order_service" href="index.html" title="立即预约">立即预约</a>
+		</div>
+		<!--end无订单-->
+        <input type="hidden" id="openidinput" value="">
+        <input type="hidden" id="userid" value="">
+        <input type="hidden" id="par" value="">
+	</div>
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+    <script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    	    //url解析
+    	    //微信跳转截取url 获取openid
+		    var href = window.location.href;
+		    var wenhaohou = href.split("?");
+		    var param = wenhaohou[1];
+		    if (param != "") {
+		        var params = param.split("=");
+		        var openidval = params[1];
+		        //存储openid
+		        $("#openidinput").attr("value", openidval);
+		    }
+		    var openid = $("#openidinput").val();
+		    $("#completed").attr("href", "order_completed.html?openid=" + openid);
+		    $("#cancelled").attr("href", "order_cancelled.html?openid=" + openid);
+		    $("#ongoing").attr("href", "order_ongoing.html?openid=" + openid);
+            //检查openid
+		    checkOpenidAjax(openid);
+
+    	});
+
+    	//验证openid函数
+    	function checkOpenidAjax(openid) {
+    	    var param = "{\"openid\":\"" + openid + "\"}";
+    	    $.ajax({
+    	        url: "http://localhost:8088/app/User_findUserinfoByOpenid",
+    	        type: "POST",
+    	        data: { params: param, devices: "weixin" },
+    	        dataType: "jsonp",
+    	        jsonpCallback: 'checkOpenidCollback',
+    	        jsonp: "jsonCollback",//服务端用于接收callback调用的function名的参数
+    	        success: function (data) {
+    	            var status = data.status;
+    	            var openid = $("#openidinput").val();
+    	            if (status == 1) {
+    	                //已绑定,获取userid
+    	                var userinfo = data.userinfo;
+    	                var userid = userinfo.userid;
+    	                $("#userid").val(userid);
+    	                $("#openidinput").attr("value",openid);
+    	                $("#userid").attr("value",userid);
+						var params = "{\"openid\":\""+openid+"\",\"userid\":\""+userid+"\",\"orderstatus\":\"\"}";
+						//$("#par").val(params);
+						var url = "http://localhost:8088/app/Order_userOrderList";
+					    fnAjax(url, params);
+    	            }
+    	            else if (status == 2) {
+    	                //未绑定,存储用户信息获取userid
+    	                window.location = "bang_phone.html?openid=" + openid + "";
+    	            }
+    	            else {
+    	                //系统错误
+    	                alert("网络错误O(∩_∩)O~~");
+    	            }
+    	        },
+    	        complete: function (XMLHttpRequest, textStatus) {
+    	        },
+    	    });
+    	}
+    	//openid毁掉函数
+    	function checkOpenidCollback(v) {
+
+    	    var openid = $("#openidinput").val();
+    	    var status = v.status;
+    	    if (status == 1) {
+    	        //已绑定
+    	        //$(".order_a").attr("href", "order_ongoing.html?openid=" + openid);
+    	        //alert($(".order_a").val());
+    	    }
+    	    else if (status == 2) {
+    	        //未绑定
+    	        //$(".order_a").attr("href", "bang_phone.html");
+    	    }
+    	    else {
+    	        //系统错误
+    	        alert("网络错误O(∩_∩)O~~");
+    	    }
+    	}
+
+	    var str = "";
+
+	    function orderListCallback(v){
+	    	var status = v.status;
+	    	if(status == 1){
+	    		/*
+				  "orderid":"订单id",*
+				  "ordertypeid":"订单类型id",*
+				  "ordertypename":"订单类型名称", //服务类型
+				  "ordertablename","表名",*
+				  "orderstatus":"4/5/6",
+				  "userid":"用户id",*
+				  "userphone":"联系方式",       //联系电话
+				  "locktime":"锁定时间",
+				  "feishouid":"飞手id",
+				  "ordernumber":"订单编号",
+				  "addtime":"添加时间",        //下单时间
+				  "username":"用户名称",       //联系人
+				  "begintime":"开始时间",      //服务时间
+				  "orderlocation":"订单地点"   //服务地点
+	    		*/
+	    		var allOrders = v.orders;
+	    		for (var i = 0; i < allOrders.length; i++) {
+					var oneOrder = allOrders[i];
+	
+					var number = oneOrder.ordernumber//订单编号
+					var type = oneOrder.ordertypename;//服务类型
+					var address = oneOrder.orderlocation;//服务地点
+					var service_time = oneOrder.begintime;//服务时间
+					var order_time = oneOrder.addtime;//下单时间
+					var phone = oneOrder.userphone;//联系电话
+					var person = oneOrder.username;//联系人
+
+					/*订单详情用到*/
+		    		var ordertypeid = oneOrder.ordertypeid;
+		    		var feishouid = oneOrder.feishouid;
+		    		var userid = oneOrder.userid;
+		    		var orderstatus = oneOrder.orderstatus;
+		    		var orderid = oneOrder.orderid;
+		    		var orderindex = oneOrder.orderindex;
+		    		var ordertablename = oneOrder.ordertablename;
+		    		var openid = $("#openidinput").val();
+					/*end订单详情用到*/
+					var json = "{\"ordertypeid\":\"" + ordertypeid + "\","+
+								 "\"feishouid\":\"" + feishouid + "\","+
+								 "\"userid\":\"" + userid + "\","+
+								 "\"ordernumber\":\"" + number + "\","+
+								 "\"orderstatus\":\"" + orderstatus + "\","+
+								 "\"orderid\":\"" + orderid + "\","+
+								 "\"openid\":\"" + openid + "\","+
+								 "\"ordertablename\":\"" + ordertablename + "\","+
+								 "\"orderindex\":\"" + orderindex + "\""+
+								"}";
+					/*判断订单状态*/
+					var orderstatus_val="";
+					if (orderstatus==0) {
+						orderstatus_val="未派送";
+					}
+					else if (orderstatus==1) {
+						orderstatus_val="未锁定";
+					}
+					else if (orderstatus==2) {
+						orderstatus_val="锁定";
+					}
+					else if (orderstatus==3) {
+						orderstatus_val="已被抢";
+					}
+					else if (orderstatus==4) {
+						orderstatus_val="已接单";
+					}
+					else if (orderstatus==5) {
+						orderstatus_val="进行中";
+					}
+
+					str = str + "<a href='order_details.html?json="+json+"'><div class=\"order_wrap\">";
+					str = str + "	<div class=\"content\">";
+					str = str + "		<div class=\"order_num\">";	
+					str = str + "			订单号：<span>" + number + "</span><span class=\"green_span fr\">" + orderstatus_val + "</span>";
+					str = str + "       </div>";
+					str = str + "		<dl class=\"order_info_dl\">";
+					str = str + "			<dt>服务类型：</dt>";
+					str = str + "			<dd>" + type + "</dd>";
+					str = str + "			<dt>服务地点：</dt>";
+					str = str + "			<dd>" + address + "</dd>";
+					str = str + "			<dt>服务时间：</dt>";
+					str = str + "			<dd>" + service_time + "</dd>";
+					str = str + "			<dt>下单时间：</dt>";
+					str = str + "			<dd>" + order_time + "</dd>";
+					str = str + "			<dt>联系电话：</dt>";
+					str = str + "			<dd>" + phone + "</dd>";
+					str = str + "		    <dt>联系人：</dt>";
+					str = str + "			<dd>" + person + "</dd>";
+					str = str + "		</dl>";
+					str = str + "	</div>";
+					str = str + "</div></a>";
+					$(".order_box").html(str);
+				};
+	    	}
+	    	else if(status == 2) {
+	    		$(".order_no_wrap").show();
+	    	}
+	    	else if(status == 0) {
+	    		alert("网络错误~");
+	    	}	
+		}
+    </script>
+</body>
+</html>
