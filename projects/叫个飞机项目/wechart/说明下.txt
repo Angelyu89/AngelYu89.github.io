@@ -1,6 +1,0 @@
-sign.html    登录
-
-index.html   首页
-order.html   订单
-studio.html  工作室列表
-my.html      我的
