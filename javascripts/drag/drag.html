@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <style>
+        #demo1{
+           margin:20px;
+        }
+        #demo1 .panel-list{
+            overflow:hidden;
+            list-style:none;
+            margin:0;
+            padding:0;
+        }
+        #demo1 .panel-item{
+            float:left;
+            margin-right:30px;
+            width:100px;
+            height:100px;
+            background:#ddd;
+            border:1px solid #ddd;
+        }
+        #demo1-src{
+            display:inline-block;
+            width:50px;
+            height:50px;
+            background:purple;
+        }
+        #demo1.over{
+            border:1px dashed #000;
+            -webkit-transform: scale(0.8,0.8);
+        }
+        #demo2{
+         margin:20px;
+        }
+        #demo2 .preview{
+            height:300px;
+            background:#ddd;
+        }
+        #demo2 li{
+            float:left;
+            margin-left:40px;
+        }
+        #demo2 img{
+            max-height:150px;
+            width:auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo1">
+        <ul class="panel-list">
+
+            <li class="panel-item"></li>
+            <li class="panel-item"></li>
+            <li class="panel-item"></li>
+            <li class="panel-item"></li>
+        </ul>
+        <h2>拖拽先的方块到上面任意容器中</h2>
+        <span class="movable" id="demo1-src" draggable="true"></span>
+    </div>
+    <div id="demo2">
+        <h3>从文件夹中拖拽图片到先的区域进行预览</h3>
+        <ul class="preview"></ul>
+    </div>
+    <script type="text/javascript" src="js/drag.js"></script>
+</body>
+</html>
