@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css制作空心的上下左右的箭头</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        .box{
+            width:100px;
+            height:500px;
+            margin:0 auto;
+            border:1px solid red;
+            background:white;
+        }
+        .arrow-box{
+            width:30px;
+            height:30px;
+            margin:20px auto;
+            position:relative;
+        }
+        /*右箭头*/
+        .right{
+            width:20px;
+            height:20px;
+            position:absolute;
+            left:0;
+            top:0;
+            border:1px solid white;
+        }
+        .right-arrow1,.right-arrow2{
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            left:0;
+            top:0;
+            border-top:10px transparent dashed;
+            border-right:10px transparent dashed;
+            border-bottom:10px transparent dashed;
+            border-left:10px white solid;
+            overflow:hidden;
+        }
+        .right-arrow1{
+            left:1px;/*重要*/
+            border-left:10px blue solid;
+        }
+        .right-arrow2{
+            border-left:10px white solid;
+        }
+        /*左箭头*/
+        .left{
+            width:20px;
+            height:20px;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 2;/*兼容ie8-*/
+            border:1px solid white;
+        }
+        .left-arrow1,.left-arrow2{
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index:5;/*兼容ie8-*/
+            border-top:10px transparent dashed;
+            border-left:10px transparent dashed;
+            border-bottom:10px transparent dashed;
+            border-right:10px white solid;
+            overflow:hidden;
+        }
+        .left-arrow1{
+            border-right:10px blue solid;
+        }
+        .left-arrow2{
+            left:1px;/*重要*/
+            border-right:10px white solid;
+        }
+        /*上箭头*/
+        .top{
+            width:20px;
+            height:20px;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 2;/*兼容ie8-*/
+            border:1px solid white;
+        }
+        .top-arrow1,.top-arrow2{
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 5;/*兼容ie8-*/
+            border-top:10px transparent dashed;
+            border-left:10px transparent dashed;
+            border-right:10px transparent dashed;
+            border-bottom:10px white solid;
+            overflow:hidden;
+        }
+        .top-arrow1{
+            border-bottom:10px blue solid;
+        }
+        .top-arrow2{
+            top:1px;/*重要*/
+            border-bottom:10px white solid;
+        }
+        /*下箭头*/
+        .bottom{
+            width:20px;
+            height:20px;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 2;/*兼容ie8-*/
+            border:1px solid white;
+        }
+        .bottom-arrow1,.bottom-arrow2{
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 5;/*兼容ie8-*/
+            border-bottom:10px transparent dashed;
+            border-left:10px transparent dashed;
+            border-right:10px transparent dashed;
+            border-top:10px white solid;
+            overflow:hidden;
+        }
+        .bottom-arrow1{
+            top:1px;/*重要*/
+            border-top:10px blue solid;
+        }
+        .bottom-arrow2{
+            border-top:10px white solid;
+        }
+    </style>
+
+<body>
+<div class="box">
+    <p> 右箭头</p>
+    <div class="arrow-right arrow-box">
+        <b class="right"><i class="right-arrow1"></i><i class="right-arrow2"></i></b>
+    </div>
+    <p> 左箭头</p>
+    <div class="arrow-left arrow-box" >
+        <b class="left"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
+    </div>
+    <p> 上箭头</p>
+    <div class="arrow-top arrow-box" >
+        <b class="top"><i class="top-arrow1"></i><i class="top-arrow2"></i></b>
+    </div>
+    <p> 下箭头</p>
+    <div class="arrow-bottom arrow-box" >
+        <b class="bottom"><i class="bottom-arrow1"></i><i class="bottom-arrow2"></i></b>
+    </div>
+</div>
+</body>
+</html>
