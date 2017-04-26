@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>尾部</title>
+	</head>
+	<body>
+		<!--尾部-->
+			<div class="footer">
+				<ul>
+					<li class="list-001">
+						<a href="mobile-home.html">盒子空间</a>
+					</li>
+					<li class="list-002">
+						<a href="">企业服务</a>
+					</li>
+					<!--<li class="list-003">
+						<a href="my.html">我的空间</a>
+					</li>-->
+					<li class="list-003">
+						我的空间
+					</li>
+				</ul>
+			</div>
+			
+			
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+			<script type="text/javascript" src="js/zepto.min.js"></script>
+			<script type="text/javascript">
+				$(".list-003").on("tap",function(){
+					$.ajax({
+						type:"post",
+						url:box_webapp_url+"/user/getUserInfo ",
+						dataType:"json",
+						success:function(res){
+							console.log(res)
+							if(res.code == 200) {
+							window.location.href="my.html";
+							}else if(res.code==600){
+								alert("未登录，请先登录！")
+								window.location.href="login.html";
+							}
+						},
+						error:function(msg){
+							console.log(msg);
+						},
+						
+					});
+					
+				})
+			</script>
+	</body>
+</html>

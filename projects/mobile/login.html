@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		  
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/page.css" />
+		<title>登录</title>
+	</head>
+	<body>
+		<div class="login-contrainer">
+			<div class="loginbox">
+				<div class="long-rent-nav">
+					登录					
+					<div class="long-header-return">
+						<img src="images/img3333_03.png" alt="" />
+					</div>	
+					<div class="login-nav-rg">
+						<a href="registered.html">
+							<span>注册</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+				<div class="logincenterbox">
+					<div class="logincenter">
+						<ul>
+							<li class="loginli">
+								<div>账号</div>
+								<input id="userid" name="mobile" type="text" placeholder="" />
+								 <span class='state1'>请输入账号</span><br/><br/>
+							</li>
+							<li>
+								<div>密码</div>
+								<input id="userpossword" name="password" type="password" placeholder=""/>
+								 <span class='state1'>请输入密码</span><br/><br/>
+							</li>
+						</ul>					
+					</div>
+			</div>
+			<div class="forgetbox">
+				<a href="forget_password.html">
+					<span class="wj-password2">忘记密码</span>
+				</a>
+			</div>
+				
+				<div class="loginbtn" id="user_btn">
+					<input type="submit" value="登录"/>
+				</div>	
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript">
+		
+			$(function(){
+				var ok1=false;
+				var ok2=false;	
+					
+				var mobileRegex = /^(((1[3456789][0-9]{1})|(15[0-9]{1}))+\d{8})$/;
+				 $('input[name="mobile"]').focus(function(){
+				 	$(this).next().text('请输入手机号').removeClass('state1').addClass('state2');
+				 }).blur(function(){
+				 	var phone =$("#userid").val();
+				 	console.log(phone);
+		                if(mobileRegex.test(phone) && $(this).val()!=''){
+		                    $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+		                    ok1=true;
+		                }else{
+		                    $(this).next().text('请输入正确手机号').removeClass('state1').addClass('state3');
+		                }
+				})
+				 
+				 
+				 //验证密码
+		          $('input[name="password"]').focus(function(){
+		                $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state2');
+		                }).blur(function(){
+		                    if($(this).val().length >= 6 && $(this).val().length <=20 && $(this).val()!=''){
+		                        $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+		                        ok2=true;
+		                    }else{
+		                        $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state3');
+		                    }
+		                     
+		                });
+		                
+		          //提交按钮,所有验证通过方可提交
+				
+		            $('#user_btn').on("tap",function(){
+		                if(ok1 && ok2){
+		                    var sg_name=$("#userid").val();
+					        var sg_password=$("#userpossword").val();
+							console.log(1111);
+							
+							$.ajax({
+								type:"post",
+								url:box_webapp_url+"/user/formlogin",
+								data:{username:sg_name,password:sg_password},
+								dataType:"json",
+								success:function(data){
+									console.log(data)
+									window.location.href="mobile-home.html"
+								},
+								error:function(msg){
+									console.log(msg);
+								},
+								
+							});
+		                }else{
+		                    return false;
+		                }
+		            });
+				 
+			})
+					
+		</script>
+	</body>
+</html>

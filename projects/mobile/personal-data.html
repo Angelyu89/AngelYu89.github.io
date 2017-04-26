@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+		<link rel="stylesheet" href="swiper/swiper-3.3.1.min.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/page.css" />
+		<title>个人资料</title>
+	</head>
+
+	<body>
+		<div class="tool-navbox peoplebox">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav">
+					个人资料
+					<div class="long-header-return returnBtn">
+						<img src="images/img3333_03.png" alt="" />
+					</div>
+					<span class="mod-nav-rg geren_userbaoc" id="people_userBc">保存</span>
+				</div>
+			</div>
+			<div class="tool-centerbox">
+				<div class="tool-centerbox-middle">
+					<div class="tool-center personal2-center">
+						<div class="touxiangbox mod_user_hader">
+							<span>头像</span>
+							<img src="images/img1112321_07.png" name="file" id="img_input" alt="" />
+						</div>
+
+						<div class="rent-xq-gengduo tool-imgiphone personal2-tutu">
+							<img src="images/img3333_07.png" alt="" />
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<div class="tool-centerbox personal-centernew">
+				<div class="tool-centernew tool-centerbox-middle">
+					<ul>
+						<li>
+							<span>姓名</span>
+							<div class="rent-xq-gengduo tool-imgiphone name_img">
+								<span class="name_userbox">企业</span>
+								<img src="images/img3333_07.png" alt="" />
+							</div>
+						</li>
+						<li>
+							<span>手机号</span>
+							<div class="rent-xq-gengduo tool-imgiphone tel_img">
+								<span class="tel_baox">13588997788</span>
+								<img src="images/img3333_07.png" alt="" />
+							</div>
+						</li>
+						<li>
+							<span>性别</span>
+							<div class="rent-xq-gengduo tool-imgiphone sex_img">
+								<span class="sex_baox">男</span>
+								<img src="images/img3333_07.png" alt="" />
+							</div>
+						</li>
+						<li>
+							<span>公司名称</span>
+							<span class="canpany_userbox"></span>
+							<!--<img src="images/img3333_07.png" class="compan_img" alt="" />-->
+						</li>
+						<li>
+							<span>所属空间</span>
+							<span class="space_userbox"></span>
+							<!--<img src="images/img3333_07.png" class="space_img" alt="" />-->
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer">
+				
+			</div>
+		</div>
+
+		<!--头像-->
+		<div class="tool-navbox modify_header">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav modify-navbar">
+					修改头像
+					<span class="mod-nav-lf per_quxiao">取消</span>
+					<span class="mod-nav-rg tou_baoc">保存</span>
+				</div>
+			</div>
+			<div class="tool-centerbox">
+				<div class="tool-center">
+
+					<div class="filebox">
+						<input type="file" name="fileInput" id="fileInput" onchange="preImage(this)" multiple="multiple" accept="image" placeholder="选择头像" />选择头像
+						<div class="space" id="imgArea">
+
+						</div>
+					</div>
+
+					<img src="images/img3333_07.png" class="fil_fhao" alt="" />
+				</div>
+			</div>
+
+			<div class="footer">
+				
+			</div>
+		</div>
+
+		<!--姓名-->
+		<div class="tool-navbox modify_name">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav modify-navbar">
+					修改姓名
+					<span class="mod-nav-lf m_name_qx">取消</span>
+					<span class="mod-nav-rg name_baoc">保存</span>
+				</div>
+			</div>
+			<div class="tool-centerbox">
+				<div class="tool-center">
+					<span>
+						<input type="text" id="user_xm" placeholder="限4-16个字符，一个汉字为两个字符"/>
+					</span>
+					<img src="images/img3333_07.png" alt="" />
+				</div>
+			</div>
+
+			<div class="footer">
+				
+			</div>
+		</div>
+
+		<!--手机号-->
+		<div class="tool-navbox modify_tel">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav modify-navbar">
+					修改手机号
+					<span class="mod-nav-lf tel_quxiao">取消</span>
+					<span class="mod-nav-rg tel_userbaoc">保存</span>
+				</div>
+			</div>
+			<div class="tool-centerbox">
+				<div class="tool-center">
+					<span>
+						<input type="text" id="user_tel" placeholder="限4-16个字符，一个汉字为两个字符"/>
+					</span>
+					<img src="images/img3333_07.png" alt="" />
+				</div>
+			</div>
+
+			<div class="footer">
+				
+			</div>
+		</div>
+
+		<!--性别-->
+		<div class="tool-navbox modify_sex">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav modify-navbar">
+					修改性别
+					<span class="mod-nav-lf sex_quxiao">取消</span>
+					<span class="mod-nav-rg sex_userbaoc">保存</span>
+				</div>
+			</div>
+			<div class="tool-centerbox">
+				<div class="tool-center">
+					<span>
+						<input type="text" id="user_sex" placeholder="限4-16个字符，一个汉字为两个字符"/>
+					</span>
+					<img src="images/img3333_07.png" alt="" />
+				</div>
+			</div>
+
+			<div class="footer">
+				
+			</div>
+		</div>
+
+		<!--公司名称-->
+		<!--<div class="tool-navbox modify_company">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav modify-navbar">
+					公司名称			
+					<span class="mod-nav-lf company_quxiao">取消</span>
+					<span class="mod-nav-rg company_bc">保存</span>
+				</div>
+			</div>
+			<div class="tool-centerbox">
+				<div class="tool-center">
+					<span>
+						<input type="text" id="user_canName" placeholder="限4-16个字符，一个汉字为两个字符"/>
+					</span>
+					<img src="images/img3333_07.png" alt="" />
+				</div>	
+			</div>
+			
+			<div class="footer">
+				<ul>
+					<li class="list-001">
+						<a href="">盒子空间</a>
+					</li>
+					<li class="list-002">
+						<a href="">企业服务</a>
+					</li>
+					<li class="list-003">
+						<a href="my.html">我的空间</a>
+					</li>
+				</ul>
+			</div>
+		</div>-->
+
+		<!--所属空间-->
+		<!--<div class="tool-navbox modify_space">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav modify-navbar">
+					所以空间				
+					<span class="mod-nav-lf space_quxiao">取消</span>
+					<span class="mod-nav-rg space_bc">保存</span>
+				</div>
+			</div>
+			<div class="tool-centerbox">
+				<div class="tool-center">
+					<span>
+						<input type="text" id="user_sName" placeholder="限4-16个字符，一个汉字为两个字符"/>
+					</span>
+					<img src="images/img3333_07.png" alt="" />
+				</div>	
+			</div>
+			
+			<div class="footer">
+				<ul>
+					<li class="list-001">
+						<a href="">盒子空间</a>
+					</li>
+					<li class="list-002">
+						<a href="">企业服务</a>
+					</li>
+					<li class="list-003">
+						<a href="my.html">我的空间</a>
+					</li>
+				</ul>
+			</div>
+		</div>-->
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/personal-data.js"></script>
+		<script type="text/javascript" src="js/img.js"></script>
+		<script type="text/javascript" src="js/return.js"></script>
+		<script type="text/javascript" src="js/ajaxfileupload.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//获取信息
+				$.ajax({
+					type:"post",
+					url:box_webapp_url+"/user/profile",
+					dataType:"json",
+					success: function(res) {
+						console.log(res)
+						var data = res.data;
+
+						if(res.code ==200) {
+							
+							if(data.sex == 1) {
+								data.sex = '男'
+							} else if(data.sex ==2 ) {
+								data.sex = '女'
+							} else if(user_sex == 0) {
+								data.sex = '其他'
+							}
+							
+							$("#img_input").attr("src",data.icon);//头像
+							$(".canpany_userbox").attr("id",data.companyId);//公司id
+							$(".canpany_userbox").text(data.companyName);//公司名称
+							$(".space_userbox").text(data.spaceName);//空间名称
+							$(".tel_baox").text(data.mobile);//手机号
+							$(".sex_baox").text(data.sex);//性别
+							$(".name_userbox").text(data.nickname)//姓名
+							
+							
+						}
+
+					},
+					error: function(msg) {
+						console.log(msg);
+					},
+
+				});
+			})
+
+			//提交信息	(用户修改后的信息)
+			$("#people_userBc").on("tap", function() {
+
+				var titleImg = $(".mod_user_hader img").attr("src");
+				console.log(titleImg)
+
+				var name = $(".name_userbox").text();
+				var tel = $(".tel_baox").text();
+				var user_sex = $(".sex_baox").text();
+
+				if(user_sex == '男') {
+					user_sex = 1
+				} else if(user_sex == '女') {
+					user_sex = 2
+				} else if(user_sex == '其他') {
+					user_sex = 0
+				}
+
+				$.ajaxFileUpload({
+					type: "POST",
+					url:box_webapp_url+"/user/saveProfile",
+					fileElementId: 'fileInput', //文件域 （input框的id）
+					data: {
+						//					icon:titleImg, //头像
+						//					realname:"",//真实姓名
+						realname: name, //用户名
+						mobile: tel, //手机号
+						sex: user_sex //性别
+					},
+					enctype:'multipart/form-data', //上送的方式（文件的格式）
+					dataType:"json",
+					success: function(data) {
+						console.log(data)
+						window.location.href='mobile-home.html';
+					},
+					error: function(msg) {
+						console.log(msg);
+					},
+
+				});
+
+			})
+			
+		
+			
+		</script>
+		<script type="text/javascript">
+   			$(document).ready(function(){
+				$(".footer").load("footer.html"); 
+			});
+   		</script>
+
+	</body>
+
+</html>

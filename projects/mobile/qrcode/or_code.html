@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>	
+    <head>
+        <script charset='utf-8' type='text/javascript' src='../js/jquery.min.js'></script>
+        <script src="jquery.qrcode.min.js" type="text/javascript"></script>
+        <script type="text/javascript">  
+        
+        $(document).ready(function(){
+            $('#qr_container').qrcode({render:"canvas",height:120, width:120,correctLevel:0,text:$("http://127.0.0.1:8020/mobile/qrcode/or_code.html?payNumber=07_14906976927351?payNumber:getQueryString('payNumber')")}); 
+        });
+        
+        console.log(getQueryString('payNumber'));
+        
+       function getQueryString(payNumber){
+        //以id解析当前的url(如：http://127.0.0.1:8020/mobile/activity-order-xq.html?id=%2014)
+        var reg = new RegExp('(^|&)' + payNumber + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+//      console.log(r);
+        if (r != null) {
+            return decodeURI(r[2]);//获取ClassName的参数
+
+        }
+        return null;
+    }
+        
+        </script>
+    </head>
+    <body>
+        <div>
+            <input id="qr_link" type="text" value="" style="width:450px;" /> 
+        </div>
+        <div id="qr_container" style="margin:auto; position:relative;"></div>
+        
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		  
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/page.css" />
+		<title>注册</title>
+	</head>
+	<body>
+		<div class="login-contrainer">
+			<div class="loginbox">
+				<div class="long-rent-nav">
+						注册					
+					<div class="long-header-return">
+						<img src="images/img3333_03.png" alt="" />
+					</div>	
+				</div>
+			</div>
+			
+			<div class="logincenterbox">
+				<div class="logincenter">
+					<ul>
+						<li class="loginli">
+							<div>验证码</div>
+							<input type="text" id="rg_code" placeholder="请输入验证码" />
+							<img src='http://121.42.238.147:8080/validcode/stickyImg?w=90&h=36' alt="" />
+						</li>
+						<li class="loginli">
+							<div>手机号</div>
+							<input type="text" placeholder="请输入手机号" id="rg_tel"/>
+						</li>
+						<li class="loginli yanz">
+							<div>验证码</div>
+							<input type="text" placeholder="请输入验证" id="rg_yz"/>
+							<button id="user_hqyz">获取验证码</button>
+						</li>
+						<li>
+							<div>密码</div>
+							<input type="text" placeholder="请输入密码" id="rg_password"/>
+						</li>
+					</ul>					
+				</div>
+			</div>
+			<!--<span class="wj-password">忘记密码</span>-->
+			<div class="loginbtn">
+				<span id="user_rg">立即注册</span>
+			</div>
+		
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/regst.js"></script>
+		<script type="text/javascript" src="js/sessionstorage.js"></script>
+	</body>
+</html>

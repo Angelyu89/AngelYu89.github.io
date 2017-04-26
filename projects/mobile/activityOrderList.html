@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		  
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/page.css" />
+		<title>我的活动</title>
+	</head>
+	<body>
+		<div class="long-rent-container activityOrderqxBox">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav">
+					精彩活动					
+					<div class="long-header-return returnBtn">
+						<img src="images/img3333_03.png" alt="" />
+					</div>				
+				</div>
+								
+				<div class="activity-nav">
+					<ul>
+						<li>
+							<div class="activityAllBtn active">
+								<span>全部</span>
+							</div>
+						</li>
+						<li>
+							<div class="activityRegisteredBtn">
+								<span>已报名</span>
+							</div>
+						</li>
+						<li>
+							<div class="activityPendingBtn">
+								<span>待付款</span>
+							</div>
+						</li>
+						<li>
+							<div class="activityPaymentBtn">
+								<span>已付款</span>
+							</div>
+						</li>
+						<li>
+							<div class="activityFreeticketBtn">
+								<span>已取消</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!--全部订单-->
+			<div class="home-cenction-box cion-box02 activityAll"></div>
+			
+			<!--待付款-->
+			<div class="home-cenction-box cion-box02 activityPending">					
+					<!--<div class="home-cion-ip">
+						<div class="home-cion-list activity-list">
+							<ul>
+								<li>
+									<div class="mettingOrder_XQListBtn" metXqListBtnOrderId="'+data[i].orderId+'" orderStatus="'+data[i].orderStatus+'">
+										<a href="activity-xq.html">
+										<div class="li-lf">
+											<img src="images/img_11.png" alt="" />
+										</div>
+										<div class="li-rg">
+											<div class="li-h5">
+												互联网下一个风口何方？新一轮的风向标
+											</div>
+											<div class="li-ip">北京市天恒大厦B1企业盒子28号</div>
+											<div class="li-ip">
+												2017-2-6
+											</div>
+										</div>
+										</a>
+										<div class="act-pay">
+											<span class="pay-lf">等待支付</span>
+											<span class="pay-rg">￥66元</span>
+											
+										</div>
+									</div>
+									<div class="activity-zifubtn">
+										<button>
+											<a href="pay-zif.html">
+												活动支付
+											</a>											
+										</button>
+									</div>									
+								</li>
+							</ul>
+						</div>
+					</div>-->
+				</div>
+				
+				<!--已付款-->
+				<div class="home-cenction-box cion-box02 activityPayment">		
+				</div>
+				
+				<!--已取消-->
+				<div class="home-cenction-box cion-box02 activityFreeticket">		
+				</div>
+				
+				<!--已报名-->
+				<div class="home-cenction-box cion-box02 activityRegistered">		
+				</div>
+			
+				<!--尾部-->
+				<div class="footer">
+			
+				</div>
+		</div>	
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/return.js"></script>
+		<script type="text/javascript" src="js/activityListOrder.js"></script>
+		<script type="text/javascript">
+   			$(document).ready(function(){
+				$(".footer").load("footer.html"); 
+			});
+   		</script>
+	</body>
+</html>
