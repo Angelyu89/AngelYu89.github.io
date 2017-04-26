@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/activity.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="laydate/laydate.css" />
+		<title>活动管理</title>
+	</head>
+
+	<body>
+		<!--logo导航-->
+		<div class="header container-fluid">
+			<div class="headerbox">
+				<div class="row">
+					<div class="col-sm-2 col-sx-2">		
+						<a href="home.html">
+							<div class="logo">
+							</div>
+							<span class="logotext">
+							企业盒子
+						</span>
+						</a>
+						
+						
+						
+						
+					</div>
+					<div class="col-sm-3 col-sx-3">
+						<div class="logobar">
+							欢迎使用企业盒子
+						</div>
+					</div>
+					<div class="col-sm-4 col-sx-4">
+
+					</div>
+					<div class="header-rg">
+						<div class="col-sm-1 col-sx-1">
+							<div class="message"></div>
+							<div class="message-text">
+								<span>1</span>
+							</div>
+						</div>
+						<div class="col-sm-1 col-sx-1">
+							<a href="personal-data.html" style="position: absolute;">
+									<div class="my"></div>
+							</a>
+						</div>
+						<div class="col-sm-1 col-sx-1">
+							<div class="return"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<!--logo导航结束-->
+
+		<!--导航-->
+		<div class="nav">
+			<div>
+				<div class="row rowbox">
+					<div class="nav-bt">
+						<a href="space.html" class="nav-bar">
+							<div class="nav-icon1">
+							</div>
+							<div class="online"></div>
+							<div class="navtext">空间管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="station.html" class="nav-bar">
+							<div class="nav-icon2">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">工位管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="meeting.html" class="nav-bar">
+							<div class="nav-icon3">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext2">会议室管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="site.html" class="nav-bar">
+							<div class="nav-icon4">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">场地管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="appointment.html" class="nav-bar">
+							<div class="nav-icon5">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">预约管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="order.html" class="nav-bar">
+							<div class="nav-icon6">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">订单管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="activity.html" class="nav-bar">
+							<div class="nav-icon7">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">活动管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="enterprise.html" class="nav-bar">
+							<div class="nav-icon8">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">企业用户</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="user-registration.html" class="nav-bar">
+							<div class="nav-icon9">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">注册用户</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="" class="nav-bar">
+							<div class="nav-icon10">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">门禁办卡</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="system.html" class="nav-bar">
+							<div class="nav-icon11">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">系统用户</div>
+						</a>
+
+					</div>
+					<div class="nav-bt">
+						<a href="data-analysis.html" class="nav-bar">
+							<div class="nav-icon12">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">数据分析</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--导航-->
+	
+		<div class="activ-box">
+			
+			<div class="meeting-table">
+			<div class="meeting-box">
+				<div class="h5-line">
+					<h5 class="meet-list1">活动列表</h5>
+				</div>
+				<button type="button" class="btn btn-primary btn-lg" id="aciv-add-btn">
+						 添加活动
+					</button>
+				<div class="mett-ip">
+					<div class="site-list-name">
+						<span>活动标题：</span>	
+					</div>
+									
+					<div class="met-input">
+						<input type="name" />
+					</div>
+				</div>
+
+				<div class="mett-ip met-lef6">
+					<div class="site-list-name">
+						<span>活动状态：</span>
+					</div>					
+					<div class="met-input">
+						<select name="">
+							<option value="">北京市</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="mett-ip met-lef6">
+					<div class="site-list-name">
+						<span>参与方式：</span>
+					</div>
+					
+					<div class="met-input">
+						<select name="">
+							<option value="">北京</option>
+						</select>
+					</div>
+				</div>
+
+				
+				<div class="mett-ip met-lef6">
+					<div class="site-list-name">
+						<span>显示状态：</span>
+					</div>
+					
+					<div class="met-input">
+						<select name="">
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+
+					
+				<div class="mett-ip">
+					<div class="site-list-name">
+						<span>创建时间：</span>
+					</div>					
+					<div class="met-input">
+						<input type="name" />
+					</div>
+				</div>
+				<div class="mett-ip met-btm-24 met-lef6">
+					<div class="site-list-name">
+						<span>状态：</span>
+					</div>					
+					<div class="met-input">
+						<select name="">
+							<option value="">北京</option>
+						</select>
+					</div>
+				</div>
+				<div class="sta-btn">
+					<button>查找</button>
+				</div>
+			</div>			
+		</div>
+
+		<!--列表区-->
+		<div class="tab-content">
+			<div class="table-a">
+				<table border="0" cellspacing="1" cellpadding="0">
+					<tr>						
+						<td class="navtd56">编号</td>
+						<td class="navtd navtd88">活动标题</td>
+						<td class="navtd navtd88">二维码</td>
+						<td class="navtd navtd88">发起者</td>
+						<td class="navtd navtd88">活动类型</td>
+						<td class="navtd navtd88">活动时间</td>
+						<td class="navtd navtd88">预约网址</td>
+						<td class="navtd navtd88">参与方式</td>
+						<td class="navtd navtd88">参加人数</td>						
+						<td class="navtd navtd88">显示状态</td>
+						<td class="navtd navtd88">活动状态</td>
+						<td class="navtd navtd88">创建时间</td>
+						<td class="navtd navtd88">发布者</td>
+						<td class="navtd navtd88">操作</td>
+					</tr>
+					<tr>						
+						<td class="navtd56 tabalelist">1</td>
+						<td class="tabalelist navtd88">优客年终优惠大放送</td>
+						<td class="tabalelist navtd88"></td>
+						<td class="tabalelist navtd88">天恒大厦优客工场</td>						
+						<td class="tabalelist navtd88">线上活动</td>
+						<td class="tabalelist navtd88">2016.12.12</td>
+						<td class="tabalelist navtd88">www.qiyebox.com</td>
+						<td class="tabalelist navtd88">需要报名</td>
+						<td class="tabalelist ">
+							<span class="span_orgin">20</span>
+						</td>
+						<td class="tabalelist navtd88">开放</td>
+						<td class="tabalelist navtd88">正在进行</td>						
+						<td class="tabalelist navtd88">
+							<span>2016.12.12</span>
+						</td>
+						<td class="tabalelist">编辑</td>	
+						<td class="navtd88 tabalelist">
+							<div class="information-box">
+								<div class="information-tu">
+									<img src="img/6.png" alt="" />
+								</div>
+								<div class="information-text">编辑</div>
+							</div>
+						</td>
+					</tr>
+						
+					<tr>						
+						<td class="navtd56 tabalelist">2</td>
+						<td class="tabalelist navtd88">优客年终优惠大放送</td>
+						<td class="tabalelist navtd88"></td>
+						<td class="tabalelist navtd88">天恒大厦优客工场</td>						
+						<td class="tabalelist navtd88">线上活动</td>
+						<td class="tabalelist navtd88">2016.12.12</td>
+						<td class="navtd88 tabalelist ">www.qiyebox.com</td>
+						<td class="tabalelist navtd88">需要报名</td>
+						<td class="tabalelist ">
+							<span class="span_orgin">20</span>
+						</td>
+						<td class="tabalelist navtd88">开放</td>
+						<td class="tabalelist navtd88">正在进行</td>						
+						<td class="tabalelist navtd88">
+							<span>2016.12.12</span>
+						</td>
+						<td class="tabalelist">编辑</td>	
+						<td class="navtd88 tabalelist">
+							<div class="information-box">
+								<div class="information-tu">
+									<img src="img/6.png" alt="" />
+								</div>
+								<div class="information-text">编辑</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+			
+		</div>
+		
+		<!--参与人员-->	
+		<div class="act-cy-box">
+			<div class="meeting-table">
+				<div class="meeting-box">
+					<div class="h5-line">
+						<h5 class="meet-list1">企业列表</h5>
+
+					</div>
+					<button type="button" class="btn btn-primary btn-lg" id="enter-push-btn">
+							 添加企业
+					</button>
+
+					<div class="ent-box">
+						<div class="mett-ip">
+							<div class="use-name use80">
+								<span class="meeting-td">姓名：</span>
+							</div>
+							<div class="met-input">
+								<input type="text" />
+							</div>
+						</div>
+
+						<div class="mett-ip met-lef6">
+							<div class="use-name use80">
+								<span class="meeting-td">手机号：</span>
+							</div>
+							<div class="met-input">
+								<input type="text" />
+							</div>
+						</div>
+
+						<div class="mett-ip met-lef6">
+							<div class="use-name use80">
+								<span class="meeting-td">门票名称：</span>
+							</div>
+							<div class="met-input">
+								<input type="text" />
+							</div>
+
+						</div>
+
+						<div class="mett-ip  ent-mg-top24">
+							<div class="use-name use80">
+								<span class="meeting-td">创建时间：</span>
+							</div>
+							<div class="met-input date-act">
+								<input type="text" class="form-control input-small input-inline laydate-icon" name="startTime" id="startDate" value="" placeholder="起始时间">- - -
+							</div>
+							<div class="met-input date-act use-mage-93">
+								<input type="text" class="form-control input-small input-inline laydate-icon" name="endTime" id="endDate" value="" placeholder="终止时间">
+							</div>
+						</div>
+						<div class="mett-ip use-mag170 mag-lef149">
+							<div class="use-name use80">
+								<span class="meeting-td">状况：</span>
+							</div>
+							<div class="met-input">
+								<select name="">
+									<option value="">北京</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="sta-btn">
+							<button>查找</button>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!--列表区-->
+			<div class="tab-content">
+				<div class="table-a">
+					<table border="0" cellspacing="1" cellpadding="0" style="width: 1100px;margin: 0 auto;text-align: center;">
+						<tr>
+							<td class="navtd navtd88">编号</td>
+							<td class="navtd navtd104">姓名</td>
+							<td class="navtd navtd104">手机号</td>
+							<td class="navtd navtd104">门票名称</td>
+							<td class="navtd navtd88">门票价格</td>
+							<td class="navtd navtd88">报名时间</td>
+							<td class="navtd navtd88">活动状态</td>
+							<td class="navtd navtd88">操作</td>
+						</tr>
+						<tr>
+							<td class="navtd88 tabalelist">1</td>
+							<td class="navtd104 tabalelist">优客工场</td>
+							<td class="tabalelist ">优客工场</td>
+							<td class="tabalelist ">互联网-020电商</td>
+							<td class="tabalelist navtd88">
+								<span>2000</span>
+							</td>
+							<td class="tabalelist">2017-1-8</td>
+							
+							<td class="tabalelist navtd88">
+								<span class="span_blue">已生效</span>
+							</td>
+							<td class="navtd88 tabalelist">
+								<div class="information-box">
+									<div class="information-tu">
+										<img src="img/6.png" alt="" />
+									</div>
+									<div class="information-text">编辑</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		<!--创建活动-无需报名--->
+			
+		<div class="act-no-sign">
+			<div class="cen-hd-order">
+			<div class="meeting-table">
+			<div class="meeting-box">
+				<div class="h5-line">
+					<h5 class="meet-list1">创建活动</h5>
+					<h5 class="meet-list1" id="cy-btn">参与人员</h5>
+				</div>	
+				<div class="act-cen-box">
+					<div>
+						<div class="mett-ip">
+							<div class="use-name">
+								<span class="meeting-td">活动标题：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="mett-ip order-lef-10">
+							<div class="use-name">
+								<span class="meeting-td">活动发起者：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+						<div class="mett-ip use-mag24 order-lef-10">
+							<div class="use-name">
+								<span class="meeting-td">活动时间：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>	
+					</div>
+					
+					<div>
+						<div class="mett-ip">
+							<span class="meeting-td use-name">活动地点：</span>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">省</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">市</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">活动名称</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<button class="add-btn-act">添加</button>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="mett-ip">
+							<span class="meeting-td use-name"></span>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">省</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">市</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">活动名称</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<button class="del-btn-act">删除</button>
+							</div>
+						</div>
+					</div>
+					
+					<div>						
+						<div class="sapce-box">
+							<div class="name-12 use-name">活动海报：</div>
+							<div class="space act-img" id="imgArea">
+							</div>
+							<div class="file">
+								<input type="file" id="fileInput" onchange="preImage(this)" multiple="multiple" accept="image" placeholder="上传自定义图片" />上传自定义图片
+							</div>
+							<div class="sapce-box-text">
+								<span>上传750x420的JPG、PNG</span>
+								<span>图片文件</span>
+							</div>
+						</div>
+						<div class="describe">
+							<div class="name duiqi">活动详情：</div>
+							<textarea  class="input-text" required="required" value="描述"></textarea>
+						</div>
+					</div>
+				
+					<div class="act-registration ">
+						<div class="meeting-box">
+							<div>
+								<h5 class="meet-list1">报名信息</h5>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="mett-ip">
+							<span class="meeting-td use-name">参与方式：</span>
+							<div class="met-equ-input">
+								<button class="wu-sign no-sign">无需报名</button>
+							</div>
+							<div class="met-equ-input">
+								<button class="wu-sign to-sign">需要报名</button>
+							</div>
+							<div class="met-equ-input">
+								<button class="wu-sign go-sign">购票</button>
+							</div>
+							
+						</div>
+					</div>
+					<div>
+						<div class="mett-ip order-lef-10">
+							<div class="use-name">
+								<span class="meeting-td">活动人数：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+					</div>
+					<div class="act-bm-s">
+						<div class="mett-ip">
+							<span class="meeting-td use-name">显示状态：</span>
+							<div class="met-input">
+								<select name="">
+									<option value=""></option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div>
+					<div class="modal-footer">
+						<button type="button" class="met-qu-butn">确定</button>
+						<button type="button" class="met-cancel" data-dismiss="modal">取消</button>						
+					</div>
+				</div>
+			</div>
+			
+		</div>	
+		</div>
+
+		</div>
+		
+		<!--需要报名-->
+		
+		<div class="to-sign-box">
+			<div class="cen-hd-order">
+			<div class="meeting-table">
+			<div class="meeting-box">
+				<div class="h5-line">
+					<h5 class="meet-list1">创建活动</h5>
+					<h5 class="meet-list1">参与人员</h5>
+				</div>	
+				<div class="act-cen-box">
+					<div>
+						<div class="mett-ip">
+							<div class="use-name">
+								<span class="meeting-td">活动标题：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="mett-ip order-lef-10">
+							<div class="use-name">
+								<span class="meeting-td">活动发起者：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+						<div class="mett-ip use-mag24 order-lef-10">
+							<div class="use-name">
+								<span class="meeting-td">活动时间：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>	
+					</div>
+					
+					<div>
+						<div class="mett-ip">
+							<span class="meeting-td use-name">活动地点：</span>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">省</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">市</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">活动名称</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<button class="add-btn-act">添加</button>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="mett-ip">
+							<span class="meeting-td use-name"></span>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">省</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">市</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">活动名称</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<button class="del-btn-act">删除</button>
+							</div>
+						</div>
+					</div>
+					
+					<div>						
+						<div class="sapce-box">
+							<div class="name-12 use-name">活动海报：</div>
+							<div class="space act-img" id="imgArea">
+							</div>
+							<div>
+								<input type="file" class="file" id="fileInput" onchange="preImage(this)" multiple="multiple" accept="image" placeholder="上传自定义图片" />
+							</div>
+							<div class="sapce-box-text">
+								<span>上传750x420的JPG、PNG</span>
+								<span>图片文件</span>
+							</div>
+						</div>
+						<div class="describe">
+							<div class="name duiqi">活动详情：</div>
+							<textarea  class="input-text" required="required" value="描述"></textarea>
+						</div>
+					</div>
+				
+					<div class="act-registration ">
+						<div class="meeting-box">
+							<div>
+								<h5 class="meet-list1">报名信息</h5>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="mett-ip">
+							<span class="meeting-td use-name">参与方式：</span>
+							<div class="met-equ-input">
+								<button class="wu-sign no-sign">无需报名</button>
+							</div>
+							<div class="met-equ-input">
+								<button class="wu-sign to-sign">需要报名</button>
+							</div>
+							<div class="met-equ-input">
+								<button class="wu-sign go-sign">购票</button>
+							</div>
+							
+						</div>
+					</div>
+					<div>
+						<div class="mett-ip order-lef-10">
+							<div class="use-name">
+								<span class="meeting-td">活动人数：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+					</div>
+					<div class="act-bm-s">
+						<div class="mett-ip">
+							<span class="meeting-td use-name">报名时间：</span>
+							<div class="met-input">
+								<select name="">
+									<option value=""></option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="options">
+							<form>
+								<input type="radio" name="gender" class="use-rad" id="use-rad" value="" />需要预留信息						
+								<input type="radio" name="gender" value="" />仅允许入驻用户参与
+							</form>					
+					</div>
+					<div class="options-box">					
+						<div class="mett-ip">
+							<div class="use-name">
+								<span class="meeting-td">预留信息表单：</span>
+							</div>					
+						</div>
+						<div class="fom-box">
+							<div class="fom-cent">
+								<div class="act-tle-text">
+									<span class="d-btn">单行文本</span>
+								</div>
+								<div class="act-tle-text met-lef30">
+									<span class="dh-btn">多行文本</span>
+								</div>
+								<div class="act-tle-text met-lef30">
+									<span class="dx-btn">单选问题</span>
+								</div>
+								<div class="act-tle-text met-lef30">
+									<span class="dx-w-btn">多选问题</span>
+								</div>
+								
+								<div class="use-iphone-box">
+									<div class="fom-cent-int">
+										<input type="text" placeholder="姓名"/>
+									</div>
+									
+									<div class="fom-cent-int met-lef30"> 
+										<input type="text" placeholder="手机"/>
+									</div>
+								</div>
+								
+								<div class="adb-new">
+									<div class="adb-cen-box">
+										<h4>单选问题标题</h4>
+										<p>内容1</p>
+									</div>
+									<div class="adb-dx-push">
+										<div class="rom-btn">
+											<button>删除</button>
+										</div>
+										<div class="push-btn">
+											<button>添加</button>
+										</div>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+									
+					<div class="act-bm-s">
+						<div class="mett-ip">
+							<span class="meeting-td use-name">显示状态：</span>
+							<div class="met-input">
+								<select name="">
+									<option value=""></option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div>
+					<div class="modal-footer">
+						<button type="button" class="met-qu-butn">确定</button>
+						<button type="button" class="met-cancel" data-dismiss="modal">取消</button>						
+					</div>
+				</div>
+			</div>
+			
+		</div>	
+		</div>
+
+		</div>
+		
+		<!--购票-->
+		
+		<div class="go-sign-box">
+			<div class="cen-hd-order">
+			<div class="meeting-table">
+			<div class="meeting-box">
+				<div class="h5-line">
+					<h5 class="meet-list1">创建活动</h5>
+					<h5 class="meet-list1">参与人员</h5>
+				</div>	
+				<div class="act-cen-box">
+					<div>
+						<div class="mett-ip">
+							<div class="use-name">
+								<span class="meeting-td">活动标题：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="mett-ip order-lef-10">
+							<div class="use-name">
+								<span class="meeting-td">活动发起者：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+						<div class="mett-ip use-mag24 order-lef-10">
+							<div class="use-name">
+								<span class="meeting-td">活动时间：</span>
+							</div>					
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>	
+					</div>
+					
+					<div>
+						<div class="mett-ip">
+							<span class="meeting-td use-name">活动地点：</span>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">省</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">市</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">活动名称</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<button class="add-btn-act">添加</button>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="mett-ip">
+							<span class="meeting-td use-name"></span>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">省</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">市</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<select name="">
+									<option value="">活动名称</option>
+								</select>
+							</div>
+							<div class="met-equ-input">
+								<button class="del-btn-act">删除</button>
+							</div>
+						</div>
+					</div>
+					
+					<div>						
+						<div class="sapce-box">
+							<div class="name-12 use-name">活动海报：</div>
+							<div class="space act-img" id="imgArea">
+							</div>
+							<div>
+								<input type="file" class="file" id="fileInput" onchange="preImage(this)" multiple="multiple" accept="image" placeholder="上传自定义图片" />
+							</div>
+							<div class="sapce-box-text">
+								<span>上传750x420的JPG、PNG</span>
+								<span>图片文件</span>
+							</div>
+						</div>
+						<div class="describe">
+							<div class="name duiqi">活动详情：</div>
+							<textarea  class="input-text" required="required" value="描述"></textarea>
+						</div>
+					</div>
+				
+					<div class="act-registration ">
+						<div class="meeting-box">
+							<div>
+								<h5 class="meet-list1">报名信息</h5>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="mett-ip">
+							<span class="meeting-td use-name">参与方式：</span>
+							<div class="met-equ-input">
+								<button class="wu-sign no-sign">无需报名</button>
+							</div>
+							<div class="met-equ-input">
+								<button class="wu-sign to-sign">需要报名</button>
+							</div>
+							<div class="met-equ-input">
+								<button class="wu-sign go-sign">购票</button>
+							</div>
+							
+						</div>
+					</div>
+					<div class="act-gp-box">
+						<table border="0" cellspacing="1" cellpadding="0">
+							<tr>
+								<td class="navtd56">排序</td>
+								<td class="navtd navtd104">门票名称</td>
+								<td class="navtd navtd104">数量</td>
+								<td class="navtd navtd88">价格</td>
+								<td class="navtd navtd88">门票日期</td>
+								<td class="navtd navtd88">售票</td>
+								<td class="navtd navtd88">售票</td>
+							</tr>
+							<tr>
+								<td class="navtd56 tabalelist">1</td>
+								<td class="navtd104 tabalelist">
+									<div class="met-equ-input act-mg">
+										<input type="text" placeholder="请输入门票名称" />
+									</div>
+								</td>
+								<td class="tabalelist">
+									<div class="met-equ-input act-mg">
+										<select name="">
+											<option value="">35</option>
+										</select>
+									</div>
+								</td>
+								<td class="tabalelist ">
+									<div class="met-equ-input act-mg">
+										<input type="text" placeholder="" />
+									</div>
+								</td>
+								<td class="tabalelist">
+									<div class="met-equ-input act-mg">
+										<select name="">
+											<option value="">日期</option>
+										</select>
+									</div>
+								</td>
+								
+								<td class="tabalelist">
+									<div class="met-equ-input act-mg act-mp-date">
+										<select name="">
+											<option value="">日期</option>
+										</select>
+									</div>
+								</td>
+							
+								<td class="navtd88 tabalelist" id="editor">
+									<div class="information-box">
+										<div class="information-text">操作</div>
+									</div>
+								</td>						
+							</tr>
+							
+						</table>
+			
+						
+					</div>
+					<div class="act-bm-s">
+						<div class="mett-ip">
+							<span class="meeting-td use-name">退货截止时间：</span>
+							<div class="met-input">
+								<select name="">
+									<option value=""></option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+					<div class="options">
+						<form>
+							<input type="radio" name="gender" class="use-rad" id="use-rad" value="" />需要预留信息						
+							<input type="radio" name="gender" value="" />仅允许入驻用户参与
+						</form>					
+					</div>
+					<div class="options-box">					
+						<div class="mett-ip">
+							<div class="use-name">
+								<span class="meeting-td">预留信息表单：</span>
+							</div>					
+						</div>
+						<div class="fom-box">
+							<div class="fom-cent">
+								<div class="act-tle-text">
+									<span>单行文本</span>
+								</div>
+								<div class="act-tle-text met-lef30">
+									<span>多行文本</span>
+								</div>
+								<div class="act-tle-text met-lef30">
+									<span>单选问题</span>
+								</div>
+								<div class="act-tle-text met-lef30">
+									<span>多选问题</span>
+								</div>
+								<div>
+									<div class="fom-cent-int">
+										<input type="text" placeholder="姓名"/>
+									</div>
+									
+									<div class="fom-cent-int met-lef30"> 
+										<input type="text" placeholder="手机"/>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+					</div>
+									
+					<div class="act-bm-s">
+						<div class="mett-ip">
+							<span class="meeting-td use-name">显示状态：</span>
+							<div class="met-input">
+								<select name="">
+									<option value=""></option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div>
+					<div class="modal-footer">
+						<button type="button" class="met-qu-butn">确定</button>
+						<button type="button" class="met-cancel" data-dismiss="modal">取消</button>						
+					</div>
+				</div>
+			</div>
+			
+		</div>	
+
+		</div>
+
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog" style="width:702px;">
+				<div class="modal-content">		
+					
+						<button type="button" class="close" data-dismiss="modal">							
+							<div class="list-backs"></div>
+							<span aria-hidden="true" class="chahao">&times;</span>
+							<span class="sr-only">Close</span>
+							
+						</button>
+						
+						
+						<div class="met-h5-line">
+							<h5 class="meet-list1">编辑关联门禁</h5>
+						</div>										
+					<div class="modal-body">
+						<div class="met-equipment">
+							<div class="met-equipment-box">
+								<!--<div class="met-h5-line">
+									<h5 class="meet-list1">编辑关联门禁</h5>
+								</div>-->
+								<div class="mett-ip met-lef64">
+									<span class="meeting-td">省：</span>
+									<div class="met-equ-input">
+										<select name="">
+											<option value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="mett-ip met-lef64">
+									<span class="meeting-td">省：</span>
+									<div class="met-equ-input">
+										<select name="">
+											<option value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="mett-ip met-lef64">
+									<span class="meeting-td">省：</span>
+									<div class="met-equ-input">
+										<select name="">
+											<option value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="mett-ip met-lef30">
+									<span class="meeting-td">门禁ID：</span>
+									<div class="met-equ-input">
+										<input type="text" />
+									</div>
+								</div>
+								<div class="mett-ip met-lef16">
+									<span class="meeting-td">门禁名称：</span>
+									<div class="met-equ-input">
+										<input type="text" />
+									</div>
+								</div>
+								<div class="met-equ-btn">
+									<button>查找</button>
+								</div>
+								<div class="met-equ-tbe">
+									<table>
+										<tr class="met-tl-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td16">门禁ID</td>
+											<td class="met-td120 met-td16">门禁名称</td>
+											<td class="met-td120 met-td16">社区</td>
+											<td class="met-td120 met-td16">省份</td>
+											<td class="met-td120 met-td16">市</td>
+										</tr>
+										<tr class="met-center-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td14">10086</td>
+											<td class="met-td120 met-td14">办公区东门</td>
+											<td class="met-td120 met-td14">天恒大厦优客工场</td>
+											<td class="met-td120 met-td14">新疆维吾尔自治区</td>
+											<td class="met-td120 met-td14">乌鲁木齐市</td>
+										</tr>
+										<tr class="met-center-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td14">10086</td>
+											<td class="met-td120 met-td14">办公区东门</td>
+											<td class="met-td120 met-td14">天恒大厦优客工场</td>
+											<td class="met-td120 met-td14">新疆维吾尔自治区</td>
+											<td class="met-td120 met-td14">乌鲁木齐市</td>
+										</tr>
+										<tr class="met-center-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td14">10086</td>
+											<td class="met-td120 met-td14">办公区东门</td>
+											<td class="met-td120 met-td14">天恒大厦优客工场</td>
+											<td class="met-td120 met-td14">新疆维吾尔自治区</td>
+											<td class="met-td120 met-td14">乌鲁木齐市</td>
+										</tr>
+									</table>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="met-qu-butn">确定</button>
+						<button type="button" class="met-cancel" data-dismiss="modal">取消</button>						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/img.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/activity.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="laydate/base.js"></script>
+		<script type="text/javascript" src="laydate/layout.min.js"></script>
+		<script type="text/javascript" src="laydate/laydate.js"></script>
+		<script type="text/javascript" src="laydate/place-order-list.js"></script>
+	</body>
+
+</html>

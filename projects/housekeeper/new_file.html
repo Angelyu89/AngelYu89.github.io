@@ -1,0 +1,600 @@
+<%@ page import="com.tools.constants.PermissionConstants"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="pg" uri="/WEB-INF/taglib/page"%>
+<%@page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<!doctype html>
+<html>
+<head>
+<title>Ebox | 企业盒子 1.0</title>
+<link rel="stylesheet" href="${basePath}/v1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${basePath}/v1/css/kkpager_blue.css" />
+<link rel="stylesheet" href="${basePath}/v1/css/base.css" />
+<link rel="stylesheet" href="${basePath}/v1/css/user-registration.css" />
+<link rel="stylesheet" href="${basePath}/v1/laydate/laydate.css" />
+<link rel="stylesheet" href="${basePath}/resource/artdialog/skins/default.css">
+<script src="${basePath}/v1/js/jquery.min.js" type="text/javascript"charset="utf-8"></script>
+<script type="text/javascript"src="${basePath}/resource/artdialog/jquery.artDialog.js?skin=blue"></script>
+<script type="text/javascript"src="${basePath}/resource/artdialog/plugins/iframeTools.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+            $(function(){
+                $(document).on("click","input[name=all]",function(){
+                    var selected = $(this).prop("checked");
+                    $("input.item").prop("checked",selected);
+                });
+                $(document).on("click","input.item",function(){
+                    var allSelected = true;
+                    $("input.item").each(function(){
+                        var current = $(this).prop("checked");
+                        if (!current){
+                            allSelected = false;
+                            return false;
+                        }
+                    });
+                    $("input[name=all]").prop("checked",allSelected);
+                });
+
+                $(".js-usersImplBtn").on('click',function(){
+                    var userWin=art.dialog.open('userImplDialog', {
+                                title: '批量用户注册',
+                                width: 800,
+                                height: 340,
+                                lock:true,
+                                opacity: 0.5,
+                                fixed: true,
+                                drag: false,
+                                resize: false,
+                                ok: function(){
+                                    var status = window.parent.userImplPageStatusBySystem;
+                                    if (status == 1) {
+                                        var oForm = userWin.iframe.contentDocument.getElementById("SystemUserImplForm");
+                                        var userFile = $(oForm).find(".userImplFile");
+                                        var fileVal = userFile.val();
+                                        if (fileVal == '') {
+                                            alert("请选择导入文件");
+                                        } else {
+                                            var arr = fileVal.split(".");
+                                            var fileGs = arr[arr.length - 1];
+                                            if (fileGs == "xls" || fileGs == "xlsx") {
+                                                $(".mask-layer").addClass("mask-show");
+                                                window.parent.userImplPageStatusBySystem = 2;
+                                                $(oForm).submit();
+                                            } else {
+                                                alert("只支持xls、xlsx文件格式");
+                                            }
+                                        }
+                                    }else if (status == 2){
+                                        window.parent.userImplPageStatusBySystem = 1;
+                                        return true;
+                                    }
+                                    return false;
+                                },
+                                cancel: function(){
+                                    userImplPageStatusBySystem = 1;
+                                    return true;
+                                }
+                            });
+                });
+
+                $("[name=enter]").on('click',function(){
+                    var userWin=art.dialog.open('enterUserDialog',
+                            {
+                                title: '入驻会员导入',
+                                width: 800,
+                                height: 340,
+                                lock:true,
+                                opacity: 0.5,
+                                fixed: true,
+                                drag: false,
+                                resize: false,
+                                ok: function(){
+                                    var status = window.parent.userEnterStatus;
+                                    if (status ==1){
+                                        var oForm = userWin.iframe.contentDocument.getElementById("userEnter");
+                                        var userFile = $(oForm).find(".userEnterFile");
+                                        var fileVal = userFile.val();
+                                        if (fileVal == '') {
+                                            alert("请选择导入文件");
+                                        } else {
+                                            var arr = fileVal.split(".");
+                                            var fileGs = arr[arr.length - 1];
+                                            if (fileGs == "xls" || fileGs == "xlsx") {
+                                                $(".mask-layer").addClass("mask-show");
+                                                window.parent.userEnterStatus = 2;
+                                                $(oForm).submit();
+                                            } else {
+                                                alert("只支持xls、xlsx文件格式");
+                                            }
+                                        }
+                                        return false;
+                                    }else if (status == 2){
+                                        window.parent.userEnterStatus = 1;
+                                        return true;
+                                    }
+
+                                },
+                                cancel: function(){
+                                    return true;
+                                }
+                            });
+                });
+            });
+            var userImplPageStatusBySystem = 1;
+            var userEnterStatus = 1;
+        </script>
+</head>
+
+	<%@ include file="/common/v1/menu.jsp"%>
+<!--用户注册----->
+
+
+		<div class="user-metbox">  
+			<div class="meeting-table">
+				<div class="meeting-box">
+					<div class="h5-line">
+						<h5 class="meet-list1">注册用户查询</h5>
+					</div>
+					
+					<form class="form-horizontal search" role="form" id="userSearch" method="get" action="/user/webUserList">
+					<div class="mett-ip">
+						<div class="use-name">
+							<span class="meeting-td">手机号：</span>
+						</div>
+						<div class="met-input use-mag24">
+							<input type="text" class="form-control" name="mobile" value="${userSearch.mobile}" placeholder="手机号">
+						</div>
+					</div>
+
+					<div class="mett-ip met-lef6">
+						<div class="use-name">
+							<span class="meeting-td">姓名：</span>
+						</div>
+
+						<div class="met-input">
+							<input type="text" class="form-control " name="realName" value="${userSearch.realName}" placeholder="姓名">
+						</div>
+					</div>
+
+					<div class="mett-ip met-lef6">
+						<div class="use-name">
+							<span class="meeting-td">身份证号：</span>
+						</div>
+
+						<div class="met-input">
+							<input type="text" class="form-control " name="idCard" value="${userSearch.idCard}" placeholder="身份证号">
+						</div>
+					</div>
+
+					<div class="mett-ip met-lef6">
+						<div class="use-name">
+							<span class="meeting-td">入驻状态：</span>
+						</div>
+						
+						<div class="met-input">
+							<select class="form-control input-xsmall" name="enterType">
+															<option value="">请选择</option>
+															<%--<option value="0" <c:if test="${userSearch.enterType == '0'}">selected</c:if> >退租</option>--%>
+															<%--<option value="1" <c:if test="${userSearch.enterType == '1'}">selected</c:if>>未入驻</option>--%>
+															<%--<option value="2" <c:if test="${userSearch.enterType == '2'}">selected</c:if>>待入驻</option>--%>
+															<option value="3" <c:if test="${userSearch.enterType == '3'}">selected</c:if>>已入驻</option>
+														</select>
+						</div>
+					</div>
+
+					<div class="mett-ip use-mag24">
+						<div class="use-name">
+							<span class="meeting-td">创建时间：</span>
+						</div>
+						<div class="met-input">
+							<input type="text" class="form-control input-small input-inline laydate-icon" name="registerStartTime" id="startDate" value="<fmt:formatDate value="${userSearch.registerStartTime}" pattern="yyyy-MM-dd"/>" placeholder="预约开始时间">- - -
+						</div>
+						<div class="met-input use-mage-93">
+							 <input type="text" class="form-control input-small input-inline laydate-icon" name="registerEndTime" id="endDate" value="<fmt:formatDate value="${userSearch.registerEndTime}" pattern="yyyy-MM-dd"/>" placeholder="预约结束时间">
+						</div>
+					</div>
+					<div class="mett-ip use-mag170 use-mag24">
+						<div class="use-name">
+							<span class="meeting-td">注册渠道：</span>
+						</div>
+						<div class="met-input">
+							<select class="form-control" name="registerLocal">
+								<option value="">请选择</option>
+								<option value="1" <c:if test="${userSearch.registerLocal == '1'}">selected</c:if>>网站</option>
+								<option value="4" <c:if test="${userSearch.registerLocal == '4'}">selected</c:if>>H5</option>
+								<option value="2" <c:if test="${userSearch.registerLocal == '2'}">selected</c:if>>iOS</option>
+								<option value="3" <c:if test="${userSearch.registerLocal == '3'}">selected</c:if>>android</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="mett-ip use-mag76">
+						<div class="use-name">
+							<span class="meeting-td">账号状态：</span>
+						</div>
+						<div class="met-input">
+							<select class="form-control" name="status">
+															<option value="">请选择</option>
+															<option value="0" <c:if test="${userSearch.status == '0'}">selected</c:if>>正常</option>
+															<option value="1" <c:if test="${userSearch.status == '1'}">selected</c:if>>禁用</option>
+														</select>
+						</div>
+					</div>
+					<div class="mett-ip use-mag24">
+						<div class="use-name">
+							<span class="meeting-td">企业名称：</span>
+						</div>
+
+						<div class="met-input">
+							<input type="text" class="form-control " name="corpName" value="${userSearch.corpName}" placeholder="企业名称">
+						</div>
+					</div>
+					<div class="mett-ip use-mage-40">
+						<div class="use-name">
+							<span class="meeting-td">省：</span>
+						</div>
+
+						<div class="met-input">
+							<select name="">
+								<option value="">北京</option>
+							</select>
+						</div>
+					</div>
+					<div class="mett-ip use-mage-40">
+						<div class="use-name">
+							<span class="meeting-td">市：</span>
+						</div>
+
+						<div class="met-input">
+							<select name="">
+								<option value="">北京</option>
+							</select>
+						</div>
+					</div>
+					<div class="mett-ip use-mage-40">
+						<div class="use-name">
+							<span class="meeting-td">空间名称：</span>
+						</div>
+
+						<div class="met-input">
+							<select name="">
+								<option value="">北京</option>
+							</select>
+						</div>
+					</div>
+					<div class="sta-btn use-mag24">
+						<button type="submit" class="btn blue input-small">查 找</button>
+					</div>
+					</form>
+					
+				</div>
+			</div>	
+			
+			<div class="tab-content">
+						<div class="table-a">
+							<table border="0" cellspacing="1" cellpadding="0" style="width: 1100px;margin: 0 auto;text-align: center;">
+								<thead>
+								<tr>
+									<td class="navtd36">
+										<input type="radio" name="all">
+									</td>
+									<td class="navtd56">用户ID</td>
+									<td class="navtd navtd104">手机号</td>
+									<td class="navtd navtd104">姓名</td>
+									<!-- 						<td class="navtd navtd88">证件号</td> -->
+									<!-- 						<td class="navtd navtd88">入驻状态</td> -->
+									<td class="navtd navtd88">注册时间</td>
+									<!-- 						<td class="navtd navtd88">注册渠道</td> -->
+									<td class="navtd navtd120">账号状态</td>
+									<td class="navtd navtd120">企业</td>
+									<td class="navtd navtd88">操作</td>
+								</tr>
+								</thead>
+								<tbody>
+								<c:forEach items="${page.result}" var="user" varStatus="status">
+									<tr>
+										<td class="tabalelist"><input type="checkbox" class="item" id="${user.id}"></td>
+										<td class="tabalelist">${user.nickname}</td>
+										<td class="tabalelist"><c:out value="${user.mobile}" /></td>
+										<td class="tabalelist"><c:out value="${user.realname}" /></td>
+											<%-- 							                                                    <td><c:out value="${user.idCard}"/></td> --%>
+										<!-- 							                                                    <td> -->
+											<%-- 							                                                        ${user.strEnterType} --%>
+										<!-- 							                                                    </td> -->
+										<td>
+											<fmt:formatDate value="${user.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
+										</td>
+										<!-- 							                                                    <td> -->
+											<%-- 							                                                        ${user.strRegisterLocal} --%>
+										<!-- 							                                                    </td> -->
+										<td>
+											<c:if test="${user.isDel eq 0}">正常</c:if>
+											<c:if test="${user.isDel eq 1}">禁用</c:if>
+										</td>
+										<td>
+											<c:if test="${!empty(companyList)}">
+												<c:forEach items="${companyList}" var="co" varStatus="status">
+													<c:if test="${user.id eq co.userId}">
+														${co.companyName}
+													</c:if>
+												</c:forEach>
+											</c:if>
+										</td>
+										<td class="tabalelist">
+											<shiro:hasPermission
+													name="<%=PermissionConstants.IN_WEB_USER_CREATE%>">
+												<div class="information-box user-btn-bj" data-number="${user.id}">
+														<%--<a href="javascript:edit('${user.id}');"--%>
+														<%--class="btn btn-outline btn-xs yellow"> --%>
+													<div class="information-tu">
+														<img src="${basePath}/v1/img/6.png" alt="" />
+													</div>
+													<div class="information-text">编辑</div>
+														<%--</a>--%>
+												</div>
+											</shiro:hasPermission></td>
+									</tr>
+								</c:forEach>
+								</tbody>
+							</table>
+							<!-- 分页 -->
+							<div class="page" style="width:100%;margin:0 auto;">
+								<div class="page-box" style="margin-left:100px" id="kkpager"></div>
+							</div>
+							<!--/ 分页 -->
+						</div>
+					</div>
+		
+		</div>
+					<!--用户注册---编辑--->
+		<div class="user-regbox">
+						<div class="enter-push-box">
+							<div class="meeting-table">
+								<div class="meeting-box">
+									<div class="h5-line">
+										<h5 class="meet-list1">注册用户</h5>
+									</div>
+									<div class="ent-box enter-box">
+										<div class="mett-ip">
+											<div class="use-name enter-name">
+												<span class="meeting-td">用户ID：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<input type="name" />
+											</div>
+										</div>
+
+										<div class="mett-ip met-input-top">
+											<div class="use-name enter-name">
+												<span class="meeting-td">手机号码：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<input type="name" placeholder="" />
+											</div>
+										</div>
+
+										<div class="mett-ip met-input-top">
+											<div class="use-name enter-name">
+												<span class="meeting-td">姓名：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<input type="name" />
+											</div>
+										</div>
+
+										<div class="mett-ip met-input-top">
+											<div class="use-name enter-name">
+											</div>
+											<div class="met-input">
+												<div class="sapce-box">
+													<div class="name-12 use-mlf">头像：</div>
+													<div class="space use-space-m" id="imgArea"></div>
+													<div>
+														<input type="file" class="file file-mglf" id="fileInput" onchange="preImage(this)" multiple="multiple" accept="image" placeholder="上传自定义图片" />
+													</div>
+													<div class="sapce-box-text file-mglf">
+														<span>格式GIF、JPG、PNG</span>
+														<span></span>大小3M以内</p>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="mett-ip reg-navbox">
+											<div class="use-name enter-name tabe-reg-tile">
+												<span class="meeting-td">企业：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<table class="reg-name-tablebox">
+													<tr>
+														<td class="reg-name-table">企业名称</td>
+														<td class="reg-name-table">企业ID</td>
+														<td class="reg-name-table">入驻状态</td>
+														<td class="reg-name-table">职位</td>
+														<td class="reg-name-table">管理员状态</td>
+													</tr>
+													<tr>
+														<td class="reg-tab-chirld">优客工场</td>
+														<td class="reg-tab-chirld">007</td>
+														<td class="reg-tab-chirld">已入驻</td>
+														<td class="reg-tab-chirld"></td>
+														<td class="reg-tab-chirld">是</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+								<!--创始人-->
+								<div class="meeting-box">
+									<div class="ent-box enter-boxs">
+										<div class="mett-ip">
+											<div class="use-name enter-name">
+												<span class="meeting-td">门禁卡：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<input type="name" />
+											</div>
+										</div>
+
+										<div class="mett-ip met-input-top">
+											<div class="use-name enter-name">
+												<span class="meeting-td">用户身份：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<input type="name" />
+											</div>
+										</div>
+
+										<div class="mett-ip met-input-top">
+											<div class="use-name enter-name">
+												<span class="meeting-td">活动地点：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<input type="name" />
+											</div>
+											<div class="met-input">
+												<input type="name" />
+											</div>
+											<div class="met-input yonzhubtn">
+												<button>添加</button>
+											</div>
+										</div>
+										<div class="mett-ip">
+											<div class="use-name enter-name">
+												<span class="meeting-td"></span>
+											</div>
+											<div class="met-input en-met-wd">
+												<input type="name" />
+											</div>
+											<div class="met-input">
+												<input type="name" />
+											</div>
+											<div class="met-input yonzhubtn">
+												<button>撤离</button>
+											</div>
+										</div>
+
+										<div class="mett-ip met-input-top">
+											<div class="use-name enter-name">
+												<span class="meeting-td">注册时间：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<input type="name" />
+											</div>
+										</div>
+										<div class="mett-ip met-input-top">
+											<div class="use-name enter-name">
+												<span class="meeting-td">注册渠道：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<input type="name" />
+											</div>
+										</div>
+										<div class="mett-ip met-input-top zhuangtai">
+											<div class="use-name enter-name">
+												<span class="meeting-td">状态：</span>
+											</div>
+											<div class="met-input en-met-wd">
+												<select name="">
+													<option value=""></option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="save baocbox">
+										<button class="user-save baoc">保存</button>
+										<button class="user-cancel qux">取消</button>
+									</div>
+								</div>
+
+							</div>
+
+
+						</div>
+				</div>
+			
+		
+
+
+	<!-- 批量匹配企业-->
+	<div class="modal fade" id="myModal20" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" style="width:702px;">
+			<div class="modal-content">
+				<button type="button" class="close" data-dismiss="modal">
+					<div class="list-backs"></div>
+					<span aria-hidden="true" class="chahao">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<div class="met-h5-line">
+					<h5 class="meet-list1">批量匹配企业</h5>
+				</div>
+				<div class="modal-body">
+					<div class="met-equipment">
+						<div class="met-equipment-box">
+							<div class="mett-ip met-lef16">
+								<span class="meeting-td">企业名称：</span>
+								<div class="met-equ-input">
+									<input type="text" name="enterpriseName" id="enterpriseName" />
+								</div>
+							</div>
+							<div class="met-equ-btn">
+								<button onclick="loadEnterpriseList();">查找</button>
+							</div>
+							<div class="met-equ-tbe">
+								<table>
+									<tr class="met-tl-tr">
+										<td class="met-td68">
+											<%--<input type="radio" name="vehicle[]" value="Boat"><br>--%>
+										</td>
+										<td class="met-td88 met-td16">企业ID</td>
+										<td class="met-td120 met-td16">企业名称</td>
+										<td class="met-td120 met-td16">企业类型</td>
+										<%--<td class="met-td120 met-td16">是否入驻</td>--%>
+										<td class="met-td120 met-td16">联系人</td>
+										<td class="met-td120 met-td16">联系电话</td>
+									</tr>
+									<tbody id="batchRelationEnterprise">
+								</tbody>
+
+								</table>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="met-qu-butn" onclick="save();">确定</button>
+					<button type="button" class="met-cancel" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+    
+    function edit(id) {
+    	createWin = art.dialog.open('${basePath}/user/webUserEdit?id='+id,
+                {
+    				id:'editwin',
+                    title: '编辑用户',
+                    width: 600,
+                    height: 900,
+                    left: '50%',
+                    top: '10%',
+                    lock:true
+                });
+    }
+</script>
+		<script src="${basePath}/v1/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${basePath}/v1/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${basePath}/v1/js/img.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${basePath}/v1/js/title.js" type="text/javascript" charset="utf-8"></script>
+		<script src="${basePath}/v1/js/kkpager.min.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="${basePath}/v1/js/user-registration.js" type="text/javascript" charset="UTF-8"></script>
+		<pg:page name="userPage" page="${page}" formTagId="userSearch" />
+</body>
+</html>

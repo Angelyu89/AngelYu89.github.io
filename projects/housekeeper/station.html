@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/station.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<!--<script type="text/javascript" src="js/address.js"></script>-->
+		<title>工位管理-长租</title>
+	</head>
+
+	<body>
+		<!--logo导航-->
+		<div class="header container-fluid">
+			<div class="headerbox">
+				<div class="row">
+					<div class="col-sm-2 col-sx-2">
+						<a href="home.html">
+							<div class="logo data-an-logo"></div>
+							<span class="logotext logotext2">企业盒子</span>
+						</a>
+					</div>
+					<div class="col-sm-3 col-sx-3">
+						<div class="logobar">
+							欢迎使用企业盒子
+						</div>
+					</div>
+					<div class="col-sm-4 col-sx-4">
+
+					</div>
+					<div class="header-rg">
+						<div class="col-sm-1 col-sx-1">
+							<div class="message"></div>
+							<div class="message-text">
+								<span>1</span>
+							</div>
+						</div>
+						<div class="col-sm-1 col-sx-1">
+							<a href="personal-data.html" style="position: absolute;">
+								<div class="my"></div>
+							</a>
+						</div>
+						<div class="col-sm-1 col-sx-1">
+							<div class="return"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<!--logo导航结束-->
+
+		<!--导航-->
+		<div class="nav">
+			<div>
+				<div class="row rowbox">
+					<div class="nav-bt">
+						<a href="space.html" class="nav-bar">
+							<div class="nav-icon1">
+							</div>
+							<div class="online"></div>
+							<div class="navtext">空间管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="station.html" class="nav-bar">
+							<div class="nav-icon2">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">工位管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="meeting.html" class="nav-bar">
+							<div class="nav-icon3">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext2">会议室管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="site.html" class="nav-bar">
+							<div class="nav-icon4">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">场地管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="appointment.html" class="nav-bar">
+							<div class="nav-icon5">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">预约管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="order.html" class="nav-bar">
+							<div class="nav-icon6">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">订单管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="activity.html" class="nav-bar">
+							<div class="nav-icon7">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">活动管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="enterprise.html" class="nav-bar">
+							<div class="nav-icon8">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">企业用户</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="user-registration.html" class="nav-bar">
+							<div class="nav-icon9">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">注册用户</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="" class="nav-bar">
+							<div class="nav-icon10">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">门禁办卡</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="system.html" class="nav-bar">
+							<div class="nav-icon11">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">系统用户</div>
+						</a>
+
+					</div>
+					<div class="nav-bt">
+						<a href="data-analysis.html" class="nav-bar">
+							<div class="nav-icon12">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">数据分析</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--导航-->
+
+		<div class="meeting-table">
+			<div class="meeting-box">
+				<ul>
+					<li class="mg--0">
+						<a href="station.html">
+							<h5 class="meet-list1">长租管理</h5>						
+						</a>							
+					</li>
+					<li>
+						<a href="station-D.html">
+							<h5 class="meet-list1">短租管理</h5>							
+						</a>			
+					</li>
+				</ul>
+				<div class="h5-line"></div>
+				<button type="button" class="btn btn-primary btn-lg add-station" data-toggle="modal" data-target="#myModal4">
+						 添加长租工位
+				</button>
+				<div class="mett-ip">
+					<span class="meeting-td">区域名称：</span>
+					<div class="met-input">
+						<input type="name" />
+					</div>
+				</div>
+
+				<div class="mett-ip met-lef6">
+					<span class="meeting-td">省：</span>
+					<div class="met-input">
+						<select name="">
+							<option value="">北京</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="mett-ip met-lef6">
+					<span class="meeting-td">市：</span>
+					<div class="met-input">
+						<select name="">
+							<option value="">北京</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="mett-ip met-lef6">
+					<span class="meeting-td">空间名称：</span>
+					<div class="met-input met70">
+						<input type="name" />
+					</div>
+				</div>
+
+				<div class="mett-ip">
+					<span class="meeting-td">区域类型： </span>
+					<div class="met-input sta-in2">
+						<select name="">
+							<option value="">北京</option>
+						</select>
+					</div>
+				</div>
+
+				
+				<div class="sta-btn">
+					<button>查找</button>
+				</div>
+			</div>
+			<div class="batch-1">
+				<div class="batch-2">
+					<button type="button" class="lease" data-toggle="modal" data-target="#myModal2">
+						添加区域
+					</button>				
+				</div>
+			</div>
+		</div>
+
+		<!--列表区-->
+		<div class="tab-content">
+			<div class="table-a">
+				<table border="0" cellspacing="1" cellpadding="0">
+					<tr>
+						<td class="navtd36">
+							<input type="checkbox" name="vehicle[]" value="Boat"><br>
+						</td>
+						<td class="navtd56">编号</td>
+						<td class="navtd navtd104">短租编号</td>
+						<td class="navtd navtd104">所属空间</td>
+						<td class="navtd navtd88">工位状态</td>
+						<td class="navtd navtd88">工位类型</td>
+						<td class="navtd navtd88">预定数量</td>
+						<td class="navtd navtd88">剩余数量</td>
+						<td class="navtd navtd120">开放时间</td>
+						<td class="navtd navtd120">租赁单价</td>
+						<td class="navtd navtd88">操作</td>
+					</tr>
+					<tr>
+						<td class="navtd36">
+							<input type="checkbox" name="vehicle[]" value="Boat"><br>
+						</td>
+						<td class="navtd56 tabalelist">1</td>
+						<td class="navtd104 tabalelist">001</td>
+						<td class="tabalelist">优客工场</td>
+						<td class="tabalelist ">开放租赁</td>
+						<td class="tabalelist">18</td>
+						<td class="tabalelist navtd88">
+							<span class="span_orgin">0.002</span>
+						</td>
+						<td class="tabalelist navtd88">
+							<span>全年</span>
+						</td>
+						<td class="navtd120 tabalelist time">10:32:00</td>
+						<td class="navtd120 tabalelist time">50：00</td>
+						
+						
+						<td class="navtd88 tabalelist" id="editor">
+							<div class="information-box">
+								<div class="information-tu">
+									<img src="img/6.png" alt="" />
+								</div>
+								<div class="information-text">编辑</div>
+							</div>
+						</td>						
+					</tr>
+					<tr>
+						<td class="navtd36">
+							<input type="checkbox" name="vehicle[]" value="Boat"><br>
+						</td>
+						<td class="navtd56 tabalelist">2</td>
+						<td class="navtd104 tabalelist">002</td>
+						<td class="tabalelist ">优客工场</td>
+						<td class="tabalelist navtd88">开放租赁</td>
+						<td class="tabalelist">18</td>
+						<td class="tabalelist">
+							<span class="span_orgin">0.002</span>
+						</td>
+						<td class="tabalelist navtd88">
+							<span>全年</span>
+						</td>
+						<td class="navtd120 tabalelist time">10:32:00</td>
+						<td class="navtd120 tabalelist time">50：00</td>
+						<!--<td class="navtd120 tabalelist time">00:32:00</td>
+						<td class="navtd120 tabalelist time">2016.12.22 10:32:00</td>-->
+						<td class="navtd88 tabalelist" id="editor">
+							<div class="information-box">
+								<div class="information-tu">
+									<img src="img/6.png" alt="" />
+								</div>
+								<div class="information-text">编辑</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		
+		<!-- 创建长租工位 -->
+		<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+					<div class="modal-body">
+						<!--弹框-->
+						<div class="tank-dw">
+							<div class="tankang-box">
+								<div class="modal-header">
+									<h5>添加长租工位</h5>
+									<button type="button" class="close" data-dismiss="modal">
+									<div class="list-back">
+										<span aria-hidden="true">&times;</span>
+										<span class="sr-only">Close</span>
+									</div>
+									
+								</button>
+								</div>
+								<div>
+									<div class="city1">
+										<div class="name">省</div>
+										<strong class="strong40">*</strong>	
+										<select class="sec-provinces">
+											<option id="input-zone" value="">省份</option>
+										</select>
+									</div>
+									<div class="city2">
+										<div class="name">市</div>
+										<strong class="strong41">*</strong>	
+										<select class="sec-city">
+											<option id="input-city" value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div>
+									<div class="name">空间名称</div>
+									<strong class="strong42">*</strong>	
+									<select class="input-select03">
+											<option id="input-city" value="">北京</option>
+									</select>
+								</div>
+								<div>
+									<div class="name">入驻分区</div>
+									<strong class="strong43">*</strong>	
+									<select class="input-select03">
+											<option id="input-city" value="">北京</option>
+									</select>
+								</div>							
+								<div class="city2 city22">
+									<div class="name">区域类型</div>
+									<strong class="strong44">*</strong>	
+									<select class="sec-city">
+										<option id="input-city" value="">开放类型</option>
+									</select>
+								</div>
+								
+								<div class="city1 city11">
+										<div class="name name140">工位情况</div>
+										<strong class="strong45">*</strong>	
+										<input type="text" class="sec-provinces" required="required" placeholder="12/20" />
+										<span> 已分配工位/总工位数</span>
+								</div>
+								<div>
+									<div class="name namemeng">添加数量</div>
+									<strong class="strong46">*</strong>	
+									<input type="url" class="rinput-text namemeng-number" required="required" placeholder="添加数量" />
+								</div>
+								<div>
+									<div class="name"></div>
+									<button type="button" class="input-text associated" data-toggle="modal" data-target="#myModal1">
+											生成预览
+									</button>
+								</div>
+								<div class="location-area">
+									<div class="location-area-box">
+										<span>B1-南一区 001</span>
+									</div>
+									<div class="location-area-box">
+										<span>B1-南一区 002</span>
+									</div>
+									<div class="location-area-box">
+										<span>B1-南一区 003</span>
+									</div>
+									<div class="location-area-box">
+										<span>B1-南一区 004</span>
+									</div>
+									<div class="location-area-box">
+										<span>B1-南一区 005</span>
+									</div>
+									<div class="location-area-box">
+										<span>B1-南一区 006</span>
+									</div>
+									<div class="location-area-box">
+										<span>B1-南一区 007</span>
+									</div>
+									<div class="location-area-box">
+										<span>B1-南一区 008</span>
+									</div>
+									
+								</div>
+
+								<div class="save">
+									<button class="user-save">确定添加</button>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 长租-创建-生成预览-->
+		<!--<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog" style="width:702px;">
+				<div class="modal-content">		
+					
+						<button type="button" class="close" data-dismiss="modal">							
+							<div class="list-backs"></div>
+							<span aria-hidden="true" class="chahao">&times;</span>
+							<span class="sr-only">Close</span>
+							
+						</button>
+						
+						
+						<div class="met-h5-line">
+							<h5 class="meet-list1">编辑关联门禁</h5>
+						</div>										
+					<div class="modal-body">
+						<div class="met-equipment">
+							<div class="met-equipment-box">								
+								<div class="mett-ip met-lef64">
+									<span class="meeting-td">省：</span>
+									<div class="met-equ-input">
+										<select name="">
+											<option value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="mett-ip met-lef64">
+									<span class="meeting-td">省：</span>
+									<div class="met-equ-input">
+										<select name="">
+											<option value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="mett-ip met-lef64">
+									<span class="meeting-td">省：</span>
+									<div class="met-equ-input">
+										<select name="">
+											<option value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="mett-ip met-lef30">
+									<span class="meeting-td">门禁ID：</span>
+									<div class="met-equ-input">
+										<input type="text" />
+									</div>
+								</div>
+								<div class="mett-ip met-lef16">
+									<span class="meeting-td">门禁名称：</span>
+									<div class="met-equ-input">
+										<input type="text" />
+									</div>
+								</div>
+								<div class="met-equ-btn">
+									<button>查找</button>
+								</div>
+								<div class="met-equ-tbe">
+									<table>
+										<tr class="met-tl-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td16">门禁ID</td>
+											<td class="met-td120 met-td16">门禁名称</td>
+											<td class="met-td120 met-td16">社区</td>
+											<td class="met-td120 met-td16">省份</td>
+											<td class="met-td120 met-td16">城市</td>
+										</tr>
+										<tr class="met-center-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td14">10086</td>
+											<td class="met-td120 met-td14">办公区东门</td>
+											<td class="met-td120 met-td14">天恒大厦优客工场</td>
+											<td class="met-td120 met-td14">新疆维吾尔自治区</td>
+											<td class="met-td120 met-td14">乌鲁木齐市</td>
+										</tr>
+										<tr class="met-center-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td14">10086</td>
+											<td class="met-td120 met-td14">办公区东门</td>
+											<td class="met-td120 met-td14">天恒大厦优客工场</td>
+											<td class="met-td120 met-td14">新疆维吾尔自治区</td>
+											<td class="met-td120 met-td14">乌鲁木齐市</td>
+										</tr>
+										<tr class="met-center-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td14">10086</td>
+											<td class="met-td120 met-td14">办公区东门</td>
+											<td class="met-td120 met-td14">天恒大厦优客工场</td>
+											<td class="met-td120 met-td14">新疆维吾尔自治区</td>
+											<td class="met-td120 met-td14">乌鲁木齐市</td>
+										</tr>
+									</table>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary met-qu-butn">确定</button>
+						<button type="button" class="btn btn-default met-cancel" data-dismiss="modal">取消</button>						
+					</div>
+				</div>
+			</div>
+		</div>-->
+				
+		
+		<!-- 添加区域 -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog add-area-box">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">
+		        	<span aria-hidden="true">&times;</span>
+		        	<span class="sr-only">Close</span>
+		        </button>
+		        <h4 class="modal-title" id="myModalLabel">添加区域</h4>
+		      </div>
+		      <div class="modal-body">
+		       		<div class="add-area-box">
+		       			<div>
+									<div class="city1">
+										<div class="name">省</div>		
+										<strong class="strong1">*</strong>																	
+										<select class="sec-provinces">
+											<option id="input-zone" value="">省份</option>
+										</select>
+									</div>
+									<div class="city2">
+										<div class="name-shi">市</div>
+										<strong class="strong2">*</strong>		
+										<select class="sec-city">
+											<option id="input-city" value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div>
+									<div class="name">空间名称</div>
+									<strong class="strong3">*</strong>		
+									<select class="input-select03">
+											<option id="input-city" value="">北京</option>
+									</select>
+								</div>
+								<div>
+									<div class="name">区域名称</div>
+									<strong class="strong4">*</strong>		
+									<input type="url" class="input-text" placeholder="请输入区域名称" />
+									</div>
+								</div>
+								
+							
+								<div class="city2 city22">
+									<div class="name">区域类型</div>
+									<strong class="strong5">*</strong>		
+									<select class="sec-city">
+										<option id="input-city" value="">开放区域</option>
+									</select>
+								</div>
+								
+								<div>
+									<div class="name namemeng">区域面积</div>
+									<input type="url" class="input-text" placeholder="平方米" />
+									</div>
+								<div class="save">
+									<button class="user-save">确定添加</button>
+
+								</div>
+		       		</div>
+		      </div>
+		    
+		    </div>
+		  </div>
+		</div>
+		
+		<div class="sta-700">	
+			<th>
+				<div class="sta-area-20">
+					<h4>编辑区域</h4>
+				</div></th>
+			<table style="width:636px;">
+				<tr>
+					<td>
+						<div class="mett-ip met-lef20">
+							<div class="oDiv">
+								<span class="meeting-td">省：</span>
+							</div>
+							
+							<div class="met-input">
+								<select name="">
+									<option value="">北京</option>
+								</select>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="mett-ip met-lef20">
+							<div class="oDiv">
+								<span class="meeting-td">市：</span>
+							</div>
+							
+							<div class="met-input">
+								<select name="">
+									<option value="">北京</option>
+								</select>
+							</div>
+						</div>
+					</td>	
+					<td>
+						<div class="mett-ip">
+							<div class="oDiv">
+								<span class="meeting-td">空间名称：</span>
+							</div>							
+							<div class="met-input met140">
+								<input type="name" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>					
+					<td>
+						<div class="mett-ip met-lef20">
+							<div class="oDiv">
+								<span class="meeting-td">区域类型：</span>
+							</div>
+							
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="mett-ip met-lef20">
+							<div class="oDiv">
+								<span class="meeting-td">区域面积：</span>
+							</div>
+							
+							<div class="met-input">
+								<input type="name" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="mett-ip met-lef20">
+							<div class="oDiv">
+								<span class="meeting-td">入驻率：</span>
+							</div>
+							
+							<div class="met-input sta-ruzhul">
+								<input type="name" />
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="mett-ip met-lef20">
+							<div class="oDiv">
+								<span class="meeting-td">工位情况：</span>
+							</div>
+							
+							<div class="met-input">
+								<input type="name" />
+							</div>
+							
+						</div>
+					</td>
+					<td>
+						<div class="sta-zhus">
+							<span>已分配工位/工位总数</span>
+						</div>
+					</td>
+					<td>
+						<div class="sta-tian-btn">
+							<button>添加工位</button>
+						</div>
+					</td>
+				</tr>
+			</table>	
+			
+			<div class="sta-zt-box">
+				<table style="width:636px;">
+					<tr class="sta-zt-box-bt">
+						<td>
+							<div class="sta-zt-80">
+								<span>状态</span>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-81" id="sta-use">
+								<div class="wsy"></div>
+								<span>未使用</span>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-82" id="sta-huse">
+								<div class="ysy"></div>
+								<span>已分配</span>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-83" id="maintenance">
+								<div class="wxz"></div>
+								<span>维修中</span>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-84" id="expiring">
+								<div class="kdq"></div>
+								<span>快到期</span>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-85">
+								<select name="">
+									<option value="">操作</option>
+									<option value="">分配工位</option>
+									<option value="">维修工位</option>
+									<option value="">删除工位</option>
+								</select>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="sta-zt-box-centen">
+								<span>
+									B1-南一区 001
+								</span>
+								<div class="xuanh">			
+									<div class="sjx"></div>
+									<div class="duig">√</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+			<div class="sta-zt-box-centen-bm">
+				<tr>						
+					<td>
+						<div class="sta-zt-box-centen-qd">
+							确定
+						</div>
+					</td>
+					<td>
+						<div class="sta-zt-box-centen-qx">
+							取消
+						</div>
+					</td>						
+				</tr>
+			</div>			
+		</div>
+		
+		
+
+		
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/station.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="js/title.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -61,7 +61,7 @@
                         // }
                         //  console.log(that.div);
                         that.show();
-                        that.future()
+                        that.future() 
                     }
                     else {
                         that.dialog.style.animation = "block 1.5s linear 0s"

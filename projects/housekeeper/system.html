@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/system.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<!--<script type="text/javascript" src="js/address.js"></script>-->
+		<title>系统用户</title>
+	</head>
+
+	<body>
+		<!--logo导航-->
+		<div class="header container-fluid">
+			<div class="headerbox">
+				<div class="row">
+					<div class="col-sm-2 col-sx-2">
+						<a href="home.html">
+							<div class="logo"></div>
+							<span class="logotext">企业盒子</span>
+						</a>
+						
+					</div>
+					<div class="col-sm-3 col-sx-3">
+						<div class="logobar">
+							欢迎使用企业盒子
+						</div>
+					</div>
+					<div class="col-sm-4 col-sx-4">
+
+					</div>
+					<div class="header-rg">
+						<div class="col-sm-1 col-sx-1">
+							<div class="message"></div>
+							<div class="message-text">
+								<span>1</span>
+							</div>
+						</div>
+						<div class="col-sm-1 col-sx-1">
+							<a href="personal-data.html" style="position: absolute;">
+								<div class="my"></div>
+							</a>
+						</div>
+						<div class="col-sm-1 col-sx-1">
+							<div class="return"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<!--logo导航结束-->
+
+		<!--导航-->
+		<div class="nav">
+			<div>
+				<div class="row rowbox">
+					<div class="nav-bt">
+						<a href="space.html" class="nav-bar">
+							<div class="nav-icon1">
+							</div>
+							<div class="online"></div>
+							<div class="navtext">空间管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="station.html" class="nav-bar">
+							<div class="nav-icon2">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">工位管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="meeting.html" class="nav-bar">
+							<div class="nav-icon3">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext2">会议室管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="site.html" class="nav-bar">
+							<div class="nav-icon4">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">场地管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="appointment.html" class="nav-bar">
+							<div class="nav-icon5">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">预约管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="order.html" class="nav-bar">
+							<div class="nav-icon6"></div>
+							<div class="online">|</div>
+							<div class="navtext">订单管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="activity.html" class="nav-bar">
+							<div class="nav-icon7"></div>
+							<div class="online">|</div>
+							<div class="navtext">活动管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="enterprise.html" class="nav-bar">
+							<div class="nav-icon8"></div>
+							<div class="online">|</div>
+							<div class="navtext">企业用户</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="user-registration.html" class="nav-bar">
+							<div class="nav-icon9"></div>
+							<div class="online">|</div>
+							<div class="navtext">注册用户</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="" class="nav-bar">
+							<div class="nav-icon10">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">门禁办卡</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="system.html" class="nav-bar">
+							<div class="nav-icon11">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">系统用户</div>
+						</a>
+
+					</div>
+					<div class="nav-bt">
+						<a href="data-analysis.html" class="nav-bar">
+							<div class="nav-icon12">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">数据分析</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--导航-->
+
+<!----用户列表-->
+	<div class="yonghubox">
+		<div class="meeting-table">
+			<div class="meeting-box">
+				<div class="h5-line">
+					<h5 class="meet-list1 yongbtn1">用户列表</h5>
+					<h5 class="meet-list1 xitongbtn1">角色列表</h5>
+				</div>
+				
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal8">
+						 添加用户
+				</button>
+				
+				<div class="mett-ip">
+					<div class="site-list-name">
+						<span>账号：</span>	
+					</div>
+									
+					<div class="met-input">
+						<input type="name" />
+					</div>
+				</div>
+
+				<div class="mett-ip met-lef6">
+					<div class="site-list-name">
+						<span>姓名：</span>
+					</div>					
+					<div class="met-input">
+						<select name="">
+							<option value="">北京市</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="mett-ip met-lef6">
+					<div class="site-list-name">
+						<span>手机号：</span>
+					</div>
+					
+					<div class="met-input">
+						<select name="">
+							<option value="">北京</option>
+						</select>
+					</div>
+				</div>
+
+				
+				<div class="mett-ip met-lef6">
+					<div class="site-list-name">
+						<span>系统角色：</span>
+					</div>
+					
+					<div class="met-input">
+						<select name="">
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+				<div class="sta-btn">
+					<button>查找</button>
+				</div>
+			</div>			
+		</div>
+			<!--列表区-->
+		<div class="tab-content">
+			<div class="table-a">
+				<table border="0" cellspacing="1" cellpadding="0">
+					<tr>						
+						<td class="navtd56">编号</td>
+						<td class="navtd navtd88">账号</td>
+						<td class="navtd navtd88">姓名</td>
+						<td class="navtd navtd88">手机号</td>
+						<td class="navtd navtd88">系统角色</td>						
+						<td class="navtd navtd88">状态</td>
+						<td class="navtd navtd88">操作</td>
+					</tr>
+					<tr>						
+						<td class="navtd56 tabalelist">1</td>
+						<td class="tabalelist navtd88">优客年终优惠大放送</td>
+						<td class="tabalelist navtd88">李大宝</td>
+						<td class="tabalelist navtd88">13866899865</td>		
+						<td class="tabalelist navtd88">超级管理员</td>	
+						<td class="tabalelist ">
+							<span class="span_orgin">20</span>
+						</td>										
+						<td class="navtd162 tabalelist">
+							<button type="button" class="information-box" data-toggle="modal" data-target="#myModal11">
+								
+									<div class="information-tu">
+										<img src="img/6.png" alt="" />
+									</div>
+									<div class="information-text">编辑</div>
+								
+							</button>
+							<button type="button" class="information-box2" data-toggle="modal" data-target="#myModal12">
+								<div class="information-text">重置密码</div>
+							</button>							
+						</td>
+					</tr>					
+				</table>
+			</div>
+		</div>
+		
+		<!--重置密码-->
+		<div class="modal fade" id="myModal12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel12" aria-hidden="true">
+		  <div class="modal-dialog ">
+		    <div class="modal-content sta-guiz">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel12">重置密码</h4>
+		      </div>
+		      <div class="modal-body">
+		       	<div class="sta-ztl">
+		       		 <div class="mett-ip sys-mg40">
+					<span class="meeting-td">该用户密码将被重置为123456，请确认</span>					
+				</div>
+		       	</div>
+		      </div>
+		      <div class="modal-footer">
+		      	<button type="button" class="sta-return">确定</button>
+		        <button type="button" class="sta-guan" data-dismiss="modal">关闭</button>   
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+	</div>
+		
+		
+	<!--角色列表-->	
+	<div class="xitongbox">
+		<div class="meeting-table">
+			<div class="meeting-box">
+				<div class="h5-line">
+					<h5 class="meet-list1 yongbtn1">用户列表</h5>
+					<h5 class="meet-list1 xitongbtn1">角色列表</h5>
+				</div>
+				
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal8">
+						 添加用户
+				</button>
+				
+				<div class="mett-ip">
+					<div class="site-list-name">
+						<span>角色名称：</span>	
+					</div>
+									
+					<div class="met-input">
+						<input type="name" />
+					</div>
+				</div>
+
+				<div class="mett-ip">
+					<div class="site-list-name">
+						<span>说明：</span>	
+					</div>
+									
+					<div class="met-input">
+						<input type="name" />
+					</div>
+				</div>
+					
+				<div class="sta-btn">
+					<button>查找</button>
+				</div>
+			</div>			
+		</div>
+			<!--列表区-->
+		<div class="tab-content">
+			<div class="table-a">
+				<table border="0" cellspacing="1" cellpadding="0">
+					<tr>						
+						<td class="navtd56">编号</td>
+						<td class="navtd navtd88">角色</td>
+						<td class="navtd navtd450">权限</td>
+						<td class="navtd navtd88">说明</td>
+						<td class="navtd navtd88">操作</td>
+					</tr>
+					<tr>						
+						<td class="navtd56 tabalelist">1</td>
+						<td class="tabalelist navtd88">优客年终优惠大放送</td>
+						<td class="tabalelist navtd88">李大宝优客年终优惠大放送优客年终优惠大放送优客年终优惠大放优客年终优惠大放送优客年终优惠大放送优客年终优惠大放送送优客年终优惠大放送</td>
+						<td class="tabalelist navtd88">测试</td>
+						<td class="navtd162 tabalelist">
+							<button type="button" class="information-box" data-toggle="modal" data-target="#myModal11">
+								
+									<div class="information-tu">
+										<img src="img/6.png" alt="" />
+									</div>
+									<div class="information-text">编辑</div>
+								
+							</button>
+							<button type="button" class="information-box2" data-toggle="modal" data-target="#myModal122">
+								<div class="information-text">重置密码</div>
+							</button>							
+						</td>
+					</tr>					
+				</table>
+			</div>
+		</div>
+		
+		<!--重置密码-->
+		<div class="modal fade" id="myModal122" tabindex="-1" role="dialog" aria-labelledby="myModalLabel12" aria-hidden="true">
+		  <div class="modal-dialog ">
+		    <div class="modal-content sta-guiz">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		        <h4 class="modal-title" id="myModalLabel12">重置密码</h4>
+		      </div>
+		      <div class="modal-body">
+		       	<div class="sta-ztl">
+		       		 <div class="mett-ip sys-mg40">
+					<span class="meeting-td">该用户密码将被重置为123456，请确认</span>					
+				</div>
+		       	</div>
+		      </div>
+		      <div class="modal-footer">
+		      	<button type="button" class="sta-return">确定</button>
+		        <button type="button" class="sta-guan" data-dismiss="modal">关闭</button>   
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	
+	
+	
+
+	
+		
+		
+		
+		
+		<!-- Modal -->
+		<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog" style="width:500px;">
+				<div class="modal-content">
+
+					<div class="modal-body">
+						<!--弹框-->
+						<div class="tank-dw">
+							<div class="tankang-box">
+								<div class="modal-header">
+									<h5>添加新用户</h5>
+									<button type="button" class="close" data-dismiss="modal">
+									<div class="list-back">
+										<span aria-hidden="true">&times;</span>
+										<span class="sr-only">Close</span>
+									</div>
+									
+								</button>
+								</div>													
+								<div>
+									<div class="site-dsp">
+										<div class="site-name">省</div>
+										<div class="site-b">
+											<strong>*</strong>	
+										</div>	
+										<div class="sec-provinces">
+											<select>
+												<option id="input-zone" value=""></option>
+											</select>
+										</div>
+										
+									</div>
+									<div class="site-dsp">
+										<div class="name">城市</div>
+										<div class="site-b">
+											<strong>*</strong>	
+										</div>		
+										<div class="sec-provinces">
+											<select>
+												<option id="input-zone" value=""></option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="site-name">空间名称</div>
+									<div class="site-b">
+										<strong>*</strong>	
+									</div>	
+									<div class="site-input">
+										<select class="sec-city">
+												<option id="input-city" value=""></option>
+										</select>
+									</div>	
+								</div>
+
+								<div>
+									<div class="site-name">账号</div>
+									<div class="site-b">
+										<strong>*</strong>	
+									</div>	
+									<div class="site-input">
+											<input type="name" required="required" placeholder="" />
+									</div>
+								</div>
+								<div>
+									<div class="site-name">姓名</div>
+									<div class="site-b">
+										<strong>*</strong>	
+									</div>	
+									<div class="site-input">
+											<input type="name" required="required" placeholder="" />
+									</div>
+								</div>
+								<div>
+									<div class="site-name">手机号</div>
+									<div class="site-b">
+										<strong>*</strong>	
+									</div>	
+									<div class="site-input">
+											<input type="name" required="required" placeholder="" />
+									</div>
+								</div>
+								<div>
+									<div class="site-name">电子邮箱</div>
+									<div class="site-b">
+										<strong>*</strong>	
+									</div>	
+									<div class="site-input">
+											<input type="name" required="required" placeholder="" />
+									</div>
+								</div>
+								<div>
+									<div class="site-name">状态</div>
+									<div class="site-b">
+										<strong>*</strong>	
+									</div>	
+									<div class="site-input">
+										<select class="sec-city">
+												<option id="input-city" value=""></option>
+										</select>
+									</div>	
+								</div>
+								<div>
+									<div class="site-name">角色</div>
+									<div class="site-b">
+										<strong>*</strong>	
+									</div>	
+									<div class="site-input">
+										<select class="sec-city">
+												<option id="input-city" value=""></option>
+										</select>
+									</div>	
+								</div>
+								
+								<div class="save">
+									<button class="user-save">保存</button>
+									<button class="user-cancel">取消</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog" style="width:702px;">
+				<div class="modal-content">		
+					
+						<button type="button" class="close" data-dismiss="modal">							
+							<div class="list-backs"></div>
+							<span aria-hidden="true" class="chahao">&times;</span>
+							<span class="sr-only">Close</span>
+							
+						</button>
+						
+						
+						<div class="met-h5-line">
+							<h5 class="meet-list1">编辑关联门禁</h5>
+						</div>										
+					<div class="modal-body">
+						<div class="met-equipment">
+							<div class="met-equipment-box">
+								<!--<div class="met-h5-line">
+									<h5 class="meet-list1">编辑关联门禁</h5>
+								</div>-->
+								<div class="mett-ip met-lef64">
+									<span class="meeting-td">省：</span>
+									<div class="met-equ-input">
+										<select name="">
+											<option value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="mett-ip met-lef64">
+									<span class="meeting-td">省：</span>
+									<div class="met-equ-input">
+										<select name="">
+											<option value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="mett-ip met-lef64">
+									<span class="meeting-td">省：</span>
+									<div class="met-equ-input">
+										<select name="">
+											<option value="">北京</option>
+										</select>
+									</div>
+								</div>
+								<div class="mett-ip met-lef30">
+									<span class="meeting-td">门禁ID：</span>
+									<div class="met-equ-input">
+										<input type="text" />
+									</div>
+								</div>
+								<div class="mett-ip met-lef16">
+									<span class="meeting-td">门禁名称：</span>
+									<div class="met-equ-input">
+										<input type="text" />
+									</div>
+								</div>
+								<div class="met-equ-btn">
+									<button>查找</button>
+								</div>
+								<div class="met-equ-tbe">
+									<table>
+										<tr class="met-tl-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td16">门禁ID</td>
+											<td class="met-td120 met-td16">门禁名称</td>
+											<td class="met-td120 met-td16">社区</td>
+											<td class="met-td120 met-td16">省份</td>
+											<td class="met-td120 met-td16">市</td>
+										</tr>
+										<tr class="met-center-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td14">10086</td>
+											<td class="met-td120 met-td14">办公区东门</td>
+											<td class="met-td120 met-td14">天恒大厦优客工场</td>
+											<td class="met-td120 met-td14">新疆维吾尔自治区</td>
+											<td class="met-td120 met-td14">乌鲁木齐市</td>
+										</tr>
+										<tr class="met-center-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td14">10086</td>
+											<td class="met-td120 met-td14">办公区东门</td>
+											<td class="met-td120 met-td14">天恒大厦优客工场</td>
+											<td class="met-td120 met-td14">新疆维吾尔自治区</td>
+											<td class="met-td120 met-td14">乌鲁木齐市</td>
+										</tr>
+										<tr class="met-center-tr">
+											<td class="met-td68">
+												<input type="checkbox" name="vehicle[]" value="Boat"><br>
+											</td>
+											<td class="met-td88 met-td14">10086</td>
+											<td class="met-td120 met-td14">办公区东门</td>
+											<td class="met-td120 met-td14">天恒大厦优客工场</td>
+											<td class="met-td120 met-td14">新疆维吾尔自治区</td>
+											<td class="met-td120 met-td14">乌鲁木齐市</td>
+										</tr>
+									</table>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="met-qu-butn">确定</button>
+						<button type="button" class="met-cancel" data-dismiss="modal">取消</button>						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/img.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/system.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,89 @@
+/*登录*/
+body{
+	background-color:#f6f9f9;
+}
+
+.login-main{
+	width:420px;
+	height:560px;
+	background-color:#fff;
+	margin:6% auto;
+	border:1px  solid #eaeaea;
+	text-align: center;
+}
+
+.login-main h5{
+	font-size:24px;
+	color:#333;
+	text-align: center;
+    margin-top: 90px;
+    margin-bottom: 50px;
+}
+
+.input342,.input202,.input122{
+	height:42px;
+	padding-left:10px;
+	border-radius: 8px;
+	outline: none;
+	border:1px solid #eaeaea;
+	color:#999;
+	font-size:16px;
+}
+
+.input342{
+	width:342px;	
+}
+
+.input122{
+	width:122px;
+}
+
+.input202{
+	width:202px;
+}
+
+.input202,.input122{
+	display:inline-block;
+}
+
+.input342btn{
+	width:342px;
+	height:42px;
+	padding-left:10px;
+	background-color:#39bc4d;
+	border:1px solid #2aa13e;
+	text-align: center;
+	color:#fff;
+	font-size:22px;
+	border-radius: 8px;
+	outline: none;
+	font-size:16px;
+}
+
+.input342btn .active{
+	background-color:#41cc55;
+	border:1px solid #35ba4a;
+}
+
+.magp38{
+	margin-top:38px;
+}
+
+.magp48{
+	margin-top:48px;
+}
+
+.logo_yzimg{
+	width: 342px;
+    text-align: left;
+    padding: 10px;
+    padding-left: 40px;
+}
+
+.logo_yzimg span{
+	color:red;
+}
+
+.logoicon{
+	color:red;
+}

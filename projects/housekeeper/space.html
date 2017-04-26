@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/space.css" />
+		<link rel="stylesheet" href="css/kkpager_blue.css" />
+		<link rel="stylesheet" href="css/base.css" />
+				
+		<title>创建空间</title>
+	</head>
+
+	<body>
+		<!--logo导航-->
+		<div class="header container-fluid">
+			<div class="headerbox">
+				<div class="row">
+					<div class="col-sm-2 col-sx-2">
+						<a href="home.html">
+							<div class="logo"></div>
+							<span class="logotext">企业盒子</span>
+						</a>
+						
+					</div>
+					<div class="col-sm-3 col-sx-3">
+						<div class="logobar">
+							欢迎使用企业盒子
+						</div>
+					</div>
+					<div class="col-sm-4 col-sx-4">
+
+					</div>
+					<div class="header-rg">
+						<div class="col-sm-1 col-sx-1">
+							<div class="message"></div>
+							<div class="message-text">
+								<span>1</span>
+							</div>
+						</div>
+						<div class="col-sm-1 col-sx-1">
+							<a href="personal-data.html" style="position: absolute;">
+								<div class="my"></div>
+							</a>
+						</div>
+						<div class="col-sm-1 col-sx-1">
+							<div class="return"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<!--logo导航结束-->
+
+		<!--导航-->
+		<div class="nav">
+			<div>
+				<div class="row rowbox">
+					<div class="nav-bt">
+						<a href="space.html" class="nav-bar">
+							<div class="nav-icon1 normal activeimg">
+							</div>
+							
+							<div class="online"></div>
+							<div class="navtext active">空间管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="station.html" class="nav-bar">
+							<div class="nav-icon2">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">工位管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="meeting.html" class="nav-bar">
+							<div class="nav-icon3">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext2">会议室管理</div>
+						</a>
+
+					</div>
+
+					<div class="nav-bt">
+						<a href="site.html" class="nav-bar">
+							<div class="nav-icon4">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">场地管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="appointment.html" class="nav-bar">
+							<div class="nav-icon5">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">预约管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="order.html" class="nav-bar">
+							<div class="nav-icon6">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">订单管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="activity.html" class="nav-bar">
+							<div class="nav-icon7">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">活动管理</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="enterprise.html" class="nav-bar">
+							<div class="nav-icon8">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">企业用户</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="user-registration.html" class="nav-bar">
+							<div class="nav-icon9">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">注册用户</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="" class="nav-bar">
+							<div class="nav-icon10">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">门禁办卡</div>
+						</a>
+					</div>
+
+					<div class="nav-bt">
+						<a href="system.html" class="nav-bar">
+							<div class="nav-icon11">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">系统用户</div>
+						</a>
+
+					</div>
+					
+					<div class="nav-bt">
+						<a href="data-analysis.html" class="nav-bar">
+							<div class="nav-icon12">
+							</div>
+							<div class="online">|</div>
+							<div class="navtext">数据分析</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--导航-->
+
+		
+
+		<!--列表区-->
+		<div class="tab-content">
+			<div class="table-a"> 
+				<table border="0" cellspacing="1" cellpadding="0"> 
+					<tr>
+						<th colspan="9">添加空间</th>
+						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+								 创建空间
+						</button>
+					</tr>			
+					<tr> 
+					<td class="navtd">编号</td> 
+					<td class="navtd">空间</td> 
+					<td class="navtd">城市</td> 
+					<td class="navtd">详细地址</td> 
+					<td class="navtd">空间状态</td> 
+					<td class="navtd">会议室数量</td> 
+					<td class="navtd">工位数量</td> 
+					<td class="navtd">创建时间</td> 
+					<td class="navtd">操作</td> 
+					</tr> 
+					<tr> 
+					<td class="tabalelist">1</td> 
+					<td class="tabalelist">优客工场</td> 
+					<td class="tabalelist">北京</td> 
+					<td class="tabalelist">北京市朝阳区28号天恒大厦</td> 
+					<td class="tabalelist">正在营业</td> 
+					<td class="tabalelist">
+						<span class="span_orgin">30</span>
+					</td> 
+					<td class="tabalelist">
+						<span class="span_red">30</span>
+					</td> 
+					<td class="tabalelist time">2016.12.22 10:32:00</td> 
+					<td class="tabalelist">
+						<div class="information-box">
+							<div class="information-tu">
+								<img src="img/6.png" alt="" />
+							</div>
+							<div class="information-text">编辑</div>
+						</div>
+					</td> 
+					</tr>
+					<tr> 
+					<td class="tabalelist">2</td> 
+					<td class="tabalelist">优客工场</td> 
+					<td class="tabalelist">北京</td> 
+					<td class="tabalelist">北京市朝阳区28号天恒大厦</td> 
+					<td class="tabalelist">正在营业</td> 
+					<td class="tabalelist">
+						<span class="span_orgin">30</span>
+					</td> 
+					<td class="tabalelist">
+						<span class="span_red">30</span>
+					</td> 
+					<td class="tabalelist time">
+						2016.12.22 10:32:00
+					</td> 
+					<td class="tabalelist">
+						<div class="information-box">
+							<div class="information-tu">
+								<img src="img/6.png" alt="" />
+							</div>
+							<div class="information-text">编辑</div>
+						</div>
+					</td> 
+					</tr>
+					
+				</table> 
+				<div class="page" style="width:100%;margin:0 auto;">
+					<div class="page-box" id="kkpager"></div>
+				</div>
+			</div> 
+			
+		</div>
+		
+
+	
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					
+					<div class="modal-body">					
+						<!--弹框-->
+						<div class="tank-dw">						
+							<div class="tankang-box">
+								<div class="modal-header">
+								<h5>添加空间</h5>
+								<button type="button" class="close" data-dismiss="modal">
+									<div class="list-back">
+										<span aria-hidden="true">&times;</span>
+										<span class="sr-only">Close</span>
+									</div>
+									
+								</button>
+								
+								</div>
+								<div>
+									<div class="name impt">空间名称</div>
+									<!--<strong class="strong21">*</strong>-->	
+									<input type="name" class="input-text" required="required" placeholder="请输入空间名称" />
+								</div>
+								<div>
+									<div class="name impt">空间编号</div>
+									<!--<strong class="strong22">*</strong>-->	
+									<input type="text" class="input-text" required="required" placeholder="请输入空间编号" />
+								</div>
+								<div class="city1">
+									<div class="name impt">省</div>
+									<!--<strong class="strong23">*</strong>-->	
+									<select class="sec-provinces">
+										<option id="input-zone" value="">省份</option>
+									</select>
+								</div>
+								<div class="city2">
+									<div class="name impt">市</div>
+									<!--<strong class="strong24">*</strong>-->	
+									<select class="sec-city">
+										<option id="input-city" value="">北京</option>
+									</select>
+								</div>
+								<div>
+									<div class="name impt">详细地址</div>
+									<!--<strong class="strong25">*</strong>-->	
+									<input type="url" class="input-text" required="required" placeholder="请输入详细地址" />
+								</div>
+								<div>
+									<div class="name duiqi">邮编</div>
+									<input type="text" class="input-text" placeholder="请输入邮编" />
+								</div>
+								<div>
+									<div class="name duiqi impt">经度</div>
+									<!--<strong class="strong26">*</strong>-->	
+									<input type="text" class="input-text" required="required" placeholder="请输入经度" />
+								</div>
+								<div>
+									<div class="name duiqi impt">纬度</div>
+									<!--<strong class="strong27">*</strong>-->	
+									<input type="text" class="input-text" required="required" placeholder="请输入纬度" />
+								</div>
+								<div>
+									<div class="name">空间热线</div>
+									<input type="text" class="input-text" placeholder="请输入空间热线" />
+								</div>
+								<div class="describe">
+									<div class="name duiqi impt">描述</div>
+									<!--<strong class="strong28">*</strong>-->	
+									<textarea  class="input-text" required="required" value="描述">描述</textarea>
+								</div>
+								<div class="sapce-box">
+									<div class="name impt">空间门面</div>		
+									<!--<strong class="strong29">*</strong>-->	
+									<div class="space" id="imgArea">
+									</div>
+									<div class="file">										
+										<input type="file"  id="fileInput" onchange="preImage(this)" multiple="multiple" accept="image" placeholder="上传自定义图片"/>上传自定义图片																		
+									</div>
+									<div class="sapce-box-text">
+										<span>格式GIF、JPG、PNG</span>
+										<span></span>大小3M以内</p>
+									</div>
+								</div>
+								<div>
+									<div class="city3">
+										<div class="name impt">空间状态</div>
+										<!--<strong class="strong30">*</strong>-->	
+										<select class="sec-provinces">
+											<option id="input-zone" value="">正常营业</option>
+											<option id="input-zone" value="">暂停营业</option>
+											<option id="input-zone" value="">筹备中</option>
+										</select>
+									</div>
+									<div class="city4">
+										<div class="name impt">显示</div>
+										<!--<strong class="strong31">*</strong>-->	
+										<select class="sec-yes">
+											<option id="input-zone" value="">是</option>
+											<option id="input-zone" value="">否</option>
+										</select>
+									</div>
+								</div>
+								<!--<div>
+									<div class="city5">
+										<div class="name impt">参观</div>
+										<select class="sec-provinces">
+											<option id="input-zone" value="">是</option>
+											<option id="input-zone" value="">否</option>
+										</select>
+									</div>
+									<div class="city6">
+										<div class="name impt">预约</div>
+										<select class="sec-yes">
+											<option id="input-zone" value="">是</option>
+											<option id="input-zone" value="">否</option>
+										</select>
+									</div>
+								</div>-->
+
+								<div>
+									<div class="name">门禁地址</div>
+									<!--<strong class="strong34">*</strong>-->	
+									<input type="url" class="input-text" required="required" placeholder="请输入门禁服务器地址" />
+								</div>
+								<div class="save">
+									<button class="user-save">保存</button>						 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/img.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/title.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/kkpager.min.js" type="text/javascript" charset="UTF-8"></script>
+		<script type="text/javascript">
+			function getParameter(name) { 
+				var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); 
+				var r = window.location.search.substr(1).match(reg); 
+				if (r!=null) return unescape(r[2]); return null;
+			}
+			
+			//init
+			$(function(){
+				var totalPage = 20;
+				var totalRecords = 390;
+				var pageNo = getParameter('pno');
+				if(!pageNo){
+					pageNo = 1;
+				}
+				//生成分页
+				//有些参数是可选的，比如lang，若不传有默认值
+				kkpager.generPageHtml({
+					pno : pageNo,
+					//总页码
+					total : totalPage,
+					//总数据条数 
+					totalRecords : totalRecords,
+					mode : 'click',//默认值是link，可选link或者click
+					click : function(n){
+						// do something
+						//手动选中按钮
+						this.selectPage(n);
+						return false;
+					}
+					
+					,lang				: {
+						firstPageText			: '首页',
+						firstPageTipText		: '首页',
+						lastPageText			: '尾页',
+						lastPageTipText			: '尾页',
+						prePageText				: '上一页',
+						prePageTipText			: '上一页',
+						nextPageText			: '下一页',
+						nextPageTipText			: '下一页',
+						totalPageBeforeText		: '共',
+						totalPageAfterText		: '页',
+						currPageBeforeText		: '当前第',
+						currPageAfterText		: '页',
+						totalInfoSplitStr		: '/',
+						totalRecordsBeforeText	: '共',
+						totalRecordsAfterText	: '条数据',
+						gopageBeforeText		: '&nbsp;转到',
+						gopageButtonOkText		: '确定',
+						gopageAfterText			: '页',
+						buttonTipBeforeText		: '第',
+						buttonTipAfterText		: '页'
+					}
+				});
+			});
+	</script>
+		
+	</body>
+
+</html>
