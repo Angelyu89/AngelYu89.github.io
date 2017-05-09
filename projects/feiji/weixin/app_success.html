@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="no-cache" http-equiv="Cache-Control">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/page.css" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+	<title>预约服务成功</title>
+</head>
+<body class="bg_fb">
+    <div class="pop_store">
+    	<img src="images/success.png" alt="成功" class="success">
+    	<span class="span_tit">恭喜您，预约成功！</span>
+    	<p class="pop_txt">稍后服务人员将以电话形式与您取得联系</p>
+        <a class="order_service" href="order_ongoing.html" title="查看进度">查看进度</a>
+    </div>
+    <div class="bottom_txt">
+        <span>*</span>
+        <p>感谢您使用“叫个飞机”，如有疑问或建议，请拨打我们的客服电话400-870-1088</p>
+    </div>
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?3da7c9d0e846b2329c4e2f3c5c0ac556";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	 <script type="text/javascript">
+        //初始化读取相关配置
+        $(document).ready(function () {
+            //微信跳转截取url 获取openid
+            var href = window.location.href;
+            var wenhaohou = href.split("?");
+            var param = wenhaohou[1];
+                var params = param.split("=");
+                var openidval = params[1];
+                //存储openid
+                $(".order_service").click(function () {
+                    $(".order_service").attr("href", "order_ongoing.html?openid=" + openidval);
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="no-cache" http-equiv="Cache-Control">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/page.css" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+	<title>预约服务</title>
+</head>
+<body class="bg_fb">
+	<div class="container">		
+		<div class="service_box">
+			<span class="sub_tit">服务类型</span>
+			<div class="ser_txt" id="ser_txt1">
+				送戒指、送捧花、空中拍摄、婚礼跟拍
+			</div>
+			<div class="ser_img_box">
+				<img id="ser_img" src="images/room_head1.jpg" alt="头图">
+			</div>
+			<span class="sub_tit">无人机</span>
+			<div class="ser_txt" id="ser_txt2">
+				S1000/Inspire 1/Phantom 3
+			</div>
+            <span class="sub_tit">挂载</span>
+			<div class="ser_txt" id="ser_txt3">
+				5D3/GH4/GOPRO
+			</div>
+            <span class="sub_tit">价格</span>
+            <div class="ser_txt">
+                服务方与您电话沟通
+            </div>
+			<!--填表-->
+			<ul class="ser_ul">
+				<li class="ser_li">
+					<span class="ser_span">开始时间</span>
+					<div class="long_input_wrap">
+						<div class="input-group date form_date col-md-5" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                            <input class="form-control" id="s_time" type="text" value="" readonly>
+                            <span class="input-group-addon"><span class="glyphicon_date glyphicon-calendar"></span></span>
+                        </div>
+					</div>
+				</li>
+				<li class="ser_li">
+					<span class="ser_span">结束时间</span>
+					<div class="long_input_wrap">
+						<div id="e_time_div" class="input-group date form_date col-md-5" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                            <input class="form-control" id="e_time" type="text" value="" readonly>
+                            <span class="input-group-addon"><span class="glyphicon_date glyphicon-calendar"></span></span>
+                        </div>
+					</div>
+				</li>
+				<li class="ser_li">
+					<span class="ser_span">服务地点</span>
+					<div class="long_input_wrap">
+						<input type="text" id="address_service" value="">
+					</div>
+				</li>
+				<li class="ser_li">
+					<span class="ser_span">联系人</span>
+					<div class="long_input_wrap">
+						<input maxlength="20" type="text" id="people_service" value="">
+					</div>
+				</li>
+				<li class="ser_li">
+					<span class="ser_span">联系电话</span>
+					<div class="long_input_wrap">
+						<input type="text" id="phone_service" value="">
+					</div>
+				</li>
+				<li class="ser_li">
+					<span class="ser_span">验证码</span>
+					<div class="short_input_wrap">
+						<input type="text" id="code_service" value="">
+						<!-- <a href="javascript:;" class="code_a">获取验证码</a> -->
+                        <input onclick="VerificationCodeFunction(this)" type="button" class="code_a" value="获取验证码" id="code_service_btn">
+					</div>
+				</li>
+			</ul>
+			<ul class="ser_ul">
+				<li class="ser_remark">
+					<span class="ser_span">订单要求</span>
+				</li>
+				<div class="txt_wrap">
+                    <textarea name="" id="txt_service" cols="30" rows="10" ></textarea>
+				</div>
+			</ul>
+			<span class="service_error"></span>
+			<input type="button" class="service_input"  id="crruntsubmit"   value="立即预约">
+            <div class="loading_wrap">
+                <div class="bg_mask"></div>
+                <div class="loading_box">
+                    <img class="loading" src="images/loading.png" alt="loading">
+                    <span>请耐心等待，您叫的飞机正在飞来~</span>
+                </div> 
+            </div>
+            
+			<!--end填表-->
+            <!--隐藏域存储openid开始-->
+            <input  type="hidden"  id="openidinput"   />
+            <input type="hidden" id="VerificationCode">
+            <input type="hidden" id="servicetypename">
+            <input type="hidden" id="userinfoid">
+            <input type="hidden" id="servicetypeid">
+            <!--隐藏域存储openid结束-->
+		</div>
+	</div>
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+	<script src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+	<script type="text/javascript">  
+		$('.form_date').datetimepicker({
+		    language: 'zh-CN',
+	        weekStart: 1,
+	        todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			minView: 2,
+			forceParse: 0
+	    });
+//	    $('.form_date').datetimepicker('setStartDate', new Date());
+//
+//	    $("#s_time").change(function(){
+//	        $('#e_time_div').datetimepicker('setStartDate', $("#s_time").val());
+//	    })
+	</script>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?3da7c9d0e846b2329c4e2f3c5c0ac556";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+    <script type="text/javascript">
+        //初始化读取相关配置
+        $(document).ready(function () {
+            //微信跳转截取url 获取openid
+            var href = window.location.href;
+            var wenhaohou = href.split("?");
+            var param = wenhaohou[1];
+            var b = urlCheckExist(href, param);
+            if (param!=""&& b)
+            {
+                var params = param.split("=");
+                var openidval = params[1];
+                //存储openid
+                var openid = openidval.split("&");
+                $("#openidinput").attr("value", openid[0]);
+                var type = param.split("&");
+                var typenum = type[1].split("=");
+                var typeid = typenum[1];
+                if (typeid == 1)
+                {
+                    $("#servicetypename").val("婚礼航拍");
+                }
+                if (typeid == 2) {
+                    $("#servicetypename").val("影视航拍");
+                }
+                if (typeid == 3) {
+                    $("#servicetypename").val("商业宣传");
+                }
+                if (typeid == 4) {
+                    $("#servicetypename").val("活动宣传");
+                }
+            }
+            //初始化绑定预约按钮
+            $("#crruntsubmit").click(crruntsubmitFunction);
+            //初始化绑定手机验证按钮
+            //$("#code_service_btn").click(codeServiceBtnFuncation);
+            //验证码输入验证
+            $("#code_service").blur(blurVerificationCode);
+
+            $("#address_service").focus(function(){
+                $("body").scrollTop(900);
+            })
+            $("#people_service").focus(function(){
+                $("body").scrollTop(900);
+            })
+            $("#phone_service").focus(function(){
+                $("body").scrollTop(980);
+            })
+            $("#code_service").focus(function(){
+                $("body").scrollTop(980);
+            })
+
+        });
+        //url参数验证
+        function urlCheckExist(url,param)
+        {
+            if (url.indexOf(param) > 0) {
+                return true;
+            }
+            return false;
+        }
+        //验证openid函数
+        function checkOpenidAjax(openid)
+        {
+            var param = "{\"openid\":\"" + openid + "\"}";
+            $.ajax({
+                url: "http://localhost:8088/app/User_findUserinfoByOpenid",
+                type: "POST",
+                data: { params: param, devices: "weixin" },
+                dataType: "jsonp",
+                jsonpCallback: 'checkOpenidCollback',
+                jsonp: "jsonCollback",//服务端用于接收callback调用的function名的参数
+                success: function (data) {
+
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });
+        }
+
+        //openid毁掉函数
+        function checkOpenidCollback(v)
+        {
+            var status = v.status;
+            if(status==1)
+            {
+                var userid = v.userinfo.userid;
+                //正常不去处理,存储userid
+                $("userinfoid").val();
+            }
+            else if (status == 2) {
+                //没有数据存储openid、返回数据
+                saveUserinfo();
+            }
+            else {
+                //不正常服务器异常
+                alert("服务器异常。。");
+            }
+        }
+        //存储openid附带手机号
+        function saveUserinfo()
+        {
+            var openid = $("#openidinput").val();
+            var userphone = $("#phone_service").val();
+            var param = "{\"usercardid\":\"\",\"userid\":\"\",\"username\":\"\",\"userpassword\":\"222222\",\"userphone\":\"" + userphone + "\",\"userwecatid\":\"" + openid + "\"}";
+            $.ajax({
+                url: "http://localhost:8088/app/User_register",
+                type: "POST",
+                data: { params: param, devices: "wixin" },
+                dataType: "jsonp",
+                jsonpCallback: 'saveUserinfoCollBackFun',
+                jsonp: "jsonCollback",//服务端用于接收callback调用的function名的参数
+                success: function (data) {
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });
+        }
+        //保存用户信息回调函数
+        function saveUserinfoCollBackFun(v)
+        {
+            var status = v.status;
+            if (status == 1) {
+                //正常不去处理,存储userid
+            }
+            else if (status == 2) {
+                //没有数据存储openid、返回数据
+                
+            }
+            else {
+                //不正常服务器异常
+                alert("服务器异常。。");
+            }
+        }
+        //预约事件函数
+        function crruntsubmitFunction()
+        {
+            //提交代码事件绑定
+            //$("#joinasbtn").click(function () {
+            var b = submit_sevice();
+            if (b && blurVerificationCode()) {
+                $("#crruntsubmit").attr('disabled', true);
+                var orderbegintime = $("#s_time").val();
+                var orderendtime = $("#e_time").val();
+                var orderlocation = $("#address_service").val();
+                var username = $("#people_service").val();
+                var userphone = $("#phone_service").val();
+                var yanzhengma = $("#code_service").val();
+                var service_desc = $("#txt_service").val();
+                var servicetypename = $("#servicetypename").val();
+                var ordertype = "1000001010";
+                var ordertablename = "order_default";
+                var param = "{\"ordertablename\":\"order_default\",\"ordertype\":\"1000001010\",\"ordertypename\":\"" + servicetypename + "\",\"userid\":\"00028a1e-1714-4e20-a450-c734c1598e5a\",\"feishouid\":\"\",\"studioid\":\"\",\"properties\":{\"orderid\":\"\",\"ordernumber\":\"\",\"ordertype\":\"1000001010\",\"orderlocation\":\"" + orderlocation + "\",\"orderbegintime\":\"" + orderbegintime + "\",\"orderendtime\":\"" + orderendtime + "\",\"orderaddtime\":\"2015-08-13 10:16:17\",\"orderstatus\":\"0\",\"username\":\"" + username + "\",\"userphone\":\"" + userphone + "\",\"orderremark\":\"" + service_desc + "\"}}";
+                    $(".loading_wrap").show();
+                $.ajax({
+                    url: "http://localhost:8088/app/Order_saveOrder",
+                    //url: "http://localhost:8088/app/Order_saveOrder",
+                    type: "POST",
+                    data: { params: param, devices: "wixin", jsonCallback: "orderJsonCallback" },
+                    dataType: "jsonp",
+                    success: function (data) {
+                    },
+                    complete: function (XMLHttpRequest, textStatus) {
+                        $("#s_time").attr("value", '');
+                        $("#e_time").attr("value", '');
+                        $("#address_service").attr("value", '');
+                        $("#people_service").attr("value", '');
+                        $("#phone_service").attr("value", '');
+                        $("#code_service").attr("value", '');
+                        $("#txt_service").attr("value", '');
+                        $("#crruntsubmit").attr('disabled', false);
+                        //alert("恭喜你预约成功，请等待客服与您联系！");
+                  
+                    },
+                });
+            }
+            //});
+        }
+
+
+        function orderJsonCallback(v) {
+
+            var status = v.status;
+            var openid = $("#openidinput").val();
+            $(".loading_wrap").hide();
+            if (status == 1){
+                window.location = "app_success.html?openid=" + openid + "";
+            }
+            else{
+                window.location.href = "app_fail.html?openid=" + openid + "";
+            }
+        }
+
+
+        //手机验证按钮绑定事件验证
+        function VerificationCodeFunction(obj) {
+            if (phoneReg()) {
+                $("#code_service_btn").attr('disabled', true);
+                //时间out
+                countDown(obj, 60);
+                var userphone = $("#phone_service").val();
+                var params = "{\"userphone\":\"" + userphone + "\"}";
+                $.ajax({
+                    url: "http://localhost:8088/app/VerificationCode_getVerificationCode",
+                    type: "POST",
+                    data: { params: params, devices: "wixin", json_callback: "jsonCallback" },
+                    dataType: "jsonp",
+                    callback: 'jsonCallback',
+                    jsonp: "jsonCallback",//服务端用于接收callback调用的function名的参数
+                    success: function (data) {
+                        $("#code_service_btn").attr('disabled', false);
+                    },
+                    complete: function (XMLHttpRequest, textStatus) {
+                        $("#code_service_btn").attr('disabled', false);
+                    },
+                });
+            }
+        }
+        //返回的验证码
+        function jsonCallback(v) {
+            var status = v.status;
+            if (status == 1) {
+                //alert("验证码发送成功！");
+                error_service("");
+                $("#code_service_btn").attr('disabled', false);
+                $("#VerificationCode").attr("value", v.code);
+            }
+            else {
+                //alert("验证码发送失败,请检查手机号码！");
+                error_service("验证码发送失败,请检查手机号码！");
+                $("#code_service_btn").attr('disabled', false);
+            }
+        }
+        //验证码验证函数
+        function blurVerificationCode() {
+            var yanzheng = $("#code_service").val();
+            var VerificationCode = $("#VerificationCode").val();
+            if (yanzheng == VerificationCode) {
+                error_service("");
+                var openid = $("#openidinput").val();
+                //验证openid
+                checkOpenidAjax(openid);
+                return true;
+            }
+            else {
+                error_service("验证码输入错误！");
+                return false;
+            }
+        }
+        /**
+            * 倒计时函数
+            * 需要在按钮上绑定单击事件
+            * 如: <input value="发送短信" data-cke-editable="1" data-cke-pa-onclick="setInterval('countDown(this,30)',1000);" contenteditable="false" type="button">
+            * 30代表秒数，需要倒计时多少秒可以自行更改
+         */
+        function countDown(obj, second) {
+            // 如果秒数还是大于0，则表示倒计时还没结束
+            if (second >= 0) {
+                // 获取默认按钮上的文字
+                if (typeof buttonDefaultValue === 'undefined') {
+                    buttonDefaultValue = obj.defaultValue;
+                }
+                // 按钮置为不可点击状态
+                obj.disabled = true;
+                // 按钮里的内容呈现倒计时状态
+                obj.value = '倒计时(' + second + ')';
+                obj.style.color = "#8a8989";
+                obj.style.background = "#c0c0c0 url(images/btn_bg_ccc.jpg) repeat";
+                // 时间减一
+                second--;
+                // 一秒后重复执行
+                setTimeout(function () { countDown(obj, second); }, 1000);
+                // 否则，按钮重置为初始状态
+            } else {
+                // 按钮置未可点击状态
+                obj.disabled = false;
+                // 按钮里的内容恢复初始状态
+                obj.value = buttonDefaultValue;
+                obj.style.color = "#fff";
+                obj.style.background = "#10d0ab url(images/btn_bg_green.jpg) repeat";
+            }
+        }
+        //手机号验证
+        function phoneReg() {
+            var userphone = $("#phone_service").val();
+            var reg = /^0?1[3|4|5|8][0-9]\d{8}$/;
+            if (reg.test(userphone)) {
+                error_service("");
+                return true;
+            } else {
+                error_service("请填写正确的电话号码！");
+                return false;
+            };
+        }
+    </script>
+
+</body>
+</html>

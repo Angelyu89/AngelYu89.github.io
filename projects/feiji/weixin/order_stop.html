@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+	<meta content="no-cache" http-equiv="Cache-Control">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/page.css"/> 
+	<title>我的订单</title>
+	</head>
+<body class="bg_fb">
+	<div class="container">
+		<div class="push_wrap">
+			<span class="push_tit">服务方申请取消</span>
+            <p id="inputordercancelreason">拒绝理由：服务场地无法飞行</p>
+			<p>您可以联系客服人员（<span>400-870-1088</span>）经行协商</p>
+		</div>
+		<!--经度条-->
+		<div class="speed_wrap">
+			<img id="speed_img" src="images/speed1.png" alt="进度条">
+		</div>
+		<!--经度条结束-->
+		<div class="order_box">
+			<!--订单外框-->
+			<div class="order_wrap">
+				<div class="content">
+					<!--订单号 订单状态-->
+					<div class="order_num">
+						<span class="fl">订单号：<span id="inputordernumber" >201508070008</span></span>
+						<div class="cb"></div>
+					</div>
+					<!--end订单号 订单状态-->
+					<!--订单详情-->
+					<dl class="order_info_dl">
+						<dt>服务类型：</dt>
+                        <dd id="inputordertypename">婚礼航拍</dd>
+
+					   	<dt>服务地点：</dt>
+                        <dd id="inputorderlocaltion">奥林匹克公园</dd>
+
+					   	<dt>服务时间：</dt>
+                        <dd id="inputorderservicetime">2015年8月7日 星期四</dd>
+
+					   	<dt>下单时间：</dt>
+                        <dd id="inputorderaddtime">2015年8月6日</dd>
+
+					   	<dt>联系电话：</dt>
+                        <dd id="inputorderuserphone">18600003321</dd>
+
+					   	<dt>联系人：</dt>
+                        <dd id="inputorderusername">18600003321</dd>
+
+					   	<dt>订单描述：</dt>
+                        <dd id="inputorderremark">现场布置，婚纱，礼品...</dd>
+					</dl>
+					<!--订单详情-->					
+				</div>
+			</div>
+			<!--end订单外框-->
+            <input id="ordertablename" type="hidden" />
+            <input id="orderindex" type="hidden" />
+            <input id="orderstatus" type="hidden" />
+            <input id="orderbegintime" type="hidden" />
+            <input id="locktime" type="hidden" />
+            <input id="userid" type="hidden" />
+            <input id="cancelreason" type="hidden" />
+            <input id="ordernumber" type="hidden" />
+            <input id="isdelete" type="hidden" />
+            <input id="ordertype" type="hidden" />
+            <input id="ordertypename" type="hidden" />
+            <input id="orderremark" type="hidden" />
+            <input id="temp1" type="hidden" />
+            <input id="temp2" type="hidden" />
+            <input id="username" type="hidden" />
+            <input id="userphone" type="hidden" />
+            <input id="feishouid" type="hidden" />
+            <input id="ordertypeid" type="hidden" />
+            <input id="orderendtime" type="hidden" />
+            <input id="orderaddtime" type="hidden" />
+            <input id="orderid" type="hidden" />
+            <input id="orderlocation" type="hidden" />
+            <input id="openid" type="hidden" />
+		</div>
+		<div class="button_wrap">
+            <input type="button" class="contact_input fl" value="不同意" id="userNotAgreeCancel">
+            <input type="button" class="cancel_input fr" value="同意" id="userAgreeCancel">
+		</div>
+	</div>
+	<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" src="js/fun_all.js"></script>
+    <script  language="javascript"  type="text/javascript" >
+        $(document).ready(function () {
+            $("#userAgreeCancel").click(userAgreeCancelFunction);
+            $("#userNotAgreeCancel").click(userNotAgreeCancelFunction);
+            //微信跳转截取url 获取openid
+            var href = window.location.href;
+            href = decodeURI(href);
+            var wenhaohou = href.split("?");
+            var params = wenhaohou[1].split("&");
+            for (var i = 0; i<params.length;i++)
+            {
+                var param = params[i].split("=");
+                if (param[0] == "ordertablename")
+                {
+                    $("#ordertablename").val(param[1]);
+                }
+                if (param[0] == "orderindex") {
+                    $("#orderindex").val(param[1]);
+                }
+                if (param[0] == "orderstatus") {
+                    $("#orderstatus").val(param[1]);
+                }
+                if (param[0] == "orderbegintime") {
+                    $("#orderbegintime").val(param[1]);
+                }
+                if (param[0] == "locktime") {
+                    $("#locktime").val(param[1]);
+                }
+                if (param[0] == "userid") {
+                    $("#userid").val(param[1]);
+                }
+                if (param[0] == "cancelreason") {
+                    $("#cancelreason").val(param[1]);
+                    $("#inputordercancelreason").html(param[1]);
+                }
+                if (param[0] == "ordernumber") {
+                    $("#ordernumber").val(param[1]);
+                }
+                if (param[0] == "isdelete") {
+                    $("#isdelete").val(param[1]);
+                }
+                if (param[0] == "ordertype") {
+                    $("#ordertype").val(param[1]);
+                }
+                if (param[0] == "ordertypename") {
+                    $("#ordertypename").val(param[1]);
+                    $("#inputordertypename").html(param[1]);
+                }
+                if (param[0] == "orderremark") {
+                    $("#orderremark").val(param[1]);
+                    $("#inputorderremark").html(param[1]);
+                }
+                if (param[0] == "username") {
+                    $("#username").val(param[1]);
+                    $("#inputorderusername").html(param[1]);
+                }
+                if (param[0] == "userphone") {
+                    $("#userphone").val(param[1]);
+                    $("#inputorderuserphone").html(param[1]);
+                }
+                if (param[0] == "feishouid") {
+                    $("#feishouid").val(param[1]);
+                }
+                if (param[0] == "ordertypeid") {
+                    $("#ordertypeid").val(param[1]);
+                }
+                if (param[0] == "orderendtime") {
+                    $("#orderendtime").val(param[1]);
+                    $("#inputorderservicetime").html(param[1]);
+                }
+                if (param[0] == "orderaddtime") {
+                    $("#orderaddtime").val(param[1]);
+                    $("#inputorderaddtime").html(param[1]);
+                }
+                if (param[0] == "orderid") {
+                    $("#orderid").val(param[1]);
+                }
+                if (param[0] == "orderlocation") {
+                    $("#orderlocation").val(param[1]);
+                    $("#inputorderlocaltion").html(param[1]);
+                }
+                if (param[0] == "openid") {
+                    $("#openid").val(param[1]);
+                }
+            }
+            //文本赋值               
+            //$("#ordertablename").val(params[0]);
+            //$("#orderindex").val(params[1]);
+            //$("#orderstatus").val(params[2]);
+            //$("#orderbegintime").val(params[3]);
+            //$("#locktime").val(params[4]);
+            //$("#userid").val(params[5]);
+            //$("#cancelreason").val(params[6]);
+            //$("#ordernumber").val(params[7]);
+            //$("#isdelete").val(params[8]);
+            //$("#ordertype").val(params[9]);
+            //$("#ordertypename").val(params[10]);
+            //$("#orderremark").val(params[11]);
+            //$("#temp1").val(params[12]);
+            //$("#temp2").val(params[13]);
+            //$("#username").val(params[14]);
+            //$("#userphone").val(params[15]);
+            //$("#feishouid").val(params[16]);
+            //$("#ordertypeid").val(params[17]);
+            //$("#orderendtime").val(params[18]);
+            //$("#orderaddtime").val(params[19]);
+            //$("#orderid").val(params[20]);
+            //$("#orderlocation").val(params[21]);
+
+
+           
+        });
+        function userAgreeCancelFunction()
+        {
+            $("#userAgreeCancel").attr('disabled', true);
+            var ordertablename = $("#ordertablename").val();
+            var orderid = $("#orderid").val();
+            var orderindex = $("#orderindex").val();
+            var userid = $("#userid").val();
+            var orderstatus = $("#orderstatus").val();
+            var feishouid = $("#feishouid").val();
+            var param = "{\"feishouid\":\"" + feishouid + "\",\"ordertablename\":\"" + ordertablename + "\",\"orderid\":\"" + orderid + "\",\"orderindex\":\"" + orderindex + "\",\"userid\":\"" + userid + "\",\"orderstatus\":\"" + orderstatus + "\"}";
+            $.ajax({
+                url: "http://localhost:8088/app/Order_userAgreeCancel",
+                type: "POST",
+                data: { params: param, devices: "weixin", jsonCallback: "userAgreeCancelFunctionCollback" },
+                dataType: "jsonp",
+                jsonpCallback: 'userAgreeCancelFunctionCollback',
+                jsonp: "jsonCollback",//服务端用于接收callback调用的function名的参数
+                success: function (data) {
+                    var status = data.status;
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });
+        }
+        function userAgreeCancelFunctionCollback(v)
+        {
+            $("#userAgreeCancel").attr('disabled', false);
+            var status = v.status;
+            if (status == 1) {
+               // alert("同意取消成功");
+                var openid =  $("#openid").val();
+                window.location.href = "order_cancelled.html?openid=" + openid;
+            }
+            if (status == 2) {
+               // alert("同意取消失败");
+                var openid = $("#openid").val();
+                window.location.href="order_ongoing.html?openid=" + openid;
+            }
+            if (status == 0) {
+                alert("同意取消错误");
+            }
+        }
+        function userNotAgreeCancelFunction()
+        {
+            $("#userNotAgreeCancel").attr('disabled', true);
+            var ordertablename = $("#ordertablename").val();
+            var orderid = $("#orderid").val();
+            var orderindex = $("#orderindex").val();
+            var userid = $("#userid").val();
+            var orderstatus = $("#orderstatus").val();
+            var feishouid = $("#feishouid").val();
+            var param = "{\"feishouid\":\"" + feishouid + "\",\"ordertablename\":\"" + ordertablename + "\",\"orderid\":\"" + orderid + "\",\"orderindex\":\"" + orderindex + "\",\"userid\":\"" + userid + "\",\"orderstatus\":\"" + orderstatus + "\"}";
+            $.ajax({
+                url: "http://localhost:8088/app/Order_userNotAgreeCancel",
+                type: "POST",
+                data: { params: param, devices: "weixin", jsonCallback: "userNotAgreeCancelFunctionCollback" },
+                dataType: "jsonp",
+                jsonpCallback: 'userNotAgreeCancelFunctionCollback',
+                jsonp: "jsonCollback",//服务端用于接收callback调用的function名的参数
+                success: function (data) {
+                    var status = data.status;
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+            });
+        }
+        function userNotAgreeCancelFunctionCollback(v)
+        {
+            $("#userNotAgreeCancel").attr('disabled', false);
+            var status = v.status;
+            //var cookie = $.cookie('openid');
+            if (status == 1)
+            {
+                alert("不同意取消成功");
+                var openid = $("#openid").val();
+                window.location.href="order_ongoing.html?openid=" + openid;
+            }
+            if (status == 2)
+            {
+                alert("不同意取消失败");
+                var openid = $("#openid").val();
+                window.location.href="order_ongoing.html?openid=" + openid;
+            }
+            if (status == 0)
+            {
+                alert("不同意取消错误");
+            }
+        }
+    </script>
+</body>
+</html>
