@@ -205,8 +205,8 @@ $(function(){
 								alert(res.error_msg)
 							}
 						}else if(res.code==600){
-								alert("未登录，请您先登录！")
-								window.location.href="login.html";
+//								alert("未登录，请您先登录！")
+//								window.location.href="login.html";
 							}
 			
 			}

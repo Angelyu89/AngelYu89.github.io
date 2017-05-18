@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/space.css" />
+		<link rel="stylesheet" href="css/kkpager_blue.css" />
+		<link rel="stylesheet" href="css/base.css" />
+				
+		<title>创建空间</title>
+	</head>
+
+	<body>
+		<!--logo导航-->
+		
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$.ajax({
+			type: "POST",
+			url: 'http://115.28.40.198:8080/user/formlogin',
+			data:{'mobile':'15010150048','password':'123456'},
+			success: function (res) {
+				//if(res.code==200){
+				//	alert("ok");
+				//}else{
+					alert(res.code);
+				//}
+			},
+			dataType: "json"
+		});
+	</script>
+		
+	</body>
+
+</html>

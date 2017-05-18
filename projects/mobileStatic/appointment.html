@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		  
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/page.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+		<title>预约页面</title>
+	</head>
+	<body>
+		<div class="appointment-container">
+			<div class="appointment-nav-box">
+				<div class="appointment-nav">
+					预约入驻					
+					<div class="long-header-return returnBtn">
+						<img src="images/img3333_03.png" alt=""/>
+					</div>				
+				</div>
+			</div>
+			<div class="app-contentbox usernamebox">
+				<ul>
+					<li class="app-list-city app-spanL appd_list_city">
+						<span>预约城市</span>
+						<div id="appointment_city">				
+							请选择
+							<img src="images/img3333_07.png" alt="" />
+						</div>
+					</li>
+					<li class="app-list-city app-spanL appd_list_space">
+						<span>空间名称</span>
+						<div id="appointment_space">
+							请选择
+							<img src="images/img3333_07.png" alt="" />
+						</div>
+					</li>
+					<li class="app-list-city app-spanL user_spaTimebox">
+						<span>入驻日期</span>
+						<input id="app_user_time" class="form-control pdlf12 user_tim" min="currentdate" type="date" />
+					</li>
+					<li class="app-list-input app-spanL">
+						<span>公司名称</span>
+						<div>
+							<input id="company_name" type="text" name="user_companyName" placeholder="请输入公司名称"/>
+							<span class="span_name"></span>
+						</div>
+					</li>
+					<li class="app-list-input app-spanL">
+						<span>联 系 人 </span>
+						<div>
+							<input id="contact" type="text" class="pdlf4"  placeholder=" 请输入联系人名称"/>
+						    <span class="span_contact"></span>
+						</div>
+					</li>
+					<li class="app-list-input app-spanL">
+						<span>联系电话</span>
+						<div>
+							<input id="tel" type="text" placeholder="13865487888"/>
+							 <span class="span_tel"></span>
+						</div>
+					</li>
+					<li class="app-list-input app-spanL">
+						<span>入驻人数</span>
+						<div>
+							<input id="people" type="text" placeholder="请输入入驻人数"/>
+							 <span class="span_people"></span>
+						</div>
+					</li>
+					<li class="app-list-input-bz app-spanL">
+						<span>备注</span>
+						<div>
+							<textarea id="note" type="text" placeholder="请输入备注内容,不少于10个字"></textarea>							
+						</div>
+					</li>
+					<li class="user-appointment-btn-box">
+						<div class="user-appointment-btn">
+							<button id="sub">提交预约</button>
+						</div>
+					</li>
+				</ul>
+			</div>						
+		</div>
+		
+		<!--预约---选择城市-->
+		<div class="tool-navbox citybox">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav modify-navbar">
+					选择城市				
+					<span class="mod-nav-lf">取消</span>
+					<span class="mod-nav-rg" id="app_city_baoc">保存</span>
+				</div>
+			</div>
+			<div class="tool-centerbox">
+				<div class="tool-center">
+					<span>
+						<input id="space_user_city" type="text" name="user_spaceCity" placeholder="限4-16个字符，一个汉字为两个字符"/>
+					</span>
+					<img src="images/img3333_07.png" alt="" />
+				</div>	
+			</div>
+			
+		</div>
+		
+		<!--预约---选择空间--->
+		<div class="tool-navbox spacebox">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav modify-navbar">
+					选择空间				
+					<span class="mod-nav-lf">取消</span>
+					<span class="mod-nav-rg" id="app_space_baoc">保存</span>
+				</div>
+			</div>
+			<div class="tool-centerbox">
+				<div class="tool-center">
+					<span>
+						<input id="space_user_space" type="text" name="user_spaceSpe" placeholder="限4-16个字符，一个汉字为两个字符"/>
+					</span>
+					<img src="images/img3333_07.png" alt="" />
+				</div>	
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/fun.js"></script>
+		<script type="text/javascript">
+			  document.body.style.height=window.innerHeight+"px";
+			  $(".tool-navbox").height=window.innerHeight+"px";
+		</script>
+		<script type="text/javascript">
+		
+			$(document).ready(function(){
+				
+			    var date = new Date();
+//			    console.log(date);
+			    var seperator1 = "/";
+//			    var seperator2 = ":";
+			    var month = date.getMonth() + 1;
+			    var strDate = date.getDate();
+			    if (month >= 1 && month <= 9) {
+			        month = "0" + month;
+			    }
+			    if (strDate >= 0 && strDate <= 9) {
+			        strDate = "0" + strDate;
+			    }
+			    //年月日时分秒
+//			    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+//			            + " " + date.getHours() + seperator2 + date.getMinutes()
+//			            + seperator2 + date.getSeconds();
+//			             console.log(currentdate);
+			    
+			    //年月日
+			     var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate;
+			     console.log(currentdate); 
+			     
+				$("#app_user_time").attr("min",currentdate);
+				
+				var indatas = $("#app_user_time").val();
+				
+				indatas =date.getFullYear() + seperator1 + month + seperator1 + strDate;
+			});
+			
+		</script>
+		
+	<script type="text/javascript" src="js/shotrRent.js"></script>
+	<script type="text/javascript" src="js/long_list.js"></script>
+	<script type="text/javascript" src="js/return.js"></script>
+	</body>
+</html>

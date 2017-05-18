@@ -85,8 +85,8 @@ $(function(){
 				else if(res.code==500){
 						showAlert("系统繁忙，请稍后再试")
 				}else if(res.code==600){
-								alert("未登录，请您先登录！")
-								window.location.href="login.html";
+//								alert("未登录，请您先登录！")
+//								window.location.href="login.html";
 							}
 			},
 			error:function(msg){

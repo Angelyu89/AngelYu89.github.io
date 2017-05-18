@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		  
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/page.css" />
+		<title>短租详情</title>
+	</head>
+	<body>
+		<div class="long-rent-xq-container">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav">
+					短租详情				
+					<div class="long-header-return returnBtnImg">
+						<img src="images/img3333_03.png" alt="" />
+					</div>				
+				</div>
+			</div>
+				
+				<div class="long-rent-xqbox">
+					<div class="long-rent-xq">					
+						<img id= "user_bannerimg_rent" src="images/img11111_02.png" alt="" />
+							<h4 id="usernameh4_rent">盒子空间，阳光100豪华10人房间</h4>
+							<div id="user_id_rent">北京市天恒大厦B1企业盒子28号</div>
+							<div id = "user_tel_rent" class="rent-off-xqiphone">010-88888888</div>
+							<span id="user_time_rent" class="rent-office-yuding-time rent-off-yd-time-xq">09:00-18:00</span>
+							<div class="rent-yuytimeboxs">
+								<div class="rent-yuytime">
+									<span>预约日期</span>
+									<div class="rent-xq-gengduo">
+											<input type="date" class="rent-xq-date" id="new_Date" min="" />
+											<!--<img src="images/img3333_07.png" alt="" />-->
+									</div>
+								</div>
+							</div>														
+					</div>		
+				</div>
+				
+				<div class="rent-office-xq-newsbox">
+					<div class="rent-office-xq-news">
+						<ul>
+							<li class="app-list-city met-xq-border">
+								<span>工位信息</span>
+							</li>
+							
+							<li class="app-list-input">
+								<span>工位数量</span>
+								<div>
+									<input type="number" id="user_rent_nmber" name="points" min="1"/>
+								</div>
+							</li>
+							<li class="app-list-input">
+								<span>工位价格</span>
+								<div>
+									<input id="user_rent_qian" type="text" placeholder="1300 /月"/>
+								</div>
+							</li>
+							<li class="app-list-input line">
+								<span>配套设施</span>						
+							</li>
+						</ul>
+						
+						<div class="rent-office-facilitiesbox">
+							<div class="rent-office-facilities">
+								<ul>
+									<li class="fac01">
+										<span>WiFi</span>
+									</li>
+									<li class="fac02">
+										 <span>会议室</span>
+									</li>
+									<li class="fac03">
+										 <span>休闲</span>
+									</li>
+									<li class="fac04">
+										 <span>打印</span>
+									</li>
+									<li class="fac05">
+										 <span>饮用水</span>
+									</li>
+									<li class="fac06">
+										 <span>办公</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>					
+				</div>
+				
+				<div class="rent-office-xq-zfbox">
+					<div class="rent-office-xq-zf">
+						<span>
+							支付方式
+						</span>
+						<div class="ofc-zf-img payBox_user">
+							<img src="images/img2331123_28.png" alt="" />
+							支付宝
+							<input type="checkbox" class="Zhifu_Pay"/>
+						</div>
+						<div class="ofc-zf-img weixinimg wechatBox_user">
+							<img src="images/img2331123_35.png" alt="" />
+						微信
+							<input type="checkbox" class="weChat_Pay"/>
+						</div>
+					</div>
+					
+				</div>
+					
+				<div class="long-rent-xq-appointment-btn">
+					<div>
+						价格：
+						<span class="rent_xq_pirobox"></span>元
+					</div>	
+					<a href="javascript:void(0)">
+						<button class="sub_order">
+						提交预约	
+						</button>	
+					</a>
+				</div>
+			
+		</div>
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/home.js"></script>
+		<script type="text/javascript" src="js/return.js"></script>
+		<script type="text/javascript">
+		
+			$(document).ready(function(){
+			    var date = new Date();
+//			    console.log(date);
+			    var seperator1 = "-";
+			    var seperator2 = ":";
+			    var month = date.getMonth() + 1;
+			    var strDate = date.getDate();
+			    if (month >= 1 && month <= 9) {
+			        month = "0" + month;
+			    }
+			    if (strDate >= 0 && strDate <= 9) {
+			        strDate = "0" + strDate;
+			    }
+			    //年月日时分秒
+//			    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+//			            + " " + date.getHours() + seperator2 + date.getMinutes()
+//			            + seperator2 + date.getSeconds();
+//			             console.log(currentdate);
+			    
+			    //年月日
+			     var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate;
+			     console.log(currentdate);         
+			             
+				$("#new_Date").attr("min",currentdate);
+				
+			});
+			
+		</script>
+	</body>
+</html>

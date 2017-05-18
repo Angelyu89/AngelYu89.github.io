@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		 
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/page.css" />
+	
+		<title>预约会议室</title>
+	</head>
+	<body>
+		<div class="long-rent-xq-container">
+			<div class="long-rent-nav-box">
+				<div class="long-rent-nav">
+					预约会议室				
+					<div class="long-header-return returnBtnImg">
+						<img src="images/img3333_03.png" alt="" />
+					</div>				
+				</div>
+			</div>
+			
+			<div class="met-xq-containerbox">
+				<div class="met-xq-box">
+					<div class="met-xq">					
+						<a href="">
+							<div class="li-lf">
+								<img src="images/img_11.png" alt="" />
+							</div>
+							<div class="li-rg">
+								<div class="li-h5">
+									万紫千红(111)
+								</div>
+								<div class="li-ip">北京市天恒大厦B1企业盒子28号</div>
+								<div class="li-ip">
+									2017-03-08
+								</div>
+							</div>
+						</a>												
+					</div>		
+				</div>
+				
+				
+			
+			
+				<div class="met-xq-ydbox">
+					<div class="rent-yuytimeboxs">
+						<div class="rent-yuytime metnewstime">
+							<span>预约信息</span>
+						</div>
+						<div class="rent-yuytime metnewstime">
+							<span>预约日期</span>
+							<div class="rent-xq-gengduo">
+									<input type="date" class="rent-xq-date" id="newdate" min="currentdate"/>
+							</div>
+						</div>
+						<div class="rent-yuytime metnewstime">
+							<span>预约时间</span>
+							<div class="rent-xq-gengduo metting-xq-timeabox">
+								<div class="metting-xq-time">
+									<input type="text" id="time-range-input" datetime="" evaluation=""/>
+								</div>
+								<span id="result-show">0小时</span>
+								<button type="button" data-toggle="modal" data-target="#myModal" onclick="changeDateK()"></button>
+							</div>
+						</div>
+					</div>	
+				</div>
+				
+				<div class="rent-office-xq-newsbox">
+					<div class="rent-office-xq-news">
+						<ul>
+							<li class="app-list-city">
+								<span>会议室信息</span>
+							</li>
+							
+							<li class="app-list-input">
+								<span>会议室单价</span>
+								<div class="met-dj">
+									<input type="text" placeholder="￥999元 /每分钟"/>
+								</div>
+							</li>
+							<li class="app-list-input">
+								<span>容纳人数</span>
+								<div>
+									<input type="text" placeholder="9人"/>
+								</div>
+							</li>
+							<li class="app-list-input line">
+								<span>配套设施</span>						
+							</li>
+						</ul>
+						
+						<div class="rent-office-facilitiesbox">
+							<div class="rent-office-facilities">
+								<ul>
+									<li class="fac01">
+										<span>WiFi</span>
+									</li>
+									<li class="fac02">
+										 <span>会议室</span>
+									</li>
+									<li class="fac03">
+										 <span>休闲</span>
+									</li>
+									<li class="fac04">
+										 <span>打印</span>
+									</li>
+									<li class="fac05">
+										 <span>饮用水</span>
+									</li>
+									<li class="fac06">
+										 <span>办公</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>					
+				</div>
+			</div>	
+				<div class="rent-office-xq-zfbox">
+					<div class="rent-office-xq-zf">
+						<span>
+							支付方式
+						</span>
+						<div class="ofc-zf-img payBox_user">
+							<img src="images/img2331123_28.png" alt="" />
+							支付宝
+							<input type="checkbox" class="Zhifu_Pay"/>
+						</div>
+						<div class="ofc-zf-img weixinimg wechatBox_user">
+							<img src="images/img2331123_35.png" alt="" />
+							微信
+							<input type="checkbox"  class="weChat_Pay" />
+						</div>
+					</div>
+					
+				</div>
+					
+				<div class="long-rent-xq-appointment-btn">
+					<div>价格：8888元</div>						
+						<button class="met-yud-btn">
+						提交预订
+						</button>					
+				</div>
+			</div>
+			
+			<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+				  <div class="modal-dialog modal-lg" role="document">
+				    <div class="modal-content">
+				    	<div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">2017-3-10</h4>
+					      </div>
+					     <div class="modal-body">
+       						<div class="time-item-area">
+							  	<div class="modalTime">
+						    		<h5>上午 9:00-13:00</h5>
+						    	   <span class="dateSpan" value="9:00" datetime="18" dateNumber="9:00">9:00</span>
+							       <span class="dateSpan" value="9:30" datetime="19" dateNumber="9:30">9:30</span>
+							       <span class="dateSpan" value="10:00" datetime="20" dateNumber="10:00">10:00</span>
+							       <span class="dateSpan" value="10:30" datetime="21" dateNumber="10:30">10:30</span>
+							       <span class="dateSpan" value="11:00" datetime="22" dateNumber="11:00">11:00</span>
+							       <span class="dateSpan" value="11:30" datetime="23" dateNumber="11:30">11:30</span>
+							       <span class="dateSpan" value="12:00" datetime="24" dateNumber="12:00">12:00</span>
+							       <span class="dateSpan" value="12:30" datetime="25" dateNumber="12:30">12:30</span>
+							      
+							       <h5>下午 13:00-17:00</h5>
+							       <span class="dateSpan" value="13:00" datetime="26" dateNumber="13:00">13:00</span>
+							       <span class="dateSpan" value="13:30" datetime="27" dateNumber="13:30">13:30</span>
+							       <span class="dateSpan" value="14:00" datetime="28" dateNumber="14:00">14:00</span>
+							       <span class="dateSpan" value="14:30" datetime="29" dateNumber="14:30">14:30</span>
+							       <span class="dateSpan" value="15:00" datetime="30" dateNumber="15:00">15:00</span>
+							       <span class="dateSpan" value="15:30" datetime="31" dateNumber="15:30">15:30</span>
+							       <span class="dateSpan" value="16:00" datetime="32" dateNumber="16:00">16:00</span>
+							       <span class="dateSpan" value="16:30" datetime="33" dateNumber="16:30">16:30</span>
+							       <span class="dateSpan" value="17:00" datetime="34" dateNumber="17:00">17:00</span>
+							       <span class="dateSpan" value="17:30" datetime="35" dateNumber="17:30">17:30</span>
+							       <span class="dateSpan" value="18:00" datetime="36" dateNumber="18:00">18:00</span>
+							       <span class="dateSpan" value="18:30" datetime="37" dateNumber="18:30">18:30</span>
+							        <h5>晚上19:00-24:00</h5>
+							       <span class="dateSpan" value="19:00" datetime="38" dateNumber="19:00">19:00</span>
+							       <span class="dateSpan" value="19:30" datetime="39" dateNumber="19:30">19:30</span>
+							       <span class="dateSpan" value="20:00" datetime="40" dateNumber="20:00">20:00</span>
+							       <span class="dateSpan" value="20:30" datetime="41" dateNumber="20:30">20:30</span>
+							       <span class="dateSpan" value="21:00" datetime="42" dateNumber="21:00">21:00</span>
+							       <span class="dateSpan" value="21:30" datetime="43" dateNumber="21:30">21:30</span>
+							       <span class="dateSpan" value="22:00" datetime="44" dateNumber="22:00">22:00</span>
+							       <span class="dateSpan" value="22:30" datetime="45" dateNumber="22:30">22:30</span>
+							       <span class="dateSpan" value="23:00" datetime="46" dateNumber="23:00">23:00</span>
+							       <span class="dateSpan" value="23:30" datetime="47" dateNumber="23:30">23:30</span>
+							       <span class="dateSpan" value="24:00" datetime="48" dateNumber="24:00">24:00</span>
+						    	</div>
+					 		 </div>			
+    					 </div>
+				    </div>
+				  </div>
+				</div>
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/shotrRent.js"></script>	
+		<script type="text/javascript" src="js/home.js"></script>
+		<script type="text/javascript" src="js/meeting_list.js"></script>
+		<script type="text/javascript" src="js/return.js"></script>
+	</body>
+</html>
