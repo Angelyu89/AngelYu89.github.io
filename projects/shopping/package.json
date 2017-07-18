@@ -1,0 +1,17 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "description": "开发购物车功能",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "xiaoyu",
+  "license": "ISC",
+  "dependencies": {
+    "vue-resource": "^1.3.4"
+  }
+}
